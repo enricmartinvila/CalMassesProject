@@ -1,7 +1,7 @@
 import { isTodo, siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
-import { CtaLink } from "../ui/CtaLink";
 import { renderText } from "../ui/TodoMark";
+
 export function ReviewsSection({ title }: { title: string }) {
   const { content } = useLang();
   const { sources, items } = siteConfig.reviews;
