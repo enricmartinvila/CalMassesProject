@@ -93,8 +93,8 @@ export const siteConfig = {
 
   booking: {
     /** Primary booking engine (Airbnb). Booking.com URL not stably resolved. */
-    url: "https://www.airbnb.es/rooms/1662276202761241338",
-    airbnb: "https://www.airbnb.es/rooms/1662276202761241338",
+    url: "https://www.airbnb.es/rooms/896856836379489751",
+    airbnb: "https://www.airbnb.es/rooms/896856836379489751",
     bookingCom: TODO_DATA,
   },
 
