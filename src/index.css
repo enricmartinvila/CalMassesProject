@@ -2,9 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-
-:root{
-    font-family: 'Cabin';
+@font-face {
+  font-family: "Cabin";
+  src: url("/font/Cabin.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
 }
 
+:root {
+  font-family: "Cabin", Georgia, serif;
+  color: #111827;
+  background-color: #ffffff;
+}
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
