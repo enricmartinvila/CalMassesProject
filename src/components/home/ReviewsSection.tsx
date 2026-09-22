@@ -2,18 +2,21 @@ import { isTodo, siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 import { CtaLink } from "../ui/CtaLink";
 import { renderText } from "../ui/TodoMark";
-
 export function ReviewsSection({ title }: { title: string }) {
   const { content } = useLang();
-  const { rating, reviewCount, reviewSource, reviewDate, items, moreUrl } =
-    siteConfig.reviews;
+  const { sources, items } = siteConfig.reviews;
 
-  const hasAggregate =
-    !isTodo(rating) && !isTodo(reviewCount) && !isTodo(reviewSource);
+  const visibleSources = sources.filter(
+    (s) =>
+      !isTodo(s.rating) &&
+      !isTodo(s.count) &&
+      !isTodo(s.source) &&
+      !isTodo(s.url),
+  );
 
   const hasQuotes = Array.isArray(items) && items.length > 0;
 
-  if (!hasAggregate && !hasQuotes) {
+  if (!visibleSources.length && !hasQuotes) {
     return null;
   }
 
@@ -24,17 +27,31 @@ export function ReviewsSection({ title }: { title: string }) {
           {renderText(title)}
         </h2>
 
-        {hasAggregate && (
-          <div className="mb-10 max-w-[46rem]">
-            <p className="text-3xl md:text-4xl font-light text-gray-900 tracking-tight">
-              {String(rating)}
-              <span className="text-lg md:text-xl text-gray-600"> / 5</span>
-            </p>
-            <p className="mt-2 text-sm md:text-base text-gray-600">
-              {String(reviewCount)} · {String(reviewSource)}
-              {!isTodo(reviewDate) ? ` · ${String(reviewDate)}` : null}
-            </p>
-          </div>
+        {visibleSources.length > 0 && (
+          <ul className="mb-10 grid gap-6 sm:grid-cols-2 max-w-2xl">
+            {visibleSources.map((s) => (
+              <li key={s.source} className="border-t border-[#556B2F]/25 pt-4">
+                <p className="text-3xl md:text-4xl font-light text-gray-900 tracking-tight">
+                  {s.rating}
+                  <span className="text-lg md:text-xl text-gray-600">
+                    {" "}
+                    / {s.scale}
+                  </span>
+                </p>
+                <p className="mt-2 text-sm md:text-base text-gray-600">
+                  {s.count} · {s.source}
+                </p>
+                <a
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-block text-sm font-medium text-[#556B2F] underline-offset-4 hover:underline"
+                >
+                  {content.ui.cta.seeMoreReviews}
+                </a>
+              </li>
+            ))}
+          </ul>
         )}
 
         {hasQuotes ? (
@@ -42,10 +59,7 @@ export function ReviewsSection({ title }: { title: string }) {
             {(items as Array<{ text: string; name: string; source?: string }>)
               .slice(0, 3)
               .map((review, i) => (
-                <li
-                  key={i}
-                  className="border-t border-[#556B2F]/25 pt-5"
-                >
+                <li key={i} className="border-t border-[#556B2F]/25 pt-5">
                   <p className="text-base text-gray-800 leading-relaxed">
                     “{review.text}”
                   </p>
@@ -57,14 +71,6 @@ export function ReviewsSection({ title }: { title: string }) {
               ))}
           </ul>
         ) : null}
-
-        {!isTodo(moreUrl) && (
-          <div className="mt-10">
-            <CtaLink href={String(moreUrl)} external variant="secondary">
-              {content.ui.cta.seeMoreReviews}
-            </CtaLink>
-          </div>
-        )}
       </div>
     </section>
   );

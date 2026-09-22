@@ -103,7 +103,8 @@ export const siteConfig = {
   booking: {
     url: "https://www.airbnb.es/rooms/896856836379489751",
     airbnb: "https://www.airbnb.es/rooms/896856836379489751",
-    bookingCom: TODO_DATA,
+    bookingCom:
+      "https://www.booking.com/hotel/es/cal-masses-st-salvador-de-guardiola.es.html",
   },
 
   social: {
@@ -111,13 +112,24 @@ export const siteConfig = {
   },
 
   reviews: {
-    rating: "4,97",
-    reviewCount: "86",
-    reviewSource: "Airbnb",
-    reviewDate: TODO_DATA,
+    sources: [
+      {
+        rating: "4,97",
+        scale: "5",
+        count: "86",
+        source: "Airbnb",
+        url: "https://www.airbnb.es/rooms/896856836379489751/reviews",
+      },
+      {
+        rating: "9,5",
+        scale: "10",
+        count: "4",
+        source: "Booking.com",
+        url: "https://www.booking.com/hotel/es/cal-masses-st-salvador-de-guardiola.es.html",
+      },
+    ],
     /** Approved guest quotes — none provided yet. */
     items: TODO_CONTENT_REVIEWS as typeof TODO_CONTENT_REVIEWS,
-    moreUrl: "https://www.airbnb.es/rooms/896856836379489751/reviews",
   },
 
   confirmedHeroAttributes: {

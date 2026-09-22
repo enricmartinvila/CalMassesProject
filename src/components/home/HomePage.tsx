@@ -71,7 +71,7 @@ export function HomePage() {
             sizes="100vw"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/40 to-black/20" />
         </div>
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-14 pt-32 sm:px-6 lg:px-8 md:pb-20">
           <div className="max-w-[40rem] space-y-6 text-white">
@@ -94,7 +94,7 @@ export function HomePage() {
               <CtaLink
                 to={path("alojamiento")}
                 variant="secondary"
-                className="!border-white !text-white hover:!bg-white/10"
+                className="!bg-transparent !border-2 !border-white !text-white hover:!bg-white/15"
               >
                 {content.ui.cta.seeAccommodation}
               </CtaLink>
@@ -284,7 +284,7 @@ export function HomePage() {
             <CtaLink
               to={path("contacto")}
               variant="secondary"
-              className="!border-white !text-white hover:!bg-white/10"
+              className="!bg-transparent !border-2 !border-white !text-white hover:!bg-white/15"
             >
               {content.ui.cta.contact}
             </CtaLink>

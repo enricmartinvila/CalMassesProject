@@ -18,7 +18,7 @@ export function BookingLinks({ id = "reservar" }: { id?: string }) {
       <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
         {hasAirbnb && (
           <CtaLink href={airbnb} external>
-            {content.ui.cta.availability}
+            Airbnb
           </CtaLink>
         )}
         {hasBooking && (
@@ -27,6 +27,11 @@ export function BookingLinks({ id = "reservar" }: { id?: string }) {
           </CtaLink>
         )}
       </div>
+      {(hasAirbnb || hasBooking) && (
+        <p className="mt-4 text-sm text-gray-600">
+          {content.ui.cta.availability}
+        </p>
+      )}
     </section>
   );
 }

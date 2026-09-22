@@ -40,7 +40,7 @@ export function BookingCTA({ h2, paragraphs, primary, secondary }: Props) {
               href={secondary.href}
               external={secondary.external}
               variant="secondary"
-              className="!border-white !text-white hover:!bg-white/10"
+              className="!bg-transparent !border-2 !border-white !text-white hover:!bg-white/15"
             >
               {secondary.label}
             </CtaLink>

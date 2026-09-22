@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import { isTodo } from "../../config/siteConfig";
 import { absoluteUrl, isTodo, siteConfig } from "../../config/siteConfig";
 import type { RouteKey } from "../../i18n/routes";
 import { useLang } from "../../hooks/useLang";
