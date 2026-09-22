@@ -317,7 +317,7 @@ export const contentEs: ContentBundle = {
       answer: "Sí, hay aparcamiento de sobra; cabe cualquier tipo de vehículo.",
     },
     { question: "¿Hay cocina?", answer: "Sí" },
-    { question: "¿Se admiten mascotas?", answer: TODO_DATA },
+    { question: "¿Se admiten mascotas?", answer: "No." },
     { question: "¿Pueden alojarse niños?", answer: "Sí" },
     { question: "¿A qué hora es el check-in?", answer: "A partir de las 16:00." },
     { question: "¿A qué hora es el check-out?", answer: "Hasta las 11:00." },
@@ -335,6 +335,9 @@ export const contentEs: ContentBundle = {
       answer:
         "Puedes reservar en Airbnb, o contactar por WhatsApp o email.",
     },
-    { question: "¿Cuál es la política de cancelación?", answer: TODO_DATA },
+    {
+      question: "¿Cuál es la política de cancelación?",
+      answer: "Se indica en Airbnb al elegir las fechas de la reserva.",
+    },
   ],
 };

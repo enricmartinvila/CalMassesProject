@@ -51,7 +51,8 @@ export const siteConfig = {
   capacity: {
     guests: 2,
     bedrooms: 1,
-    beds: "1 cama de matrimonio y 1 sofá cama",
+    /** Airbnb listing: 1 bed. */
+    beds: "1 cama",
     bathrooms: "1 (con jacuzzi)",
   },
 
@@ -61,24 +62,25 @@ export const siteConfig = {
     pool: {
       available: true,
       confirmedForGuests: true,
+      /** Owner: compartida. Airbnb la publica como privada para huéspedes. */
       privateOrShared: "compartida",
       season: "verano",
       hours: "sin horario fijo",
       rules: "sentido común",
-      type: "exterior",
+      type: "exterior de agua salada",
     },
     jacuzzi: true,
-    parking: "Sí",
+    parking: "Sí, gratis in situ",
     wifi: "Sí",
-    /** A/C and/or heating — unconfirmed; third-party listings mention A/C. */
-    climateControl: TODO_DATA,
-    petsAllowed: TODO_DATA,
+    climateControl: "Aire acondicionado y calefacción",
+    petsAllowed: false,
     childrenAllowed: true,
   },
 
   checkIn: "16:00",
   checkOut: "11:00",
-  cancellationPolicy: TODO_DATA,
+  /** Exact band depends on dates selected on Airbnb. */
+  cancellationPolicy: "Según la política de Airbnb al reservar",
 
   /** Driving estimates via OSRM from Cal Masses coordinates. */
   distances: {
@@ -103,9 +105,9 @@ export const siteConfig = {
   },
 
   reviews: {
-    rating: TODO_DATA,
-    reviewCount: TODO_DATA,
-    reviewSource: TODO_DATA,
+    rating: "4,97",
+    reviewCount: "86 evaluaciones",
+    reviewSource: "Airbnb",
     reviewDate: TODO_DATA,
   },
 
@@ -114,9 +116,9 @@ export const siteConfig = {
    * Only include facts confirmed in editorial brief / this config.
    */
   confirmedHeroAttributes: {
-    es: ["2 huéspedes", "1 dormitorio", "piscina", "cocina", "Wi-Fi", "naturaleza"],
-    ca: ["2 hostes", "1 dormitori", "piscina", "cuina", "Wi-Fi", "natura"],
-    en: ["2 guests", "1 bedroom", "pool", "kitchen", "Wi-Fi", "nature"],
+    es: ["2 huéspedes", "1 dormitorio", "piscina", "cocina", "Wi-Fi", "A/C", "naturaleza"],
+    ca: ["2 hostes", "1 dormitori", "piscina", "cuina", "Wi-Fi", "A/C", "natura"],
+    en: ["2 guests", "1 bedroom", "pool", "kitchen", "Wi-Fi", "A/C", "nature"],
   },
 
   images: {

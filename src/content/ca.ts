@@ -310,7 +310,7 @@ export const contentCa: ContentBundle = {
       answer: "Sí, hi ha aparcament de sobres; hi cap qualsevol tipus de vehicle.",
     },
     { question: "Hi ha cuina?", answer: "Sí" },
-    { question: "S'admeten mascotes?", answer: TODO_DATA },
+    { question: "S'admeten mascotes?", answer: "No." },
     { question: "Hi poden allotjar-se nens?", answer: "Sí" },
     { question: "A quina hora és el check-in?", answer: "A partir de les 16:00." },
     { question: "A quina hora és el check-out?", answer: "Fins a les 11:00." },
@@ -328,6 +328,9 @@ export const contentCa: ContentBundle = {
       answer:
         "Pots reservar a Airbnb, o contactar per WhatsApp o correu.",
     },
-    { question: "Quina és la política de cancel·lació?", answer: TODO_DATA },
+    {
+      question: "Quina és la política de cancel·lació?",
+      answer: "S'indica a Airbnb en triar les dates de la reserva.",
+    },
   ],
 };

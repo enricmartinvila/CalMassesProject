@@ -310,7 +310,7 @@ export const contentEn: ContentBundle = {
       answer: "Yes, there is plenty of parking; any type of vehicle fits.",
     },
     { question: "Is there a kitchen?", answer: "Yes" },
-    { question: "Are pets allowed?", answer: TODO_DATA },
+    { question: "Are pets allowed?", answer: "No." },
     { question: "Can children stay?", answer: "Yes" },
     { question: "What time is check-in?", answer: "From 16:00." },
     { question: "What time is check-out?", answer: "Until 11:00." },
@@ -328,6 +328,9 @@ export const contentEn: ContentBundle = {
       answer:
         "You can book on Airbnb, or contact us by WhatsApp or email.",
     },
-    { question: "What is the cancellation policy?", answer: TODO_DATA },
+    {
+      question: "What is the cancellation policy?",
+      answer: "It is shown on Airbnb when you select your dates.",
+    },
   ],
 };
