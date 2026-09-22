@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo, type ReactNode } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import {
   DEFAULT_LANG,
   SUPPORTED_LANGS,
@@ -24,9 +24,15 @@ export function parseLang(value: string | undefined): Lang {
   return DEFAULT_LANG;
 }
 
+/** First path segment is the locale (`/es/...`, `/ca/...`, `/en/...`). */
+export function langFromPathname(pathname: string): Lang {
+  const segment = pathname.split("/").filter(Boolean)[0];
+  return parseLang(segment);
+}
+
 export function LangProvider({ children }: { children: ReactNode }) {
-  const { lang: langParam } = useParams();
-  const lang = parseLang(langParam);
+  const { pathname } = useLocation();
+  const lang = langFromPathname(pathname);
 
   const value = useMemo<LangContextValue>(
     () => ({
