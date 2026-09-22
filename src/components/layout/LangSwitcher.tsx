@@ -1,8 +1,8 @@
 import { useEffect, useId, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { SUPPORTED_LANGS, type Lang } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 import { pathFor, resolveRouteKey } from "../../i18n/routes";
-import { useLocation } from "react-router-dom";
 
 const LABELS: Record<Lang, { short: string; full: string }> = {
   ca: { short: "CA", full: "Català" },
@@ -23,7 +23,7 @@ export function LangSwitcher({ className = "" }: { className?: string }) {
       location.pathname.replace(new RegExp(`^/${lang}/?`), "").split("/"),
     ) ?? "home";
 
-  const hrefFor = (next: Lang) => {
+  const toFor = (next: Lang) => {
     const key = currentKey === "entorno" ? "home" : currentKey;
     return pathFor(next, key);
   };
@@ -46,7 +46,6 @@ export function LangSwitcher({ className = "" }: { className?: string }) {
 
   return (
     <div ref={rootRef} className={`relative ${className}`}>
-      {/* Desktop / tablet: segmented control */}
       <div
         className="hidden sm:inline-flex items-center rounded-full border border-[#556B2F]/25 bg-[#f7f7f4] p-0.5"
         role="group"
@@ -55,9 +54,9 @@ export function LangSwitcher({ className = "" }: { className?: string }) {
         {SUPPORTED_LANGS.map((l) => {
           const active = l === lang;
           return (
-            <a
+            <Link
               key={l}
-              href={hrefFor(l)}
+              to={toFor(l)}
               aria-current={active ? "true" : undefined}
               title={LABELS[l].full}
               className={`min-w-[2.25rem] rounded-full px-2.5 py-1.5 text-center text-[0.7rem] font-semibold tracking-[0.08em] transition ${
@@ -67,12 +66,11 @@ export function LangSwitcher({ className = "" }: { className?: string }) {
               }`}
             >
               {LABELS[l].short}
-            </a>
+            </Link>
           );
         })}
       </div>
 
-      {/* Mobile: compact dropdown */}
       <div className="sm:hidden">
         <button
           type="button"
@@ -101,8 +99,8 @@ export function LangSwitcher({ className = "" }: { className?: string }) {
               const active = l === lang;
               return (
                 <li key={l} role="option" aria-selected={active}>
-                  <a
-                    href={hrefFor(l)}
+                  <Link
+                    to={toFor(l)}
                     className={`flex items-center justify-between gap-3 px-3.5 py-2.5 text-sm transition ${
                       active
                         ? "bg-[#EEF2E6] font-semibold text-[#556B2F]"
@@ -114,7 +112,7 @@ export function LangSwitcher({ className = "" }: { className?: string }) {
                     <span className="text-[0.65rem] tracking-[0.1em] text-[#556B2F]/70">
                       {LABELS[l].short}
                     </span>
-                  </a>
+                  </Link>
                 </li>
               );
             })}
