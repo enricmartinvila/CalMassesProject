@@ -139,29 +139,27 @@ export const siteConfig = {
   },
 
   images: {
-    logo: "/fotosTargetes/fotosCaseta/logo.webp",
+    logo: "/images/logo-400.webp",
     favicon: "/favicon-32.png",
     ogDefault: "/images/og-calmasses.jpg",
-    /** Exterior LCP for home hero. */
+    /** Exterior LCP for home hero — SmartImage derives 400/800/1600 srcset. */
     heroLcp: "/images/exterior-1600.webp",
-    heroLcpSrcSet:
-      "/images/exterior-800.webp 800w, /images/exterior-1600.webp 1600w",
     exterior: "/images/exterior-1600.webp",
     vineyard: "/images/hero-vinyes-1600.webp",
-    pool: "/fotosTargetes/fotosExterior/SliderExterior6.jpg",
-    poolAlt: "/fotosTargetes/fotosExterior/SliderExterior7.jpg",
+    pool: "/images/pool-1600.webp",
+    poolAlt: "/images/pool-2-1600.webp",
     wine: "/images/sisu-1600.webp",
-    wineAlt: "/fotosVino/fotoplano.webp",
+    wineAlt: "/images/sisu-alt-1600.webp",
     interior: "/images/hero-interior-1600.webp",
-    bedroom: "/fotosTargetes/fotosCaseta/SliderHab1.jpg",
-    bedroomAlt: "/fotosTargetes/fotosCaseta/SliderHab3.jpg",
-    living: "/fotosTargetes/fotosCaseta/dinsnousoda.webp",
-    kitchen: "/fotosTargetes/fotosCaseta/SliderMen2.jpg",
-    bathroom: "/fotosTargetes/fotosCaseta/yacuzzi.webp",
-    terrace: "/fotosTargetes/fotosCaseta/foravermut.webp",
-    garden: "/fotosTargetes/fotosHorta/SliderTerra1.jpg",
-    bbq: "/fotosTargetes/fotosExterior/SliderBbq2.jpg",
-    placeta: "/fotosTargetes/fotosPlaceta/SliderPlac1.jpg",
+    bedroom: "/images/bedroom-1600.webp",
+    bedroomAlt: "/images/bedroom-2-1600.webp",
+    living: "/images/interior-soda-1600.webp",
+    kitchen: "/images/kitchen-1600.webp",
+    bathroom: "/images/bathroom-1600.webp",
+    terrace: "/images/exterior-vermut-1600.webp",
+    garden: "/images/garden-1600.webp",
+    bbq: "/images/bbq-1600.webp",
+    placeta: "/images/placeta-1600.webp",
     montserrat: "TODO_IMAGE_MONTSERRAT",
   },
 
@@ -176,7 +174,7 @@ export const siteConfig = {
       category: "exterior" as const,
     },
     {
-      src: "/fotosTargetes/fotosExterior/SliderExterior1.jpg",
+      src: "/images/exterior-1-1600.webp",
       alt: {
         es: "Paisaje alrededor de Cal Masses",
         ca: "Paisatge al voltant de Cal Masses",
@@ -185,16 +183,7 @@ export const siteConfig = {
       category: "exterior" as const,
     },
     {
-      src: "/fotosTargetes/fotosExterior/SliderExterior2.jpg",
-      alt: {
-        es: "Casa y entorno de Cal Masses",
-        ca: "Casa i entorn de Cal Masses",
-        en: "House and surroundings at Cal Masses",
-      },
-      category: "exterior" as const,
-    },
-    {
-      src: "/fotosTargetes/fotosExterior/SliderExterior3.jpg",
+      src: "/images/exterior-3-1600.webp",
       alt: {
         es: "Vista exterior de la finca",
         ca: "Vista exterior de la finca",
@@ -203,7 +192,7 @@ export const siteConfig = {
       category: "exterior" as const,
     },
     {
-      src: "/fotosTargetes/fotosCaseta/foravermut.webp",
+      src: "/images/exterior-vermut-1600.webp",
       alt: {
         es: "Terraza de Cal Masses",
         ca: "Terrassa de Cal Masses",
@@ -212,7 +201,7 @@ export const siteConfig = {
       category: "exterior" as const,
     },
     {
-      src: "/fotosTargetes/fotosExterior/SliderExterior6.jpg",
+      src: "/images/pool-1600.webp",
       alt: {
         es: "Piscina de Cal Masses",
         ca: "Piscina de Cal Masses",
@@ -221,7 +210,7 @@ export const siteConfig = {
       category: "piscina" as const,
     },
     {
-      src: "/fotosTargetes/fotosExterior/SliderExterior7.jpg",
+      src: "/images/pool-2-1600.webp",
       alt: {
         es: "Zona de piscina y exterior",
         ca: "Zona de piscina i exterior",
@@ -230,7 +219,7 @@ export const siteConfig = {
       category: "piscina" as const,
     },
     {
-      src: "/fotosTargetes/fotosExterior/SliderBbq2.jpg",
+      src: "/images/bbq-1600.webp",
       alt: {
         es: "Zona de barbacoa",
         ca: "Zona de barbacoa",
@@ -248,7 +237,7 @@ export const siteConfig = {
       category: "finca" as const,
     },
     {
-      src: "/fotosTargetes/fotosHorta/SliderTerra1.jpg",
+      src: "/images/garden-1600.webp",
       alt: {
         es: "Huerto de Cal Masses",
         ca: "Hort de Cal Masses",
@@ -257,7 +246,7 @@ export const siteConfig = {
       category: "finca" as const,
     },
     {
-      src: "/fotosTargetes/fotosHorta/SliderTerra2.jpg",
+      src: "/images/garden-2-1600.webp",
       alt: {
         es: "Cultivo en la finca",
         ca: "Conreu a la finca",
@@ -266,7 +255,7 @@ export const siteConfig = {
       category: "finca" as const,
     },
     {
-      src: "/fotosTargetes/fotosPlaceta/SliderPlac1.jpg",
+      src: "/images/placeta-1600.webp",
       alt: {
         es: "Placeta de Cal Masses",
         ca: "Placeta de Cal Masses",
@@ -275,7 +264,7 @@ export const siteConfig = {
       category: "finca" as const,
     },
     {
-      src: "/fotosTargetes/fotosCaseta/SliderHab1.jpg",
+      src: "/images/bedroom-1600.webp",
       alt: {
         es: "Dormitorio de Cal Masses",
         ca: "Dormitori de Cal Masses",
@@ -284,7 +273,7 @@ export const siteConfig = {
       category: "alojamiento" as const,
     },
     {
-      src: "/fotosTargetes/fotosCaseta/SliderHab3.jpg",
+      src: "/images/bedroom-2-1600.webp",
       alt: {
         es: "Dormitorio de Cal Masses",
         ca: "Dormitori de Cal Masses",
@@ -302,7 +291,7 @@ export const siteConfig = {
       category: "alojamiento" as const,
     },
     {
-      src: "/fotosTargetes/fotosCaseta/dinsnousoda.webp",
+      src: "/images/interior-soda-1600.webp",
       alt: {
         es: "Sala de Cal Masses",
         ca: "Sala de Cal Masses",
@@ -311,7 +300,7 @@ export const siteConfig = {
       category: "alojamiento" as const,
     },
     {
-      src: "/fotosTargetes/fotosCaseta/SliderMen2.jpg",
+      src: "/images/kitchen-1600.webp",
       alt: {
         es: "Cocina de Cal Masses",
         ca: "Cuina de Cal Masses",
@@ -320,7 +309,7 @@ export const siteConfig = {
       category: "alojamiento" as const,
     },
     {
-      src: "/fotosTargetes/fotosCaseta/yacuzzi.webp",
+      src: "/images/bathroom-1600.webp",
       alt: {
         es: "Baño de Cal Masses",
         ca: "Bany de Cal Masses",
@@ -338,7 +327,7 @@ export const siteConfig = {
       category: "sisu" as const,
     },
     {
-      src: "/fotosVino/fotoplano.webp",
+      src: "/images/sisu-alt-1600.webp",
       alt: {
         es: "Botella de SISU",
         ca: "Ampolla de SISU",

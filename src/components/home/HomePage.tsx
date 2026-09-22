@@ -1,5 +1,4 @@
-import { Helmet } from "react-helmet-async";
-import { bookingHref, isTodo, siteConfig } from "../../config/siteConfig";
+import { bookingHref, siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 import { SeoHead } from "../seo/SeoHead";
 import { BreadcrumbJsonLd, FaqJsonLd, LodgingJsonLd } from "../seo/JsonLd";
@@ -44,16 +43,6 @@ export function HomePage() {
         description={h.seo.description}
         path={path("home")}
       />
-      <Helmet>
-        <link
-          rel="preload"
-          as="image"
-          href={siteConfig.images.heroLcp}
-          imageSrcSet={siteConfig.images.heroLcpSrcSet}
-          // @ts-expect-error fetchpriority on link is valid for LCP
-          fetchpriority="high"
-        />
-      </Helmet>
       <LodgingJsonLd />
       <BreadcrumbJsonLd
         items={[{ name: content.ui.breadcrumbHome, path: path("home") }]}
@@ -65,10 +54,11 @@ export function HomePage() {
         <div className="absolute inset-0">
           <SmartImage
             src={siteConfig.images.heroLcp}
-            srcSet={siteConfig.images.heroLcpSrcSet}
             alt=""
             priority
             sizes="100vw"
+            width={1600}
+            height={1067}
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/40 to-black/20" />
@@ -172,7 +162,6 @@ export function HomePage() {
               alt={lang === "en" ? "Cal Masses vineyard" : "Viñedo de Cal Masses"}
               className="col-span-2 aspect-[16/10] w-full rounded-2xl object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
-              srcSet="/images/hero-vinyes-800.webp 800w, /images/hero-vinyes-1600.webp 1600w"
             />
             <SmartImage
               src={siteConfig.images.garden}
@@ -255,7 +244,6 @@ export function HomePage() {
             alt="SISU"
             className="w-full rounded-2xl object-cover aspect-[4/5] max-h-[28rem] mx-auto"
             sizes="(max-width: 1024px) 80vw, 35vw"
-            srcSet="/images/sisu-800.webp 800w, /images/sisu-1600.webp 1600w"
           />
         </div>
       </SectionShell>
