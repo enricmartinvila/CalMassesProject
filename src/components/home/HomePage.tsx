@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { bookingHref, isTodo, siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 import { SeoHead } from "../seo/SeoHead";
