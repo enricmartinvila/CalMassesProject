@@ -18,7 +18,8 @@ export const contentEn: ContentBundle = {
       entornoEnoturismo: "Wine tourism",
     },
     cta: {
-      availability: "Check availability",
+      bookAirbnb: "Book on Airbnb",
+      bookBooking: "Book on Booking",
       contact: "Contact",
       discoverCalMasses: "Discover Cal Masses",
       seeAccommodation: "See the accommodation",
@@ -27,13 +28,6 @@ export const contentEn: ContentBundle = {
       discoverMontserrat: "Discover Montserrat",
       discoverManresa: "Discover Manresa",
       discoverBages: "Discover the Pla de Bages",
-    },
-    booking: {
-      checkIn: "Check-in",
-      checkOut: "Check-out",
-      guests: "Guests",
-      submit: "Check availability",
-      note: "We redirect you to Airbnb to see dates and prices.",
     },
     cookie: {
       message:
@@ -92,7 +86,7 @@ export const contentEn: ContentBundle = {
         "Cal Masses is an accommodation in Sant Salvador de Guardiola, surrounded by forest, fields and vineyards, near Manresa and Montserrat.",
         "A place to slow down, enjoy the surroundings and discover the Pla de Bages from a farm with a life of its own.",
       ],
-      ctaPrimary: "Check availability",
+      ctaPrimary: "Book on Airbnb",
       ctaSecondary: "Discover Cal Masses",
     },
     accommodation: {
@@ -169,9 +163,9 @@ export const contentEn: ContentBundle = {
     finalCta: {
       h2: "Would you like to spend a few days at Cal Masses?",
       paragraphs: [
-        "Check the available dates and, if you need to know anything before coming, write to us.",
+        "Book on Airbnb and, if you need to know anything before coming, write to us.",
       ],
-      ctaPrimary: "Check availability",
+      ctaPrimary: "Book on Airbnb",
       ctaSecondary: "Contact",
     },
   },
@@ -189,7 +183,7 @@ export const contentEn: ContentBundle = {
       "We do not want to explain the accommodation with an endless list of adjectives. Here you can see the spaces, the available services and everything you need to know before you come.",
     ],
     sections: [],
-    cta: { primary: "Check availability", primaryRoute: "reservar" },
+    cta: { primary: "Book on Airbnb", primaryRoute: "reservar" },
   },
 
   finca: {
@@ -248,7 +242,7 @@ export const contentEn: ContentBundle = {
       ],
       footer: "Raval del Sellarès — Sant Salvador de Guardiola",
     },
-    cta: { primary: "Check availability", primaryRoute: "reservar" },
+    cta: { primary: "Book on Airbnb", primaryRoute: "reservar" },
   },
 
   contacto: {
@@ -268,13 +262,13 @@ export const contentEn: ContentBundle = {
 
   reservar: {
     seo: {
-      title: "Check availability | Cal Masses",
+      title: "Book | Cal Masses",
       description:
-        "Check the available dates and, if you need to know anything before coming, write to us.",
-      h1: "Check availability",
+        "Book Cal Masses on Airbnb. If you need to know anything before coming, write to us.",
+      h1: "Book",
     },
     intro:
-      "Check the available dates and, if you need to know anything before coming, write to us.",
+      "You can book directly on Airbnb. If you have any questions before coming, write to us.",
   },
 
   legal: {
@@ -330,9 +324,9 @@ export const contentEn: ContentBundle = {
       answer: "Approx. 11 km / 20 min by car.",
     },
     {
-      question: "How can I check availability?",
+      question: "How can I book?",
       answer:
-        "You can check availability on Airbnb from the booking page, or contact us by WhatsApp or email.",
+        "You can book on Airbnb, or contact us by WhatsApp or email.",
     },
     { question: "What is the cancellation policy?", answer: TODO_DATA },
   ],

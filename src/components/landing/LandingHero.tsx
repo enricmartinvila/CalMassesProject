@@ -2,15 +2,21 @@ import { CtaLink } from "../ui/CtaLink";
 import { Paragraphs, renderText } from "../ui/TodoMark";
 import { SmartImage } from "../ui/SmartImage";
 import { isTodo } from "../../config/siteConfig";
-import type { RouteKey } from "../../i18n/routes";
+
+type Cta = {
+  label: string;
+  to?: string;
+  href?: string;
+  external?: boolean;
+};
 
 type Props = {
   eyebrow?: string;
   h1: string;
   intro: string[];
   image?: string;
-  primary: { label: string; to: string };
-  secondary?: { label: string; to: string };
+  primary: Cta;
+  secondary?: Cta;
 };
 
 export function LandingHero({
@@ -36,9 +42,20 @@ export function LandingHero({
         </h1>
         <Paragraphs items={intro} />
         <div className="flex flex-wrap gap-3 pt-2">
-          <CtaLink to={primary.to}>{primary.label}</CtaLink>
+          <CtaLink
+            to={primary.to}
+            href={primary.href}
+            external={primary.external}
+          >
+            {primary.label}
+          </CtaLink>
           {secondary && (
-            <CtaLink to={secondary.to} variant="secondary">
+            <CtaLink
+              to={secondary.to}
+              href={secondary.href}
+              external={secondary.external}
+              variant="secondary"
+            >
               {secondary.label}
             </CtaLink>
           )}
@@ -63,5 +80,3 @@ export function LandingHero({
     </header>
   );
 }
-
-export type { RouteKey };

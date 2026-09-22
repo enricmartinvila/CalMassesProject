@@ -1,5 +1,4 @@
-import { Helmet } from "react-helmet-async";
-import { siteConfig } from "../../config/siteConfig";
+import { bookingHref, isTodo, siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 import { SeoHead } from "../seo/SeoHead";
 import { BreadcrumbJsonLd, FaqJsonLd, LodgingJsonLd } from "../seo/JsonLd";
@@ -10,7 +9,6 @@ import { HeroGallery } from "./HeroGallery";
 import { FaqAccordion } from "./FaqAccordion";
 import { ReviewsSection } from "./ReviewsSection";
 import { ConsentMap } from "../ui/ConsentMap";
-import { isTodo } from "../../config/siteConfig";
 
 function SectionShell({
   id,
@@ -82,7 +80,9 @@ export function HomePage() {
             </h1>
             <Paragraphs items={h.hero.paragraphs} />
             <div className="flex flex-wrap gap-3 pt-2">
-              <CtaLink to={path("reservar")}>{h.hero.ctaPrimary}</CtaLink>
+              <CtaLink href={bookingHref()} external>
+                {content.ui.cta.bookAirbnb}
+              </CtaLink>
               <CtaLink to={path("finca")} variant="secondary">
                 {h.hero.ctaSecondary}
               </CtaLink>
@@ -282,10 +282,11 @@ export function HomePage() {
           </div>
           <div className="flex flex-wrap gap-3">
             <CtaLink
-              to={path("reservar")}
+              href={bookingHref()}
+              external
               className="!bg-white !text-[#556B2F] hover:!bg-gray-100"
             >
-              {h.finalCta.ctaPrimary}
+              {content.ui.cta.bookAirbnb}
             </CtaLink>
             <CtaLink
               to={path("contacto")}

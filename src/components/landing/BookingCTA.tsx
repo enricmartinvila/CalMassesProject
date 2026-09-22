@@ -1,11 +1,18 @@
 import { CtaLink } from "../ui/CtaLink";
 import { Paragraphs, renderText } from "../ui/TodoMark";
 
+type Cta = {
+  label: string;
+  to?: string;
+  href?: string;
+  external?: boolean;
+};
+
 type Props = {
   h2: string;
   paragraphs: string[];
-  primary: { label: string; to: string };
-  secondary?: { label: string; to: string };
+  primary: Cta;
+  secondary?: Cta;
 };
 
 export function BookingCTA({ h2, paragraphs, primary, secondary }: Props) {
@@ -21,6 +28,8 @@ export function BookingCTA({ h2, paragraphs, primary, secondary }: Props) {
         <div className="flex flex-wrap gap-3 pt-2">
           <CtaLink
             to={primary.to}
+            href={primary.href}
+            external={primary.external}
             className="!bg-white !text-[#556B2F] hover:!bg-gray-100"
           >
             {primary.label}
@@ -28,6 +37,8 @@ export function BookingCTA({ h2, paragraphs, primary, secondary }: Props) {
           {secondary && (
             <CtaLink
               to={secondary.to}
+              href={secondary.href}
+              external={secondary.external}
               variant="secondary"
               className="!border-white !text-white hover:!bg-white/10"
             >

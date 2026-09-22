@@ -1,7 +1,7 @@
 import { useLang } from "../hooks/useLang";
 import { SeoHead } from "../components/seo/SeoHead";
 import { BreadcrumbJsonLd } from "../components/seo/JsonLd";
-import { BookingWidget } from "../components/booking/BookingWidget";
+import { BookingLinks } from "../components/booking/BookingLinks";
 import { CtaLink } from "../components/ui/CtaLink";
 import { renderText } from "../components/ui/TodoMark";
 import { siteConfig } from "../config/siteConfig";
@@ -34,7 +34,7 @@ export function ReservarPage() {
           <p className="text-gray-700 leading-relaxed">{renderText(t.intro)}</p>
         </header>
 
-        <BookingWidget />
+        <BookingLinks />
 
         <div className="flex flex-wrap gap-3">
           <CtaLink href={`mailto:${siteConfig.contact.email}`} variant="secondary">

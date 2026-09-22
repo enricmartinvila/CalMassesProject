@@ -1,6 +1,6 @@
-import { isTodo, siteConfig } from "../../config/siteConfig";
+import { bookingHref, isTodo, siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
-import { isDraftRoute } from "../../i18n/routes";
+import { isDraftRoute, type RouteKey } from "../../i18n/routes";
 import type { LandingDefinition } from "../../content/landings/types";
 import { SeoHead } from "../seo/SeoHead";
 import { LandingHero } from "./LandingHero";
@@ -16,9 +16,29 @@ import { CtaLink } from "../ui/CtaLink";
 import { Paragraphs, renderText } from "../ui/TodoMark";
 import { SmartImage } from "../ui/SmartImage";
 
+type ResolvedCta = {
+  label: string;
+  to?: string;
+  href?: string;
+  external?: boolean;
+};
+
+function resolveCta(
+  path: (key: RouteKey) => string,
+  label: string,
+  route: RouteKey,
+): ResolvedCta {
+  if (route === "reservar" && !isTodo(siteConfig.booking.url)) {
+    return { label, href: bookingHref(), external: true };
+  }
+  return { label, to: path(route) };
+}
+
 export function LandingPage({ landing }: { landing: LandingDefinition }) {
-  const { lang, path } = useLang();
+  const { lang, path, content } = useLang();
   const draft = landing.status === "draft" || isDraftRoute(landing.routeKey);
+
+  const bookLabel = content.ui.cta.bookAirbnb;
 
   return (
     <>
@@ -45,16 +65,20 @@ export function LandingPage({ landing }: { landing: LandingDefinition }) {
           h1={landing.hero.h1}
           intro={landing.hero.intro}
           image={landing.hero.image}
-          primary={{
-            label: landing.hero.ctaPrimary.label,
-            to: path(landing.hero.ctaPrimary.route),
-          }}
+          primary={resolveCta(
+            path,
+            landing.hero.ctaPrimary.route === "reservar"
+              ? bookLabel
+              : landing.hero.ctaPrimary.label,
+            landing.hero.ctaPrimary.route,
+          )}
           secondary={
             landing.hero.ctaSecondary
-              ? {
-                  label: landing.hero.ctaSecondary.label,
-                  to: path(landing.hero.ctaSecondary.route),
-                }
+              ? resolveCta(
+                  path,
+                  landing.hero.ctaSecondary.label,
+                  landing.hero.ctaSecondary.route,
+                )
               : undefined
           }
         />
@@ -99,11 +123,17 @@ export function LandingPage({ landing }: { landing: LandingDefinition }) {
                   </p>
                 )}
 
-                {section.cta && (
-                  <CtaLink to={path(section.cta.route)} variant="secondary">
-                    {section.cta.label}
-                  </CtaLink>
-                )}
+                {section.cta &&
+                  (section.cta.route === "reservar" &&
+                  !isTodo(siteConfig.booking.url) ? (
+                    <CtaLink href={bookingHref()} external variant="secondary">
+                      {bookLabel}
+                    </CtaLink>
+                  ) : (
+                    <CtaLink to={path(section.cta.route)} variant="secondary">
+                      {section.cta.label}
+                    </CtaLink>
+                  ))}
               </div>
 
               {section.image && !isTodo(section.image) && (
@@ -125,16 +155,20 @@ export function LandingPage({ landing }: { landing: LandingDefinition }) {
         <BookingCTA
           h2={landing.finalCta.h2}
           paragraphs={landing.finalCta.paragraphs}
-          primary={{
-            label: landing.finalCta.primary.label,
-            to: path(landing.finalCta.primary.route),
-          }}
+          primary={resolveCta(
+            path,
+            landing.finalCta.primary.route === "reservar"
+              ? bookLabel
+              : landing.finalCta.primary.label,
+            landing.finalCta.primary.route,
+          )}
           secondary={
             landing.finalCta.secondary
-              ? {
-                  label: landing.finalCta.secondary.label,
-                  to: path(landing.finalCta.secondary.route),
-                }
+              ? resolveCta(
+                  path,
+                  landing.finalCta.secondary.label,
+                  landing.finalCta.secondary.route,
+                )
               : undefined
           }
         />

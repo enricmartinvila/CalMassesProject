@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
+import { bookingHref, isTodo, siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
+import type { RouteKey } from "../../i18n/routes";
 import { renderText } from "../ui/TodoMark";
 import type { LandingCard } from "../../content/landings/types";
 
@@ -31,14 +33,44 @@ export function DestinationCards({ cards }: { cards: LandingCard[] }) {
   );
 }
 
+function BookingAwareLink({
+  label,
+  route,
+}: {
+  label: string;
+  route: RouteKey;
+}) {
+  const { path, content } = useLang();
+  const className =
+    "text-[#556B2F] underline-offset-4 hover:underline";
+
+  if (route === "reservar" && !isTodo(siteConfig.booking.url)) {
+    return (
+      <a
+        href={bookingHref()}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        {renderText(content.ui.cta.bookAirbnb)}
+      </a>
+    );
+  }
+
+  return (
+    <Link to={path(route)} className={className}>
+      {renderText(label)}
+    </Link>
+  );
+}
+
 export function InternalLinkCards({
   title,
   links,
 }: {
   title?: string;
-  links: Array<{ label: string; route: Parameters<ReturnType<typeof useLang>["path"]>[0] }>;
+  links: Array<{ label: string; route: RouteKey }>;
 }) {
-  const { path } = useLang();
   if (!links.length) return null;
 
   return (
@@ -51,12 +83,7 @@ export function InternalLinkCards({
       <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
         {links.map((l) => (
           <li key={`${l.route}-${l.label}`}>
-            <Link
-              to={path(l.route)}
-              className="text-[#556B2F] underline-offset-4 hover:underline"
-            >
-              {renderText(l.label)}
-            </Link>
+            <BookingAwareLink label={l.label} route={l.route} />
           </li>
         ))}
       </ul>
@@ -67,7 +94,7 @@ export function InternalLinkCards({
 export function RelatedPages({
   links,
 }: {
-  links: Array<{ label: string; route: Parameters<ReturnType<typeof useLang>["path"]>[0] }>;
+  links: Array<{ label: string; route: RouteKey }>;
 }) {
   return <InternalLinkCards links={links} />;
 }

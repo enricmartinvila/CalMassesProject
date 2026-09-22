@@ -18,7 +18,8 @@ export const contentCa: ContentBundle = {
       entornoEnoturismo: "Enoturisme",
     },
     cta: {
-      availability: "Consultar disponibilitat",
+      bookAirbnb: "Reservar a Airbnb",
+      bookBooking: "Reservar a Booking",
       contact: "Contactar",
       discoverCalMasses: "Descobrir Cal Masses",
       seeAccommodation: "Veure l'allotjament",
@@ -27,13 +28,6 @@ export const contentCa: ContentBundle = {
       discoverMontserrat: "Descobrir Montserrat",
       discoverManresa: "Descobrir Manresa",
       discoverBages: "Descobrir el Pla de Bages",
-    },
-    booking: {
-      checkIn: "Entrada",
-      checkOut: "Sortida",
-      guests: "Hostes",
-      submit: "Consultar disponibilitat",
-      note: "Et redirigim a Airbnb per veure dates i preus.",
     },
     cookie: {
       message:
@@ -92,7 +86,7 @@ export const contentCa: ContentBundle = {
         "Cal Masses és un allotjament a Sant Salvador de Guardiola, envoltat de bosc, camp i vinya, a prop de Manresa i Montserrat.",
         "Un lloc on baixar el ritme, gaudir de l'entorn i descobrir el Pla de Bages des d'una finca amb vida pròpia.",
       ],
-      ctaPrimary: "Consultar disponibilitat",
+      ctaPrimary: "Reservar a Airbnb",
       ctaSecondary: "Descobrir Cal Masses",
     },
     accommodation: {
@@ -169,9 +163,9 @@ export const contentCa: ContentBundle = {
     finalCta: {
       h2: "Et ve de gust passar uns dies a Cal Masses?",
       paragraphs: [
-        "Consulta les dates disponibles i, si necessites saber alguna cosa abans de venir, escriu-nos.",
+        "Reserva a Airbnb i, si necessites saber alguna cosa abans de venir, escriu-nos.",
       ],
-      ctaPrimary: "Consultar disponibilitat",
+      ctaPrimary: "Reservar a Airbnb",
       ctaSecondary: "Contactar",
     },
   },
@@ -189,7 +183,7 @@ export const contentCa: ContentBundle = {
       "No volem explicar-te l'allotjament amb una llista interminable d'adjectius. Aquí pots veure els espais, els serveis disponibles i tot el que necessites saber abans de venir.",
     ],
     sections: [],
-    cta: { primary: "Consultar disponibilitat", primaryRoute: "reservar" },
+    cta: { primary: "Reservar a Airbnb", primaryRoute: "reservar" },
   },
 
   finca: {
@@ -248,7 +242,7 @@ export const contentCa: ContentBundle = {
       ],
       footer: "Raval del Sellarès — Sant Salvador de Guardiola",
     },
-    cta: { primary: "Consultar disponibilitat", primaryRoute: "reservar" },
+    cta: { primary: "Reservar a Airbnb", primaryRoute: "reservar" },
   },
 
   contacto: {
@@ -268,13 +262,13 @@ export const contentCa: ContentBundle = {
 
   reservar: {
     seo: {
-      title: "Consultar disponibilitat | Cal Masses",
+      title: "Reservar | Cal Masses",
       description:
-        "Consulta les dates disponibles i, si necessites saber alguna cosa abans de venir, escriu-nos.",
-      h1: "Consultar disponibilitat",
+        "Reserva Cal Masses a Airbnb. Si necessites saber alguna cosa abans de venir, escriu-nos.",
+      h1: "Reservar",
     },
     intro:
-      "Consulta les dates disponibles i, si necessites saber alguna cosa abans de venir, escriu-nos.",
+      "Pots reservar directament a Airbnb. Si tens algun dubte abans de venir, escriu-nos.",
   },
 
   legal: {
@@ -330,9 +324,9 @@ export const contentCa: ContentBundle = {
       answer: "Aprox. 11 km / 20 min en cotxe.",
     },
     {
-      question: "Com puc consultar la disponibilitat?",
+      question: "Com puc reservar?",
       answer:
-        "Pots consultar la disponibilitat a Airbnb des de la pàgina de reserves, o contactar per WhatsApp o correu.",
+        "Pots reservar a Airbnb, o contactar per WhatsApp o correu.",
     },
     { question: "Quina és la política de cancel·lació?", answer: TODO_DATA },
   ],

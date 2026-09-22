@@ -22,7 +22,8 @@ export type UiCopy = {
     entornoEnoturismo: string;
   };
   cta: {
-    availability: string;
+    bookAirbnb: string;
+    bookBooking: string;
     contact: string;
     discoverCalMasses: string;
     seeAccommodation: string;
@@ -31,13 +32,6 @@ export type UiCopy = {
     discoverMontserrat: string;
     discoverManresa: string;
     discoverBages: string;
-  };
-  booking: {
-    checkIn: string;
-    checkOut: string;
-    guests: string;
-    submit: string;
-    note: string;
   };
   cookie: {
     message: string;

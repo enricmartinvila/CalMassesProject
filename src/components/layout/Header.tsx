@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { siteConfig, SUPPORTED_LANGS, type Lang } from "../../config/siteConfig";
+import { bookingHref, siteConfig, SUPPORTED_LANGS, type Lang } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 import { pathFor, resolveRouteKey, type RouteKey } from "../../i18n/routes";
 import { CtaLink } from "../ui/CtaLink";
@@ -165,10 +165,11 @@ export function Header() {
           </select>
 
           <CtaLink
-            to={path("reservar")}
+            href={bookingHref()}
+            external
             className="hidden sm:inline-flex !py-2 !px-4 text-sm"
           >
-            {content.ui.cta.availability}
+            {content.ui.cta.bookAirbnb}
           </CtaLink>
 
           <button
@@ -221,8 +222,8 @@ export function Header() {
             </li>
           ))}
           <li className="px-2 pt-2">
-            <CtaLink to={path("reservar")} className="w-full">
-              {content.ui.cta.availability}
+            <CtaLink href={bookingHref()} external className="w-full">
+              {content.ui.cta.bookAirbnb}
             </CtaLink>
           </li>
         </ul>

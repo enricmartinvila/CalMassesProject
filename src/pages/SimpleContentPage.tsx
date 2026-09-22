@@ -1,5 +1,6 @@
 import type { SimplePageContent } from "../content/types";
 import type { RouteKey } from "../i18n/routes";
+import { bookingHref, isTodo, siteConfig } from "../config/siteConfig";
 import { useLang } from "../hooks/useLang";
 import { SeoHead } from "../components/seo/SeoHead";
 import { BreadcrumbJsonLd } from "../components/seo/JsonLd";
@@ -71,15 +72,22 @@ export function SimpleContentPage({
 
         {content.cta && (
           <div className="mt-10 flex flex-wrap gap-3">
-            <CtaLink
-              to={
-                content.cta.primaryRoute
-                  ? path(content.cta.primaryRoute)
-                  : undefined
-              }
-            >
-              {content.cta.primary}
-            </CtaLink>
+            {content.cta.primaryRoute === "reservar" &&
+            !isTodo(siteConfig.booking.url) ? (
+              <CtaLink href={bookingHref()} external>
+                {content.ui.cta.bookAirbnb}
+              </CtaLink>
+            ) : (
+              <CtaLink
+                to={
+                  content.cta.primaryRoute
+                    ? path(content.cta.primaryRoute)
+                    : undefined
+                }
+              >
+                {content.cta.primary}
+              </CtaLink>
+            )}
             {content.cta.secondary && (
               <CtaLink
                 to={
