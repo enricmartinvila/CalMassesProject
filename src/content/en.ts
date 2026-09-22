@@ -10,7 +10,7 @@ export const contentEn: ContentBundle = {
       finca: "Cal Masses",
       sisu: "SISU",
       contacto: "Contact",
-      reservar: "Book",
+      reservar: "Check availability",
       entorno: "The surroundings",
       entornoBages: "The Bages",
       entornoMontserrat: "Montserrat",
@@ -18,16 +18,16 @@ export const contentEn: ContentBundle = {
       entornoEnoturismo: "Wine tourism",
     },
     cta: {
-      bookAirbnb: "Book on Airbnb",
-      bookBooking: "Book on Booking",
+      availability: "Check availability",
       contact: "Contact",
-      discoverCalMasses: "Discover Cal Masses",
       seeAccommodation: "See the accommodation",
+      seeAccommodationFull: "See the full accommodation",
       knowCalMasses: "Discover Cal Masses",
       knowSisu: "Discover SISU",
       discoverMontserrat: "Discover Montserrat",
       discoverManresa: "Discover Manresa",
       discoverBages: "Discover the Pla de Bages",
+      seeMoreReviews: "See more reviews",
     },
     cookie: {
       message:
@@ -37,15 +37,15 @@ export const contentEn: ContentBundle = {
       settings: "Cookies",
     },
     footer: {
+      brandTitle: "Cal Masses",
+      stayTitle: "Your stay",
+      entornoTitle: "The surroundings",
       legal: "Legal notice",
       privacy: "Privacy",
       cookies: "Cookies",
-      discoverTitle: "Discover Cal Masses",
-      discoverBages: "Rural accommodation in the Bages",
-      discoverManresa: "Near Manresa",
-      discoverMontserrat: "Near Montserrat",
-      discoverParaDos: "Getaway for two",
-      discoverEnoturismo: "Wine tourism in the Pla de Bages",
+      paraDos: "For two",
+      piscina: "Pool",
+      laFinca: "The farm",
     },
     notFound: {
       title: "Page not found",
@@ -57,18 +57,44 @@ export const contentEn: ContentBundle = {
       data: "TODO_DATA",
     },
     reviewsEmpty: "Reviews will be published when approved testimonials are available.",
-    faqTitle: "Frequently asked questions",
+    faqTitle: "Before you come",
+    galleryTitle: "Gallery",
+    galleryTabs: {
+      all: "All",
+      alojamiento: "Accommodation",
+      exterior: "Exterior",
+      piscina: "Pool",
+      finca: "Farm and vineyard",
+      sisu: "SISU",
+    },
     locationMapConsent:
       "The Google Maps map only loads if you accept third-party cookies.",
     loadMap: "Show map",
     breadcrumbHome: "Home",
     facts: {
       guests: "Guests",
-      bedrooms: "Bedrooms",
+      bedrooms: "Bedroom",
+      beds: "Beds",
+      bathrooms: "Bathroom",
       kitchen: "Kitchen",
       pool: "Pool",
-      poolUse: "Pool (use)",
+      poolUse: "Pool use",
       parking: "Parking",
+      wifi: "Wi-Fi",
+      climate: "Climate control",
+      location: "Location",
+      checkIn: "Check-in",
+      checkOut: "Check-out",
+      pets: "Pets",
+      children: "Children",
+      jacuzzi: "Jacuzzi",
+    },
+    poolLabels: {
+      use: "Use",
+      season: "Season",
+      hours: "Hours",
+      rules: "Rules",
+      type: "Type",
     },
   },
 
@@ -77,26 +103,26 @@ export const contentEn: ContentBundle = {
       title:
         "A getaway for two among vineyards and nature in the Bages | Cal Masses",
       description:
-        "Cal Masses is an accommodation in Sant Salvador de Guardiola, surrounded by forest, fields and vineyards, near Manresa and Montserrat.",
+        "Cal Masses is an accommodation in Sant Salvador de Guardiola, surrounded by fields, forest and vineyard, near Manresa and Montserrat.",
       h1: "A getaway for two among vineyards and nature in the Bages",
     },
     hero: {
       h1: "A getaway for two among vineyards and nature in the Bages",
       paragraphs: [
-        "Cal Masses is an accommodation in Sant Salvador de Guardiola, surrounded by forest, fields and vineyards, near Manresa and Montserrat.",
-        "A place to slow down, enjoy the surroundings and discover the Pla de Bages from a farm with a life of its own.",
+        "Cal Masses is an accommodation in Sant Salvador de Guardiola, surrounded by fields, forest and vineyard, near Manresa and Montserrat.",
+        "A small place, designed for two people, from which to discover the Bages or simply spend a few days without much rush.",
       ],
-      ctaPrimary: "Book on Airbnb",
-      ctaSecondary: "Discover Cal Masses",
+      ctaPrimary: "Check availability",
+      ctaSecondary: "See the accommodation",
     },
     accommodation: {
       h2: "A space to be at ease",
       paragraphs: [
-        "Cal Masses is designed for a quiet stay for two people, with the spaces needed to spend a few days comfortably and without rushing.",
+        "Cal Masses is designed for a quiet stay for two people, with the spaces needed to spend a few days comfortably and independently.",
         "Inside you will find the resting areas, kitchen, bathroom and living room. Outside begins much of what makes the stay different: the fields, the vineyard, the paths and life on the farm.",
-        "We do not want to explain the accommodation with an endless list of adjectives. Here you can see the spaces, the available services and everything you need to know before you come.",
+        "We do not want to explain the accommodation with an endless list of adjectives. Here you can see what it is like, what services it has and everything you need to know before you come.",
       ],
-      cta: "See the accommodation",
+      cta: "See the full accommodation",
     },
     finca: {
       h2: "You are not only coming to sleep",
@@ -105,20 +131,26 @@ export const contentEn: ContentBundle = {
         "Around the accommodation there are fields, forest and vineyard. We farm, we make our own wine and we continue shaping a small project that comes from this place.",
         "The stay is part of that landscape. It is not an accommodation placed in the middle of the countryside to look rural: the countryside was already here.",
       ],
+      h3: "A farm that changes with the seasons",
+      h3Paragraphs: [
+        "Cal Masses does not look the same in winter as in spring, summer or harvest time.",
+        "The vineyard, the light, the fields and the tasks we do all change.",
+        "That is part of the place, even if each guest decides how close they want to get to that part of the farm.",
+      ],
       cta: "Discover Cal Masses",
     },
     pool: {
       h2: "Things also happen outdoors",
       paragraphs: [
         "Much of Cal Masses is enjoyed outdoors: breakfast without rushing, reading, walking, resting or simply staying a while looking at the landscape.",
-        "The pool is part of this space during its season of use.",
+        "During the warmer months, the pool is part of that outdoor space.",
       ],
     },
     surroundings: {
       h2: "Montserrat, Manresa and the Pla de Bages",
       paragraphs: [
         "Cal Masses is in Sant Salvador de Guardiola, at a point from which it is easy to combine nature, villages, heritage, wine and gastronomy.",
-        "Montserrat and Manresa are two of the best-known visits, but the Pla de Bages also deserves its own time: vineyards, paths, small wineries and a landscape that changes a lot with the time of year.",
+        "Montserrat and Manresa are two of the best-known visits, but the Pla de Bages also deserves its own time.",
       ],
       cards: [
         {
@@ -129,7 +161,7 @@ export const contentEn: ContentBundle = {
         },
         {
           title: "Manresa",
-          text: "History, heritage, gastronomy and services a few kilometres from the farm.",
+          text: "History, heritage, gastronomy and services near the farm, without having to stay inside the city.",
           cta: "Discover Manresa",
           route: "landingManresa",
         },
@@ -151,39 +183,61 @@ export const contentEn: ContentBundle = {
       cta: "Discover SISU",
     },
     reviews: {
-      h2: "Those who have already been here say so",
-    },
-    location: {
-      h2: "In the Bages, between Manresa and Montserrat",
-      paragraphs: [
-        "Cal Masses is in Sant Salvador de Guardiola, in the Bages county.",
-        "From here you can move around the territory during the day and then return to a quiet setting, surrounded by fields and nature.",
-      ],
+      h2: "Told by those who have already been here",
     },
     finalCta: {
       h2: "Would you like to spend a few days at Cal Masses?",
       paragraphs: [
-        "Book on Airbnb and, if you need to know anything before coming, write to us.",
+        "Check the available dates and, if you need to know anything before coming, write to us.",
       ],
-      ctaPrimary: "Book on Airbnb",
+      ctaPrimary: "Check availability",
       ctaSecondary: "Contact",
     },
   },
 
   alojamiento: {
     seo: {
-      title: "Accommodation | Cal Masses",
+      title: "The accommodation | Cal Masses",
       description:
-        "Cal Masses is designed for a quiet stay for two people, with the spaces needed to spend a few days comfortably and without rushing.",
-      h1: "A space to be at ease",
+        "Cal Masses is an accommodation for two people within a farm in Sant Salvador de Guardiola.",
+      h1: "The accommodation",
     },
     intro: [
-      "Cal Masses is designed for a quiet stay for two people, with the spaces needed to spend a few days comfortably and without rushing.",
-      "Inside you will find the resting areas, kitchen, bathroom and living room. Outside begins much of what makes the stay different: the fields, the vineyard, the paths and life on the farm.",
-      "We do not want to explain the accommodation with an endless list of adjectives. Here you can see the spaces, the available services and everything you need to know before you come.",
+      "Cal Masses is an accommodation for two people within a farm in Sant Salvador de Guardiola.",
+      "It is designed for spending a few days independently, whether you want to explore the Bages or prefer to enjoy the farm itself.",
     ],
-    sections: [],
-    cta: { primary: "Book on Airbnb", primaryRoute: "reservar" },
+    bedroom: {
+      h2: "Bedroom",
+      paragraphs: ["TODO_CONTENT"],
+    },
+    living: {
+      h2: "Kitchen / living room",
+      paragraphs: ["TODO_CONTENT"],
+    },
+    bathroom: {
+      h2: "Bathroom",
+      paragraphs: ["TODO_CONTENT"],
+    },
+    exterior: {
+      h2: "Exterior / pool",
+      paragraphs: [
+        "Much of Cal Masses is enjoyed outdoors. During the warmer months, the pool is part of that outdoor space.",
+      ],
+    },
+    services: { h2: "Services" },
+    rules: {
+      h2: "Basic rules",
+      paragraphs: [
+        "Maximum 2 guests.",
+        "Pets are not allowed.",
+        "Parties and events are not allowed.",
+      ],
+    },
+    checkTimes: { h2: "Check-in / check-out" },
+    cta: {
+      primary: "Check availability",
+      secondary: "Contact",
+    },
   },
 
   finca: {
@@ -215,19 +269,25 @@ export const contentEn: ContentBundle = {
         ],
       },
     ],
+    cta: {
+      primary: "Check availability",
+      primaryRoute: "reservar",
+      secondary: "See the accommodation",
+      secondaryRoute: "alojamiento",
+    },
   },
 
   sisu: {
     seo: {
       title: "SISU, wine made at Cal Masses | Cal Masses",
       description:
-        "SISU is our small wine project. It comes from the vineyard, from the wish to learn and from a way of making wine in which we try to intervene only as needed.",
-      h1: "SISU, wine made at Cal Masses",
+        "SISU comes from the same place. The vineyard is part of Cal Masses and each vintage explains, in its own way, part of what happens on the farm.",
+      h1: "SISU",
     },
     intro: [
-      "SISU is our small wine project.",
-      "It comes from the vineyard, from the wish to learn and from a way of making wine in which we try to intervene only as needed and respect the grapes and each vintage as much as possible.",
-      "We do not want every wine to be the same. Precisely the opposite interests us: that each year keeps something of its own.",
+      "SISU comes from the same place.",
+      "The vineyard is part of Cal Masses and each vintage explains, in its own way, part of what happens on the farm.",
+      "We make small productions with a simple idea: intervene as needed and let the grapes and the year have something to say.",
     ],
     sections: [],
     existingWine: {
@@ -242,7 +302,10 @@ export const contentEn: ContentBundle = {
       ],
       footer: "Raval del Sellarès — Sant Salvador de Guardiola",
     },
-    cta: { primary: "Book on Airbnb", primaryRoute: "reservar" },
+    cta: {
+      primary: "Check availability",
+      primaryRoute: "reservar",
+    },
   },
 
   contacto: {
@@ -262,13 +325,13 @@ export const contentEn: ContentBundle = {
 
   reservar: {
     seo: {
-      title: "Book | Cal Masses",
+      title: "Check availability | Cal Masses",
       description:
-        "Book Cal Masses on Airbnb. If you need to know anything before coming, write to us.",
-      h1: "Book",
+        "Check the available dates on Airbnb. If you need to know anything before coming, write to us.",
+      h1: "Check availability",
     },
     intro:
-      "You can book directly on Airbnb. If you have any questions before coming, write to us.",
+      "Check the available dates on Airbnb. If you have any questions before coming, write to us.",
   },
 
   legal: {
@@ -303,30 +366,31 @@ export const contentEn: ContentBundle = {
     {
       question: "Is the pool private or shared?",
       answer:
-        "Shared. It is available for guests in summer; the house owners usually do not use it when guests are there. Outdoor, no fixed hours: common sense.",
+        "Shared. It is available for guests in summer; the people of the house do not usually use it when there are guests. Outdoor, no fixed hours: common sense.",
     },
+    { question: "Is there a kitchen?", answer: "Yes" },
     {
       question: "Is there parking?",
       answer: "Yes, there is plenty of parking; any type of vehicle fits.",
     },
-    { question: "Is there a kitchen?", answer: "Yes" },
+    { question: "Is there Wi-Fi?", answer: "Yes" },
     { question: "Are pets allowed?", answer: "No." },
     { question: "Can children stay?", answer: "Yes" },
     { question: "What time is check-in?", answer: "From 16:00." },
     { question: "What time is check-out?", answer: "Until 11:00." },
     { question: "How do I get there?", answer: TODO_DATA },
     {
-      question: "How far is Montserrat?",
-      answer: "Approx. 20 km / 40 min by car.",
-    },
-    {
       question: "How far is Manresa?",
       answer: "Approx. 11 km / 20 min by car.",
     },
     {
-      question: "How can I book?",
+      question: "How far is Montserrat?",
+      answer: "Approx. 20 km / 40 min by car.",
+    },
+    {
+      question: "How can I check availability?",
       answer:
-        "You can book on Airbnb, or contact us by WhatsApp or email.",
+        "You can check availability on Airbnb, or contact us by WhatsApp or email.",
     },
     {
       question: "What is the cancellation policy?",

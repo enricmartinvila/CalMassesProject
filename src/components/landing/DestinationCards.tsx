@@ -52,7 +52,7 @@ function BookingAwareLink({
         rel="noopener noreferrer"
         className={className}
       >
-        {renderText(content.ui.cta.bookAirbnb)}
+        {renderText(content.ui.cta.availability)}
       </a>
     );
   }

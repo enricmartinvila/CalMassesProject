@@ -169,7 +169,7 @@ export function Header() {
             external
             className="hidden sm:inline-flex !py-2 !px-4 text-sm"
           >
-            {content.ui.cta.bookAirbnb}
+            {content.ui.cta.availability}
           </CtaLink>
 
           <button
@@ -223,7 +223,7 @@ export function Header() {
           ))}
           <li className="px-2 pt-2">
             <CtaLink href={bookingHref()} external className="w-full">
-              {content.ui.cta.bookAirbnb}
+              {content.ui.cta.availability}
             </CtaLink>
           </li>
         </ul>

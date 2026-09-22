@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { isTodo } from "../../config/siteConfig";
 import { absoluteUrl, isTodo, siteConfig } from "../../config/siteConfig";
 import type { RouteKey } from "../../i18n/routes";
 import { useLang } from "../../hooks/useLang";
@@ -69,7 +70,9 @@ export function FaqJsonLd({
 }: {
   items: Array<{ question: string; answer: string }>;
 }) {
-  const answered = items.filter((i) => !i.answer.startsWith("TODO_"));
+  const answered = items.filter(
+    (i) => !isTodo(i.answer) && !i.answer.startsWith("TODO_"),
+  );
   if (!answered.length) return null;
 
   const data = {

@@ -4,12 +4,12 @@ import { useLang } from "../../hooks/useLang";
 import { SeoHead } from "../seo/SeoHead";
 import { BreadcrumbJsonLd, FaqJsonLd, LodgingJsonLd } from "../seo/JsonLd";
 import { CtaLink } from "../ui/CtaLink";
-import { Paragraphs, renderText, TodoMark } from "../ui/TodoMark";
+import { Paragraphs, renderText } from "../ui/TodoMark";
 import { SmartImage } from "../ui/SmartImage";
-import { HeroGallery } from "./HeroGallery";
-import { FaqAccordion } from "./FaqAccordion";
+import { QuickFacts, ServiceFacts, PoolFactsList } from "./QuickFacts";
 import { ReviewsSection } from "./ReviewsSection";
-import { ConsentMap } from "../ui/ConsentMap";
+import { ImageGallery } from "./ImageGallery";
+import { FaqSection } from "./FaqSection";
 
 function SectionShell({
   id,
@@ -21,7 +21,7 @@ function SectionShell({
   className?: string;
 }) {
   return (
-    <section id={id} className={`px-4 py-16 sm:px-6 lg:px-8 ${className}`}>
+    <section id={id} className={`px-4 py-16 md:py-20 sm:px-6 lg:px-8 ${className}`}>
       <div className="mx-auto max-w-6xl">{children}</div>
     </section>
   );
@@ -31,24 +31,9 @@ export function HomePage() {
   const { lang, content, path } = useLang();
   const h = content.home;
   const attrs = siteConfig.confirmedHeroAttributes[lang];
-
-  const practicalFacts = [
-    { label: content.ui.facts.guests, value: String(siteConfig.capacity.guests) },
-    { label: content.ui.facts.bedrooms, value: String(siteConfig.capacity.bedrooms) },
-    {
-      label: content.ui.facts.kitchen,
-      value: siteConfig.amenities.kitchen ? "✓" : "TODO_DATA",
-    },
-    {
-      label: content.ui.facts.pool,
-      value: siteConfig.amenities.pool.available ? "✓" : "TODO_DATA",
-    },
-    {
-      label: content.ui.facts.poolUse,
-      value: String(siteConfig.amenities.pool.privateOrShared),
-    },
-    { label: content.ui.facts.parking, value: String(siteConfig.amenities.parking) },
-  ];
+  const showPool =
+    siteConfig.amenities.pool.available &&
+    siteConfig.amenities.pool.confirmedForGuests === true;
 
   return (
     <>
@@ -64,237 +49,244 @@ export function HomePage() {
           rel="preload"
           as="image"
           href={siteConfig.images.heroLcp}
+          imageSrcSet={siteConfig.images.heroLcpSrcSet}
           // @ts-expect-error fetchpriority on link is valid for LCP
           fetchpriority="high"
         />
       </Helmet>
       <LodgingJsonLd />
-      <BreadcrumbJsonLd items={[{ name: content.ui.breadcrumbHome, path: path("home") }]} />
+      <BreadcrumbJsonLd
+        items={[{ name: content.ui.breadcrumbHome, path: path("home") }]}
+      />
       <FaqJsonLd items={content.faq} />
 
-      {/* HERO */}
-      <SectionShell className="pt-10 md:pt-16">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="space-y-6">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight tracking-tight text-gray-900">
+      {/* 1. HERO */}
+      <section className="relative min-h-[88vh] md:min-h-[92vh] flex items-end">
+        <div className="absolute inset-0">
+          <SmartImage
+            src={siteConfig.images.heroLcp}
+            srcSet={siteConfig.images.heroLcpSrcSet}
+            alt=""
+            priority
+            sizes="100vw"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-black/10" />
+        </div>
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-14 pt-32 sm:px-6 lg:px-8 md:pb-20">
+          <div className="max-w-[40rem] space-y-6 text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light leading-[1.15] tracking-tight">
               {renderText(h.hero.h1)}
             </h1>
-            <Paragraphs items={h.hero.paragraphs} />
+            <div className="space-y-4 text-base md:text-lg text-white/90 leading-relaxed">
+              {h.hero.paragraphs.map((p, i) => (
+                <p key={i}>{renderText(p)}</p>
+              ))}
+            </div>
             <div className="flex flex-wrap gap-3 pt-2">
-              <CtaLink href={bookingHref()} external>
-                {content.ui.cta.bookAirbnb}
+              <CtaLink
+                href={bookingHref()}
+                external
+                className="!bg-white !text-[#556B2F] hover:!bg-gray-100"
+              >
+                {content.ui.cta.availability}
               </CtaLink>
-              <CtaLink to={path("finca")} variant="secondary">
-                {h.hero.ctaSecondary}
+              <CtaLink
+                to={path("alojamiento")}
+                variant="secondary"
+                className="!border-white !text-white hover:!bg-white/10"
+              >
+                {content.ui.cta.seeAccommodation}
               </CtaLink>
             </div>
-            <p className="pt-4 text-sm md:text-base text-gray-600 tracking-wide">
-              {attrs.map((a, i) => (
-                <span key={i}>
-                  {i > 0 ? " · " : null}
-                  {a.startsWith("TODO_") ? <TodoMark>{a}</TodoMark> : a}
-                </span>
-              ))}
+            <p className="pt-4 text-sm text-white/80 tracking-wide">
+              {attrs.join(" · ")}
             </p>
           </div>
-          <HeroGallery />
         </div>
+      </section>
+
+      {/* 2. DATOS RÁPIDOS */}
+      <SectionShell className="!py-10 md:!py-12 border-b border-gray-100">
+        <QuickFacts />
       </SectionShell>
 
-      {/* ALOJAMIENTO */}
-      <SectionShell id="alojamiento" className="bg-[#f7f7f4]">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div className="space-y-6">
+      {/* 3. ALOJAMIENTO */}
+      <SectionShell id="alojamiento">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 lg:items-start">
+          <div className="grid grid-cols-2 gap-3">
+            <SmartImage
+              src={siteConfig.images.bedroom}
+              alt={lang === "en" ? "Cal Masses bedroom" : "Dormitorio de Cal Masses"}
+              className="col-span-2 aspect-[16/10] w-full rounded-2xl object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            <SmartImage
+              src={siteConfig.images.living}
+              alt={lang === "en" ? "Cal Masses living room" : "Sala de Cal Masses"}
+              className="aspect-[4/3] w-full rounded-2xl object-cover"
+              sizes="(max-width: 1024px) 50vw, 25vw"
+            />
+            <SmartImage
+              src={siteConfig.images.kitchen}
+              alt={lang === "en" ? "Cal Masses kitchen" : "Cocina de Cal Masses"}
+              className="aspect-[4/3] w-full rounded-2xl object-cover"
+              sizes="(max-width: 1024px) 50vw, 25vw"
+            />
+          </div>
+          <div className="space-y-6 max-w-[46rem]">
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
               {renderText(h.accommodation.h2)}
             </h2>
             <Paragraphs items={h.accommodation.paragraphs} />
-            <CtaLink to={path("alojamiento")}>{h.accommodation.cta}</CtaLink>
+            <ServiceFacts />
+            <CtaLink to={path("alojamiento")} variant="secondary">
+              {h.accommodation.cta}
+            </CtaLink>
           </div>
-          <SmartImage
-            src={siteConfig.images.heroLcp}
-            alt=""
-            className="w-full rounded-3xl object-cover aspect-[4/3]"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
         </div>
-        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {practicalFacts.map((fact) => {
-            if (isTodo(fact.value) || String(fact.value).startsWith("TODO_")) {
-              return null;
-            }
-            return (
-            <li
-              key={fact.label}
-              className="rounded-2xl border border-[#556B2F]/15 bg-white p-4"
-            >
-              <p className="text-xs uppercase tracking-wider text-[#556B2F]">
-                {fact.label}
-              </p>
-              <p className="mt-1 text-lg font-medium text-gray-900">
-                {fact.value}
-              </p>
-            </li>
-            );
-          })}
-        </ul>
       </SectionShell>
 
-      {/* FINCA */}
-      <SectionShell id="cal-masses">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <SmartImage
-            src={siteConfig.images.vineyard}
-            alt=""
-            className="w-full rounded-3xl object-cover aspect-[4/3] order-2 lg:order-1"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
-          <div className="space-y-6 order-1 lg:order-2">
+      {/* 4. REVIEWS */}
+      <ReviewsSection title={h.reviews.h2} />
+
+      {/* 5. CAL MASSES / FINCA */}
+      <SectionShell id="cal-masses" className="bg-[#f7f7f4]">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 lg:items-start">
+          <div className="space-y-6 max-w-[46rem] order-2 lg:order-1">
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
               {renderText(h.finca.h2)}
             </h2>
             <Paragraphs items={h.finca.paragraphs} />
-            <CtaLink to={path("finca")}>{h.finca.cta}</CtaLink>
+            <h3 className="text-xl font-semibold text-gray-900 pt-2">
+              {renderText(h.finca.h3)}
+            </h3>
+            <Paragraphs items={h.finca.h3Paragraphs} />
+            <CtaLink to={path("finca")} variant="secondary">
+              {h.finca.cta}
+            </CtaLink>
+          </div>
+          <div className="grid grid-cols-2 gap-3 order-1 lg:order-2">
+            <SmartImage
+              src={siteConfig.images.vineyard}
+              alt={lang === "en" ? "Cal Masses vineyard" : "Viñedo de Cal Masses"}
+              className="col-span-2 aspect-[16/10] w-full rounded-2xl object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              srcSet="/images/hero-vinyes-800.webp 800w, /images/hero-vinyes-1600.webp 1600w"
+            />
+            <SmartImage
+              src={siteConfig.images.garden}
+              alt={lang === "en" ? "Cal Masses garden" : "Huerto de Cal Masses"}
+              className="aspect-[4/3] w-full rounded-2xl object-cover"
+              sizes="(max-width: 1024px) 50vw, 25vw"
+            />
+            <SmartImage
+              src={siteConfig.images.placeta}
+              alt={lang === "en" ? "Cal Masses courtyard" : "Placeta de Cal Masses"}
+              className="aspect-[4/3] w-full rounded-2xl object-cover"
+              sizes="(max-width: 1024px) 50vw, 25vw"
+            />
           </div>
         </div>
       </SectionShell>
 
-      {/* PISCINA — confirmed available */}
-      {siteConfig.amenities.pool.available && (
-        <SectionShell id="exteriores" className="bg-[#f7f7f4]">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div className="space-y-6">
+      {/* 6. PISCINA */}
+      {showPool && (
+        <SectionShell id="exteriores">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 lg:items-center">
+            <div className="space-y-6 max-w-[46rem]">
               <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
                 {renderText(h.pool.h2)}
               </h2>
               <Paragraphs items={h.pool.paragraphs} />
-              <ul className="space-y-2 text-sm text-gray-700">
-                {!isTodo(siteConfig.amenities.pool.privateOrShared) && (
-                  <li>Uso: {String(siteConfig.amenities.pool.privateOrShared)}</li>
-                )}
-                {!isTodo(siteConfig.amenities.pool.season) && (
-                  <li>Temporada: {String(siteConfig.amenities.pool.season)}</li>
-                )}
-                {!isTodo(siteConfig.amenities.pool.hours) && (
-                  <li>Horarios: {String(siteConfig.amenities.pool.hours)}</li>
-                )}
-                {!isTodo(siteConfig.amenities.pool.rules) && (
-                  <li>Normas: {String(siteConfig.amenities.pool.rules)}</li>
-                )}
-              </ul>
+              <PoolFactsList />
             </div>
             <SmartImage
-              src={siteConfig.images.poolCandidate}
-              alt=""
-              className="w-full rounded-3xl object-cover aspect-[4/3]"
+              src={siteConfig.images.pool}
+              alt={lang === "en" ? "Cal Masses pool" : "Piscina de Cal Masses"}
+              className="w-full rounded-2xl object-cover aspect-[4/3]"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
         </SectionShell>
       )}
 
-      {/* ENTORNO */}
-      <SectionShell id="entorno">
-        <div className="space-y-6 max-w-3xl mb-10">
+      {/* 7. ENTORNO */}
+      <SectionShell id="entorno" className="bg-[#f7f7f4]">
+        <div className="max-w-[46rem] space-y-5 mb-10">
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
             {renderText(h.surroundings.h2)}
           </h2>
           <Paragraphs items={h.surroundings.paragraphs} />
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
+        <ul className="grid gap-8 md:grid-cols-3">
           {h.surroundings.cards.map((card) => (
-            <article
-              key={card.title}
-              className="flex flex-col rounded-3xl border border-[#556B2F]/15 bg-white p-6 shadow-sm"
-            >
+            <li key={card.title} className="border-t border-[#556B2F]/30 pt-5">
               <h3 className="text-xl font-semibold text-gray-900">{card.title}</h3>
-              <div className="mt-3 flex-1 text-sm md:text-base text-gray-700 leading-relaxed">
-                {renderText(card.text)}
-              </div>
-              <div className="mt-6">
-                <CtaLink to={path(card.route)} variant="secondary" className="!px-4 !py-2 text-sm">
-                  {card.cta}
-                </CtaLink>
-              </div>
-            </article>
+              <p className="mt-3 text-sm md:text-base text-gray-700 leading-relaxed">
+                {card.text}
+              </p>
+              <CtaLink
+                to={path(card.route)}
+                variant="ghost"
+                className="!px-0 mt-4"
+              >
+                {card.cta}
+              </CtaLink>
+            </li>
           ))}
-        </div>
+        </ul>
       </SectionShell>
 
-      {/* SISU — secondary */}
-      <SectionShell id="sisu" className="bg-[#f7f7f4]">
-        <div className="grid gap-10 lg:grid-cols-[1fr,1.1fr] lg:items-center">
-          <div className="space-y-6">
+      {/* 8. SISU */}
+      <SectionShell id="sisu">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 lg:items-center">
+          <div className="space-y-6 max-w-[40rem]">
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
               {renderText(h.sisu.h2)}
             </h2>
             <Paragraphs items={h.sisu.paragraphs} />
-            <CtaLink to={path("sisu")}>{h.sisu.cta}</CtaLink>
+            <CtaLink to={path("sisu")} variant="secondary">
+              {h.sisu.cta}
+            </CtaLink>
           </div>
           <SmartImage
             src={siteConfig.images.wine}
-            alt=""
-            className="w-full rounded-3xl object-cover aspect-[4/3]"
-            sizes="(max-width: 1024px) 100vw, 50vw"
+            alt="SISU"
+            className="w-full rounded-2xl object-cover aspect-[4/5] max-h-[28rem] mx-auto"
+            sizes="(max-width: 1024px) 80vw, 35vw"
+            srcSet="/images/sisu-800.webp 800w, /images/sisu-1600.webp 1600w"
           />
         </div>
       </SectionShell>
 
-      <ReviewsSection title={h.reviews.h2} emptyLabel={content.ui.reviewsEmpty} />
+      {/* 9. GALERÍA */}
+      <ImageGallery title={content.ui.galleryTitle} className="bg-[#f7f7f4]" />
 
-      {/* UBICACIÓN */}
-      <SectionShell id="ubicacion">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-stretch">
-          <div className="space-y-6">
-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
-              {renderText(h.location.h2)}
-            </h2>
-            <Paragraphs items={h.location.paragraphs} />
-            <ul className="space-y-2 text-sm text-gray-700">
-              {!isTodo(siteConfig.distances.montserrat) && (
-                <li>Montserrat: {String(siteConfig.distances.montserrat)}</li>
-              )}
-              {!isTodo(siteConfig.distances.manresa) && (
-                <li>Manresa: {String(siteConfig.distances.manresa)}</li>
-              )}
-              {!isTodo(siteConfig.distances.barcelona) && (
-                <li>Barcelona: {String(siteConfig.distances.barcelona)}</li>
-              )}
-            </ul>
-          </div>
-          <div className="relative overflow-hidden rounded-3xl border border-[#556B2F]/20 shadow-md min-h-[280px]">
-            <ConsentMap />
-          </div>
-        </div>
-      </SectionShell>
+      {/* 10. FAQ */}
+      <FaqSection title={content.ui.faqTitle} items={content.faq} />
 
-      <FaqAccordion title={content.ui.faqTitle} items={content.faq} />
-
-      {/* CTA FINAL */}
-      <SectionShell className="bg-[#556B2F] text-white">
-        <div className="max-w-3xl space-y-6">
+      {/* 11. CTA FINAL */}
+      <SectionShell className="bg-[#556B2F] text-white !py-16 md:!py-20">
+        <div className="max-w-[40rem] space-y-6">
           <h2 className="text-2xl md:text-3xl font-semibold">
             {renderText(h.finalCta.h2)}
           </h2>
-          <div className="space-y-4 text-base md:text-lg text-white/90 leading-relaxed">
-            {h.finalCta.paragraphs.map((p, i) => (
-              <p key={i}>{renderText(p)}</p>
-            ))}
-          </div>
+          <Paragraphs items={h.finalCta.paragraphs} className="text-white/90" />
           <div className="flex flex-wrap gap-3">
             <CtaLink
               href={bookingHref()}
               external
               className="!bg-white !text-[#556B2F] hover:!bg-gray-100"
             >
-              {content.ui.cta.bookAirbnb}
+              {content.ui.cta.availability}
             </CtaLink>
             <CtaLink
               to={path("contacto")}
               variant="secondary"
               className="!border-white !text-white hover:!bg-white/10"
             >
-              {h.finalCta.ctaSecondary}
+              {content.ui.cta.contact}
             </CtaLink>
           </div>
         </div>

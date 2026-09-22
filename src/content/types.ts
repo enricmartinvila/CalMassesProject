@@ -1,5 +1,5 @@
 import type { Lang } from "../config/siteConfig";
-import type { RouteKey } from "./routes";
+import type { RouteKey } from "../i18n/routes";
 
 export type PageSeo = {
   title: string;
@@ -22,16 +22,16 @@ export type UiCopy = {
     entornoEnoturismo: string;
   };
   cta: {
-    bookAirbnb: string;
-    bookBooking: string;
+    availability: string;
     contact: string;
-    discoverCalMasses: string;
     seeAccommodation: string;
+    seeAccommodationFull: string;
     knowCalMasses: string;
     knowSisu: string;
     discoverMontserrat: string;
     discoverManresa: string;
     discoverBages: string;
+    seeMoreReviews: string;
   };
   cookie: {
     message: string;
@@ -40,15 +40,15 @@ export type UiCopy = {
     settings: string;
   };
   footer: {
+    brandTitle: string;
+    stayTitle: string;
+    entornoTitle: string;
     legal: string;
     privacy: string;
     cookies: string;
-    discoverTitle: string;
-    discoverBages: string;
-    discoverManresa: string;
-    discoverMontserrat: string;
-    discoverParaDos: string;
-    discoverEnoturismo: string;
+    paraDos: string;
+    piscina: string;
+    laFinca: string;
   };
   notFound: {
     title: string;
@@ -61,16 +61,42 @@ export type UiCopy = {
   };
   reviewsEmpty: string;
   faqTitle: string;
+  galleryTitle: string;
+  galleryTabs: {
+    all: string;
+    alojamiento: string;
+    exterior: string;
+    piscina: string;
+    finca: string;
+    sisu: string;
+  };
   locationMapConsent: string;
   loadMap: string;
   breadcrumbHome: string;
   facts: {
     guests: string;
     bedrooms: string;
+    beds: string;
+    bathrooms: string;
     kitchen: string;
     pool: string;
     poolUse: string;
     parking: string;
+    wifi: string;
+    climate: string;
+    location: string;
+    checkIn: string;
+    checkOut: string;
+    pets: string;
+    children: string;
+    jacuzzi: string;
+  };
+  poolLabels: {
+    use: string;
+    season: string;
+    hours: string;
+    rules: string;
+    type: string;
   };
 };
 
@@ -90,6 +116,8 @@ export type HomeContent = {
   finca: {
     h2: string;
     paragraphs: string[];
+    h3: string;
+    h3Paragraphs: string[];
     cta: string;
   };
   pool: {
@@ -114,16 +142,25 @@ export type HomeContent = {
   reviews: {
     h2: string;
   };
-  location: {
-    h2: string;
-    paragraphs: string[];
-  };
   finalCta: {
     h2: string;
     paragraphs: string[];
     ctaPrimary: string;
     ctaSecondary: string;
   };
+};
+
+export type AlojamientoPageContent = {
+  seo: PageSeo;
+  intro: string[];
+  bedroom: { h2: string; paragraphs: string[] };
+  living: { h2: string; paragraphs: string[] };
+  bathroom: { h2: string; paragraphs: string[] };
+  exterior: { h2: string; paragraphs: string[] };
+  services: { h2: string };
+  rules: { h2: string; paragraphs: string[] };
+  checkTimes: { h2: string };
+  cta: { primary: string; secondary: string };
 };
 
 export type SimplePageContent = {
@@ -133,7 +170,12 @@ export type SimplePageContent = {
     h2: string;
     paragraphs: string[];
   }>;
-  cta?: { primary: string; primaryRoute?: RouteKey; secondary?: string; secondaryRoute?: RouteKey };
+  cta?: {
+    primary: string;
+    primaryRoute?: RouteKey;
+    secondary?: string;
+    secondaryRoute?: RouteKey;
+  };
 };
 
 export type FaqItem = { question: string; answer: string };
@@ -141,7 +183,7 @@ export type FaqItem = { question: string; answer: string };
 export type ContentBundle = {
   ui: UiCopy;
   home: HomeContent;
-  alojamiento: SimplePageContent;
+  alojamiento: AlojamientoPageContent;
   finca: SimplePageContent;
   sisu: SimplePageContent & {
     existingWine?: {

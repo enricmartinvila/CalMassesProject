@@ -38,7 +38,7 @@ export function LandingPage({ landing }: { landing: LandingDefinition }) {
   const { lang, path, content } = useLang();
   const draft = landing.status === "draft" || isDraftRoute(landing.routeKey);
 
-  const bookLabel = content.ui.cta.bookAirbnb;
+  const bookLabel = content.ui.cta.availability;
 
   return (
     <>

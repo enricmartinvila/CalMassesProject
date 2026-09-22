@@ -22,12 +22,19 @@ export function renderText(value: string) {
   return value;
 }
 
-export function Paragraphs({ items }: { items: string[] }) {
+export function Paragraphs({
+  items,
+  className = "",
+}: {
+  items: string[];
+  className?: string;
+}) {
   return (
-    <div className="space-y-4 text-base md:text-lg text-gray-700 leading-relaxed">
-      {items.map((p, i) => (
-        <p key={i}>{renderText(p)}</p>
-      ))}
+    <div className={`space-y-4 text-base md:text-lg text-gray-700 leading-relaxed ${className}`}>
+      {items.map((p, i) => {
+        if (p.startsWith("TODO_")) return null;
+        return <p key={i}>{renderText(p)}</p>;
+      })}
     </div>
   );
 }

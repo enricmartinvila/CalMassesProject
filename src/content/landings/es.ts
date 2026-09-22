@@ -27,7 +27,7 @@ export const landingsEs: LandingsBundle = {
         "Cal Masses está en Sant Salvador de Guardiola, en un entorno rural rodeado de bosque, campos y viñedo. Es un alojamiento pensado para dos personas que quieren pasar unos días en el Bages y tener un lugar tranquilo al que volver después de descubrir la comarca.",
       ],
       image: siteConfig.images.exterior,
-      ctaPrimary: { label: "Reservar en Airbnb", route: "reservar" },
+      ctaPrimary: { label: "Consultar disponibilidad", route: "reservar" },
       ctaSecondary: { label: "Ver el alojamiento", route: "alojamiento" },
     },
     sections: [
@@ -77,9 +77,9 @@ export const landingsEs: LandingsBundle = {
     finalCta: {
       h2: "¿Te apetece conocer el Bages desde aquí?",
       paragraphs: [
-        "Reserva en Airbnb y descubre Cal Masses como punto de partida para pasar unos días en la comarca.",
+        "Consulta las fechas disponibles y descubre Cal Masses como punto de partida para pasar unos días en la comarca.",
       ],
-      primary: { label: "Reservar en Airbnb", route: "reservar" },
+      primary: { label: "Consultar disponibilidad", route: "reservar" },
       secondary: { label: "Ver el alojamiento", route: "alojamiento" },
     },
     related: [
@@ -95,7 +95,7 @@ export const landingsEs: LandingsBundle = {
       { label: "Alojamiento rural para dos", route: "landingParaDos" },
       { label: "Alojamiento rural con piscina", route: "landingPiscina" },
       { label: "Enoturismo en el Pla de Bages", route: "landingEnoturismo" },
-      { label: "Reservar en Airbnb", route: "reservar" },
+      { label: "Consultar disponibilidad", route: "reservar" },
     ],
   },
 
@@ -121,7 +121,7 @@ export const landingsEs: LandingsBundle = {
         "Es una opción especialmente pensada para dos personas que quieren combinar Manresa con una estancia rural.",
       ],
       image: siteConfig.images.exterior,
-      ctaPrimary: { label: "Reservar en Airbnb", route: "reservar" },
+      ctaPrimary: { label: "Consultar disponibilidad", route: "reservar" },
       ctaSecondary: { label: "Ver el alojamiento", route: "alojamiento" },
     },
     sections: [
@@ -181,9 +181,9 @@ export const landingsEs: LandingsBundle = {
       h2: "Dormir cerca de Manresa sin dormir en Manresa",
       paragraphs: [
         "Si buscas un alojamiento, apartamento rural o una estancia tranquila cerca de Manresa, Cal Masses ofrece una alternativa diferente a dormir en el centro de la ciudad.",
-        "Reserva en Airbnb y decide el resto del viaje después.",
+        "Consulta las fechas disponibles y decide el resto del viaje después.",
       ],
-      primary: { label: "Reservar en Airbnb", route: "reservar" },
+      primary: { label: "Consultar disponibilidad", route: "reservar" },
     },
     related: [
       { label: "Alojamiento rural en el Bages", route: "landingBages" },
@@ -195,7 +195,7 @@ export const landingsEs: LandingsBundle = {
       { label: "Alojamiento rural en el Bages", route: "landingBages" },
       { label: "Alojamiento cerca de Montserrat", route: "landingMontserrat" },
       { label: "Enoturismo en el Pla de Bages", route: "landingEnoturismo" },
-      { label: "Reservar en Airbnb", route: "reservar" },
+      { label: "Consultar disponibilidad", route: "reservar" },
     ],
   },
 
@@ -221,7 +221,7 @@ export const landingsEs: LandingsBundle = {
         "Puedes dedicar parte del día a descubrir la montaña y volver después a un entorno completamente distinto.",
       ],
       image: siteConfig.images.montserrat,
-      ctaPrimary: { label: "Reservar en Airbnb", route: "reservar" },
+      ctaPrimary: { label: "Consultar disponibilidad", route: "reservar" },
       ctaSecondary: { label: "Ver el alojamiento", route: "alojamiento" },
     },
     sections: [
@@ -286,9 +286,9 @@ export const landingsEs: LandingsBundle = {
     finalCta: {
       h2: "Montserrat es solo una parte del viaje",
       paragraphs: [
-        "Reserva en Airbnb y descubre todo lo que puedes hacer desde Cal Masses.",
+        "Consulta las fechas disponibles y descubre todo lo que puedes hacer desde Cal Masses.",
       ],
-      primary: { label: "Reservar en Airbnb", route: "reservar" },
+      primary: { label: "Consultar disponibilidad", route: "reservar" },
     },
     related: [
       { label: "Cerca de Manresa", route: "landingManresa" },
@@ -300,7 +300,7 @@ export const landingsEs: LandingsBundle = {
       { label: "Alojamiento rural cerca de Manresa", route: "landingManresa" },
       { label: "Alojamiento rural en el Bages", route: "landingBages" },
       { label: "Alojamiento rural para dos", route: "landingParaDos" },
-      { label: "Reservar en Airbnb", route: "reservar" },
+      { label: "Consultar disponibilidad", route: "reservar" },
     ],
   },
 
@@ -326,7 +326,7 @@ export const landingsEs: LandingsBundle = {
         "Un lugar desde el que descubrir la comarca o simplemente pasar unos días sin demasiados planes.",
       ],
       image: siteConfig.images.interior,
-      ctaPrimary: { label: "Reservar en Airbnb", route: "reservar" },
+      ctaPrimary: { label: "Consultar disponibilidad", route: "reservar" },
       ctaSecondary: { label: "Ver el alojamiento", route: "alojamiento" },
     },
     sections: [
@@ -398,8 +398,8 @@ export const landingsEs: LandingsBundle = {
     ],
     finalCta: {
       h2: "¿Buscas un lugar para dos?",
-      paragraphs: ["Reserva en Airbnb y descubre Cal Masses."],
-      primary: { label: "Reservar en Airbnb", route: "reservar" },
+      paragraphs: ["Consulta las fechas disponibles y descubre Cal Masses."],
+      primary: { label: "Consultar disponibilidad", route: "reservar" },
     },
     related: [
       { label: "Con piscina", route: "landingPiscina" },
@@ -412,7 +412,7 @@ export const landingsEs: LandingsBundle = {
       { label: "Alojamiento cerca de Montserrat", route: "landingMontserrat" },
       { label: "Alojamiento rural cerca de Manresa", route: "landingManresa" },
       { label: "Enoturismo en el Pla de Bages", route: "landingEnoturismo" },
-      { label: "Reservar en Airbnb", route: "reservar" },
+      { label: "Consultar disponibilidad", route: "reservar" },
     ],
   },
 
@@ -437,8 +437,8 @@ export const landingsEs: LandingsBundle = {
         "El campo, las zonas exteriores y la piscina permiten pasar más tiempo en la finca y plantear la estancia con todavía menos prisas.",
         "Cal Masses es un alojamiento para dos personas en Sant Salvador de Guardiola, rodeado de naturaleza y viñedos.",
       ],
-      image: siteConfig.images.poolCandidate,
-      ctaPrimary: { label: "Reservar en Airbnb", route: "reservar" },
+      image: siteConfig.images.pool,
+      ctaPrimary: { label: "Consultar disponibilidad", route: "reservar" },
     },
     sections: [
       {
@@ -481,7 +481,7 @@ export const landingsEs: LandingsBundle = {
         "Cal Masses está pensado para dos huéspedes.",
         "Eso permite disfrutar del alojamiento, los exteriores y el entorno desde una escala mucho más tranquila que la de las grandes casas rurales destinadas a grupos.",
       ],
-      primary: { label: "Reservar en Airbnb", route: "reservar" },
+      primary: { label: "Consultar disponibilidad", route: "reservar" },
     },
     related: [
       { label: "Para dos", route: "landingParaDos" },
@@ -491,7 +491,7 @@ export const landingsEs: LandingsBundle = {
       { label: "Ver el alojamiento", route: "alojamiento" },
       { label: "Alojamiento rural para dos", route: "landingParaDos" },
       { label: "Alojamiento rural en el Bages", route: "landingBages" },
-      { label: "Reservar en Airbnb", route: "reservar" },
+      { label: "Consultar disponibilidad", route: "reservar" },
     ],
   },
 
@@ -516,7 +516,7 @@ export const landingsEs: LandingsBundle = {
         "Es un alojamiento para dos personas pensado para pasar unos días fuera de la ciudad y utilizar el tiempo de otra manera.",
       ],
       image: siteConfig.images.exterior,
-      ctaPrimary: { label: "Reservar en Airbnb", route: "reservar" },
+      ctaPrimary: { label: "Consultar disponibilidad", route: "reservar" },
       ctaSecondary: { label: "Ver el alojamiento", route: "alojamiento" },
     },
     sections: [
@@ -568,7 +568,7 @@ export const landingsEs: LandingsBundle = {
           "Montserrat, vino, Manresa, naturaleza o piscina pueden formar parte de la estancia.",
           "Pero también puedes utilizar Cal Masses simplemente para parar unos días.",
         ],
-        cta: { label: "Reservar en Airbnb", route: "reservar" },
+        cta: { label: "Consultar disponibilidad", route: "reservar" },
       },
     ],
     finalCta: {
@@ -577,7 +577,7 @@ export const landingsEs: LandingsBundle = {
         "Montserrat, vino, Manresa, naturaleza o piscina pueden formar parte de la estancia.",
         "Pero también puedes utilizar Cal Masses simplemente para parar unos días.",
       ],
-      primary: { label: "Reservar en Airbnb", route: "reservar" },
+      primary: { label: "Consultar disponibilidad", route: "reservar" },
     },
     related: [
       { label: "Alojamiento rural en el Bages", route: "landingBages" },
@@ -590,7 +590,7 @@ export const landingsEs: LandingsBundle = {
       { label: "Alojamiento cerca de Montserrat", route: "landingMontserrat" },
       { label: "Alojamiento rural cerca de Manresa", route: "landingManresa" },
       { label: "Alojamiento rural para dos", route: "landingParaDos" },
-      { label: "Reservar en Airbnb", route: "reservar" },
+      { label: "Consultar disponibilidad", route: "reservar" },
     ],
   },
 
@@ -616,7 +616,7 @@ export const landingsEs: LandingsBundle = {
         "Alojarse aquí permite descubrir el Pla de Bages desde un lugar que también forma parte, a pequeña escala, de ese paisaje vitícola.",
       ],
       image: siteConfig.images.vineyard,
-      ctaPrimary: { label: "Reservar en Airbnb", route: "reservar" },
+      ctaPrimary: { label: "Consultar disponibilidad", route: "reservar" },
       ctaSecondary: { label: "Conocer SISU", route: "sisu" },
     },
     sections: [
@@ -672,7 +672,7 @@ export const landingsEs: LandingsBundle = {
           "Puedes dedicar parte de la estancia al vino y el resto a Montserrat, Manresa, la naturaleza o simplemente Cal Masses.",
           "El enoturismo no necesita ocupar todo el viaje.",
         ],
-        cta: { label: "Reservar en Airbnb", route: "reservar" },
+        cta: { label: "Consultar disponibilidad", route: "reservar" },
       },
     ],
     finalCta: {
@@ -681,7 +681,7 @@ export const landingsEs: LandingsBundle = {
         "Puedes dedicar parte de la estancia al vino y el resto a Montserrat, Manresa, la naturaleza o simplemente Cal Masses.",
         "El enoturismo no necesita ocupar todo el viaje.",
       ],
-      primary: { label: "Reservar en Airbnb", route: "reservar" },
+      primary: { label: "Consultar disponibilidad", route: "reservar" },
     },
     related: [
       { label: "SISU", route: "sisu" },
@@ -694,7 +694,7 @@ export const landingsEs: LandingsBundle = {
       { label: "Conocer Cal Masses", route: "finca" },
       { label: "Alojamiento rural en el Bages", route: "landingBages" },
       { label: "Alojamiento rural para dos", route: "landingParaDos" },
-      { label: "Reservar en Airbnb", route: "reservar" },
+      { label: "Consultar disponibilidad", route: "reservar" },
     ],
   },
 };

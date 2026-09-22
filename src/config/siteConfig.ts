@@ -6,23 +6,34 @@
 export const TODO_DATA = "TODO_DATA" as const;
 export const TODO_DATA_BOOKING_URL = "TODO_DATA_BOOKING_URL" as const;
 export const TODO_LEGAL_CONTENT = "TODO_LEGAL_CONTENT" as const;
+export const TODO_CONTENT_REVIEWS = "TODO_CONTENT_REVIEWS" as const;
+export const TODO_IMAGE = "TODO_IMAGE" as const;
 
 export type Lang = "es" | "ca" | "en";
 
 export const SUPPORTED_LANGS: Lang[] = ["es", "ca", "en"];
 export const DEFAULT_LANG: Lang = "es";
 
+export type GalleryCategoryId =
+  | "alojamiento"
+  | "exterior"
+  | "piscina"
+  | "finca"
+  | "sisu";
+
+export type GalleryImage = {
+  src: string;
+  alt: { es: string; ca: string; en: string };
+  category: GalleryCategoryId;
+};
+
 export const siteConfig = {
   brandName: "Cal Masses",
   wineBrandName: "SISU",
 
-  /** Domain used for canonical / OG / sitemap. Confirm production domain. */
   siteUrl: "https://calmasses.com",
 
-  /** Official lodging category (e.g. turisme rural / apartament). */
   lodgingCategory: TODO_DATA,
-
-  /** Official tourism registration number. */
   registrationNumber: TODO_DATA,
 
   address: {
@@ -51,7 +62,6 @@ export const siteConfig = {
   capacity: {
     guests: 2,
     bedrooms: 1,
-    /** Airbnb listing: 1 bed. */
     beds: "1 cama",
     bathrooms: "1 (con jacuzzi)",
   },
@@ -62,7 +72,6 @@ export const siteConfig = {
     pool: {
       available: true,
       confirmedForGuests: true,
-      /** Owner: compartida. Airbnb la publica como privada para huéspedes. */
       privateOrShared: "compartida",
       season: "verano",
       hours: "sin horario fijo",
@@ -79,10 +88,8 @@ export const siteConfig = {
 
   checkIn: "16:00",
   checkOut: "11:00",
-  /** Exact band depends on dates selected on Airbnb. */
   cancellationPolicy: "Según la política de Airbnb al reservar",
 
-  /** Driving estimates via OSRM from Cal Masses coordinates. */
   distances: {
     montserrat: "aprox. 20 km / 40 min en coche",
     manresa: "aprox. 11 km / 20 min en coche",
@@ -94,7 +101,6 @@ export const siteConfig = {
   },
 
   booking: {
-    /** Primary booking engine (Airbnb). Booking.com URL not stably resolved. */
     url: "https://www.airbnb.es/rooms/896856836379489751",
     airbnb: "https://www.airbnb.es/rooms/896856836379489751",
     bookingCom: TODO_DATA,
@@ -106,44 +112,229 @@ export const siteConfig = {
 
   reviews: {
     rating: "4,97",
-    reviewCount: "86 evaluaciones",
+    reviewCount: "86",
     reviewSource: "Airbnb",
     reviewDate: TODO_DATA,
+    /** Approved guest quotes — none provided yet. */
+    items: TODO_CONTENT_REVIEWS as typeof TODO_CONTENT_REVIEWS,
+    moreUrl: "https://www.airbnb.es/rooms/896856836379489751/reviews",
   },
 
-  /**
-   * Confirmed attribute chips for the hero line.
-   * Only include facts confirmed in editorial brief / this config.
-   */
   confirmedHeroAttributes: {
-    es: ["2 huéspedes", "1 dormitorio", "piscina", "cocina", "Wi-Fi", "A/C", "naturaleza"],
-    ca: ["2 hostes", "1 dormitori", "piscina", "cuina", "Wi-Fi", "A/C", "natura"],
-    en: ["2 guests", "1 bedroom", "pool", "kitchen", "Wi-Fi", "A/C", "nature"],
+    es: ["2 huéspedes", "1 dormitorio", "piscina", "cocina", "naturaleza"],
+    ca: ["2 hostes", "1 dormitori", "piscina", "cuina", "natura"],
+    en: ["2 guests", "1 bedroom", "pool", "kitchen", "nature"],
   },
 
   images: {
     logo: "/fotosTargetes/fotosCaseta/logo.webp",
     favicon: "/favicon-32.png",
     ogDefault: "/images/og-calmasses.jpg",
-    heroLcp: "/images/hero-interior-1600.webp",
-    heroGallery: [
-      "/images/hero-interior-1600.webp",
-      "/fotosTargetes/fotosCaseta/dinsnousoda.webp",
-      "/fotosTargetes/fotosCaseta/foravermut.webp",
-      "/images/exterior-1600.webp",
-      "/fotosTargetes/fotosCaseta/SliderHab1.jpg",
-      "/images/hero-vinyes-1600.webp",
-    ],
+    /** Exterior LCP for home hero. */
+    heroLcp: "/images/exterior-1600.webp",
+    heroLcpSrcSet:
+      "/images/exterior-800.webp 800w, /images/exterior-1600.webp 1600w",
     exterior: "/images/exterior-1600.webp",
     vineyard: "/images/hero-vinyes-1600.webp",
-    poolCandidate: "/fotosTargetes/fotosExterior/SliderExterior6.jpg",
+    pool: "/fotosTargetes/fotosExterior/SliderExterior6.jpg",
+    poolAlt: "/fotosTargetes/fotosExterior/SliderExterior7.jpg",
     wine: "/images/sisu-1600.webp",
     wineAlt: "/fotosVino/fotoplano.webp",
     interior: "/images/hero-interior-1600.webp",
     bedroom: "/fotosTargetes/fotosCaseta/SliderHab1.jpg",
-    /** No approved Montserrat photo in the project. */
+    bedroomAlt: "/fotosTargetes/fotosCaseta/SliderHab3.jpg",
+    living: "/fotosTargetes/fotosCaseta/dinsnousoda.webp",
+    kitchen: "/fotosTargetes/fotosCaseta/SliderMen2.jpg",
+    bathroom: "/fotosTargetes/fotosCaseta/yacuzzi.webp",
+    terrace: "/fotosTargetes/fotosCaseta/foravermut.webp",
+    garden: "/fotosTargetes/fotosHorta/SliderTerra1.jpg",
+    bbq: "/fotosTargetes/fotosExterior/SliderBbq2.jpg",
+    placeta: "/fotosTargetes/fotosPlaceta/SliderPlac1.jpg",
     montserrat: "TODO_IMAGE_MONTSERRAT",
   },
+
+  gallery: [
+    {
+      src: "/images/exterior-1600.webp",
+      alt: {
+        es: "Exterior de Cal Masses",
+        ca: "Exterior de Cal Masses",
+        en: "Cal Masses exterior",
+      },
+      category: "exterior" as const,
+    },
+    {
+      src: "/fotosTargetes/fotosExterior/SliderExterior1.jpg",
+      alt: {
+        es: "Paisaje alrededor de Cal Masses",
+        ca: "Paisatge al voltant de Cal Masses",
+        en: "Landscape around Cal Masses",
+      },
+      category: "exterior" as const,
+    },
+    {
+      src: "/fotosTargetes/fotosExterior/SliderExterior2.jpg",
+      alt: {
+        es: "Casa y entorno de Cal Masses",
+        ca: "Casa i entorn de Cal Masses",
+        en: "House and surroundings at Cal Masses",
+      },
+      category: "exterior" as const,
+    },
+    {
+      src: "/fotosTargetes/fotosExterior/SliderExterior3.jpg",
+      alt: {
+        es: "Vista exterior de la finca",
+        ca: "Vista exterior de la finca",
+        en: "Exterior view of the farm",
+      },
+      category: "exterior" as const,
+    },
+    {
+      src: "/fotosTargetes/fotosCaseta/foravermut.webp",
+      alt: {
+        es: "Terraza de Cal Masses",
+        ca: "Terrassa de Cal Masses",
+        en: "Cal Masses terrace",
+      },
+      category: "exterior" as const,
+    },
+    {
+      src: "/fotosTargetes/fotosExterior/SliderExterior6.jpg",
+      alt: {
+        es: "Piscina de Cal Masses",
+        ca: "Piscina de Cal Masses",
+        en: "Cal Masses pool",
+      },
+      category: "piscina" as const,
+    },
+    {
+      src: "/fotosTargetes/fotosExterior/SliderExterior7.jpg",
+      alt: {
+        es: "Zona de piscina y exterior",
+        ca: "Zona de piscina i exterior",
+        en: "Pool and outdoor area",
+      },
+      category: "piscina" as const,
+    },
+    {
+      src: "/fotosTargetes/fotosExterior/SliderBbq2.jpg",
+      alt: {
+        es: "Zona de barbacoa",
+        ca: "Zona de barbacoa",
+        en: "Barbecue area",
+      },
+      category: "exterior" as const,
+    },
+    {
+      src: "/images/hero-vinyes-1600.webp",
+      alt: {
+        es: "Viñedo de Cal Masses",
+        ca: "Vinya de Cal Masses",
+        en: "Cal Masses vineyard",
+      },
+      category: "finca" as const,
+    },
+    {
+      src: "/fotosTargetes/fotosHorta/SliderTerra1.jpg",
+      alt: {
+        es: "Huerto de Cal Masses",
+        ca: "Hort de Cal Masses",
+        en: "Cal Masses kitchen garden",
+      },
+      category: "finca" as const,
+    },
+    {
+      src: "/fotosTargetes/fotosHorta/SliderTerra2.jpg",
+      alt: {
+        es: "Cultivo en la finca",
+        ca: "Conreu a la finca",
+        en: "Crops on the farm",
+      },
+      category: "finca" as const,
+    },
+    {
+      src: "/fotosTargetes/fotosPlaceta/SliderPlac1.jpg",
+      alt: {
+        es: "Placeta de Cal Masses",
+        ca: "Placeta de Cal Masses",
+        en: "Cal Masses courtyard",
+      },
+      category: "finca" as const,
+    },
+    {
+      src: "/fotosTargetes/fotosCaseta/SliderHab1.jpg",
+      alt: {
+        es: "Dormitorio de Cal Masses",
+        ca: "Dormitori de Cal Masses",
+        en: "Cal Masses bedroom",
+      },
+      category: "alojamiento" as const,
+    },
+    {
+      src: "/fotosTargetes/fotosCaseta/SliderHab3.jpg",
+      alt: {
+        es: "Dormitorio de Cal Masses",
+        ca: "Dormitori de Cal Masses",
+        en: "Cal Masses bedroom",
+      },
+      category: "alojamiento" as const,
+    },
+    {
+      src: "/images/hero-interior-1600.webp",
+      alt: {
+        es: "Interior del alojamiento",
+        ca: "Interior de l'allotjament",
+        en: "Accommodation interior",
+      },
+      category: "alojamiento" as const,
+    },
+    {
+      src: "/fotosTargetes/fotosCaseta/dinsnousoda.webp",
+      alt: {
+        es: "Sala de Cal Masses",
+        ca: "Sala de Cal Masses",
+        en: "Cal Masses living room",
+      },
+      category: "alojamiento" as const,
+    },
+    {
+      src: "/fotosTargetes/fotosCaseta/SliderMen2.jpg",
+      alt: {
+        es: "Cocina de Cal Masses",
+        ca: "Cuina de Cal Masses",
+        en: "Cal Masses kitchen",
+      },
+      category: "alojamiento" as const,
+    },
+    {
+      src: "/fotosTargetes/fotosCaseta/yacuzzi.webp",
+      alt: {
+        es: "Baño de Cal Masses",
+        ca: "Bany de Cal Masses",
+        en: "Cal Masses bathroom",
+      },
+      category: "alojamiento" as const,
+    },
+    {
+      src: "/images/sisu-1600.webp",
+      alt: {
+        es: "SISU, vino de Cal Masses",
+        ca: "SISU, vi de Cal Masses",
+        en: "SISU, Cal Masses wine",
+      },
+      category: "sisu" as const,
+    },
+    {
+      src: "/fotosVino/fotoplano.webp",
+      alt: {
+        es: "Botella de SISU",
+        ca: "Ampolla de SISU",
+        en: "SISU bottle",
+      },
+      category: "sisu" as const,
+    },
+  ] satisfies GalleryImage[],
 
   mapsEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2979.978258593224!2d1.7557528760743542!3d41.67781297126447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDQwJzQwLjEiTiAxwrA0NSczMC4wIkU!5e0!3m2!1ses!2ses!4v1713543105295!5m2!1ses!2ses",
@@ -163,6 +354,8 @@ export function isTodo(value: unknown): boolean {
     (value === TODO_DATA ||
       value === TODO_DATA_BOOKING_URL ||
       value === TODO_LEGAL_CONTENT ||
+      value === TODO_CONTENT_REVIEWS ||
+      value === TODO_IMAGE ||
       value.startsWith("TODO_"))
   );
 }

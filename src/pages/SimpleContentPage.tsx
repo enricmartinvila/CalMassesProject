@@ -75,7 +75,7 @@ export function SimpleContentPage({
             {content.cta.primaryRoute === "reservar" &&
             !isTodo(siteConfig.booking.url) ? (
               <CtaLink href={bookingHref()} external>
-                {content.ui.cta.bookAirbnb}
+                {bundle.ui.cta.availability}
               </CtaLink>
             ) : (
               <CtaLink

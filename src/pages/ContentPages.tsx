@@ -1,20 +1,11 @@
 import { siteConfig } from "../config/siteConfig";
 import { useLang } from "../hooks/useLang";
 import { SimpleContentPage } from "./SimpleContentPage";
+import { AlojamientoPage } from "./AlojamientoPage";
 import { SmartImage } from "../components/ui/SmartImage";
 import { Paragraphs, renderText } from "../components/ui/TodoMark";
 
-export function AlojamientoPage() {
-  const { content } = useLang();
-  return (
-    <SimpleContentPage
-      routeKey="alojamiento"
-      content={content.alojamiento}
-      breadcrumbName={content.ui.nav.alojamiento}
-      image={siteConfig.images.heroLcp}
-    />
-  );
-}
+export { AlojamientoPage };
 
 export function FincaPage() {
   const { content } = useLang();
@@ -47,8 +38,8 @@ export function SisuPage() {
           <div className="grid gap-8 lg:grid-cols-2">
             <SmartImage
               src={siteConfig.images.wineAlt}
-              alt=""
-              className="w-full rounded-3xl object-cover aspect-[4/3]"
+              alt="SISU"
+              className="w-full rounded-2xl object-cover aspect-[4/3]"
             />
             <div>
               <Paragraphs items={wine.paragraphs} />

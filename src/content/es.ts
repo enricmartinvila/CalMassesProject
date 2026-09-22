@@ -1,7 +1,7 @@
 import type { ContentBundle } from "./types";
 import { TODO_DATA, TODO_LEGAL_CONTENT } from "../config/siteConfig";
 
-/** Spanish editorial copy — exact strings from the brief. */
+/** Spanish editorial copy — exact strings from the quality brief. */
 export const contentEs: ContentBundle = {
   ui: {
     nav: {
@@ -10,7 +10,7 @@ export const contentEs: ContentBundle = {
       finca: "Cal Masses",
       sisu: "SISU",
       contacto: "Contacto",
-      reservar: "Reservar",
+      reservar: "Consultar disponibilidad",
       entorno: "El entorno",
       entornoBages: "El Bages",
       entornoMontserrat: "Montserrat",
@@ -18,16 +18,16 @@ export const contentEs: ContentBundle = {
       entornoEnoturismo: "Enoturismo",
     },
     cta: {
-      bookAirbnb: "Reservar en Airbnb",
-      bookBooking: "Reservar en Booking",
+      availability: "Consultar disponibilidad",
       contact: "Contactar",
-      discoverCalMasses: "Descubrir Cal Masses",
       seeAccommodation: "Ver el alojamiento",
+      seeAccommodationFull: "Ver el alojamiento completo",
       knowCalMasses: "Conocer Cal Masses",
       knowSisu: "Conocer SISU",
       discoverMontserrat: "Descubrir Montserrat",
       discoverManresa: "Descubrir Manresa",
       discoverBages: "Descubrir el Pla de Bages",
+      seeMoreReviews: "Ver más opiniones",
     },
     cookie: {
       message:
@@ -37,15 +37,15 @@ export const contentEs: ContentBundle = {
       settings: "Cookies",
     },
     footer: {
+      brandTitle: "Cal Masses",
+      stayTitle: "Tu estancia",
+      entornoTitle: "El entorno",
       legal: "Aviso legal",
       privacy: "Privacidad",
       cookies: "Cookies",
-      discoverTitle: "Descubre Cal Masses",
-      discoverBages: "Alojamiento rural en el Bages",
-      discoverManresa: "Cerca de Manresa",
-      discoverMontserrat: "Cerca de Montserrat",
-      discoverParaDos: "Escapada para dos",
-      discoverEnoturismo: "Enoturismo en el Pla de Bages",
+      paraDos: "Para dos",
+      piscina: "Piscina",
+      laFinca: "La finca",
     },
     notFound: {
       title: "Página no encontrada",
@@ -57,45 +57,72 @@ export const contentEs: ContentBundle = {
       data: "TODO_DATA",
     },
     reviewsEmpty: "Las reseñas se publicarán cuando haya testimonios aprobados.",
-    faqTitle: "Preguntas frecuentes",
+    faqTitle: "Antes de venir",
+    galleryTitle: "Galería",
+    galleryTabs: {
+      all: "Todas",
+      alojamiento: "Alojamiento",
+      exterior: "Exterior",
+      piscina: "Piscina",
+      finca: "Finca y viñedo",
+      sisu: "SISU",
+    },
     locationMapConsent:
       "El mapa de Google Maps se carga solo si aceptas cookies de terceros.",
     loadMap: "Mostrar mapa",
     breadcrumbHome: "Inicio",
     facts: {
       guests: "Huéspedes",
-      bedrooms: "Dormitorios",
+      bedrooms: "Dormitorio",
+      beds: "Camas",
+      bathrooms: "Baño",
       kitchen: "Cocina",
       pool: "Piscina",
-      poolUse: "Piscina (uso)",
+      poolUse: "Uso de la piscina",
       parking: "Parking",
+      wifi: "Wi-Fi",
+      climate: "Climatización",
+      location: "Ubicación",
+      checkIn: "Check-in",
+      checkOut: "Check-out",
+      pets: "Mascotas",
+      children: "Niños",
+      jacuzzi: "Jacuzzi",
+    },
+    poolLabels: {
+      use: "Uso",
+      season: "Temporada",
+      hours: "Horarios",
+      rules: "Normas",
+      type: "Tipo",
     },
   },
 
   home: {
     seo: {
-      title: "Una escapada para dos entre viñedos y naturaleza en el Bages | Cal Masses",
+      title:
+        "Una escapada para dos entre viñedos y naturaleza en el Bages | Cal Masses",
       description:
-        "Cal Masses es un alojamiento en Sant Salvador de Guardiola, rodeado de bosque, campo y viñedo, cerca de Manresa y Montserrat.",
+        "Cal Masses es un alojamiento en Sant Salvador de Guardiola, rodeado de campo, bosque y viñedo, cerca de Manresa y Montserrat.",
       h1: "Una escapada para dos entre viñedos y naturaleza en el Bages",
     },
     hero: {
       h1: "Una escapada para dos entre viñedos y naturaleza en el Bages",
       paragraphs: [
-        "Cal Masses es un alojamiento en Sant Salvador de Guardiola, rodeado de bosque, campo y viñedo, cerca de Manresa y Montserrat.",
-        "Un lugar donde bajar el ritmo, disfrutar del entorno y descubrir el Pla de Bages desde una finca con vida propia.",
+        "Cal Masses es un alojamiento en Sant Salvador de Guardiola, rodeado de campo, bosque y viñedo, cerca de Manresa y Montserrat.",
+        "Un lugar pequeño, pensado para dos personas, desde el que descubrir el Bages o simplemente pasar unos días sin demasiadas prisas.",
       ],
-      ctaPrimary: "Reservar en Airbnb",
-      ctaSecondary: "Descubrir Cal Masses",
+      ctaPrimary: "Consultar disponibilidad",
+      ctaSecondary: "Ver el alojamiento",
     },
     accommodation: {
       h2: "Un espacio para estar a tu aire",
       paragraphs: [
-        "Cal Masses está pensado para una estancia tranquila de dos personas, con los espacios necesarios para pasar unos días con comodidad y sin prisas.",
+        "Cal Masses está pensado para una estancia tranquila de dos personas, con los espacios necesarios para pasar unos días con comodidad y autonomía.",
         "Dentro encontrarás las zonas de descanso, cocina, baño y sala. Fuera empieza buena parte de lo que hace diferente la estancia: el campo, el viñedo, los caminos y la vida de la finca.",
-        "No queremos explicarte el alojamiento con una lista interminable de adjetivos. Aquí puedes ver los espacios, los servicios disponibles y todo lo que necesitas saber antes de venir.",
+        "No queremos explicarte el alojamiento con una lista interminable de adjetivos. Aquí puedes ver cómo es, qué servicios tiene y todo lo que necesitas saber antes de venir.",
       ],
-      cta: "Ver el alojamiento",
+      cta: "Ver el alojamiento completo",
     },
     finca: {
       h2: "No vienes solo a dormir",
@@ -104,20 +131,26 @@ export const contentEs: ContentBundle = {
         "Alrededor del alojamiento hay campo, bosque y viñedo. Cultivamos, hacemos nuestro propio vino y seguimos dando forma a un proyecto pequeño que nace de este lugar.",
         "La estancia forma parte de ese paisaje. No es un alojamiento colocado en medio del campo para parecer rural: el campo ya estaba aquí.",
       ],
+      h3: "Una finca que cambia con las estaciones",
+      h3Paragraphs: [
+        "Cal Masses no se ve igual en invierno que en primavera, verano o vendimia.",
+        "Cambian el viñedo, la luz, el campo y las tareas que hacemos.",
+        "Eso forma parte del lugar, aunque cada huésped decida cuánto quiere acercarse a esa parte de la finca.",
+      ],
       cta: "Conocer Cal Masses",
     },
     pool: {
       h2: "Fuera también pasan cosas",
       paragraphs: [
         "Buena parte de Cal Masses se disfruta fuera: desayunar sin prisas, leer, pasear, descansar o simplemente quedarse un rato mirando el paisaje.",
-        "La piscina forma parte de este espacio durante su temporada de uso.",
+        "Durante los meses más cálidos, la piscina forma parte de ese espacio exterior.",
       ],
     },
     surroundings: {
       h2: "Montserrat, Manresa y el Pla de Bages",
       paragraphs: [
         "Cal Masses está en Sant Salvador de Guardiola, en un punto desde el que es fácil combinar naturaleza, pueblos, patrimonio, vino y gastronomía.",
-        "Montserrat y Manresa son dos de las visitas más conocidas, pero el Pla de Bages merece también tiempo propio: viñedos, caminos, pequeñas bodegas y un paisaje que cambia mucho según la época del año.",
+        "Montserrat y Manresa son dos de las visitas más conocidas, pero el Pla de Bages merece también tiempo propio.",
       ],
       cards: [
         {
@@ -128,7 +161,7 @@ export const contentEs: ContentBundle = {
         },
         {
           title: "Manresa",
-          text: "Historia, patrimonio, gastronomía y servicios a pocos kilómetros de la finca.",
+          text: "Historia, patrimonio, gastronomía y servicios cerca de la finca, sin tener que alojarte dentro de la ciudad.",
           cta: "Descubrir Manresa",
           route: "landingManresa",
         },
@@ -152,37 +185,59 @@ export const contentEs: ContentBundle = {
     reviews: {
       h2: "Lo cuentan quienes ya han estado aquí",
     },
-    location: {
-      h2: "En el Bages, entre Manresa y Montserrat",
-      paragraphs: [
-        "Cal Masses está en Sant Salvador de Guardiola, en la comarca del Bages.",
-        "Desde aquí puedes moverte por el territorio durante el día y volver después a un entorno tranquilo, rodeado de campo y naturaleza.",
-      ],
-    },
     finalCta: {
       h2: "¿Te apetece pasar unos días en Cal Masses?",
       paragraphs: [
-        "Reserva en Airbnb y, si necesitas saber alguna cosa antes de venir, escríbenos.",
+        "Consulta las fechas disponibles y, si necesitas saber alguna cosa antes de venir, escríbenos.",
       ],
-      ctaPrimary: "Reservar en Airbnb",
+      ctaPrimary: "Consultar disponibilidad",
       ctaSecondary: "Contactar",
     },
   },
 
   alojamiento: {
     seo: {
-      title: "Alojamiento | Cal Masses",
+      title: "El alojamiento | Cal Masses",
       description:
-        "Cal Masses está pensado para una estancia tranquila de dos personas, con los espacios necesarios para pasar unos días con comodidad y sin prisas.",
-      h1: "Un espacio para estar a tu aire",
+        "Cal Masses es un alojamiento para dos personas dentro de una finca de Sant Salvador de Guardiola.",
+      h1: "El alojamiento",
     },
     intro: [
-      "Cal Masses está pensado para una estancia tranquila de dos personas, con los espacios necesarios para pasar unos días con comodidad y sin prisas.",
-      "Dentro encontrarás las zonas de descanso, cocina, baño y sala. Fuera empieza buena parte de lo que hace diferente la estancia: el campo, el viñedo, los caminos y la vida de la finca.",
-      "No queremos explicarte el alojamiento con una lista interminable de adjetivos. Aquí puedes ver los espacios, los servicios disponibles y todo lo que necesitas saber antes de venir.",
+      "Cal Masses es un alojamiento para dos personas dentro de una finca de Sant Salvador de Guardiola.",
+      "Está pensado para pasar unos días con autonomía, tanto si quieres recorrer el Bages como si prefieres disfrutar de la propia finca.",
     ],
-    sections: [],
-    cta: { primary: "Reservar en Airbnb", primaryRoute: "reservar" },
+    bedroom: {
+      h2: "Dormitorio",
+      paragraphs: ["TODO_CONTENT"],
+    },
+    living: {
+      h2: "Cocina / sala",
+      paragraphs: ["TODO_CONTENT"],
+    },
+    bathroom: {
+      h2: "Baño",
+      paragraphs: ["TODO_CONTENT"],
+    },
+    exterior: {
+      h2: "Exterior / piscina",
+      paragraphs: [
+        "Buena parte de Cal Masses se disfruta fuera. Durante los meses más cálidos, la piscina forma parte de ese espacio exterior.",
+      ],
+    },
+    services: { h2: "Servicios" },
+    rules: {
+      h2: "Normas básicas",
+      paragraphs: [
+        "Máximo 2 viajeros.",
+        "No se admiten mascotas.",
+        "No se permiten fiestas ni eventos.",
+      ],
+    },
+    checkTimes: { h2: "Check-in / check-out" },
+    cta: {
+      primary: "Consultar disponibilidad",
+      secondary: "Contactar",
+    },
   },
 
   finca: {
@@ -214,19 +269,25 @@ export const contentEs: ContentBundle = {
         ],
       },
     ],
+    cta: {
+      primary: "Consultar disponibilidad",
+      primaryRoute: "reservar",
+      secondary: "Ver el alojamiento",
+      secondaryRoute: "alojamiento",
+    },
   },
 
   sisu: {
     seo: {
       title: "SISU, vino hecho en Cal Masses | Cal Masses",
       description:
-        "SISU es nuestro pequeño proyecto de vino. Nace del viñedo, de las ganas de aprender y de una manera de elaborar en la que intentamos intervenir lo necesario.",
-      h1: "SISU, vino hecho en Cal Masses",
+        "SISU nace del mismo lugar. El viñedo forma parte de Cal Masses y cada añada explica, a su manera, una parte de lo que pasa en la finca.",
+      h1: "SISU",
     },
     intro: [
-      "SISU es nuestro pequeño proyecto de vino.",
-      "Nace del viñedo, de las ganas de aprender y de una manera de elaborar en la que intentamos intervenir lo necesario y respetar todo lo posible la uva y cada añada.",
-      "No buscamos que todos los vinos sean iguales. Precisamente nos interesa lo contrario: que cada año conserve algo propio.",
+      "SISU nace del mismo lugar.",
+      "El viñedo forma parte de Cal Masses y cada añada explica, a su manera, una parte de lo que pasa en la finca.",
+      "Hacemos pequeñas elaboraciones con una idea sencilla: intervenir lo necesario y dejar que la uva y el año tengan algo que decir.",
     ],
     sections: [],
     existingWine: {
@@ -241,7 +302,10 @@ export const contentEs: ContentBundle = {
       ],
       footer: "Raval del Sellarès — Sant Salvador de Guardiola",
     },
-    cta: { primary: "Reservar en Airbnb", primaryRoute: "reservar" },
+    cta: {
+      primary: "Consultar disponibilidad",
+      primaryRoute: "reservar",
+    },
   },
 
   contacto: {
@@ -261,22 +325,14 @@ export const contentEs: ContentBundle = {
 
   reservar: {
     seo: {
-      title: "Reservar | Cal Masses",
+      title: "Consultar disponibilidad | Cal Masses",
       description:
-        "Reserva Cal Masses en Airbnb. Si necesitas saber alguna cosa antes de venir, escríbenos.",
-      h1: "Reservar",
+        "Consulta las fechas disponibles en Airbnb. Si necesitas saber alguna cosa antes de venir, escríbenos.",
+      h1: "Consultar disponibilidad",
     },
     intro:
-      "Puedes reservar directamente en Airbnb. Si tienes alguna duda antes de venir, escríbenos.",
+      "Consulta las fechas disponibles en Airbnb. Si tienes alguna duda antes de venir, escríbenos.",
   },
-
-
-
-
-
-
-
-
 
   legal: {
     aviso: {
@@ -312,28 +368,28 @@ export const contentEs: ContentBundle = {
       answer:
         "Compartida. Está disponible para huéspedes en verano; los de la casa no suelen usarla si hay gente. Exterior, sin horario fijo: sentido común.",
     },
+    { question: "¿Hay cocina?", answer: "Sí" },
     {
       question: "¿Hay aparcamiento?",
       answer: "Sí, hay aparcamiento de sobra; cabe cualquier tipo de vehículo.",
     },
-    { question: "¿Hay cocina?", answer: "Sí" },
+    { question: "¿Hay Wi-Fi?", answer: "Sí" },
     { question: "¿Se admiten mascotas?", answer: "No." },
     { question: "¿Pueden alojarse niños?", answer: "Sí" },
     { question: "¿A qué hora es el check-in?", answer: "A partir de las 16:00." },
     { question: "¿A qué hora es el check-out?", answer: "Hasta las 11:00." },
     { question: "¿Cómo se llega?", answer: TODO_DATA },
     {
-      question: "¿A qué distancia está Montserrat?",
-      answer: "Aprox. 20 km / 40 min en coche.",
-    },
-    {
       question: "¿A qué distancia está Manresa?",
       answer: "Aprox. 11 km / 20 min en coche.",
     },
     {
-      question: "¿Cómo puedo reservar?",
-      answer:
-        "Puedes reservar en Airbnb, o contactar por WhatsApp o email.",
+      question: "¿A qué distancia está Montserrat?",
+      answer: "Aprox. 20 km / 40 min en coche.",
+    },
+    {
+      question: "¿Cómo puedo consultar disponibilidad?",
+      answer: "Puedes consultar disponibilidad en Airbnb, o contactar por WhatsApp o email.",
     },
     {
       question: "¿Cuál es la política de cancelación?",
