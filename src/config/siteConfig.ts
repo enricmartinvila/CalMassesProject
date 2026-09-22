@@ -121,9 +121,9 @@ export const siteConfig = {
         url: "https://www.airbnb.es/rooms/896856836379489751/reviews",
       },
       {
-        rating: "9,5",
+        rating: "9,9",
         scale: "10",
-        count: "4",
+        count: TODO_DATA,
         source: "Booking.com",
         url: "https://www.booking.com/hotel/es/cal-masses-st-salvador-de-guardiola.es.html",
       },

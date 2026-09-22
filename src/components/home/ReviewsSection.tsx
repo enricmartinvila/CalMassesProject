@@ -7,11 +7,7 @@ export function ReviewsSection({ title }: { title: string }) {
   const { sources, items } = siteConfig.reviews;
 
   const visibleSources = sources.filter(
-    (s) =>
-      !isTodo(s.rating) &&
-      !isTodo(s.count) &&
-      !isTodo(s.source) &&
-      !isTodo(s.url),
+    (s) => !isTodo(s.rating) && !isTodo(s.source) && !isTodo(s.url),
   );
 
   const hasQuotes = Array.isArray(items) && items.length > 0;
@@ -39,7 +35,8 @@ export function ReviewsSection({ title }: { title: string }) {
                   </span>
                 </p>
                 <p className="mt-2 text-sm md:text-base text-gray-600">
-                  {s.count} · {s.source}
+                  {!isTodo(s.count) ? `${s.count} · ` : null}
+                  {s.source}
                 </p>
                 <a
                   href={s.url}

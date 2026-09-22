@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { bookingHref, siteConfig, SUPPORTED_LANGS, type Lang } from "../../config/siteConfig";
+import { bookingHref, siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
-import { pathFor, resolveRouteKey, type RouteKey } from "../../i18n/routes";
+import { resolveRouteKey, type RouteKey } from "../../i18n/routes";
 import { CtaLink } from "../ui/CtaLink";
+import { LangSwitcher } from "./LangSwitcher";
 
 export function Header() {
   const { lang, content, path } = useLang();
@@ -29,11 +30,6 @@ export function Header() {
       lang,
       location.pathname.replace(new RegExp(`^/${lang}/?`), "").split("/"),
     ) ?? "home";
-
-  const switchLang = (next: Lang) => {
-    const key = currentKey === "entorno" ? "home" : currentKey;
-    return pathFor(next, key);
-  };
 
   const entornoLinks: Array<{ route: RouteKey; label: string }> = [
     { route: "landingBages", label: content.ui.nav.entornoBages },
@@ -146,23 +142,7 @@ export function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-3">
-          <label className="sr-only" htmlFor="lang-switch">
-            Language
-          </label>
-          <select
-            id="lang-switch"
-            className="appearance-none rounded-lg border-2 border-[#556B2F] bg-transparent py-1 pl-3 pr-8 text-sm font-bold text-[#556B2F]"
-            value={lang}
-            onChange={(e) => {
-              window.location.assign(switchLang(e.target.value as Lang));
-            }}
-          >
-            {SUPPORTED_LANGS.map((l) => (
-              <option key={l} value={l}>
-                {l === "ca" ? "Català" : l === "es" ? "Español" : "English"}
-              </option>
-            ))}
-          </select>
+          <LangSwitcher />
 
           <CtaLink
             href={bookingHref()}
