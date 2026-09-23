@@ -71,6 +71,11 @@ export const contentEs: ContentBundle = {
       "El mapa de Google Maps se carga solo si aceptas cookies de terceros.",
     loadMap: "Mostrar mapa",
     breadcrumbHome: "Inicio",
+    guide: {
+      tocTitle: "En esta guía",
+      keepDiscovering: "Sigue descubriendo",
+      fromCalMasses: "Desde Cal Masses",
+    },
     facts: {
       guests: "Huéspedes",
       bedrooms: "Dormitorio",
@@ -95,6 +100,9 @@ export const contentEs: ContentBundle = {
       hours: "Horarios",
       rules: "Normas",
       type: "Tipo",
+      loungers: "Tumbonas",
+      shade: "Zona de sombra",
+      distance: "Distancia al alojamiento",
     },
   },
 
@@ -197,44 +205,237 @@ export const contentEs: ContentBundle = {
 
   alojamiento: {
     seo: {
-      title: "El alojamiento | Cal Masses",
+      title: "El alojamiento | Cal Masses, Bages",
       description:
-        "Cal Masses es un alojamiento para dos personas dentro de una finca de Sant Salvador de Guardiola.",
+        "Descubre el alojamiento de Cal Masses: un espacio para dos en Sant Salvador de Guardiola con cocina, piscina y naturaleza en el Bages.",
       h1: "El alojamiento",
     },
-    intro: [
-      "Cal Masses es un alojamiento para dos personas dentro de una finca de Sant Salvador de Guardiola.",
-      "Está pensado para pasar unos días con autonomía, tanto si quieres recorrer el Bages como si prefieres disfrutar de la propia finca.",
-    ],
+    hero: {
+      paragraphs: [
+        "Cal Masses es un alojamiento entero para dos personas dentro de una finca de Sant Salvador de Guardiola, en el Bages.",
+        "Un espacio pequeño y tranquilo desde el que descubrir la comarca o simplemente pasar unos días entre campo, viñedo y naturaleza.",
+      ],
+      ctaSecondary: "Ver los espacios",
+    },
+    essentialsAria: "Datos esenciales del alojamiento",
+    essentialLabels: {
+      entirePlace: "Alojamiento entero",
+      guests: "2 huéspedes",
+      bedrooms: "1 dormitorio",
+      beds: "1 cama",
+      bathrooms: "1 baño",
+      kitchen: "Cocina",
+      pool: "Piscina",
+      wifi: "Wi-Fi",
+    },
+    gallery: {
+      seeAll: "Ver todas las fotos",
+      close: "Cerrar",
+    },
+    intro: {
+      h2: "Un espacio para estar a tu aire",
+      paragraphs: [
+        "Cal Masses está pensado para una estancia tranquila de dos personas, con los espacios necesarios para pasar unos días con comodidad y autonomía.",
+        "Dentro encontrarás dormitorio, cocina, baño y zona de estar. Fuera empieza buena parte de lo que hace diferente la estancia: el campo, el viñedo, los caminos y la vida de la finca.",
+        "Puedes utilizar Cal Masses como punto de partida para descubrir el Bages o simplemente quedarte y disfrutar del lugar.",
+      ],
+    },
     bedroom: {
-      h2: "Dormitorio",
-      paragraphs: ["TODO_CONTENT"],
+      h2: "El dormitorio",
+      paragraphs: [
+        "El dormitorio de Cal Masses está pensado para dos personas, con un ambiente sencillo y tranquilo para descansar al final del día.",
+        "Aquí no queremos añadir más cosas de las necesarias: una buena cama, calma y un espacio cómodo donde cerrar la puerta y descansar.",
+      ],
     },
     living: {
-      h2: "Cocina / sala",
-      paragraphs: ["TODO_CONTENT"],
+      h2: "Cocina y espacio para estar a tu aire",
+      paragraphs: [
+        "Una de las ventajas de alojarte en Cal Masses es poder organizar los días a tu manera.",
+        "La cocina permite preparar desayunos, comidas o cenas sin depender siempre de salir, y la zona de estar ofrece un espacio cómodo para descansar cuando apetece quedarse dentro.",
+      ],
+      equipmentTitle: "Equipamiento",
     },
     bathroom: {
-      h2: "Baño",
-      paragraphs: ["TODO_CONTENT"],
+      h2: "El baño",
+      paragraphs: [
+        "El alojamiento dispone de un baño completo para uso exclusivo de los huéspedes.",
+      ],
     },
     exterior: {
-      h2: "Exterior / piscina",
+      h2: "Piscina y vida exterior",
       paragraphs: [
-        "Buena parte de Cal Masses se disfruta fuera. Durante los meses más cálidos, la piscina forma parte de ese espacio exterior.",
+        "Durante los meses de buen tiempo, gran parte de Cal Masses se disfruta fuera.",
+        "La piscina, las zonas exteriores y el paisaje de la finca permiten pasar buena parte del día sin necesidad de salir.",
+        "Desayunar fuera, leer, darse un baño o simplemente quedarse un rato mirando el paisaje también forman parte de la estancia.",
       ],
     },
-    services: { h2: "Servicios" },
-    rules: {
-      h2: "Normas básicas",
+    privacy: {
+      h2: "Un alojamiento dentro de una finca viva",
       paragraphs: [
-        "Máximo 2 viajeros.",
-        "No se admiten mascotas.",
-        "No se permiten fiestas ni eventos.",
+        "Cal Masses está dentro de una finca donde también vivimos y trabajamos.",
+        "El alojamiento tiene sus propios espacios, pero forma parte de un lugar en el que continúa la actividad diaria de la finca, el campo y el viñedo.",
+        "Preferimos explicarlo con claridad para que sepas qué tipo de estancia vas a encontrar antes de venir.",
+      ],
+      h3: "¿Qué espacios son solo para vosotros?",
+      privateLabel: "Privado",
+      sharedLabel: "Compartido",
+      areaLabels: {
+        lodging: "Alojamiento",
+        pool: "Piscina",
+        terrace: "Terraza",
+        garden: "Jardín",
+        parking: "Parking",
+      },
+      knowFinca: "Conocer la finca",
+    },
+    services: {
+      h2: "Todo lo que encontrarás",
+      categories: {
+        kitchen: "Cocina",
+        comfort: "Confort",
+        exterior: "Exterior",
+        practical: "Práctico",
+        bedroomBath: "Dormitorio y baño",
+      },
+      items: {
+        entirePlace: "Alojamiento entero",
+        kitchen: "Cocina",
+        wifi: "Wi-Fi",
+        airConditioning: "Aire acondicionado",
+        heating: "Calefacción",
+        pool: "Piscina",
+        parking: "Parking",
+        jacuzzi: "Jacuzzi",
+        selfCheckIn: "Llegada autónoma",
+        washer: "Lavadora",
+        dryer: "Secadora",
+        linens: "Ropa de cama",
+        towels: "Toallas",
+        hairDryer: "Secador",
+      },
+    },
+    arrival: {
+      h2: "Llegar y empezar la estancia",
+      paragraphs: [
+        "Queremos que la llegada sea sencilla y que tengas la información necesaria antes de salir de casa.",
+        "Aquí encontrarás los horarios y las indicaciones básicas para organizar la estancia.",
+      ],
+      checkIn: "Entrada",
+      checkOut: "Salida",
+      selfCheckInTitle: "Llegada autónoma",
+      selfCheckInBody:
+        "Puedes realizar la llegada de forma autónoma siguiendo las instrucciones que recibirás antes de tu estancia.",
+      parkingTitle: "Aparcamiento",
+    },
+    fit: {
+      h2: "¿Es Cal Masses para ti?",
+      yesTitle: "Probablemente sí si...",
+      yesItems: [
+        "sois dos personas;",
+        "buscáis tranquilidad;",
+        "os gusta estar cerca del campo;",
+        "preferís un alojamiento pequeño a un complejo turístico;",
+        "queréis combinar descanso con Montserrat, Manresa o el Bages;",
+        "valoráis poder cocinar y organizar la estancia a vuestro ritmo.",
+      ],
+      noTitle: "Puede que no sea lo que buscas si...",
+      noItems: [
+        "viajáis en un grupo grande;",
+        "buscáis estar en el centro de una ciudad;",
+        "queréis los servicios propios de un hotel;",
+        "buscáis animación, recepción o restauración dentro del alojamiento.",
       ],
     },
-    checkTimes: { h2: "Check-in / check-out" },
-    cta: {
+    reviews: {
+      h2: "Lo cuentan quienes ya han estado aquí",
+    },
+    faq: {
+      h2: "Antes de reservar",
+      items: [
+        {
+          question: "¿El alojamiento es entero?",
+          answer: "Sí. Cal Masses es un alojamiento entero para dos personas.",
+        },
+        {
+          question: "¿Para cuántas personas es?",
+          answer: "Para 2 personas.",
+        },
+        {
+          question: "¿La piscina es privada o compartida?",
+          answer:
+            "Piscina compartida. Está disponible para huéspedes en verano; los de la casa no suelen usarla si hay gente. Exterior, sin horario fijo: sentido común.",
+        },
+        {
+          question: "¿Hay cocina equipada?",
+          answer: "Sí. Hay cocina.",
+        },
+        {
+          question: "¿Hay Wi-Fi?",
+          answer: "Sí.",
+        },
+        {
+          question: "¿Hay aire acondicionado y calefacción?",
+          answer: "Sí. Hay aire acondicionado y calefacción.",
+        },
+        {
+          question: "¿Hay aparcamiento?",
+          answer: "Sí, hay aparcamiento de sobra; cabe cualquier tipo de vehículo.",
+        },
+        {
+          question: "¿Se admiten mascotas?",
+          answer: "No.",
+        },
+        {
+          question: "¿Pueden alojarse niños?",
+          answer: "Sí.",
+        },
+        {
+          question: "¿Se puede fumar?",
+          answer: TODO_DATA,
+        },
+        {
+          question: "¿Se permiten fiestas o eventos?",
+          answer: "No se permiten fiestas ni eventos.",
+        },
+        {
+          question: "¿Cómo funciona el check-in?",
+          answer: "A partir de las 16:00.",
+        },
+        {
+          question: "¿Hay otros huéspedes en la finca?",
+          answer:
+            "Cal Masses está dentro de una finca donde también vivimos y trabajamos. El alojamiento tiene sus propios espacios.",
+        },
+        {
+          question: "¿Qué zonas son compartidas?",
+          answer: "La piscina es compartida.",
+        },
+        {
+          question: "¿Cómo puedo consultar disponibilidad?",
+          answer:
+            "Puedes consultar disponibilidad en Airbnb, o contactar por WhatsApp o email.",
+        },
+        {
+          question: "¿Cuál es la política de cancelación?",
+          answer: "Se indica en Airbnb al elegir las fechas de la reserva.",
+        },
+      ],
+    },
+    related: [
+      { label: "Descubrir el Bages", route: "landingBages" },
+      { label: "Alojamiento rural cerca de Manresa", route: "landingManresa" },
+      { label: "Alojamiento cerca de Montserrat", route: "landingMontserrat" },
+      {
+        label: "Descubrir el Pla de Bages y sus vinos",
+        route: "landingEnoturismo",
+      },
+      { label: "Conocer SISU", route: "sisu" },
+    ],
+    finalCta: {
+      h2: "¿Encaja con lo que buscas?",
+      paragraphs: [
+        "Consulta las fechas disponibles y, si necesitas resolver alguna duda antes de venir, escríbenos.",
+      ],
       primary: "Consultar disponibilidad",
       secondary: "Contactar",
     },

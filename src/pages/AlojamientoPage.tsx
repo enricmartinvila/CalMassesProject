@@ -1,12 +1,26 @@
-import { bookingHref, isTodo, siteConfig } from "../config/siteConfig";
+import { bookingHref, siteConfig } from "../config/siteConfig";
 import { useLang } from "../hooks/useLang";
 import { SeoHead } from "../components/seo/SeoHead";
-import { BreadcrumbJsonLd } from "../components/seo/JsonLd";
+import { Breadcrumbs } from "../components/landing/Breadcrumbs";
+import { FaqJsonLd, LodgingJsonLd } from "../components/seo/JsonLd";
 import { CtaLink } from "../components/ui/CtaLink";
 import { Paragraphs, renderText } from "../components/ui/TodoMark";
 import { SmartImage } from "../components/ui/SmartImage";
-import { ImageGallery } from "../components/home/ImageGallery";
-import { ServiceFacts, PoolFactsList } from "../components/home/QuickFacts";
+import { EssentialFacts } from "../components/alojamiento/EssentialFacts";
+import { FeaturedGallery } from "../components/alojamiento/FeaturedGallery";
+import {
+  BathroomFacts,
+  BedroomFacts,
+  KitchenEquipmentList,
+  ServicesGrid,
+} from "../components/alojamiento/ServicesAndFacts";
+import {
+  ArrivalSection,
+  FitSection,
+  PrivacySection,
+} from "../components/alojamiento/PrivacyArrivalFit";
+import { PoolFactsList } from "../components/home/QuickFacts";
+import { ReviewsSection } from "../components/home/ReviewsSection";
 import { FaqSection } from "../components/home/FaqSection";
 
 export function AlojamientoPage() {
@@ -25,168 +39,244 @@ export function AlojamientoPage() {
         description={t.seo.description}
         path={path("alojamiento")}
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: content.ui.breadcrumbHome, path: path("home") },
-          { name: t.seo.h1, path: path("alojamiento") },
-        ]}
-      />
+      <LodgingJsonLd />
+      <FaqJsonLd items={t.faq.items} />
 
       <article>
-        <header className="mx-auto max-w-6xl px-4 pt-10 pb-8 sm:px-6 lg:px-8">
-          <div className="max-w-[46rem] space-y-5">
-            <h1 className="text-3xl md:text-4xl font-light text-gray-900 tracking-tight">
-              {renderText(t.seo.h1)}
-            </h1>
-            <Paragraphs items={t.intro} />
+        {/* 1. HERO */}
+        <header className="mx-auto max-w-6xl px-4 pt-8 pb-10 sm:px-6 lg:px-8">
+          <Breadcrumbs
+            items={[
+              { label: content.ui.breadcrumbHome, route: "home" },
+              { label: t.seo.h1, route: "alojamiento" },
+            ]}
+          />
+
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12">
+            <div className="max-w-[40rem] space-y-5">
+              <h1 className="text-3xl md:text-4xl font-light text-gray-900 tracking-tight">
+                {renderText(t.seo.h1)}
+              </h1>
+              <Paragraphs items={t.hero.paragraphs} />
+              <div className="flex flex-wrap gap-3 pt-1">
+                <CtaLink href={bookingHref()} external>
+                  {content.ui.cta.availability}
+                </CtaLink>
+                <CtaLink href="#espacios" variant="secondary">
+                  {t.hero.ctaSecondary}
+                </CtaLink>
+              </div>
+            </div>
+
+            <SmartImage
+              src={siteConfig.images.exterior}
+              alt={
+                lang === "en"
+                  ? "Cal Masses accommodation exterior"
+                  : "Exterior del alojamiento de Cal Masses"
+              }
+              className="w-full rounded-2xl object-cover aspect-[4/3]"
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              priority
+              width={1600}
+              height={1200}
+            />
           </div>
         </header>
 
-        <SmartImage
-          src={siteConfig.images.interior}
-          alt={
-            lang === "en"
-              ? "Cal Masses accommodation"
-              : "Alojamiento de Cal Masses"
-          }
-          className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 w-full rounded-2xl object-cover aspect-[21/9]"
-          sizes="100vw"
-          srcSet="/images/hero-interior-800.webp 800w, /images/hero-interior-1600.webp 1600w"
-        />
+        {/* 2. DATOS ESENCIALES */}
+        <section className="border-y border-gray-100 bg-[#f7f7f4]">
+          <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8 md:py-10">
+            <EssentialFacts />
+          </div>
+        </section>
 
-        <ImageGallery categories={["alojamiento", "exterior", "piscina"]} />
+        {/* 3. GALERÍA */}
+        <section className="mx-auto max-w-6xl px-4 py-12 md:py-16 sm:px-6 lg:px-8">
+          <FeaturedGallery />
+        </section>
 
-        <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+        {/* 4. INTRODUCCIÓN */}
+        <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+          <div className="max-w-[46rem] space-y-5">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
+              {renderText(t.intro.h2)}
+            </h2>
+            <Paragraphs items={t.intro.paragraphs} />
+          </div>
+        </section>
+
+        {/* 5. DORMITORIO */}
+        <section className="bg-[#f7f7f4] py-16 md:py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
             <SmartImage
               src={siteConfig.images.bedroom}
               alt={
                 lang === "en" ? "Cal Masses bedroom" : "Dormitorio de Cal Masses"
               }
               className="w-full rounded-2xl object-cover aspect-[4/3]"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="max-w-[46rem] space-y-4">
-              <h2 className="text-2xl font-semibold text-gray-900">
+              <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
                 {renderText(t.bedroom.h2)}
               </h2>
               <Paragraphs items={t.bedroom.paragraphs} />
-              {!isTodo(siteConfig.capacity.beds) && (
-                <p className="text-sm text-gray-700">
-                  {content.ui.facts.beds}: {String(siteConfig.capacity.beds)}
-                </p>
-              )}
+              <BedroomFacts />
             </div>
           </div>
         </section>
 
-        <section className="bg-[#f7f7f4] py-12">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid gap-10 lg:grid-cols-2 lg:items-center">
+        {/* 6. COCINA Y ZONA DE ESTAR */}
+        <section className="py-16 md:py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
             <div className="max-w-[46rem] space-y-4 order-2 lg:order-1">
-              <h2 className="text-2xl font-semibold text-gray-900">
+              <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
                 {renderText(t.living.h2)}
               </h2>
               <Paragraphs items={t.living.paragraphs} />
+              <KitchenEquipmentList />
             </div>
             <div className="grid grid-cols-2 gap-3 order-1 lg:order-2">
               <SmartImage
                 src={siteConfig.images.living}
-                alt={lang === "en" ? "Living room" : "Sala"}
-                className="aspect-[4/3] w-full rounded-2xl object-cover"
+                alt={lang === "en" ? "Living room" : "Sala de Cal Masses"}
+                className="aspect-[4/3] w-full rounded-2xl object-cover col-span-2"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <SmartImage
                 src={siteConfig.images.kitchen}
-                alt={lang === "en" ? "Kitchen" : "Cocina"}
-                className="aspect-[4/3] w-full rounded-2xl object-cover"
+                alt={lang === "en" ? "Kitchen" : "Cocina de Cal Masses"}
+                className="aspect-[4/3] w-full rounded-2xl object-cover col-span-2 sm:col-span-1"
+                sizes="(max-width: 1024px) 100vw, 25vw"
+              />
+              <SmartImage
+                src={siteConfig.images.interior}
+                alt={
+                  lang === "en"
+                    ? "Accommodation interior"
+                    : "Interior del alojamiento"
+                }
+                className="aspect-[4/3] w-full rounded-2xl object-cover hidden sm:block"
+                sizes="(max-width: 1024px) 50vw, 25vw"
               />
             </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+        {/* 7. BAÑO */}
+        <section className="bg-[#f7f7f4] py-16 md:py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
             <SmartImage
               src={siteConfig.images.bathroom}
               alt={lang === "en" ? "Bathroom" : "Baño de Cal Masses"}
               className="w-full rounded-2xl object-cover aspect-[4/3]"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="max-w-[46rem] space-y-4">
-              <h2 className="text-2xl font-semibold text-gray-900">
+              <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
                 {renderText(t.bathroom.h2)}
               </h2>
               <Paragraphs items={t.bathroom.paragraphs} />
-              {siteConfig.amenities.jacuzzi === true && (
-                <p className="text-sm text-gray-700">
-                  {content.ui.facts.jacuzzi}: ✓
-                </p>
-              )}
+              <BathroomFacts />
             </div>
           </div>
         </section>
 
-        {showPool && (
-          <section className="bg-[#f7f7f4] py-12">
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid gap-10 lg:grid-cols-2 lg:items-center">
-              <div className="max-w-[46rem] space-y-4">
-                <h2 className="text-2xl font-semibold text-gray-900">
-                  {renderText(t.exterior.h2)}
-                </h2>
-                <Paragraphs items={t.exterior.paragraphs} />
-                <PoolFactsList />
-              </div>
+        {/* 8. PISCINA Y EXTERIORES */}
+        {showPool ? (
+          <section className="py-16 md:py-20">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-10">
               <SmartImage
                 src={siteConfig.images.pool}
-                alt={lang === "en" ? "Pool" : "Piscina de Cal Masses"}
-                className="w-full rounded-2xl object-cover aspect-[4/3]"
+                alt={lang === "en" ? "Cal Masses pool" : "Piscina de Cal Masses"}
+                className="w-full rounded-2xl object-cover aspect-[21/9] min-h-[14rem]"
+                sizes="100vw"
               />
+              <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
+                <div className="max-w-[46rem] space-y-4">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
+                    {renderText(t.exterior.h2)}
+                  </h2>
+                  <Paragraphs items={t.exterior.paragraphs} />
+                </div>
+                <div>
+                  <PoolFactsList />
+                  <div className="mt-6 grid grid-cols-2 gap-3">
+                    <SmartImage
+                      src={siteConfig.images.terrace}
+                      alt={lang === "en" ? "Terrace" : "Terraza"}
+                      className="aspect-[4/3] w-full rounded-2xl object-cover"
+                      sizes="(max-width: 1024px) 50vw, 25vw"
+                    />
+                    <SmartImage
+                      src={siteConfig.images.poolAlt}
+                      alt={
+                        lang === "en" ? "Outdoor area" : "Zona exterior"
+                      }
+                      className="aspect-[4/3] w-full rounded-2xl object-cover"
+                      sizes="(max-width: 1024px) 50vw, 25vw"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
-        )}
+        ) : null}
 
-        <section className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-            {renderText(t.services.h2)}
-          </h2>
-          <ServiceFacts />
+        {/* 9. PRIVACIDAD */}
+        <PrivacySection />
+
+        {/* 10. SERVICIOS */}
+        <section className="bg-[#f7f7f4] py-16 md:py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-10 max-w-[46rem]">
+              {renderText(t.services.h2)}
+            </h2>
+            <ServicesGrid />
+          </div>
         </section>
 
-        <section className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            {renderText(t.rules.h2)}
-          </h2>
-          <Paragraphs items={t.rules.paragraphs} />
-        </section>
+        {/* 11. LLEGADA */}
+        <ArrivalSection />
 
-        <section className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            {renderText(t.checkTimes.h2)}
-          </h2>
-          <ul className="space-y-2 text-gray-700">
-            {!isTodo(siteConfig.checkIn) && (
-              <li>
-                {content.ui.facts.checkIn}: {String(siteConfig.checkIn)}
-              </li>
-            )}
-            {!isTodo(siteConfig.checkOut) && (
-              <li>
-                {content.ui.facts.checkOut}: {String(siteConfig.checkOut)}
-              </li>
-            )}
-            {!isTodo(siteConfig.cancellationPolicy) && (
-              <li>{String(siteConfig.cancellationPolicy)}</li>
-            )}
-          </ul>
-        </section>
+        {/* 12. ¿ES PARA TI? */}
+        <FitSection />
 
-        <FaqSection title={content.ui.faqTitle} items={content.faq} />
+        {/* 13. OPINIONES */}
+        <ReviewsSection title={t.reviews.h2} />
 
-        <section className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-3">
-            <CtaLink href={bookingHref()} external>
-              {t.cta.primary}
-            </CtaLink>
-            <CtaLink to={path("contacto")} variant="secondary">
-              {t.cta.secondary}
-            </CtaLink>
+        {/* 14. FAQ */}
+        <FaqSection title={t.faq.h2} items={t.faq.items} />
+
+        {/* 15. CTA FINAL */}
+        <section className="bg-[#556B2F] text-white py-16 md:py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[40rem] space-y-6">
+              <h2 className="text-2xl md:text-3xl font-semibold">
+                {renderText(t.finalCta.h2)}
+              </h2>
+              <Paragraphs
+                items={t.finalCta.paragraphs}
+                className="text-white/90"
+              />
+              <div className="flex flex-wrap gap-3">
+                <CtaLink
+                  href={bookingHref()}
+                  external
+                  className="!bg-white !text-[#556B2F] hover:!bg-gray-100"
+                >
+                  {t.finalCta.primary}
+                </CtaLink>
+                <CtaLink
+                  to={path("contacto")}
+                  variant="secondary"
+                  className="!bg-transparent !border-2 !border-white !text-white hover:!bg-white/15"
+                >
+                  {t.finalCta.secondary}
+                </CtaLink>
+              </div>
+            </div>
           </div>
         </section>
       </article>

@@ -33,3 +33,20 @@ img {
 summary::-webkit-details-marker {
   display: none;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .env-fade {
+    animation: env-fade-up 0.55s ease both;
+  }
+}
+
+@keyframes env-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

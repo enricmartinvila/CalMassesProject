@@ -1,4 +1,4 @@
-import { isTodo, siteConfig } from "../../config/siteConfig";
+import { isConfirmedTrue, isTodo, siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 import { PoolFactsList } from "../home/QuickFacts";
 
@@ -25,11 +25,17 @@ export function FeatureGrid() {
   if (siteConfig.amenities.pool.available) {
     facts.push({ label: f.pool, value: "✓" });
   }
-  if (!isTodo(siteConfig.amenities.parking)) {
-    facts.push({ label: f.parking, value: String(siteConfig.amenities.parking) });
+  if (
+    siteConfig.amenities.parking.available &&
+    !isTodo(siteConfig.amenities.parking.detail)
+  ) {
+    facts.push({
+      label: f.parking,
+      value: String(siteConfig.amenities.parking.detail),
+    });
   }
-  if (!isTodo(siteConfig.amenities.wifi)) {
-    facts.push({ label: f.wifi, value: String(siteConfig.amenities.wifi) });
+  if (isConfirmedTrue(siteConfig.amenities.wifi)) {
+    facts.push({ label: f.wifi, value: "✓" });
   }
   if (!isTodo(siteConfig.amenities.climateControl)) {
     facts.push({

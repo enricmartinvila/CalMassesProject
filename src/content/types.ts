@@ -72,8 +72,13 @@ export type UiCopy = {
   };
   locationMapConsent: string;
   loadMap: string;
-  breadcrumbHome: string;
-  facts: {
+    breadcrumbHome: string;
+    guide: {
+      tocTitle: string;
+      keepDiscovering: string;
+      fromCalMasses: string;
+    };
+    facts: {
     guests: string;
     bedrooms: string;
     beds: string;
@@ -91,14 +96,17 @@ export type UiCopy = {
     children: string;
     jacuzzi: string;
   };
-  poolLabels: {
-    use: string;
-    season: string;
-    hours: string;
-    rules: string;
-    type: string;
+    poolLabels: {
+      use: string;
+      season: string;
+      hours: string;
+      rules: string;
+      type: string;
+      loungers: string;
+      shade: string;
+      distance: string;
+    };
   };
-};
 
 export type HomeContent = {
   seo: PageSeo;
@@ -152,16 +160,120 @@ export type HomeContent = {
 
 export type AlojamientoPageContent = {
   seo: PageSeo;
-  intro: string[];
-  bedroom: { h2: string; paragraphs: string[] };
-  living: { h2: string; paragraphs: string[] };
-  bathroom: { h2: string; paragraphs: string[] };
-  exterior: { h2: string; paragraphs: string[] };
-  services: { h2: string };
-  rules: { h2: string; paragraphs: string[] };
-  checkTimes: { h2: string };
-  cta: { primary: string; secondary: string };
+  hero: {
+    paragraphs: string[];
+    ctaSecondary: string;
+  };
+  essentialsAria: string;
+  gallery: {
+    seeAll: string;
+    close: string;
+  };
+  intro: {
+    h2: string;
+    paragraphs: string[];
+  };
+  bedroom: {
+    h2: string;
+    paragraphs: string[];
+  };
+  living: {
+    h2: string;
+    paragraphs: string[];
+    equipmentTitle: string;
+  };
+  bathroom: {
+    h2: string;
+    paragraphs: string[];
+  };
+  exterior: {
+    h2: string;
+    paragraphs: string[];
+  };
+  privacy: {
+    h2: string;
+    paragraphs: string[];
+    h3: string;
+    privateLabel: string;
+    sharedLabel: string;
+    areaLabels: {
+      lodging: string;
+      pool: string;
+      terrace: string;
+      garden: string;
+      parking: string;
+    };
+    knowFinca: string;
+  };
+  services: {
+    h2: string;
+    categories: {
+      kitchen: string;
+      comfort: string;
+      exterior: string;
+      practical: string;
+      bedroomBath: string;
+    };
+    items: {
+      entirePlace: string;
+      kitchen: string;
+      wifi: string;
+      airConditioning: string;
+      heating: string;
+      pool: string;
+      parking: string;
+      jacuzzi: string;
+      selfCheckIn: string;
+      washer: string;
+      dryer: string;
+      linens: string;
+      towels: string;
+      hairDryer: string;
+    };
+  };
+  arrival: {
+    h2: string;
+    paragraphs: string[];
+    checkIn: string;
+    checkOut: string;
+    selfCheckInTitle: string;
+    selfCheckInBody: string;
+    parkingTitle: string;
+  };
+  fit: {
+    h2: string;
+    yesTitle: string;
+    yesItems: string[];
+    noTitle: string;
+    noItems: string[];
+  };
+  reviews: {
+    h2: string;
+  };
+  faq: {
+    h2: string;
+    items: FaqItem[];
+  };
+  related: Array<{ label: string; route: RouteKey }>;
+  finalCta: {
+    h2: string;
+    paragraphs: string[];
+    primary: string;
+    secondary: string;
+  };
+  /** Short essential-fact labels (icon row). */
+  essentialLabels: {
+    entirePlace: string;
+    guests: string;
+    bedrooms: string;
+    beds: string;
+    bathrooms: string;
+    kitchen: string;
+    pool: string;
+    wifi: string;
+  };
 };
+
 
 export type SimplePageContent = {
   seo: PageSeo;

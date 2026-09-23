@@ -27,6 +27,10 @@ export type GalleryImage = {
   category: GalleryCategoryId;
 };
 
+export type AreaPrivacy = "private" | "shared";
+
+export type AmenityFlag = true | false | typeof TODO_DATA;
+
 export const siteConfig = {
   brandName: "Cal Masses",
   wineBrandName: "SISU",
@@ -35,6 +39,9 @@ export const siteConfig = {
 
   lodgingCategory: TODO_DATA,
   registrationNumber: TODO_DATA,
+
+  /** Entire place (alojamiento entero), not a room in a shared home. */
+  entirePlace: true as const,
 
   address: {
     line: "Raval del Sellarès, Cal Masses, s/n",
@@ -62,29 +69,82 @@ export const siteConfig = {
   capacity: {
     guests: 2,
     bedrooms: 1,
-    beds: "1 cama",
-    bathrooms: "1 (con jacuzzi)",
+    beds: 1,
+    /** Unconfirmed detail beyond count. */
+    bedType: TODO_DATA,
+    bedSize: TODO_DATA,
+    bathrooms: 1,
   },
 
   amenities: {
-    kitchen: true,
-    nature: true,
-    pool: {
-      available: true,
-      confirmedForGuests: true,
-      privateOrShared: "compartida",
-      season: "verano",
-      hours: "sin horario fijo",
-      rules: "sentido común",
-      type: "exterior de agua salada",
+    kitchen: true as const,
+    /** Individual kitchen items — only show when confirmed true. */
+    kitchenEquipment: {
+      fridge: TODO_DATA,
+      freezer: TODO_DATA,
+      stovetop: TODO_DATA,
+      oven: TODO_DATA,
+      microwave: TODO_DATA,
+      coffeeMaker: TODO_DATA,
+      toaster: TODO_DATA,
+      kettle: TODO_DATA,
+      cookware: TODO_DATA,
+      dishes: TODO_DATA,
+      glasses: TODO_DATA,
+      diningTable: TODO_DATA,
+      tv: TODO_DATA,
     },
-    jacuzzi: true,
-    parking: "Sí, gratis in situ",
-    wifi: "Sí",
+    wifi: true as const,
+    airConditioning: true as const,
+    heating: true as const,
+    /** Legacy combined string kept for older UI that still reads it. */
     climateControl: "Aire acondicionado y calefacción",
-    petsAllowed: false,
-    childrenAllowed: true,
+    washer: TODO_DATA,
+    dryer: TODO_DATA,
+    linens: TODO_DATA,
+    towels: TODO_DATA,
+    hairDryer: TODO_DATA,
+    toiletries: TODO_DATA,
+    hotWater: TODO_DATA,
+    shower: TODO_DATA,
+    bathtub: TODO_DATA,
+    jacuzzi: true as const,
+    bbq: TODO_DATA,
+    terrace: TODO_DATA,
+    garden: TODO_DATA,
+    pool: {
+      available: true as const,
+      confirmedForGuests: true as const,
+      privateOrShared: "shared" as const,
+      /** Display labels live in content; raw key for logic. */
+      season: "verano" as const,
+      hours: "sin horario fijo" as const,
+      rules: "sentido común" as const,
+      type: "exterior de agua salada" as const,
+      loungers: TODO_DATA,
+      shade: TODO_DATA,
+      distanceFromLodging: TODO_DATA,
+    },
+    parking: {
+      available: true as const,
+      detail: "Sí, gratis in situ",
+      privacy: TODO_DATA,
+    },
+    selfCheckIn: TODO_DATA,
+    petsAllowed: false as const,
+    childrenAllowed: true as const,
+    smokingAllowed: TODO_DATA,
+    eventsAllowed: false as const,
   },
+
+  /**
+   * Confirmed guest access only.
+   * Do not list areas until privacy is confirmed.
+   */
+  areas: [
+    { id: "lodging" as const, privacy: "private" as const },
+    { id: "pool" as const, privacy: "shared" as const },
+  ],
 
   checkIn: "16:00",
   checkOut: "11:00",
@@ -142,7 +202,6 @@ export const siteConfig = {
     logo: "/images/logo-400.webp",
     favicon: "/favicon-32.png",
     ogDefault: "/images/og-calmasses.jpg",
-    /** Exterior LCP for home hero — SmartImage derives 400/800/1600 srcset. */
     heroLcp: "/images/exterior-1600.webp",
     exterior: "/images/exterior-1600.webp",
     vineyard: "/images/hero-vinyes-1600.webp",
@@ -162,6 +221,16 @@ export const siteConfig = {
     placeta: "/images/placeta-1600.webp",
     montserrat: "TODO_IMAGE_MONTSERRAT",
   },
+
+  /** Featured strip on /alojamiento before opening the full lightbox. */
+  alojamientoFeatured: [
+    { src: "/images/exterior-1600.webp", category: "exterior" as const },
+    { src: "/images/bedroom-1600.webp", category: "alojamiento" as const },
+    { src: "/images/kitchen-1600.webp", category: "alojamiento" as const },
+    { src: "/images/bathroom-1600.webp", category: "alojamiento" as const },
+    { src: "/images/pool-1600.webp", category: "piscina" as const },
+    { src: "/images/hero-vinyes-1600.webp", category: "finca" as const },
+  ],
 
   gallery: [
     {
@@ -361,8 +430,33 @@ export function isTodo(value: unknown): boolean {
   );
 }
 
+export function isConfirmedTrue(value: unknown): value is true {
+  return value === true;
+}
+
 export function bookingHref(): string {
   const url = siteConfig.booking.url;
   if (isTodo(url)) return "#reservar";
   return url as string;
+}
+
+/** Pool use label for UI — never ambiguous. */
+export function poolPrivacyLabel(lang: Lang): string | null {
+  const privacy = siteConfig.amenities.pool.privateOrShared;
+  if (isTodo(privacy)) return null;
+  if (privacy === "shared") {
+    return lang === "en"
+      ? "Shared pool"
+      : lang === "ca"
+        ? "Piscina compartida"
+        : "Piscina compartida";
+  }
+  if (privacy === "private") {
+    return lang === "en"
+      ? "Private pool"
+      : lang === "ca"
+        ? "Piscina privada"
+        : "Piscina privada";
+  }
+  return null;
 }

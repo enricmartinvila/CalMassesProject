@@ -6,7 +6,13 @@ import type { RouteKey } from "../../i18n/routes";
 
 type Crumb = { label: string; route?: RouteKey };
 
-export function Breadcrumbs({ items }: { items: Crumb[] }) {
+export function Breadcrumbs({
+  items,
+  variant = "default",
+}: {
+  items: Crumb[];
+  variant?: "default" | "editorial" | "onDark";
+}) {
   const { path } = useLang();
 
   const jsonItems = items.map((item, index) => ({
@@ -19,6 +25,19 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
           : undefined,
   }));
 
+  const tone =
+    variant === "onDark"
+      ? "text-white/60"
+      : variant === "editorial"
+        ? "text-gray-400"
+        : "text-gray-500";
+  const current =
+    variant === "onDark" ? "text-white/85" : "text-gray-700";
+  const hover =
+    variant === "onDark"
+      ? "hover:text-white"
+      : "hover:text-[#556B2F] hover:underline";
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -27,20 +46,22 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
           path: j.path,
         }))}
       />
-      <nav aria-label="Breadcrumb" className="mb-8 text-sm text-gray-500">
-        <ol className="flex flex-wrap items-center gap-2">
+      <nav
+        aria-label="Breadcrumb"
+        className={`text-xs tracking-wide ${tone} ${
+          variant === "default" ? "mb-8" : "mb-0"
+        }`}
+      >
+        <ol className="flex flex-wrap items-center gap-1.5">
           {items.map((item, i) => {
             const isLast = i === items.length - 1;
             return (
-              <li key={`${item.label}-${i}`} className="flex items-center gap-2">
+              <li key={`${item.label}-${i}`} className="flex items-center gap-1.5">
                 {i > 0 && <span aria-hidden>/</span>}
                 {isLast || !item.route ? (
-                  <span className="text-gray-800">{renderText(item.label)}</span>
+                  <span className={current}>{renderText(item.label)}</span>
                 ) : (
-                  <Link
-                    to={path(item.route)}
-                    className="hover:text-[#556B2F] hover:underline"
-                  >
+                  <Link to={path(item.route)} className={hover}>
                     {renderText(item.label)}
                   </Link>
                 )}

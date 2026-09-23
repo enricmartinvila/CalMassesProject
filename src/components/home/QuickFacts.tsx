@@ -1,4 +1,9 @@
-import { isTodo, siteConfig } from "../../config/siteConfig";
+import {
+  isConfirmedTrue,
+  isTodo,
+  poolPrivacyLabel,
+  siteConfig,
+} from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 
 type Fact = { label: string; value: string };
@@ -21,11 +26,17 @@ export function QuickFacts({ className = "" }: { className?: string }) {
   if (siteConfig.amenities.pool.available) {
     facts.push({ label: f.pool, value: "✓" });
   }
-  if (!isTodo(siteConfig.amenities.parking)) {
-    facts.push({ label: f.parking, value: String(siteConfig.amenities.parking) });
+  if (
+    siteConfig.amenities.parking.available &&
+    !isTodo(siteConfig.amenities.parking.detail)
+  ) {
+    facts.push({
+      label: f.parking,
+      value: String(siteConfig.amenities.parking.detail),
+    });
   }
-  if (!isTodo(siteConfig.amenities.wifi)) {
-    facts.push({ label: f.wifi, value: String(siteConfig.amenities.wifi) });
+  if (isConfirmedTrue(siteConfig.amenities.wifi)) {
+    facts.push({ label: f.wifi, value: "✓" });
   }
   facts.push({
     label: f.location,
@@ -55,7 +66,7 @@ export function QuickFacts({ className = "" }: { className?: string }) {
 
 /** Service list for accommodation section / page. */
 export function ServiceFacts({ className = "" }: { className?: string }) {
-  const { content } = useLang();
+  const { lang, content } = useLang();
   const f = content.ui.facts;
   const rows: Fact[] = [];
 
@@ -80,22 +91,26 @@ export function ServiceFacts({ className = "" }: { className?: string }) {
       value: String(siteConfig.amenities.climateControl),
     });
   }
-  if (!isTodo(siteConfig.amenities.wifi)) {
-    rows.push({ label: f.wifi, value: String(siteConfig.amenities.wifi) });
+  if (isConfirmedTrue(siteConfig.amenities.wifi)) {
+    rows.push({ label: f.wifi, value: "✓" });
   }
-  if (!isTodo(siteConfig.amenities.parking)) {
+  if (
+    siteConfig.amenities.parking.available &&
+    !isTodo(siteConfig.amenities.parking.detail)
+  ) {
     rows.push({
       label: f.parking,
-      value: String(siteConfig.amenities.parking),
+      value: String(siteConfig.amenities.parking.detail),
     });
   }
   if (siteConfig.amenities.pool.available) {
+    const privacy = poolPrivacyLabel(lang);
     rows.push({
       label: f.pool,
-      value: String(siteConfig.amenities.pool.privateOrShared),
+      value: privacy ?? "✓",
     });
   }
-  if (siteConfig.amenities.jacuzzi === true) {
+  if (isConfirmedTrue(siteConfig.amenities.jacuzzi)) {
     rows.push({ label: f.jacuzzi, value: "✓" });
   }
 
@@ -117,13 +132,14 @@ export function ServiceFacts({ className = "" }: { className?: string }) {
 }
 
 export function PoolFactsList({ className = "" }: { className?: string }) {
-  const { content } = useLang();
+  const { lang, content } = useLang();
   const pool = siteConfig.amenities.pool;
   const labels = content.ui.poolLabels;
   const rows: Fact[] = [];
 
-  if (!isTodo(pool.privateOrShared)) {
-    rows.push({ label: labels.use, value: String(pool.privateOrShared) });
+  const privacy = poolPrivacyLabel(lang);
+  if (privacy) {
+    rows.push({ label: labels.use, value: privacy });
   }
   if (!isTodo(pool.season)) {
     rows.push({ label: labels.season, value: String(pool.season) });
@@ -136,6 +152,18 @@ export function PoolFactsList({ className = "" }: { className?: string }) {
   }
   if (!isTodo(pool.type)) {
     rows.push({ label: labels.type, value: String(pool.type) });
+  }
+  if (!isTodo(pool.loungers)) {
+    rows.push({ label: labels.loungers, value: String(pool.loungers) });
+  }
+  if (!isTodo(pool.shade)) {
+    rows.push({ label: labels.shade, value: String(pool.shade) });
+  }
+  if (!isTodo(pool.distanceFromLodging)) {
+    rows.push({
+      label: labels.distance,
+      value: String(pool.distanceFromLodging),
+    });
   }
 
   if (!rows.length) return null;
