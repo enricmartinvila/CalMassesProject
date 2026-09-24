@@ -130,7 +130,7 @@ try {
   const rootHtml = `<!DOCTYPE html><html lang="es"><head>
 <meta charset="UTF-8"/>
 <meta http-equiv="refresh" content="0;url=/es"/>
-<link rel="canonical" href="https://calmasses.com/es"/>
+<link rel="canonical" href="https://www.calmasses.com/es"/>
 <title>Cal Masses</title>
 </head><body><p><a href="/es">Cal Masses</a></p></body></html>`;
   fs.writeFileSync(path.join(dist, "index.html"), rootHtml);

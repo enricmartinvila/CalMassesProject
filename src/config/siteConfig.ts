@@ -35,7 +35,7 @@ export const siteConfig = {
   brandName: "Cal Masses",
   wineBrandName: "SISU",
 
-  siteUrl: "https://calmasses.com",
+  siteUrl: "https://www.calmasses.com",
 
   lodgingCategory: TODO_DATA,
   registrationNumber: TODO_DATA,

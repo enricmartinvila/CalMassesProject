@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const siteUrl = "https://calmasses.com";
+const siteUrl = "https://www.calmasses.com";
 
 /** Published SEO URLs only. */
 const pages = {

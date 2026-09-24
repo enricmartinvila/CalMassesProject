@@ -34,6 +34,28 @@
       ]
     }
   ],
+  "redirects": [
+    {
+      "source": "/es/alojamiento-cerca-manresa",
+      "destination": "/es/alojamiento-rural-cerca-manresa",
+      "permanent": true
+    },
+    {
+      "source": "/es/escapada-para-dos",
+      "destination": "/es/alojamiento-rural-para-dos-bages",
+      "permanent": true
+    },
+    {
+      "source": "/ca/escapada-per-a-dos",
+      "destination": "/ca/allotjament-rural-per-a-dos-bages",
+      "permanent": true
+    },
+    {
+      "source": "/en/getaway-for-two",
+      "destination": "/en/rural-accommodation-for-two-bages",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!assets/|images/|fotos|fotosTargetes|fotosVino|logo|font|robots.txt|sitemap.xml|favicon|apple-touch-icon).*)",

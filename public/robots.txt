@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://calmasses.com/sitemap.xml
+Sitemap: https://www.calmasses.com/sitemap.xml
