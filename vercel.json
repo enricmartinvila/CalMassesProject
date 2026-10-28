@@ -36,6 +36,11 @@
   ],
   "redirects": [
     {
+      "source": "/",
+      "destination": "/es",
+      "permanent": false
+    },
+    {
       "source": "/es/alojamiento-cerca-manresa",
       "destination": "/es/alojamiento-rural-cerca-manresa",
       "permanent": true
