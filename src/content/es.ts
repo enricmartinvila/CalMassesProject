@@ -586,7 +586,7 @@ export const contentEs: ContentBundle = {
     },
     {
       question: "¿A qué distancia está Montserrat?",
-      answer: "Aprox. 20 km / 40 min en coche.",
+      answer: "Aprox. 20 km /25 min en coche.",
     },
     {
       question: "¿Cómo puedo consultar disponibilidad?",

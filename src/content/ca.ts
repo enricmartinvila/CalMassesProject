@@ -586,7 +586,7 @@ export const contentCa: ContentBundle = {
     },
     {
       question: "A quina distància és Montserrat?",
-      answer: "Aprox. 20 km / 40 min en cotxe.",
+      answer: "Aprox. 20 km /25 min en cotxe.",
     },
     {
       question: "Com puc consultar la disponibilitat?",
