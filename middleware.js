@@ -7,6 +7,20 @@
 
 const LANGS = new Set(["es", "ca", "en"]);
 
+/** Root-level legacy URLs that vercel.json redirects to a current page. */
+const LEGACY_ROOT_PATHS = new Set([
+  "/index.html",
+  "/home",
+  "/alojamiento",
+  "/cal-masses",
+  "/sisu",
+  "/contacto",
+  "/contacte",
+  "/contact",
+  "/reservar",
+  "/book",
+]);
+
 /** Slugs allowed under /:lang/… (includes legacy paths that vercel.json redirects). */
 const SLUGS = new Set([
   // core
@@ -73,6 +87,7 @@ const STATIC_EXACT = new Set([
   "/favicon-32.png",
   "/favicon.ico",
   "/apple-touch-icon.png",
+  "/apple-touch-icon-precomposed.png",
 ]);
 
 function isStatic(pathname) {
@@ -85,6 +100,7 @@ function isStatic(pathname) {
 function isKnownAppPath(pathname) {
   const clean = pathname.replace(/\/+$/, "") || "/";
   if (clean === "/") return true;
+  if (LEGACY_ROOT_PATHS.has(clean)) return true;
 
   const parts = clean.slice(1).split("/");
   const lang = parts[0];

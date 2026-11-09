@@ -41,6 +41,66 @@
       "permanent": false
     },
     {
+      "source": "/index.html",
+      "destination": "/es",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/es",
+      "permanent": true
+    },
+    {
+      "source": "/alojamiento",
+      "destination": "/es/alojamiento",
+      "permanent": true
+    },
+    {
+      "source": "/cal-masses",
+      "destination": "/es/cal-masses",
+      "permanent": true
+    },
+    {
+      "source": "/sisu",
+      "destination": "/es/sisu",
+      "permanent": true
+    },
+    {
+      "source": "/contacto",
+      "destination": "/es/contacto",
+      "permanent": true
+    },
+    {
+      "source": "/contacte",
+      "destination": "/ca/contacte",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/en/contact",
+      "permanent": true
+    },
+    {
+      "source": "/reservar",
+      "destination": "/es/reservar",
+      "permanent": true
+    },
+    {
+      "source": "/book",
+      "destination": "/en/book",
+      "permanent": true
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/favicon-32.png",
+      "permanent": true
+    },
+    {
+      "source": "/apple-touch-icon-precomposed.png",
+      "destination": "/apple-touch-icon.png",
+      "permanent": true
+    },
+    {
       "source": "/es/alojamiento-cerca-manresa",
       "destination": "/es/alojamiento-rural-cerca-manresa",
       "permanent": true
