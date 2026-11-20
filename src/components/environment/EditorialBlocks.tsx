@@ -138,7 +138,7 @@ export function NumberedList({
     <ol className="mt-10 max-w-[46rem] space-y-10">
       {items.map((item, i) => (
         <li key={`${item.title}-${i}`} className="grid gap-3 sm:grid-cols-[3.5rem_1fr]">
-          <span className="text-sm font-medium tracking-[0.18em] text-[#556B2F]">
+          <span className="text-sm font-medium tracking-[0.18em] text-[#4d5a2a]">
             {String(i + 1).padStart(2, "0")}
           </span>
           <div>
@@ -151,7 +151,7 @@ export function NumberedList({
             {item.href && item.cta ? (
               <Link
                 to={item.href}
-                className="mt-3 inline-block text-sm font-medium text-[#556B2F] underline-offset-4 hover:underline"
+                className="mt-3 inline-block text-sm font-medium text-[#4d5a2a] underline-offset-4 hover:underline"
               >
                 {item.cta}
               </Link>
@@ -171,9 +171,9 @@ export function EditorialNote({
   children: React.ReactNode;
 }) {
   return (
-    <aside className="mt-10 max-w-[40rem] border-l-2 border-[#556B2F]/40 pl-5 py-1">
+    <aside className="mt-10 max-w-[40rem] border-l-2 border-[#4d5a2a]/40 pl-5 py-1">
       {label ? (
-        <p className="text-[0.7rem] uppercase tracking-[0.2em] text-[#556B2F]">
+        <p className="text-[0.7rem] uppercase tracking-[0.2em] text-[#4d5a2a]">
           {label}
         </p>
       ) : null}

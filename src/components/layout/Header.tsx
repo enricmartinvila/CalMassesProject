@@ -3,10 +3,17 @@ import { Link, useLocation } from "react-router-dom";
 import { bookingHref, siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 import { resolveRouteKey, type RouteKey } from "../../i18n/routes";
-import { CtaLink } from "../ui/CtaLink";
 import { LangSwitcher } from "./LangSwitcher";
 
-export function Header() {
+export function Logo({ className = "" }: { className?: string }) {
+  return (
+    <span className={`font-serif text-2xl font-medium tracking-tight ${className}`}>
+      Cal <span className="italic font-normal">Masses</span>
+    </span>
+  );
+}
+
+export function Header({ overHero = false }: { overHero?: boolean }) {
   const { lang, content, path } = useLang();
   const location = useLocation();
   const [open, setOpen] = useState(false);
@@ -14,7 +21,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -37,58 +44,49 @@ export function Header() {
     { route: "landingManresa", label: content.ui.nav.entornoManresa },
     { route: "landingEnoturismo", label: content.ui.nav.entornoEnoturismo },
   ];
-
   const entornoActive = entornoLinks.some((l) => l.route === currentKey);
+
+  const mainLinks: Array<[RouteKey, string]> = [
+    ["home", content.ui.nav.home],
+    ["alojamiento", content.ui.nav.alojamiento],
+    ["finca", content.ui.nav.finca],
+  ];
+  const tailLinks: Array<[RouteKey, string]> = [
+    ["sisu", content.ui.nav.sisu],
+    ["contacto", content.ui.nav.contacto],
+  ];
+
+  const transparent = overHero && !scrolled && !open;
+
+  const navLink = (key: RouteKey, label: string) => (
+    <li key={key}>
+      <Link
+        to={path(key)}
+        className={`relative opacity-90 hover:opacity-100 after:absolute after:left-0 after:-bottom-1.5 after:h-[1.5px] after:bg-current after:transition-all hover:after:w-full ${
+          currentKey === key ? "after:w-full" : "after:w-0"
+        }`}
+      >
+        {label}
+      </Link>
+    </li>
+  );
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 border-b border-gray-200 bg-white/95 backdrop-blur transition-all ${
-        scrolled ? "py-2 shadow-md" : "py-3 shadow-sm"
+      className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
+        transparent
+          ? "bg-transparent text-white"
+          : "bg-cream/90 text-ink backdrop-blur-md shadow-[0_1px_0_var(--line)]"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-[78px] max-w-[1180px] items-center gap-6 px-5 sm:px-7">
         <Link to={path("home")} className="shrink-0" aria-label={siteConfig.brandName}>
-          <img
-            src={siteConfig.images.logo}
-            alt={siteConfig.brandName}
-            width={120}
-            height={48}
-            className={`w-auto transition-all ${scrolled ? "h-8" : "h-10 sm:h-11"}`}
-          />
+          <Logo />
         </Link>
 
         <nav className="mx-auto hidden lg:block" aria-label="Primary">
-          <ul className="flex items-center gap-6 text-sm font-semibold xl:gap-8">
-            <li>
-              <Link
-                to={path("home")}
-                className={`hover:underline underline-offset-4 ${
-                  currentKey === "home" ? "text-[#556B2F]" : "text-gray-900"
-                }`}
-              >
-                {content.ui.nav.home}
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={path("alojamiento")}
-                className={`hover:underline underline-offset-4 ${
-                  currentKey === "alojamiento" ? "text-[#556B2F]" : "text-gray-900"
-                }`}
-              >
-                {content.ui.nav.alojamiento}
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={path("finca")}
-                className={`hover:underline underline-offset-4 ${
-                  currentKey === "finca" ? "text-[#556B2F]" : "text-gray-900"
-                }`}
-              >
-                {content.ui.nav.finca}
-              </Link>
-            </li>
+          <ul className="flex items-center gap-5 whitespace-nowrap text-[0.93rem] font-medium xl:gap-8">
+            {mainLinks.map(([k, l]) => navLink(k, l))}
             <li
               className="relative"
               onMouseEnter={() => setEntornoOpen(true)}
@@ -96,115 +94,98 @@ export function Header() {
             >
               <button
                 type="button"
-                className={`hover:underline underline-offset-4 ${
-                  entornoActive ? "text-[#556B2F]" : "text-gray-900"
+                className={`relative opacity-90 hover:opacity-100 after:absolute after:left-0 after:-bottom-1.5 after:h-[1.5px] after:bg-current after:transition-all hover:after:w-full ${
+                  entornoActive ? "after:w-full" : "after:w-0"
                 }`}
                 aria-expanded={entornoOpen}
+                onClick={() => setEntornoOpen((v) => !v)}
               >
                 {content.ui.nav.entorno}
               </button>
               {entornoOpen && (
-                <ul className="absolute left-0 top-full z-50 min-w-[14rem] rounded-xl border border-gray-200 bg-white py-2 shadow-lg">
-                  {entornoLinks.map((l) => (
-                    <li key={l.route}>
-                      <Link
-                        to={path(l.route)}
-                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-[#EEF2E6]"
-                      >
-                        {l.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3">
+                  <ul className="min-w-[14rem] rounded-2xl border border-line bg-paper py-2 text-ink shadow-[0_20px_40px_-20px_rgba(47,56,25,.35)]">
+                    {entornoLinks.map((l) => (
+                      <li key={l.route}>
+                        <Link
+                          to={path(l.route)}
+                          className="block px-5 py-2 text-sm hover:bg-brand-soft"
+                        >
+                          {l.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
             </li>
-            <li>
-              <Link
-                to={path("sisu")}
-                className={`hover:underline underline-offset-4 ${
-                  currentKey === "sisu" ? "text-[#556B2F]" : "text-gray-900"
-                }`}
-              >
-                {content.ui.nav.sisu}
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={path("contacto")}
-                className={`hover:underline underline-offset-4 ${
-                  currentKey === "contacto" ? "text-[#556B2F]" : "text-gray-900"
-                }`}
-              >
-                {content.ui.nav.contacto}
-              </Link>
-            </li>
+            {tailLinks.map(([k, l]) => navLink(k, l))}
           </ul>
         </nav>
 
-        <div className="ml-auto flex items-center gap-3">
-          <LangSwitcher />
+        <div className="ml-auto flex items-center gap-4">
+          <LangSwitcher onDark={transparent} />
 
-          <CtaLink
+          <a
             href={bookingHref()}
-            external
-            className="hidden sm:inline-flex !py-2 !px-4 text-sm"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`hidden xl:inline-flex items-center whitespace-nowrap rounded-full px-[22px] py-[11px] text-[0.95rem] font-semibold transition hover:-translate-y-0.5 ${
+              transparent
+                ? "bg-white text-brand-dark"
+                : "bg-brand text-white hover:bg-brand-dark"
+            }`}
           >
             {content.ui.cta.availability}
-          </CtaLink>
+          </a>
 
           <button
             type="button"
-            className="lg:hidden text-2xl text-[#556B2F]"
+            className="lg:hidden text-2xl leading-none"
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
           >
-            {open ? "✖" : "☰"}
+            {open ? "✕" : "☰"}
           </button>
         </div>
       </div>
 
       <div
-        className={`lg:hidden overflow-hidden border-t border-gray-200 bg-white transition-[max-height] ${
-          open ? "max-h-[32rem]" : "max-h-0"
+        className={`lg:hidden overflow-hidden bg-cream text-ink transition-[max-height] duration-300 ${
+          open ? "max-h-[36rem] shadow-[0_20px_30px_-20px_rgba(0,0,0,.3)]" : "max-h-0"
         }`}
       >
-        <ul className="flex flex-col p-3 text-sm font-semibold">
-          {(
-            [
-              ["home", content.ui.nav.home],
-              ["alojamiento", content.ui.nav.alojamiento],
-              ["finca", content.ui.nav.finca],
-              ["sisu", content.ui.nav.sisu],
-              ["contacto", content.ui.nav.contacto],
-            ] as Array<[RouteKey, string]>
-          ).map(([key, label]) => (
+        <ul className="flex flex-col gap-1 px-7 pb-6 pt-2 text-base font-medium">
+          {[...mainLinks, ...tailLinks].map(([key, label]) => (
             <li key={key}>
               <Link
                 to={path(key)}
-                className="block rounded-md px-2 py-2 text-[#556B2F] hover:bg-gray-50"
+                className={`block py-2 ${currentKey === key ? "text-brand" : ""}`}
               >
                 {label}
               </Link>
             </li>
           ))}
-          <li className="px-2 pt-2 text-xs uppercase tracking-wider text-gray-500">
+          <li className="pt-3 text-xs font-semibold uppercase tracking-[0.16em] text-muted">
             {content.ui.nav.entorno}
           </li>
           {entornoLinks.map((l) => (
             <li key={l.route}>
-              <Link
-                to={path(l.route)}
-                className="block rounded-md px-2 py-2 text-[#556B2F] hover:bg-gray-50"
-              >
+              <Link to={path(l.route)} className="block py-2">
                 {l.label}
               </Link>
             </li>
           ))}
-          <li className="px-2 pt-2">
-            <CtaLink href={bookingHref()} external className="w-full">
+          <li className="pt-4">
+            <a
+              href={bookingHref()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center justify-center rounded-full bg-brand px-6 py-3.5 font-semibold text-white"
+            >
               {content.ui.cta.availability}
-            </CtaLink>
+            </a>
           </li>
         </ul>
       </div>

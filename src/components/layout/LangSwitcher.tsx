@@ -10,7 +10,13 @@ const LABELS: Record<Lang, { short: string; full: string }> = {
   en: { short: "EN", full: "English" },
 };
 
-export function LangSwitcher({ className = "" }: { className?: string }) {
+export function LangSwitcher({
+  className = "",
+  onDark = false,
+}: {
+  className?: string;
+  onDark?: boolean;
+}) {
   const { lang } = useLang();
   const location = useLocation();
   const [open, setOpen] = useState(false);
@@ -47,7 +53,7 @@ export function LangSwitcher({ className = "" }: { className?: string }) {
   return (
     <div ref={rootRef} className={`relative ${className}`}>
       <div
-        className="hidden sm:inline-flex items-center rounded-full border border-[#556B2F]/25 bg-[#f7f7f4] p-0.5"
+        className="hidden sm:inline-flex items-center gap-0.5 rounded-full border border-current p-[3px] opacity-90"
         role="group"
         aria-label="Idioma"
       >
@@ -59,10 +65,12 @@ export function LangSwitcher({ className = "" }: { className?: string }) {
               to={toFor(l)}
               aria-current={active ? "true" : undefined}
               title={LABELS[l].full}
-              className={`min-w-[2.25rem] rounded-full px-2.5 py-1.5 text-center text-[0.7rem] font-semibold tracking-[0.08em] transition ${
+              className={`rounded-full px-2.5 py-1 text-center text-[0.78rem] font-semibold tracking-[0.06em] transition ${
                 active
-                  ? "bg-[#556B2F] text-white shadow-sm"
-                  : "text-[#556B2F]/80 hover:text-[#556B2F] hover:bg-white/70"
+                  ? onDark
+                    ? "bg-white text-brand-dark"
+                    : "bg-brand text-white"
+                  : "hover:opacity-100 opacity-80"
               }`}
             >
               {LABELS[l].short}
@@ -74,7 +82,7 @@ export function LangSwitcher({ className = "" }: { className?: string }) {
       <div className="sm:hidden">
         <button
           type="button"
-          className="inline-flex items-center gap-1.5 rounded-full border border-[#556B2F]/30 bg-[#f7f7f4] px-3 py-1.5 text-[0.7rem] font-semibold tracking-[0.08em] text-[#556B2F]"
+          className="inline-flex items-center gap-1.5 rounded-full border border-current px-3 py-1.5 text-[0.72rem] font-semibold tracking-[0.08em]"
           aria-expanded={open}
           aria-controls={listId}
           aria-haspopup="listbox"
@@ -93,7 +101,7 @@ export function LangSwitcher({ className = "" }: { className?: string }) {
             id={listId}
             role="listbox"
             aria-label="Idioma"
-            className="absolute right-0 top-[calc(100%+0.35rem)] z-50 min-w-[8.5rem] overflow-hidden rounded-2xl border border-[#556B2F]/15 bg-white py-1 shadow-[0_12px_30px_rgba(0,0,0,0.1)]"
+            className="absolute right-0 top-[calc(100%+0.35rem)] z-50 min-w-[8.5rem] overflow-hidden rounded-2xl border border-[#4d5a2a]/15 bg-white py-1 shadow-[0_12px_30px_rgba(0,0,0,0.1)]"
           >
             {SUPPORTED_LANGS.map((l) => {
               const active = l === lang;
@@ -103,13 +111,13 @@ export function LangSwitcher({ className = "" }: { className?: string }) {
                     to={toFor(l)}
                     className={`flex items-center justify-between gap-3 px-3.5 py-2.5 text-sm transition ${
                       active
-                        ? "bg-[#EEF2E6] font-semibold text-[#556B2F]"
-                        : "text-gray-800 hover:bg-[#f7f7f4]"
+                        ? "bg-[#e8ebd9] font-semibold text-[#4d5a2a]"
+                        : "text-gray-800 hover:bg-[#f7f3ea]"
                     }`}
                     onClick={() => setOpen(false)}
                   >
                     <span>{LABELS[l].full}</span>
-                    <span className="text-[0.65rem] tracking-[0.1em] text-[#556B2F]/70">
+                    <span className="text-[0.65rem] tracking-[0.1em] text-[#4d5a2a]/70">
                       {LABELS[l].short}
                     </span>
                   </Link>

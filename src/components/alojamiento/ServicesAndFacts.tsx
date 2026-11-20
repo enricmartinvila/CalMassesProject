@@ -77,7 +77,7 @@ export function ServicesGrid() {
     <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
       {categories.map((cat) => (
         <div key={cat.title}>
-          <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-[#556B2F]">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-[#4d5a2a]">
             {cat.title}
           </h3>
           <ul className="mt-4 space-y-2">
@@ -131,7 +131,7 @@ export function BedroomFacts() {
       {facts.map((f) => (
         <li
           key={f}
-          className="rounded-full border border-[#556B2F]/25 px-3 py-1 text-sm text-gray-800"
+          className="rounded-full border border-[#4d5a2a]/25 px-3 py-1 text-sm text-gray-800"
         >
           {f}
         </li>
@@ -162,7 +162,7 @@ export function BathroomFacts() {
       {facts.map((f) => (
         <li
           key={f}
-          className="rounded-full border border-[#556B2F]/25 px-3 py-1 text-sm text-gray-800"
+          className="rounded-full border border-[#4d5a2a]/25 px-3 py-1 text-sm text-gray-800"
         >
           {f}
         </li>

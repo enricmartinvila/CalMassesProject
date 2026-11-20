@@ -17,34 +17,37 @@ export function ReviewsSection({ title }: { title: string }) {
   }
 
   return (
-    <section className="bg-[#f7f7f4] py-16 md:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-8 max-w-[46rem]">
-          {renderText(title)}
-        </h2>
+    <section className="bg-brand-soft py-20">
+      <div className="mx-auto max-w-[1180px] px-5 sm:px-7">
+        <h2 className="eyebrow !font-sans !tracking-[0.18em]">{renderText(title)}</h2>
 
         {visibleSources.length > 0 && (
-          <ul className="mb-10 grid gap-6 sm:grid-cols-2 max-w-2xl">
+          <ul className="mt-8 grid gap-7 md:grid-cols-2">
             {visibleSources.map((s) => (
-              <li key={s.source} className="border-t border-[#556B2F]/25 pt-4">
-                <p className="text-3xl md:text-4xl font-light text-gray-900 tracking-tight">
-                  {s.rating}
-                  <span className="text-lg md:text-xl text-gray-600">
-                    {" "}
-                    / {s.scale}
-                  </span>
-                </p>
-                <p className="mt-2 text-sm md:text-base text-gray-600">
-                  {!isTodo(s.count) ? `${s.count} · ` : null}
-                  {s.source}
-                </p>
+              <li
+                key={s.source}
+                className="rv flex flex-col items-start justify-between gap-5 rounded-card bg-paper p-8 sm:flex-row sm:items-center sm:p-[42px]"
+              >
+                <div>
+                  <p className="font-serif text-[4rem] leading-none text-brand-dark">
+                    {s.rating}
+                    <span className="text-[1.2rem] text-muted"> / {s.scale}</span>
+                  </p>
+                  <p className="text-[0.95rem] tracking-[3px] text-[#c88a2d]" aria-hidden>
+                    ★★★★★
+                  </p>
+                  <p className="mt-2 text-[0.92rem] text-muted">
+                    {!isTodo(s.count) ? `${s.count} · ` : null}
+                    {s.source}
+                  </p>
+                </div>
                 <a
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-block text-sm font-medium text-[#556B2F] underline-offset-4 hover:underline"
+                  className="link-underline"
                 >
-                  {content.ui.cta.seeMoreReviews}
+                  {content.ui.cta.seeMoreReviews} →
                 </a>
               </li>
             ))}
@@ -52,15 +55,13 @@ export function ReviewsSection({ title }: { title: string }) {
         )}
 
         {hasQuotes ? (
-          <ul className="grid gap-6 md:grid-cols-3">
+          <ul className="mt-10 grid gap-6 md:grid-cols-3">
             {(items as Array<{ text: string; name: string; source?: string }>)
               .slice(0, 3)
               .map((review, i) => (
-                <li key={i} className="border-t border-[#556B2F]/25 pt-5">
-                  <p className="text-base text-gray-800 leading-relaxed">
-                    “{review.text}”
-                  </p>
-                  <p className="mt-4 text-sm text-gray-600">
+                <li key={i} className="rounded-card bg-paper p-8">
+                  <p className="font-serif text-lg leading-relaxed">“{review.text}”</p>
+                  <p className="mt-4 text-sm text-muted">
                     {review.name}
                     {review.source ? ` · ${review.source}` : null}
                   </p>

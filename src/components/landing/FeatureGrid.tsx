@@ -49,8 +49,8 @@ export function FeatureGrid() {
   return (
     <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {facts.map((fact) => (
-        <li key={fact.label} className="border-l-2 border-[#556B2F]/30 pl-3 py-1">
-          <p className="text-xs uppercase tracking-wider text-[#556B2F]">
+        <li key={fact.label} className="border-l-2 border-[#4d5a2a]/30 pl-3 py-1">
+          <p className="text-xs uppercase tracking-wider text-[#4d5a2a]">
             {fact.label}
           </p>
           <p className="mt-1 text-lg font-medium text-gray-900">{fact.value}</p>

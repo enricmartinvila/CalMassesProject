@@ -6,7 +6,7 @@ import {
 } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 import { SmartImage } from "../ui/SmartImage";
-import { renderText } from "../ui/TodoMark";
+import { emphasize } from "../ui/TodoMark";
 
 const ORDER: Array<GalleryCategoryId | "all"> = [
   "all",
@@ -19,10 +19,14 @@ const ORDER: Array<GalleryCategoryId | "all"> = [
 
 export function ImageGallery({
   title,
+  eyebrow,
+  emphasis,
   categories,
   className = "",
 }: {
   title?: string;
+  eyebrow?: string;
+  emphasis?: string;
   /** Limit to specific categories when used on a page. */
   categories?: GalleryCategoryId[];
   className?: string;
@@ -50,31 +54,27 @@ export function ImageGallery({
     return siteConfig.gallery.some((img) => img.category === key);
   });
 
-  const tabLabel = (key: GalleryCategoryId | "all") => {
-    if (key === "all") return tabs.all;
-    return tabs[key];
-  };
+  const tabLabel = (key: GalleryCategoryId | "all") =>
+    key === "all" ? tabs.all : tabs[key];
 
   return (
-    <section className={`py-16 md:py-20 ${className}`}>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        {title && (
-          <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-8 max-w-[46rem]">
-            {renderText(title)}
-          </h2>
-        )}
+    <section className={`py-20 md:py-[110px] ${className}`}>
+      <div className="mx-auto max-w-[1180px] px-5 sm:px-7">
+        {eyebrow && <div className="eyebrow">{eyebrow}</div>}
+        {title && <h2 className="h2-display">{emphasize(title, emphasis)}</h2>}
 
         {visibleTabs.length > 1 && (
-          <div className="mb-8 flex flex-wrap gap-2">
+          <div className="mb-10 mt-8 flex flex-wrap gap-2.5">
             {visibleTabs.map((key) => (
               <button
                 key={key}
                 type="button"
                 onClick={() => setActive(key)}
-                className={`rounded-full px-4 py-2 text-sm transition ${
+                aria-pressed={active === key}
+                className={`rounded-full border-[1.5px] px-5 py-2 text-[0.88rem] font-medium transition ${
                   active === key
-                    ? "bg-[#556B2F] text-white"
-                    : "border border-[#556B2F]/30 text-[#556B2F] hover:bg-[#EEF2E6]"
+                    ? "border-brand bg-brand text-white"
+                    : "border-line hover:border-brand"
                 }`}
               >
                 {tabLabel(key)}
@@ -83,14 +83,19 @@ export function ImageGallery({
           </div>
         )}
 
-        <ul className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
-          {images.map((img) => (
-            <li key={img.src} className="overflow-hidden rounded-2xl bg-gray-100">
+        <ul className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+          {images.map((img, i) => (
+            <li
+              key={img.src}
+              className="group mb-4 break-inside-avoid overflow-hidden rounded-[14px] bg-line/40"
+            >
               <SmartImage
                 src={img.src}
                 alt={img.alt[lang]}
-                className="aspect-[4/3] w-full object-cover"
-                sizes="(max-width: 768px) 50vw, 33vw"
+                className={`w-full object-cover transition-transform duration-[600ms] group-hover:scale-105 ${
+                  i % 3 === 1 ? "aspect-[3/4]" : "aspect-[4/3]"
+                }`}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
             </li>
           ))}

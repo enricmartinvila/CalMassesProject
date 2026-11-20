@@ -17,7 +17,7 @@ type Props = {
 
 export function BookingCTA({ h2, paragraphs, primary, secondary }: Props) {
   return (
-    <section className="rounded-3xl bg-[#556B2F] px-6 py-10 md:px-10 text-white">
+    <section className="rounded-3xl bg-[#4d5a2a] px-6 py-10 md:px-10 text-white">
       <div className="max-w-[46rem] space-y-5">
         <h2 className="text-2xl md:text-3xl font-semibold">{renderText(h2)}</h2>
         <div className="space-y-4 text-base md:text-lg text-white/90 leading-relaxed">
@@ -30,7 +30,7 @@ export function BookingCTA({ h2, paragraphs, primary, secondary }: Props) {
             to={primary.to}
             href={primary.href}
             external={primary.external}
-            className="!bg-white !text-[#556B2F] hover:!bg-gray-100"
+            className="!bg-white !text-[#4d5a2a] hover:!bg-gray-100"
           >
             {primary.label}
           </CtaLink>

@@ -46,6 +46,7 @@ export const contentCa: ContentBundle = {
       paraDos: "Per a dos",
       piscina: "Piscina",
       laFinca: "La finca",
+      exploreTitle: "Explora",
     },
     notFound: {
       title: "Pàgina no trobada",
@@ -107,6 +108,33 @@ export const contentCa: ContentBundle = {
   },
 
   home: {
+    design: {
+      eyebrows: {
+        accommodation: "L'allotjament",
+        finca: "La finca",
+        pool: "A l'aire lliure",
+        surroundings: "L'entorn",
+        sisu: "SISU",
+        gallery: "Galeria",
+        faq: "Abans de venir",
+        reviews: "Ho expliquen els qui ja hi han estat",
+      },
+      emphasis: {
+        hero: "vinyes",
+        accommodation: "al teu aire",
+        finca: "dormir",
+        pool: "passen coses",
+        surroundings: "Pla de Bages",
+        sisu: "vi",
+        gallery: "és",
+        faq: "freqüents",
+        finalCta: "Cal Masses",
+      },
+      poolChips: ["Piscina compartida", "Temporada: estiu", "Sense horari fix", "Normes: sentit comú", "Aigua salada"],
+      faqLead: "Tens algun altre dubte? Escriu-nos i et responem.",
+      galleryTitle: "Mira com és",
+      faqTitle: "Preguntes freqüents",
+    },
     seo: {
       title:
         "Una escapada per a dos entre vinyes i natura al Bages | Cal Masses",

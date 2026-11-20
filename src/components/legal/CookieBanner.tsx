@@ -40,7 +40,7 @@ export function CookieBanner() {
           ) : (
             content.ui.cookie.message
           )}{" "}
-          <Link to={path("cookies")} className="underline text-[#556B2F]">
+          <Link to={path("cookies")} className="underline text-[#4d5a2a]">
             {content.ui.footer.cookies}
           </Link>
         </p>
@@ -48,7 +48,7 @@ export function CookieBanner() {
           <button
             type="button"
             onClick={() => save("accepted")}
-            className="rounded-full bg-[#556B2F] px-5 py-2 text-sm font-medium text-white"
+            className="rounded-full bg-[#4d5a2a] px-5 py-2 text-sm font-medium text-white"
           >
             {content.ui.cookie.accept}
           </button>

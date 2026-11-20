@@ -202,7 +202,7 @@ export const siteConfig = {
     logo: "/images/logo-400.webp",
     favicon: "/favicon-32.png",
     ogDefault: "/images/og-calmasses.jpg",
-    heroLcp: "/images/exterior-1600.webp",
+    heroLcp: "/images/hero-vinyes-1600.webp",
     exterior: "/images/exterior-1600.webp",
     vineyard: "/images/hero-vinyes-1600.webp",
     pool: "/images/pool-1600.webp",

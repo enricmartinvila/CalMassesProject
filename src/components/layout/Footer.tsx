@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { bookingHref, siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 import type { RouteKey } from "../../i18n/routes";
+import { Logo } from "./Header";
 
 export function Footer() {
   const { content, path } = useLang();
@@ -31,43 +32,50 @@ export function Footer() {
     },
   ];
 
+  const linkCls = "transition-colors hover:text-white";
+
   return (
-    <footer className="border-t border-gray-200 bg-[#f7f7f4] text-gray-700">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
-        <div>
-          <p className="text-lg font-semibold text-gray-900">{f.brandTitle}</p>
-          <ul className="mt-3 space-y-1.5 text-sm">
+    <footer className="bg-[#171a0e] pb-9 pt-20 text-[0.92rem] text-[#b9bca6]">
+      <div className="mx-auto max-w-[1180px] px-5 sm:px-7">
+        <div className="mb-14 grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
+          <div>
+            <Link to={path("home")} className="mb-4 block text-white">
+              <Logo className="!text-[1.8rem]" />
+            </Link>
+            <p className="max-w-xs leading-relaxed">{content.home.seo.h1}.</p>
+            <p className="mt-5 text-xs leading-relaxed text-[#8d907b]">
+              {siteConfig.address.line}
+              <br />
+              {siteConfig.address.postalCode} {siteConfig.address.locality}
+            </p>
+          </div>
+
+          <FooterCol title={f.exploreTitle}>
             {brand.map((item) => (
               <li key={item.route}>
-                <Link className="hover:underline" to={path(item.route)}>
+                <Link className={linkCls} to={path(item.route)}>
                   {item.label}
                 </Link>
               </li>
             ))}
-          </ul>
-        </div>
+          </FooterCol>
 
-        <div>
-          <p className="text-sm font-semibold text-gray-900">{f.entornoTitle}</p>
-          <ul className="mt-3 space-y-1.5 text-sm">
+          <FooterCol title={f.entornoTitle}>
             {entorno.map((item) => (
               <li key={item.route}>
-                <Link className="hover:underline" to={path(item.route)}>
+                <Link className={linkCls} to={path(item.route)}>
                   {item.label}
                 </Link>
               </li>
             ))}
-          </ul>
-        </div>
+          </FooterCol>
 
-        <div>
-          <p className="text-sm font-semibold text-gray-900">{f.stayTitle}</p>
-          <ul className="mt-3 space-y-1.5 text-sm">
+          <FooterCol title={f.stayTitle}>
             {stay.map((item) => (
               <li key={item.label}>
                 {item.href ? (
                   <a
-                    className="hover:underline"
+                    className={linkCls}
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -75,44 +83,49 @@ export function Footer() {
                     {item.label}
                   </a>
                 ) : (
-                  <Link className="hover:underline" to={item.to!}>
+                  <Link className={linkCls} to={item.to!}>
                     {item.label}
                   </Link>
                 )}
               </li>
             ))}
-          </ul>
+          </FooterCol>
         </div>
 
-        <div>
-          <p className="text-sm font-semibold text-gray-900">{f.legal}</p>
-          <ul className="mt-3 space-y-1.5 text-sm">
-            <li>
-              <Link className="hover:underline" to={path("avisoLegal")}>
-                {f.legal}
-              </Link>
-            </li>
-            <li>
-              <Link className="hover:underline" to={path("privacidad")}>
-                {f.privacy}
-              </Link>
-            </li>
-            <li>
-              <Link className="hover:underline" to={path("cookies")}>
-                {f.cookies}
-              </Link>
-            </li>
-          </ul>
-          <p className="mt-6 text-xs text-gray-500 leading-relaxed">
-            {siteConfig.address.line}
-            <br />
-            {siteConfig.address.postalCode} {siteConfig.address.locality}
-          </p>
+        <div className="flex flex-wrap justify-between gap-4 border-t border-white/10 pt-6 text-[0.82rem]">
+          <span>
+            © {year} {siteConfig.brandName}
+          </span>
+          <div className="flex flex-wrap gap-6">
+            <Link className={linkCls} to={path("avisoLegal")}>
+              {f.legal}
+            </Link>
+            <Link className={linkCls} to={path("privacidad")}>
+              {f.privacy}
+            </Link>
+            <Link className={linkCls} to={path("cookies")}>
+              {f.cookies}
+            </Link>
+          </div>
         </div>
       </div>
-      <div className="border-t border-gray-200 py-4 text-center text-xs text-gray-500">
-        © {year} {siteConfig.brandName}
-      </div>
     </footer>
+  );
+}
+
+function FooterCol({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <h4 className="mb-4 text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-white">
+        {title}
+      </h4>
+      <ul className="space-y-2.5">{children}</ul>
+    </div>
   );
 }

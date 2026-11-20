@@ -85,7 +85,7 @@ export function AlojamientoPage() {
         </header>
 
         {/* 2. DATOS ESENCIALES */}
-        <section className="border-y border-gray-100 bg-[#f7f7f4]">
+        <section className="border-y border-gray-100 bg-[#f7f3ea]">
           <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8 md:py-10">
             <EssentialFacts />
           </div>
@@ -107,7 +107,7 @@ export function AlojamientoPage() {
         </section>
 
         {/* 5. DORMITORIO */}
-        <section className="bg-[#f7f7f4] py-16 md:py-20">
+        <section className="bg-[#f7f3ea] py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
             <SmartImage
               src={siteConfig.images.bedroom}
@@ -165,7 +165,7 @@ export function AlojamientoPage() {
         </section>
 
         {/* 7. BAÑO */}
-        <section className="bg-[#f7f7f4] py-16 md:py-20">
+        <section className="bg-[#f7f3ea] py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
             <SmartImage
               src={siteConfig.images.bathroom}
@@ -228,7 +228,7 @@ export function AlojamientoPage() {
         <PrivacySection />
 
         {/* 10. SERVICIOS */}
-        <section className="bg-[#f7f7f4] py-16 md:py-20">
+        <section className="bg-[#f7f3ea] py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-10 max-w-[46rem]">
               {renderText(t.services.h2)}
@@ -250,7 +250,7 @@ export function AlojamientoPage() {
         <FaqSection title={t.faq.h2} items={t.faq.items} />
 
         {/* 15. CTA FINAL */}
-        <section className="bg-[#556B2F] text-white py-16 md:py-20">
+        <section className="bg-[#4d5a2a] text-white py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-[40rem] space-y-6">
               <h2 className="text-2xl md:text-3xl font-semibold">
@@ -264,7 +264,7 @@ export function AlojamientoPage() {
                 <CtaLink
                   href={bookingHref()}
                   external
-                  className="!bg-white !text-[#556B2F] hover:!bg-gray-100"
+                  className="!bg-white !text-[#4d5a2a] hover:!bg-gray-100"
                 >
                   {t.finalCta.primary}
                 </CtaLink>

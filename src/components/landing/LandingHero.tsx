@@ -33,7 +33,7 @@ export function LandingHero({
     <header className="grid gap-10 lg:grid-cols-2 lg:items-center">
       <div className="space-y-6 max-w-[46rem]">
         {eyebrow && (
-          <p className="text-xs uppercase tracking-[0.25em] text-[#556B2F]">
+          <p className="text-xs uppercase tracking-[0.25em] text-[#4d5a2a]">
             {renderText(eyebrow)}
           </p>
         )}

@@ -70,7 +70,7 @@ export function EditorialHero({
           <div className="mx-auto max-w-6xl px-4 pt-10 pb-12 sm:px-6 lg:px-8">
             <Breadcrumbs items={breadcrumb} variant="editorial" />
             {eyebrow ? (
-              <p className="mt-6 text-[0.7rem] uppercase tracking-[0.28em] text-[#556B2F]">
+              <p className="mt-6 text-[0.7rem] uppercase tracking-[0.28em] text-[#4d5a2a]">
                 {eyebrow}
               </p>
             ) : null}
@@ -111,7 +111,7 @@ export function EditorialHero({
         >
           <div className="max-w-[40rem]">
             {eyebrow ? (
-              <p className="text-[0.7rem] uppercase tracking-[0.28em] text-[#556B2F]">
+              <p className="text-[0.7rem] uppercase tracking-[0.28em] text-[#4d5a2a]">
                 {eyebrow}
               </p>
             ) : null}
@@ -150,7 +150,7 @@ export function EditorialHero({
       <div className="mx-auto max-w-6xl px-4 pt-10 sm:px-6 lg:px-8">
         <Breadcrumbs items={breadcrumb} variant="editorial" />
         {eyebrow ? (
-          <p className="mt-8 text-[0.7rem] uppercase tracking-[0.28em] text-[#556B2F]">
+          <p className="mt-8 text-[0.7rem] uppercase tracking-[0.28em] text-[#4d5a2a]">
             {eyebrow}
           </p>
         ) : null}

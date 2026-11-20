@@ -38,3 +38,18 @@ export function Paragraphs({
     </div>
   );
 }
+
+/** Sets the first occurrence of `word` in italic (design accent in headings). */
+export function emphasize(text: string, word?: string) {
+  if (text.startsWith("TODO_")) return renderText(text);
+  if (!word) return text;
+  const i = text.indexOf(word);
+  if (i < 0) return text;
+  return (
+    <>
+      {text.slice(0, i)}
+      <em>{word}</em>
+      {text.slice(i + word.length)}
+    </>
+  );
+}

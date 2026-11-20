@@ -22,7 +22,7 @@ export function ConsentMap() {
         <button
           type="button"
           onClick={() => setForce(true)}
-          className="rounded-full border border-[#556B2F] px-4 py-2 text-sm font-medium text-[#556B2F]"
+          className="rounded-full border border-[#4d5a2a] px-4 py-2 text-sm font-medium text-[#4d5a2a]"
         >
           {content.ui.loadMap}
         </button>

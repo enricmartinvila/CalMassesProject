@@ -154,7 +154,7 @@ export function BagesGuide({ landing }: { landing: LandingDefinition }) {
             <CtaLink
               href={bookingHref()}
               external
-              className="!bg-white !text-[#556B2F] hover:!bg-gray-100"
+              className="!bg-white !text-[#4d5a2a] hover:!bg-gray-100"
             >
               {bookLabel}
             </CtaLink>

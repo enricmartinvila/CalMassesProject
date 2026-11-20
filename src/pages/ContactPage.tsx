@@ -74,7 +74,7 @@ export function ContactPage() {
         </header>
 
         <div className="grid gap-10 lg:grid-cols-2">
-          <div className="rounded-3xl border border-[#556B2F]/20 bg-white p-6 md:p-8 shadow-md">
+          <div className="rounded-3xl border border-[#4d5a2a]/20 bg-white p-6 md:p-8 shadow-md">
             <p className="text-lg font-semibold">{contact.name}</p>
             <ul className="mt-6 space-y-4 text-gray-800">
               <li className="flex gap-3">
@@ -109,7 +109,7 @@ export function ContactPage() {
                 href={mapsDir}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#556B2F] px-4 py-3 font-semibold text-[#556B2F]"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#4d5a2a] px-4 py-3 font-semibold text-[#4d5a2a]"
               >
                 <MapPinIcon className="h-5 w-5" />
                 {t.arrival}
@@ -117,23 +117,23 @@ export function ContactPage() {
               <button
                 type="button"
                 onClick={downloadVCard}
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#556B2F] px-4 py-3 font-semibold text-[#556B2F]"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#4d5a2a] px-4 py-3 font-semibold text-[#4d5a2a]"
               >
                 {t.saveContact}
               </button>
               <button
                 type="button"
                 onClick={copyEmail}
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#556B2F] px-4 py-3 font-semibold text-[#556B2F]"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#4d5a2a] px-4 py-3 font-semibold text-[#4d5a2a]"
               >
                 {copied ? t.copied : t.copyEmail}
               </button>
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-3xl border border-[#556B2F]/20 shadow-md min-h-[320px]">
+          <div className="relative overflow-hidden rounded-3xl border border-[#4d5a2a]/20 shadow-md min-h-[320px]">
             <ConsentMap />
-            <div className="absolute inset-x-0 bottom-0 bg-[#EEF2E6] px-4 py-3 text-sm font-medium text-[#556B2F]">
+            <div className="absolute inset-x-0 bottom-0 bg-[#e8ebd9] px-4 py-3 text-sm font-medium text-[#4d5a2a]">
               {addressText}
             </div>
           </div>

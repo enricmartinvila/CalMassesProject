@@ -40,7 +40,7 @@ export function EssentialFacts() {
       {items.map((item) => (
         <li key={item.key} className="flex items-center gap-3">
           <span
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#556B2F]/35 text-[#556B2F]"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#4d5a2a]/35 text-[#4d5a2a]"
             aria-hidden
           >
             <EssentialIcon name={item.key} />

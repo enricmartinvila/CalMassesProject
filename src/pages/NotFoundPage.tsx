@@ -25,7 +25,7 @@ export function NotFoundPage() {
       <p className="mt-4 text-gray-600">{renderText(content.ui.notFound.body)}</p>
       <Link
         to={home}
-        className="mt-8 inline-flex rounded-full bg-[#556B2F] px-6 py-3 text-white"
+        className="mt-8 inline-flex rounded-full bg-[#4d5a2a] px-6 py-3 text-white"
       >
         {content.ui.notFound.back}
       </Link>

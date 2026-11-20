@@ -36,7 +36,7 @@ export function Breadcrumbs({
   const hover =
     variant === "onDark"
       ? "hover:text-white"
-      : "hover:text-[#556B2F] hover:underline";
+      : "hover:text-[#4d5a2a] hover:underline";
 
   return (
     <>

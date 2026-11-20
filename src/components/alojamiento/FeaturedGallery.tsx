@@ -75,7 +75,7 @@ export function FeaturedGallery() {
                 setActive(img.category);
                 setOpen(true);
               }}
-              className="group relative block w-full overflow-hidden rounded-xl bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#556B2F]"
+              className="group relative block w-full overflow-hidden rounded-xl bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d5a2a]"
             >
               <SmartImage
                 src={img.src}
@@ -101,7 +101,7 @@ export function FeaturedGallery() {
             setActive("all");
             setOpen(true);
           }}
-          className="text-sm font-medium text-[#556B2F] underline-offset-4 hover:underline"
+          className="text-sm font-medium text-[#4d5a2a] underline-offset-4 hover:underline"
         >
           {content.alojamiento.gallery.seeAll}
         </button>

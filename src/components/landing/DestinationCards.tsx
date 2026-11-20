@@ -13,7 +13,7 @@ export function DestinationCards({ cards }: { cards: LandingCard[] }) {
       {cards.map((card) => (
         <article
           key={`${card.route}-${card.title}`}
-          className="flex flex-col rounded-3xl border border-[#556B2F]/15 bg-white p-6 shadow-sm"
+          className="flex flex-col rounded-3xl border border-[#4d5a2a]/15 bg-white p-6 shadow-sm"
         >
           <h3 className="text-xl font-semibold text-gray-900">
             {renderText(card.title)}
@@ -23,7 +23,7 @@ export function DestinationCards({ cards }: { cards: LandingCard[] }) {
           </p>
           <Link
             to={path(card.route)}
-            className="mt-6 inline-flex text-sm font-semibold text-[#556B2F] underline-offset-4 hover:underline"
+            className="mt-6 inline-flex text-sm font-semibold text-[#4d5a2a] underline-offset-4 hover:underline"
           >
             {renderText(card.cta)}
           </Link>
@@ -42,7 +42,7 @@ function BookingAwareLink({
 }) {
   const { path, content } = useLang();
   const className =
-    "text-[#556B2F] underline-offset-4 hover:underline";
+    "text-[#4d5a2a] underline-offset-4 hover:underline";
 
   if (route === "reservar" && !isTodo(siteConfig.booking.url)) {
     return (
@@ -74,7 +74,7 @@ export function InternalLinkCards({
   if (!links.length) return null;
 
   return (
-    <aside className="rounded-3xl border border-[#556B2F]/10 bg-[#f7f7f4] p-6 md:p-8">
+    <aside className="rounded-3xl border border-[#4d5a2a]/10 bg-[#f7f3ea] p-6 md:p-8">
       {title && (
         <h2 className="text-lg font-semibold text-gray-900 mb-4">
           {renderText(title)}

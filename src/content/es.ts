@@ -46,6 +46,7 @@ export const contentEs: ContentBundle = {
       paraDos: "Para dos",
       piscina: "Piscina",
       laFinca: "La finca",
+      exploreTitle: "Explorar",
     },
     notFound: {
       title: "Página no encontrada",
@@ -107,6 +108,33 @@ export const contentEs: ContentBundle = {
   },
 
   home: {
+    design: {
+      eyebrows: {
+        accommodation: "El alojamiento",
+        finca: "La finca",
+        pool: "Al aire libre",
+        surroundings: "El entorno",
+        sisu: "SISU",
+        gallery: "Galería",
+        faq: "Antes de venir",
+        reviews: "Lo cuentan quienes ya han estado aquí",
+      },
+      emphasis: {
+        hero: "viñedos",
+        accommodation: "a tu aire",
+        finca: "dormir",
+        pool: "pasan cosas",
+        surroundings: "Pla de Bages",
+        sisu: "vino",
+        gallery: "es",
+        faq: "frecuentes",
+        finalCta: "Cal Masses",
+      },
+      poolChips: ["Piscina compartida", "Temporada: verano", "Sin horario fijo", "Normas: sentido común", "Agua salada"],
+      faqLead: "¿Alguna duda más? Escríbenos y te respondemos.",
+      galleryTitle: "Mira cómo es",
+      faqTitle: "Preguntas frecuentes",
+    },
     seo: {
       title:
         "Una escapada para dos entre viñedos y naturaleza en el Bages | Cal Masses",

@@ -47,7 +47,7 @@ export function PrivacySection() {
                 <span
                   className={`rounded-full px-3 py-1 text-xs font-medium tracking-wide ${
                     row.privacy === t.privateLabel
-                      ? "bg-[#EEF2E6] text-[#556B2F]"
+                      ? "bg-[#e8ebd9] text-[#4d5a2a]"
                       : "bg-gray-100 text-gray-700"
                   }`}
                 >
@@ -62,7 +62,7 @@ export function PrivacySection() {
       <p className="mt-8">
         <Link
           to={path("finca")}
-          className="text-sm font-medium text-[#556B2F] underline-offset-4 hover:underline"
+          className="text-sm font-medium text-[#4d5a2a] underline-offset-4 hover:underline"
         >
           {t.knowFinca}
         </Link>
@@ -96,7 +96,7 @@ export function ArrivalSection() {
   }
 
   return (
-    <section className="bg-[#f7f7f4] py-16 md:py-20">
+    <section className="bg-[#f7f3ea] py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-[46rem] space-y-5">
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
@@ -108,8 +108,8 @@ export function ArrivalSection() {
         {blocks.length > 0 ? (
           <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {blocks.map((b) => (
-              <li key={b.title} className="border-t border-[#556B2F]/30 pt-4">
-                <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#556B2F]">
+              <li key={b.title} className="border-t border-[#4d5a2a]/30 pt-4">
+                <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#4d5a2a]">
                   {b.title}
                 </h3>
                 <p className="mt-3 text-base text-gray-900">{b.body}</p>
@@ -137,7 +137,7 @@ export function FitSection() {
           <ul className="mt-5 space-y-3 text-gray-700 leading-relaxed">
             {t.yesItems.map((item) => (
               <li key={item} className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#556B2F]" />
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#4d5a2a]" />
                 <span>{item}</span>
               </li>
             ))}

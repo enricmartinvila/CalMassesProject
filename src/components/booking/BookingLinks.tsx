@@ -13,7 +13,7 @@ export function BookingLinks({ id = "reservar" }: { id?: string }) {
   return (
     <section
       id={id}
-      className="rounded-3xl border border-[#556B2F]/20 bg-white p-6 md:p-8"
+      className="rounded-3xl border border-[#4d5a2a]/20 bg-white p-6 md:p-8"
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
         {hasAirbnb && (

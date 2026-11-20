@@ -20,13 +20,13 @@ export function DistanceFromCalMasses({
   if (isTodo(raw)) return null;
 
   return (
-    <div className="mt-8 max-w-xl border border-[#556B2F]/20 px-5 py-5 sm:px-6">
-      <p className="text-[0.7rem] uppercase tracking-[0.2em] text-[#556B2F]">
+    <div className="mt-8 max-w-xl border border-[#4d5a2a]/20 px-5 py-5 sm:px-6">
+      <p className="text-[0.7rem] uppercase tracking-[0.2em] text-[#4d5a2a]">
         {content.ui.guide.fromCalMasses}
       </p>
       <p className="mt-3 text-lg md:text-xl font-light text-gray-900 tracking-tight">
         Cal Masses
-        <span className="mx-2 text-[#556B2F]" aria-hidden>
+        <span className="mx-2 text-[#4d5a2a]" aria-hidden>
           →
         </span>
         {destinationLabel}
@@ -50,7 +50,7 @@ export function PageTOC({
       className="border-y border-gray-200 py-5"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <p className="text-[0.7rem] uppercase tracking-[0.2em] text-[#556B2F]">
+        <p className="text-[0.7rem] uppercase tracking-[0.2em] text-[#4d5a2a]">
           {content.ui.guide.tocTitle}
         </p>
         <ul className="mt-3 flex gap-x-6 gap-y-2 overflow-x-auto pb-1 text-sm text-gray-700 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
@@ -58,7 +58,7 @@ export function PageTOC({
             <li key={item.id} className="shrink-0">
               <a
                 href={`#${item.id}`}
-                className="whitespace-nowrap underline-offset-4 hover:text-[#556B2F] hover:underline"
+                className="whitespace-nowrap underline-offset-4 hover:text-[#4d5a2a] hover:underline"
               >
                 {item.label}
               </a>
@@ -91,18 +91,18 @@ export function RelatedDestinations({
                 to={item.to}
                 className="group flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
               >
-                <span className="text-lg font-medium text-gray-900 group-hover:text-[#556B2F]">
+                <span className="text-lg font-medium text-gray-900 group-hover:text-[#4d5a2a]">
                   {item.title}
                 </span>
                 {item.text ? (
                   <span className="text-sm text-gray-600 sm:text-right max-w-md">
                     {item.text}
-                    <span className="ml-2 text-[#556B2F]" aria-hidden>
+                    <span className="ml-2 text-[#4d5a2a]" aria-hidden>
                       →
                     </span>
                   </span>
                 ) : (
-                  <span className="text-[#556B2F]" aria-hidden>
+                  <span className="text-[#4d5a2a]" aria-hidden>
                     →
                   </span>
                 )}
@@ -127,7 +127,7 @@ export function EnvironmentCTA({
   secondary?: React.ReactNode;
 }) {
   return (
-    <section className="bg-[#556B2F] text-white py-16 md:py-24">
+    <section className="bg-[#4d5a2a] text-white py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-[40rem] space-y-5">
           <h2 className="text-2xl md:text-3xl font-semibold">{h2}</h2>

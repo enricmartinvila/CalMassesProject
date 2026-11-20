@@ -46,6 +46,7 @@ export const contentEn: ContentBundle = {
       paraDos: "For two",
       piscina: "Pool",
       laFinca: "The farm",
+      exploreTitle: "Explore",
     },
     notFound: {
       title: "Page not found",
@@ -107,6 +108,33 @@ export const contentEn: ContentBundle = {
   },
 
   home: {
+    design: {
+      eyebrows: {
+        accommodation: "The accommodation",
+        finca: "The farm",
+        pool: "Outdoors",
+        surroundings: "The surroundings",
+        sisu: "SISU",
+        gallery: "Gallery",
+        faq: "Before you come",
+        reviews: "Told by those who have already been here",
+      },
+      emphasis: {
+        hero: "vineyards",
+        accommodation: "at ease",
+        finca: "sleep",
+        pool: "outdoors",
+        surroundings: "Pla de Bages",
+        sisu: "wine",
+        gallery: "like",
+        faq: "questions",
+        finalCta: "Cal Masses",
+      },
+      poolChips: ["Shared pool", "Season: summer", "No fixed hours", "Rules: common sense", "Salt water"],
+      faqLead: "Any other questions? Write to us and we'll get back to you.",
+      galleryTitle: "See what it's like",
+      faqTitle: "Frequently asked questions",
+    },
     seo: {
       title:
         "A getaway for two among vineyards and nature in the Bages | Cal Masses",

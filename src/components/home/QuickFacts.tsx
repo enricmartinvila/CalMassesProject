@@ -9,7 +9,14 @@ import { useLang } from "../../hooks/useLang";
 type Fact = { label: string; value: string };
 
 /** Confirmed facts only — never surfaces TODO_DATA. */
-export function QuickFacts({ className = "" }: { className?: string }) {
+export function QuickFacts({
+  className = "",
+  variant = "list",
+}: {
+  className?: string;
+  /** "band" = dark strip under the home hero. */
+  variant?: "list" | "band";
+}) {
   const { content } = useLang();
   const f = content.ui.facts;
   const facts: Fact[] = [];
@@ -43,6 +50,28 @@ export function QuickFacts({ className = "" }: { className?: string }) {
     value: `${siteConfig.address.locality}, ${siteConfig.address.region}`,
   });
 
+  if (variant === "band") {
+    return (
+      <ul
+        className={`grid grid-cols-2 sm:grid-cols-4 lg:grid-flow-col lg:auto-cols-fr lg:grid-cols-none ${className}`}
+      >
+        {facts.map((fact) => (
+          <li
+            key={fact.label}
+            className="border-b border-white/10 px-4 py-7 text-center lg:border-b-0 lg:border-r lg:last:border-r-0"
+          >
+            <p className="font-serif text-[1.45rem] leading-tight text-white">
+              {fact.value}
+            </p>
+            <p className="mt-1 text-[0.7rem] uppercase tracking-[0.15em] opacity-70">
+              {fact.label}
+            </p>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   return (
     <ul
       className={`grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-4 ${className}`}
@@ -50,9 +79,9 @@ export function QuickFacts({ className = "" }: { className?: string }) {
       {facts.map((fact) => (
         <li
           key={fact.label}
-          className="border-l-2 border-[#556B2F]/40 pl-3 py-1"
+          className="border-l-2 border-[#4d5a2a]/40 pl-3 py-1"
         >
-          <p className="text-[0.7rem] uppercase tracking-[0.14em] text-[#556B2F]">
+          <p className="text-[0.7rem] uppercase tracking-[0.14em] text-[#4d5a2a]">
             {fact.label}
           </p>
           <p className="mt-1 text-base font-medium text-gray-900 leading-snug">
@@ -117,14 +146,14 @@ export function ServiceFacts({ className = "" }: { className?: string }) {
   if (!rows.length) return null;
 
   return (
-    <ul className={`grid gap-3 sm:grid-cols-2 ${className}`}>
+    <ul className={`grid gap-x-10 sm:grid-cols-2 ${className}`}>
       {rows.map((r) => (
         <li
           key={r.label}
-          className="flex items-baseline justify-between gap-4 border-b border-gray-200 py-2 text-sm"
+          className="flex items-baseline justify-between gap-4 border-b border-line py-3.5 text-[0.95rem]"
         >
-          <span className="text-gray-600">{r.label}</span>
-          <span className="font-medium text-gray-900 text-right">{r.value}</span>
+          <span className="text-muted">{r.label}</span>
+          <span className="font-medium text-right">{r.value}</span>
         </li>
       ))}
     </ul>

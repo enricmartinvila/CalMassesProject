@@ -43,7 +43,7 @@ export function SisuPage() {
             />
             <div>
               <Paragraphs items={wine.paragraphs} />
-              <p className="mt-4 text-xs tracking-wide text-[#556B2F]">
+              <p className="mt-4 text-xs tracking-wide text-[#4d5a2a]">
                 {wine.footer}
               </p>
             </div>

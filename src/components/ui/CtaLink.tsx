@@ -11,13 +11,13 @@ type Props = {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm md:text-base font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#556B2F]/50";
+  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm md:text-base font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4d5a2a]/50";
 
 const variants = {
-  primary: "bg-[#556B2F] text-white hover:bg-[#445323]",
+  primary: "bg-[#4d5a2a] text-white hover:bg-[#2f3819]",
   secondary:
-    "border border-[#556B2F] text-[#556B2F] bg-white hover:bg-[#EEF2E6]",
-  ghost: "text-[#556B2F] underline-offset-4 hover:underline",
+    "border border-[#4d5a2a] text-[#4d5a2a] bg-white hover:bg-[#e8ebd9]",
+  ghost: "text-[#4d5a2a] underline-offset-4 hover:underline",
 };
 
 export function CtaLink({

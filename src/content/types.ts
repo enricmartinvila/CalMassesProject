@@ -49,6 +49,7 @@ export type UiCopy = {
     paraDos: string;
     piscina: string;
     laFinca: string;
+    exploreTitle: string;
   };
   notFound: {
     title: string;
@@ -108,8 +109,28 @@ export type UiCopy = {
     };
   };
 
+type HomeSectionKey =
+  | "hero"
+  | "accommodation"
+  | "finca"
+  | "pool"
+  | "surroundings"
+  | "sisu"
+  | "gallery"
+  | "faq"
+  | "finalCta";
+
 export type HomeContent = {
   seo: PageSeo;
+  /** Visual layer: small kicker above each heading and the words set in italic. */
+  design: {
+    eyebrows: Partial<Record<HomeSectionKey | "reviews", string>>;
+    emphasis: Partial<Record<HomeSectionKey, string>>;
+    poolChips: string[];
+    faqLead: string;
+    galleryTitle: string;
+    faqTitle: string;
+  };
   hero: {
     h1: string;
     paragraphs: string[];

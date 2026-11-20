@@ -93,8 +93,8 @@ export function SmartImage({
 
 /** Shared hero / LCP preload hints (mirrored in index.html). */
 export const HERO_LCP = {
-  webp: "/images/exterior-1600.webp",
+  webp: "/images/hero-vinyes-1600.webp",
   avifSrcSet:
-    "/images/exterior-400.avif 400w, /images/exterior-800.avif 800w, /images/exterior-1600.avif 1600w",
+    "/images/hero-vinyes-400.avif 400w, /images/hero-vinyes-800.avif 800w, /images/hero-vinyes-1600.avif 1600w",
   sizes: "100vw",
 } as const;

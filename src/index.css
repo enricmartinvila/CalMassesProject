@@ -2,18 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Cabin";
-  src: url("/font/Cabin.ttf") format("truetype");
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
-  font-family: "Cabin", Georgia, serif;
-  color: #111827;
-  background-color: #ffffff;
+  --olive: #4d5a2a;
+  --olive-dark: #2f3819;
+  --olive-soft: #e8ebd9;
+  --cream: #f7f3ea;
+  --paper: #fffdf8;
+  --ink: #23251b;
+  --muted: #6a6c5c;
+  --wine: #7a2e3a;
+  --line: #ded9c8;
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--ink);
+  background-color: var(--cream);
 }
 
 html {
@@ -23,6 +24,28 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+h1 em,
+h2 em {
+  font-style: italic;
+  color: var(--olive);
+}
+
+/* <picture> is only a source wrapper: let the <img> take part in grid/flex layout. */
+picture {
+  display: contents;
 }
 
 img {
@@ -32,6 +55,45 @@ img {
 
 summary::-webkit-details-marker {
   display: none;
+}
+
+@layer components {
+  .eyebrow {
+    @apply mb-4 flex items-center gap-3 text-[0.78rem] font-semibold uppercase tracking-[0.18em] text-brand;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 32px;
+    height: 1px;
+    background: currentColor;
+  }
+  .h2-display {
+    @apply font-serif text-[2.1rem] leading-[1.1] md:text-[2.8rem] lg:text-[3.4rem];
+  }
+  .link-underline {
+    @apply inline-block border-b-[1.5px] border-current pb-0.5 font-semibold text-brand transition-colors hover:text-wine;
+  }
+}
+
+/* Scroll reveal */
+.rv {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.rv.in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rv {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
