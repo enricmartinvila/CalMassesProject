@@ -18,6 +18,7 @@ export function ReservarPage() {
         title={t.seo.title}
         description={t.seo.description}
         path={path("reservar")}
+        noIndex
       />
       <BreadcrumbJsonLd
         items={[

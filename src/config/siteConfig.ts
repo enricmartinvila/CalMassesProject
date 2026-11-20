@@ -38,7 +38,14 @@ export const siteConfig = {
   siteUrl: "https://www.calmasses.com",
 
   lodgingCategory: TODO_DATA,
-  registrationNumber: TODO_DATA,
+  /** Catalan tourism register number (e.g. HUTCC-000000). Shown in footer + legal notice once filled. */
+  registrationNumber: TODO_DATA as string,
+
+  /** Owner identity for the legal notice (LSSI). Rows are hidden while TODO. */
+  legal: {
+    holderName: TODO_DATA as string,
+    taxId: TODO_DATA as string,
+  },
 
   /** Entire place (alojamiento entero), not a room in a shared home. */
   entirePlace: true as const,
@@ -151,7 +158,7 @@ export const siteConfig = {
   cancellationPolicy: "Según la política de Airbnb al reservar",
 
   distances: {
-    montserrat: "aprox. 20 km / 40 min en coche",
+    montserrat: "aprox. 20 km / 25 min en coche",
     manresa: "aprox. 11 km / 20 min en coche",
     barcelona: "aprox. 65 km / 1 h 10 min en coche",
   },
@@ -215,6 +222,7 @@ export const siteConfig = {
     living: "/images/interior-soda-1600.webp",
     kitchen: "/images/kitchen-1600.webp",
     bathroom: "/images/bathroom-1600.webp",
+    jacuzzi: "/images/jacuzzi-1600.webp",
     terrace: "/images/exterior-vermut-1600.webp",
     garden: "/images/garden-1600.webp",
     bbq: "/images/bbq-1600.webp",
@@ -222,11 +230,29 @@ export const siteConfig = {
     montserrat: "TODO_IMAGE_MONTSERRAT",
   },
 
+  /** Share image (1200x630) per page; falls back to images.ogDefault. */
+  ogImages: {
+    home: "/images/og/home.jpg",
+    alojamiento: "/images/og/alojamiento.jpg",
+    finca: "/images/og/finca.jpg",
+    sisu: "/images/og/sisu.jpg",
+    contacto: "/images/og/contacto.jpg",
+    reservar: "/images/og/home.jpg",
+    landingBages: "/images/og/bages.jpg",
+    landingManresa: "/images/og/manresa.jpg",
+    landingMontserrat: "/images/og/montserrat.jpg",
+    landingParaDos: "/images/og/parados.jpg",
+    landingPiscina: "/images/og/piscina.jpg",
+    landingBarcelona: "/images/og/barcelona.jpg",
+    landingEnoturismo: "/images/og/enoturismo.jpg",
+  } as Record<string, string>,
+
   /** Featured strip on /alojamiento before opening the full lightbox. */
   alojamientoFeatured: [
     { src: "/images/exterior-1600.webp", category: "exterior" as const },
     { src: "/images/bedroom-1600.webp", category: "alojamiento" as const },
     { src: "/images/kitchen-1600.webp", category: "alojamiento" as const },
+    { src: "/images/jacuzzi-1600.webp", category: "alojamiento" as const },
     { src: "/images/bathroom-1600.webp", category: "alojamiento" as const },
     { src: "/images/pool-1600.webp", category: "piscina" as const },
     { src: "/images/hero-vinyes-1600.webp", category: "finca" as const },
@@ -378,6 +404,15 @@ export const siteConfig = {
       category: "alojamiento" as const,
     },
     {
+      src: "/images/jacuzzi-1600.webp",
+      alt: {
+        es: "Jacuzzi en el baño de Cal Masses",
+        ca: "Jacuzzi al bany de Cal Masses",
+        en: "Hot tub in the Cal Masses bathroom",
+      },
+      category: "alojamiento" as const,
+    },
+    {
       src: "/images/bathroom-1600.webp",
       alt: {
         es: "Baño de Cal Masses",
@@ -459,4 +494,13 @@ export function poolPrivacyLabel(lang: Lang): string | null {
         : "Piscina privada";
   }
   return null;
+}
+
+/** "★ 4,97 en Airbnb (86 opiniones)" — used in meta descriptions for CTR. */
+export function ratingSnippet(lang: Lang): string {
+  const s = siteConfig.reviews.sources[0];
+  const rating = lang === "en" ? s.rating.replace(",", ".") : s.rating;
+  if (lang === "en") return `★ ${rating} on ${s.source} (${s.count} reviews)`;
+  if (lang === "ca") return `★ ${rating} a ${s.source} (${s.count} opinions)`;
+  return `★ ${rating} en ${s.source} (${s.count} opiniones)`;
 }

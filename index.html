@@ -5,23 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" href="/logo/newlogopetit.png" />
-    <!-- LCP: discover hero image before JS/CSS so mobile can fetch 400/800w AVIF early -->
-    <link
-      rel="preload"
-      as="image"
-      type="image/avif"
-      imagesrcset="/images/hero-vinyes-400.avif 400w, /images/hero-vinyes-800.avif 800w, /images/hero-vinyes-1600.avif 1600w"
-      imagesizes="100vw"
-      fetchpriority="high"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <title>Cal Masses</title>
-    <meta name="description" content="Cal Masses" />
+    <script>document.documentElement.classList.add("js")</script>
+    <!--app-head-->
   </head>
   <body>
     <div id="root"></div>

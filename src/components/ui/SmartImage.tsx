@@ -70,7 +70,8 @@ export function SmartImage({
       srcSet={webpSrcSet}
       loading={priority ? "eager" : "lazy"}
       decoding="async"
-      {...(priority ? { fetchPriority: "high" as const } : {})}
+      // React 18 only forwards the lowercase attribute.
+      {...(priority ? ({ fetchpriority: "high" } as Record<string, string>) : {})}
     />
   );
 

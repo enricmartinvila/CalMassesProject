@@ -338,9 +338,9 @@ export type ContentBundle = {
     intro: string;
   };
   legal: {
-    aviso: { seo: PageSeo; body: string };
-    privacidad: { seo: PageSeo; body: string };
-    cookies: { seo: PageSeo; body: string };
+    aviso: { seo: PageSeo };
+    privacidad: { seo: PageSeo };
+    cookies: { seo: PageSeo };
   };
   faq: FaqItem[];
 };

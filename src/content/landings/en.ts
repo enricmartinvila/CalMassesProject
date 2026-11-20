@@ -1,5 +1,8 @@
+import { ratingSnippet } from "../../config/siteConfig";
 import { siteConfig } from "../../config/siteConfig";
 import type { LandingsBundle } from "./types";
+
+const R = ratingSnippet("en");
 
 /**
  * English landing copy — faithful translation of the Spanish editorial brief.
@@ -9,9 +12,9 @@ export const landingsEn: LandingsBundle = {
     routeKey: "landingBages",
     status: "published",
     seo: {
-      title: "Rural accommodation in the Bages | Cal Masses",
+      title: "Rural accommodation in the Bages, among vineyards | Cal Masses",
       description:
-        "Cal Masses is a rural accommodation for two in Sant Salvador de Guardiola, surrounded by countryside, vineyard and nature in the heart of the Bages.",
+        `${R}. An entire rural place for two on a farm with vineyard and woodland in Sant Salvador de Guardiola, in the heart of the Bages.`,
       h1: "Rural accommodation in the Bages, between countryside and vineyards",
     },
     breadcrumb: [
@@ -102,9 +105,9 @@ export const landingsEn: LandingsBundle = {
     routeKey: "landingManresa",
     status: "published",
     seo: {
-      title: "Rural accommodation near Manresa | Cal Masses",
+      title: "Rural accommodation 20 min from Manresa | Cal Masses",
       description:
-        "A rural accommodation for two near Manresa, surrounded by nature, countryside and vineyards. Discover Cal Masses in Sant Salvador de Guardiola.",
+        `Rural accommodation for two 11 km from Manresa, on a vineyard farm. Hot tub, summer pool and free parking. ${R}.`,
       h1: "Rural accommodation near Manresa",
     },
     breadcrumb: [
@@ -202,9 +205,9 @@ export const landingsEn: LandingsBundle = {
     routeKey: "landingMontserrat",
     status: "published",
     seo: {
-      title: "Accommodation near Montserrat | Cal Masses",
+      title: "Where to stay near Montserrat: 25 min away | Cal Masses",
       description:
-        "Discover Cal Masses, a rural accommodation for two near Montserrat, surrounded by countryside and vineyards in the Bages.",
+        `Stay 25 min from Montserrat on a vineyard farm in the Bages. Accommodation for two with a hot tub, summer pool and parking. ${R}.`,
       h1: "Accommodation near Montserrat for a quiet getaway",
     },
     breadcrumb: [
@@ -307,10 +310,10 @@ export const landingsEn: LandingsBundle = {
     routeKey: "landingParaDos",
     status: "published",
     seo: {
-      title: "Rural accommodation for two in the Bages | Cal Masses",
+      title: "Romantic getaway with hot tub in the Bages | Cal Masses",
       description:
-        "A rural getaway for two in the Bages. Countryside, vineyards and nature at Cal Masses, Sant Salvador de Guardiola.",
-      h1: "A rural getaway for two in the Bages",
+        `A place just for two, with a hot tub, among vineyards and woodland in the Bages. Ideal for a couple's getaway near Barcelona. ${R}.`,
+      h1: "A getaway for two with a hot tub in the Bages",
     },
     breadcrumb: [
       { label: "Home", route: "home" },
@@ -318,7 +321,7 @@ export const landingsEn: LandingsBundle = {
       { label: "For two" },
     ],
     hero: {
-      h1: "A rural getaway for two in the Bages",
+      h1: "A getaway for two with a hot tub in the Bages",
       intro: [
         "Not every rural accommodation has to be designed for groups.",
         "Cal Masses is a space for two people, on a Bages farm surrounded by countryside, woodland and vineyard.",
@@ -339,6 +342,15 @@ export const landingsEn: LandingsBundle = {
         ],
         image: siteConfig.images.bedroom,
         showFeatureGrid: true,
+      },
+      {
+        h2: "A hot tub to end the day",
+        paragraphs: [
+          "The Cal Masses bathroom has a hot tub.",
+          "After a day at Montserrat or among the vineyards, it is one of the best moments of the stay: no rush, and no need to leave the accommodation.",
+          "And in summer, the farm's saltwater pool is there too.",
+        ],
+        image: siteConfig.images.jacuzzi,
       },
       {
         h2: "Few plans can also be a good plan",
@@ -421,7 +433,7 @@ export const landingsEn: LandingsBundle = {
     seo: {
       title: "Rural accommodation with pool in the Bages | Cal Masses",
       description:
-        "Rural accommodation for two with a pool in the Bages. Discover Cal Masses, a farm surrounded by countryside and vineyards in Sant Salvador de Guardiola.",
+        `Outdoor saltwater pool (shared, summer) on a vineyard farm in the Bages. Accommodation for two with a hot tub. ${R}.`,
       h1: "Rural accommodation with pool in the Bages",
     },
     breadcrumb: [
@@ -498,9 +510,9 @@ export const landingsEn: LandingsBundle = {
     routeKey: "landingBarcelona",
     status: "published",
     seo: {
-      title: "Rural getaway near Barcelona | Cal Masses",
+      title: "Rural getaway 1 h from Barcelona, among vineyards | Cal Masses",
       description:
-        "A rural getaway for two near Barcelona. Discover Cal Masses, in the Bages, among vineyards, countryside and nature.",
+        `1 h 10 min from Barcelona: rural accommodation for two with a hot tub on a vineyard farm in the Bages, near Montserrat. ${R}.`,
       h1: "A rural getaway near Barcelona",
     },
     breadcrumb: [
@@ -597,9 +609,9 @@ export const landingsEn: LandingsBundle = {
     routeKey: "landingEnoturismo",
     status: "published",
     seo: {
-      title: "Wine tourism in the Pla de Bages | Cal Masses",
+      title: "Wine tourism in Pla de Bages: sleep among vines | Cal Masses",
       description:
-        "Discover wine tourism in the Pla de Bages from Cal Masses: accommodation among vineyards, our own wine and a territory deeply tied to the vine.",
+        `DO Pla de Bages wineries, vineyards and our own wine (SISU) from a farm in Sant Salvador de Guardiola. Accommodation for two. ${R}.`,
       h1: "Wine tourism in the Pla de Bages from a farm with a vineyard",
     },
     breadcrumb: [

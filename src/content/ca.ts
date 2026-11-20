@@ -1,5 +1,8 @@
+import { ratingSnippet } from "../config/siteConfig";
 import type { ContentBundle } from "./types";
-import { TODO_DATA, TODO_LEGAL_CONTENT } from "../config/siteConfig";
+import { TODO_DATA } from "../config/siteConfig";
+
+const R = ratingSnippet("ca");
 
 /** Catalan — faithful translation of approved Spanish copy. */
 export const contentCa: ContentBundle = {
@@ -137,9 +140,9 @@ export const contentCa: ContentBundle = {
     },
     seo: {
       title:
-        "Una escapada per a dos entre vinyes i natura al Bages | Cal Masses",
+        "Allotjament rural per a dos amb jacuzzi · Bages | Cal Masses",
       description:
-        "Cal Masses és un allotjament a Sant Salvador de Guardiola, envoltat de camp, bosc i vinya, a prop de Manresa i Montserrat.",
+        `${R}. Allotjament sencer per a dos en una finca amb vinya a Sant Salvador de Guardiola, a 25 min de Montserrat. Jacuzzi, piscina i pàrquing.`,
       h1: "Una escapada per a dos entre vinyes i natura al Bages",
     },
     hero: {
@@ -233,9 +236,9 @@ export const contentCa: ContentBundle = {
 
   alojamiento: {
     seo: {
-      title: "L'allotjament | Cal Masses, Bages",
+      title: "Allotjament per a dos: jacuzzi, cuina i piscina | Cal Masses",
       description:
-        "Descobreix l'allotjament de Cal Masses: un espai per a dues persones a Sant Salvador de Guardiola amb cuina, piscina i natura al Bages.",
+        "Allotjament sencer per a dos a Sant Salvador de Guardiola: dormitori, bany, cuina, jacuzzi, aire condicionat i piscina compartida a l'estiu. Mira fotos i detalls.",
       h1: "L'allotjament",
     },
     hero: {
@@ -471,9 +474,9 @@ export const contentCa: ContentBundle = {
 
   finca: {
     seo: {
-      title: "Cal Masses | La finca",
+      title: "La finca: vinya, hort i vi propi | Cal Masses",
       description:
-        "Cal Masses no va començar com un projecte turístic. És una finca, un lloc on vivim, cultivem i fem vi.",
+        "Cal Masses no va començar com un projecte turístic: és una finca amb vinya i hort on vivim, cultivem i fem el nostre vi, SISU.",
       h1: "Cal Masses",
     },
     intro: [
@@ -508,7 +511,7 @@ export const contentCa: ContentBundle = {
 
   sisu: {
     seo: {
-      title: "SISU, vi fet a Cal Masses | Cal Masses",
+      title: "SISU, el vi de la finca Cal Masses al Pla de Bages",
       description:
         "SISU neix del mateix lloc. La vinya forma part de Cal Masses i cada anyada explica, a la seva manera, una part del que passa a la finca.",
       h1: "SISU",
@@ -539,9 +542,9 @@ export const contentCa: ContentBundle = {
 
   contacto: {
     seo: {
-      title: "Contacte | Cal Masses",
+      title: "Contacte i ubicació | Cal Masses, Bages",
       description:
-        "Si tens qualsevol dubte sobre la teva estada, disponibilitat o com arribar-hi, pots contactar directament amb nosaltres.",
+        "Escriu-nos per WhatsApp, correu o telèfon si tens dubtes sobre dates, l'estada o com arribar a Cal Masses, a Sant Salvador de Guardiola (Bages).",
       h1: "Contacte",
     },
     intro:
@@ -567,63 +570,106 @@ export const contentCa: ContentBundle = {
     aviso: {
       seo: {
         title: "Avís legal | Cal Masses",
-        description: TODO_LEGAL_CONTENT,
+        description: "Dades del titular, condicions d'ús i propietat intel·lectual del web de Cal Masses.",
         h1: "Avís legal",
       },
-      body: TODO_LEGAL_CONTENT,
     },
     privacidad: {
       seo: {
         title: "Privacitat | Cal Masses",
-        description: TODO_LEGAL_CONTENT,
+        description: "Com tracta Cal Masses les dades personals de qui ens contacta o s'allotja amb nosaltres.",
         h1: "Privacitat",
       },
-      body: TODO_LEGAL_CONTENT,
     },
     cookies: {
       seo: {
         title: "Cookies | Cal Masses",
-        description: TODO_LEGAL_CONTENT,
+        description: "Quines galetes fa servir el web de Cal Masses i com canviar la teva elecció.",
         h1: "Cookies",
       },
-      body: TODO_LEGAL_CONTENT,
     },
   },
 
   faq: [
-    { question: "Per a quantes persones és Cal Masses?", answer: "2" },
+    {
+      question: "Per a quantes persones és Cal Masses?",
+      answer:
+        "Per a dues persones. És un allotjament sencer amb un dormitori i un bany, pensat per a parelles o dos amics que volen uns dies tranquils.",
+    },
+    {
+      question: "Té jacuzzi?",
+      answer:
+        "Sí. El bany de l'allotjament té jacuzzi, a més d'aire condicionat i calefacció per a qualsevol època de l'any.",
+    },
     {
       question: "La piscina és privada o compartida?",
       answer:
-        "Compartida. Està disponible per als hostes a l'estiu; els de la casa no solen fer-la servir si hi ha gent. Exterior, sense horari fix: sentit comú.",
+        "Compartida. És una piscina exterior d'aigua salada disponible per als hostes a l'estiu; els de la casa no solen fer-la servir si hi ha gent. No hi ha horari fix: sentit comú.",
     },
-    { question: "Hi ha cuina?", answer: "Sí" },
+    {
+      question: "Hi ha cuina?",
+      answer:
+        "Sí, l'allotjament té cuina pròpia perquè puguis preparar els teus àpats i organitzar-te al teu aire.",
+    },
     {
       question: "Hi ha aparcament?",
-      answer: "Sí, hi ha aparcament de sobres; hi cap qualsevol tipus de vehicle.",
+      answer:
+        "Sí, aparcament gratuït a la mateixa finca, amb espai de sobres per a qualsevol tipus de vehicle.",
     },
-    { question: "Hi ha Wi-Fi?", answer: "Sí" },
-    { question: "S'admeten mascotes?", answer: "No." },
-    { question: "Hi poden allotjar-se nens?", answer: "Sí" },
-    { question: "A quina hora és el check-in?", answer: "A partir de les 16:00." },
-    { question: "A quina hora és el check-out?", answer: "Fins a les 11:00." },
-    { question: "Com s'hi arriba?", answer: TODO_DATA },
+    {
+      question: "Hi ha Wi-Fi?",
+      answer:
+        "Sí, hi ha Wi-Fi gratuït a l'allotjament.",
+    },
+    {
+      question: "S'admeten mascotes?",
+      answer:
+        "No, a Cal Masses no s'admeten mascotes.",
+    },
+    {
+      question: "Hi poden allotjar-se nens?",
+      answer:
+        "Sí, sempre que en total no sigueu més de dues persones, que és la capacitat de l'allotjament.",
+    },
+    {
+      question: "A quina hora és el check-in?",
+      answer:
+        "El check-in és a partir de les 16:00.",
+    },
+    {
+      question: "A quina hora és el check-out?",
+      answer:
+        "El check-out és fins a les 11:00.",
+    },
+    {
+      question: "On és Cal Masses?",
+      answer:
+        "Al Raval del Sellarès, s/n, 08253 Sant Salvador de Guardiola (Bages, Barcelona). A la pàgina de contacte tens el mapa amb la ubicació exacta.",
+    },
     {
       question: "A quina distància és Manresa?",
-      answer: "Aprox. 11 km / 20 min en cotxe.",
+      answer:
+        "Manresa és a uns 11 km, aproximadament 20 minuts en cotxe.",
     },
     {
       question: "A quina distància és Montserrat?",
-      answer: "Aprox. 20 km /25 min en cotxe.",
+      answer:
+        "Montserrat és a uns 20 km, aproximadament 25 minuts en cotxe.",
+    },
+    {
+      question: "A quina distància és Barcelona?",
+      answer:
+        "Barcelona és a uns 65 km, aproximadament 1 h 10 min en cotxe.",
     },
     {
       question: "Com puc consultar la disponibilitat?",
       answer:
-        "Pots consultar la disponibilitat a Airbnb, o contactar per WhatsApp o email.",
+        "Pots veure les dates lliures a Airbnb o escriure'ns per WhatsApp o correu i et responem directament.",
     },
     {
       question: "Quina és la política de cancel·lació?",
-      answer: "S'indica a Airbnb en triar les dates de la reserva.",
+      answer:
+        "La política de cancel·lació es mostra a Airbnb en triar les dates de la reserva.",
     },
   ],
 };

@@ -120,11 +120,11 @@ function notFoundHtml(pathname) {
   <meta name="robots" content="noindex,follow"/>
   <title>404 | Cal Masses</title>
   <style>
-    body{margin:0;font-family:Georgia,serif;color:#111827;background:#fff}
+    body{margin:0;font-family:Georgia,serif;color:#23251b;background:#f7f3ea}
     main{max-width:36rem;margin:0 auto;padding:6rem 1.25rem;text-align:center}
     h1{font-weight:300;font-size:1.875rem}
-    p{color:#4b5563;line-height:1.6}
-    a{display:inline-block;margin-top:2rem;padding:.75rem 1.5rem;border-radius:9999px;background:#556B2F;color:#fff;text-decoration:none}
+    p{color:#6a6c5c;line-height:1.6}
+    a{display:inline-block;margin-top:2rem;padding:.75rem 1.5rem;border-radius:9999px;background:#4d5a2a;color:#fff;text-decoration:none}
   </style>
 </head>
 <body>

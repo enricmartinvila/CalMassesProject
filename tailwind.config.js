@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Inter"', "system-ui", "sans-serif"],
-        serif: ['"Fraunces"', "Georgia", "serif"],
+        sans: ['"Inter Variable"', '"Inter"', "system-ui", "sans-serif"],
+        serif: ['"Fraunces Variable"', '"Fraunces"', "Georgia", "serif"],
       },
       colors: {
         brand: {

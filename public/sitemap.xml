@@ -1,42 +1,291 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.calmasses.com/es</loc></url>
-  <url><loc>https://www.calmasses.com/es/alojamiento</loc></url>
-  <url><loc>https://www.calmasses.com/es/cal-masses</loc></url>
-  <url><loc>https://www.calmasses.com/es/sisu</loc></url>
-  <url><loc>https://www.calmasses.com/es/contacto</loc></url>
-  <url><loc>https://www.calmasses.com/es/reservar</loc></url>
-  <url><loc>https://www.calmasses.com/es/alojamiento-rural-bages</loc></url>
-  <url><loc>https://www.calmasses.com/es/alojamiento-rural-cerca-manresa</loc></url>
-  <url><loc>https://www.calmasses.com/es/alojamiento-cerca-montserrat</loc></url>
-  <url><loc>https://www.calmasses.com/es/alojamiento-rural-para-dos-bages</loc></url>
-  <url><loc>https://www.calmasses.com/es/alojamiento-rural-piscina-bages</loc></url>
-  <url><loc>https://www.calmasses.com/es/escapada-rural-cerca-barcelona</loc></url>
-  <url><loc>https://www.calmasses.com/es/enoturismo-pla-de-bages</loc></url>
-  <url><loc>https://www.calmasses.com/ca</loc></url>
-  <url><loc>https://www.calmasses.com/ca/allotjament</loc></url>
-  <url><loc>https://www.calmasses.com/ca/cal-masses</loc></url>
-  <url><loc>https://www.calmasses.com/ca/sisu</loc></url>
-  <url><loc>https://www.calmasses.com/ca/contacte</loc></url>
-  <url><loc>https://www.calmasses.com/ca/reservar</loc></url>
-  <url><loc>https://www.calmasses.com/ca/allotjament-rural-bages</loc></url>
-  <url><loc>https://www.calmasses.com/ca/allotjament-rural-prop-de-manresa</loc></url>
-  <url><loc>https://www.calmasses.com/ca/allotjament-prop-de-montserrat</loc></url>
-  <url><loc>https://www.calmasses.com/ca/allotjament-rural-per-a-dos-bages</loc></url>
-  <url><loc>https://www.calmasses.com/ca/allotjament-rural-piscina-bages</loc></url>
-  <url><loc>https://www.calmasses.com/ca/escapada-rural-prop-de-barcelona</loc></url>
-  <url><loc>https://www.calmasses.com/ca/enoturisme-pla-de-bages</loc></url>
-  <url><loc>https://www.calmasses.com/en</loc></url>
-  <url><loc>https://www.calmasses.com/en/accommodation</loc></url>
-  <url><loc>https://www.calmasses.com/en/cal-masses</loc></url>
-  <url><loc>https://www.calmasses.com/en/sisu</loc></url>
-  <url><loc>https://www.calmasses.com/en/contact</loc></url>
-  <url><loc>https://www.calmasses.com/en/book</loc></url>
-  <url><loc>https://www.calmasses.com/en/rural-accommodation-bages</loc></url>
-  <url><loc>https://www.calmasses.com/en/rural-accommodation-near-manresa</loc></url>
-  <url><loc>https://www.calmasses.com/en/accommodation-near-montserrat</loc></url>
-  <url><loc>https://www.calmasses.com/en/rural-accommodation-for-two-bages</loc></url>
-  <url><loc>https://www.calmasses.com/en/rural-accommodation-pool-bages</loc></url>
-  <url><loc>https://www.calmasses.com/en/rural-getaway-near-barcelona</loc></url>
-  <url><loc>https://www.calmasses.com/en/wine-tourism-pla-de-bages</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.calmasses.com/es</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/ca</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/en</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/es/alojamiento</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/accommodation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/ca/allotjament</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/accommodation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/en/accommodation</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/accommodation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/es/cal-masses</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/cal-masses"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/cal-masses"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/cal-masses"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/cal-masses"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/ca/cal-masses</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/cal-masses"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/cal-masses"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/cal-masses"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/cal-masses"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/en/cal-masses</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/cal-masses"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/cal-masses"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/cal-masses"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/cal-masses"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/es/sisu</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/sisu"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/sisu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/sisu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/sisu"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/ca/sisu</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/sisu"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/sisu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/sisu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/sisu"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/en/sisu</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/sisu"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/sisu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/sisu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/sisu"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/es/contacto</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/contacto"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/contacte"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/contacto"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/ca/contacte</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/contacto"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/contacte"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/contacto"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/en/contact</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/contacto"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/contacte"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/contacto"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/es/alojamiento-rural-bages</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento-rural-bages"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament-rural-bages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/rural-accommodation-bages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento-rural-bages"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/ca/allotjament-rural-bages</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento-rural-bages"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament-rural-bages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/rural-accommodation-bages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento-rural-bages"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/en/rural-accommodation-bages</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento-rural-bages"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament-rural-bages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/rural-accommodation-bages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento-rural-bages"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/es/alojamiento-rural-cerca-manresa</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento-rural-cerca-manresa"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament-rural-prop-de-manresa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/rural-accommodation-near-manresa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento-rural-cerca-manresa"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/ca/allotjament-rural-prop-de-manresa</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento-rural-cerca-manresa"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament-rural-prop-de-manresa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/rural-accommodation-near-manresa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento-rural-cerca-manresa"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/en/rural-accommodation-near-manresa</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento-rural-cerca-manresa"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament-rural-prop-de-manresa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/rural-accommodation-near-manresa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento-rural-cerca-manresa"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/es/alojamiento-cerca-montserrat</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento-cerca-montserrat"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament-prop-de-montserrat"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/accommodation-near-montserrat"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento-cerca-montserrat"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/ca/allotjament-prop-de-montserrat</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento-cerca-montserrat"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament-prop-de-montserrat"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/accommodation-near-montserrat"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento-cerca-montserrat"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/en/accommodation-near-montserrat</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento-cerca-montserrat"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament-prop-de-montserrat"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/accommodation-near-montserrat"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento-cerca-montserrat"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/es/alojamiento-rural-para-dos-bages</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento-rural-para-dos-bages"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament-rural-per-a-dos-bages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/rural-accommodation-for-two-bages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento-rural-para-dos-bages"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/ca/allotjament-rural-per-a-dos-bages</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento-rural-para-dos-bages"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament-rural-per-a-dos-bages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/rural-accommodation-for-two-bages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento-rural-para-dos-bages"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/en/rural-accommodation-for-two-bages</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento-rural-para-dos-bages"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament-rural-per-a-dos-bages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/rural-accommodation-for-two-bages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento-rural-para-dos-bages"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/es/alojamiento-rural-piscina-bages</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento-rural-piscina-bages"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament-rural-piscina-bages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/rural-accommodation-pool-bages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento-rural-piscina-bages"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/ca/allotjament-rural-piscina-bages</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento-rural-piscina-bages"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament-rural-piscina-bages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/rural-accommodation-pool-bages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento-rural-piscina-bages"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/en/rural-accommodation-pool-bages</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/alojamiento-rural-piscina-bages"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/allotjament-rural-piscina-bages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/rural-accommodation-pool-bages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/alojamiento-rural-piscina-bages"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/es/escapada-rural-cerca-barcelona</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/escapada-rural-cerca-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/escapada-rural-prop-de-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/rural-getaway-near-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/escapada-rural-cerca-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/ca/escapada-rural-prop-de-barcelona</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/escapada-rural-cerca-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/escapada-rural-prop-de-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/rural-getaway-near-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/escapada-rural-cerca-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/en/rural-getaway-near-barcelona</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/escapada-rural-cerca-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/escapada-rural-prop-de-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/rural-getaway-near-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/escapada-rural-cerca-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/es/enoturismo-pla-de-bages</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/enoturismo-pla-de-bages"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/enoturisme-pla-de-bages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/wine-tourism-pla-de-bages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/enoturismo-pla-de-bages"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/ca/enoturisme-pla-de-bages</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/enoturismo-pla-de-bages"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/enoturisme-pla-de-bages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/wine-tourism-pla-de-bages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/enoturismo-pla-de-bages"/>
+  </url>
+  <url>
+    <loc>https://www.calmasses.com/en/wine-tourism-pla-de-bages</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.calmasses.com/es/enoturismo-pla-de-bages"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.calmasses.com/ca/enoturisme-pla-de-bages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.calmasses.com/en/wine-tourism-pla-de-bages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.calmasses.com/es/enoturismo-pla-de-bages"/>
+  </url>
 </urlset>

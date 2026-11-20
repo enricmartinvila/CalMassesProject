@@ -1,5 +1,8 @@
+import { ratingSnippet } from "../../config/siteConfig";
 import { siteConfig } from "../../config/siteConfig";
 import type { LandingsBundle } from "./types";
+
+const R = ratingSnippet("es");
 
 /**
  * Spanish landing copy — exact strings from the editorial brief.
@@ -10,9 +13,9 @@ export const landingsEs: LandingsBundle = {
     routeKey: "landingBages",
     status: "published",
     seo: {
-      title: "Alojamiento rural en el Bages | Cal Masses",
+      title: "Alojamiento rural en el Bages, entre viñedos | Cal Masses",
       description:
-        "Cal Masses es un alojamiento rural para dos personas en Sant Salvador de Guardiola, rodeado de campo, viñedo y naturaleza en el corazón del Bages.",
+        `${R}. Alojamiento rural entero para dos en una finca con viñedo y bosque en Sant Salvador de Guardiola, en el corazón del Bages.`,
       h1: "Alojamiento rural en el Bages, entre campo y viñedos",
     },
     breadcrumb: [
@@ -103,9 +106,9 @@ export const landingsEs: LandingsBundle = {
     routeKey: "landingManresa",
     status: "published",
     seo: {
-      title: "Alojamiento rural cerca de Manresa | Cal Masses",
+      title: "Alojamiento rural a 20 min de Manresa | Cal Masses",
       description:
-        "Un alojamiento rural para dos cerca de Manresa, rodeado de naturaleza, campo y viñedos. Descubre Cal Masses en Sant Salvador de Guardiola.",
+        `Alojamiento rural para dos a 11 km de Manresa, en una finca con viñedo. Jacuzzi, piscina en verano y parking gratis. ${R}.`,
       h1: "Alojamiento rural cerca de Manresa",
     },
     breadcrumb: [
@@ -203,9 +206,9 @@ export const landingsEs: LandingsBundle = {
     routeKey: "landingMontserrat",
     status: "published",
     seo: {
-      title: "Alojamiento cerca de Montserrat | Cal Masses",
+      title: "Alojamiento rural a 25 min de Montserrat | Cal Masses",
       description:
-        "Descubre Cal Masses, un alojamiento rural para dos cerca de Montserrat, rodeado de campo y viñedos en el Bages.",
+        `Duerme a 25 min de Montserrat en una finca con viñedo del Bages. Alojamiento para dos con jacuzzi, piscina en verano y parking. ${R}.`,
       h1: "Alojamiento cerca de Montserrat para una escapada tranquila",
     },
     breadcrumb: [
@@ -308,10 +311,10 @@ export const landingsEs: LandingsBundle = {
     routeKey: "landingParaDos",
     status: "published",
     seo: {
-      title: "Alojamiento rural para dos en el Bages | Cal Masses",
+      title: "Escapada romántica con jacuzzi en el Bages | Cal Masses",
       description:
-        "Una escapada rural para dos en el Bages. Campo, viñedos y naturaleza en Cal Masses, Sant Salvador de Guardiola.",
-      h1: "Una escapada rural para dos en el Bages",
+        `Alojamiento solo para dos, con jacuzzi, entre viñedos y bosque en el Bages. Ideal para una escapada en pareja cerca de Barcelona. ${R}.`,
+      h1: "Una escapada para dos con jacuzzi en el Bages",
     },
     breadcrumb: [
       { label: "Inicio", route: "home" },
@@ -319,7 +322,7 @@ export const landingsEs: LandingsBundle = {
       { label: "Para dos" },
     ],
     hero: {
-      h1: "Una escapada rural para dos en el Bages",
+      h1: "Una escapada para dos con jacuzzi en el Bages",
       intro: [
         "No todos los alojamientos rurales tienen que estar pensados para grupos.",
         "Cal Masses es un espacio para dos personas, dentro de una finca del Bages rodeada de campo, bosque y viñedo.",
@@ -340,6 +343,15 @@ export const landingsEs: LandingsBundle = {
         ],
         image: siteConfig.images.bedroom,
         showFeatureGrid: true,
+      },
+      {
+        h2: "Un jacuzzi para el final del día",
+        paragraphs: [
+          "El baño de Cal Masses tiene jacuzzi.",
+          "Después de un día por Montserrat o entre viñedos, es uno de los mejores momentos de la estancia: sin prisas y sin tener que salir del alojamiento.",
+          "Y en verano, la piscina de agua salada de la finca también está ahí.",
+        ],
+        image: siteConfig.images.jacuzzi,
       },
       {
         h2: "Pocos planes también pueden ser un buen plan",
@@ -422,7 +434,7 @@ export const landingsEs: LandingsBundle = {
     seo: {
       title: "Alojamiento rural con piscina en el Bages | Cal Masses",
       description:
-        "Alojamiento rural para dos con piscina en el Bages. Descubre Cal Masses, una finca rodeada de campo y viñedos en Sant Salvador de Guardiola.",
+        `Piscina exterior de agua salada (compartida, en verano) en una finca con viñedo del Bages. Alojamiento para dos con jacuzzi. ${R}.`,
       h1: "Alojamiento rural con piscina en el Bages",
     },
     breadcrumb: [
@@ -499,9 +511,9 @@ export const landingsEs: LandingsBundle = {
     routeKey: "landingBarcelona",
     status: "published",
     seo: {
-      title: "Escapada rural cerca de Barcelona | Cal Masses",
+      title: "Escapada rural a 1 h de Barcelona, entre viñedos | Cal Masses",
       description:
-        "Una escapada rural para dos cerca de Barcelona. Descubre Cal Masses, en el Bages, entre viñedos, campo y naturaleza.",
+        `A 1 h 10 min de Barcelona: alojamiento rural para dos con jacuzzi en una finca con viñedo del Bages, cerca de Montserrat. ${R}.`,
       h1: "Una escapada rural cerca de Barcelona",
     },
     breadcrumb: [
@@ -598,9 +610,9 @@ export const landingsEs: LandingsBundle = {
     routeKey: "landingEnoturismo",
     status: "published",
     seo: {
-      title: "Enoturismo en el Pla de Bages | Cal Masses",
+      title: "Enoturismo Pla de Bages: duerme entre viñedos | Cal Masses",
       description:
-        "Descubre el enoturismo del Pla de Bages desde Cal Masses: alojamiento entre viñedos, vino propio y un territorio profundamente ligado a la viña.",
+        `Bodegas de la DO Pla de Bages, viña y vino propio (SISU) desde una finca en Sant Salvador de Guardiola. Alojamiento para dos. ${R}.`,
       h1: "Enoturismo en el Pla de Bages desde una finca con viñedo",
     },
     breadcrumb: [

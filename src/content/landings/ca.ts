@@ -1,5 +1,8 @@
+import { ratingSnippet } from "../../config/siteConfig";
 import { siteConfig } from "../../config/siteConfig";
 import type { LandingsBundle } from "./types";
+
+const R = ratingSnippet("ca");
 
 /**
  * Catalan landing copy — faithful translation of the Spanish editorial brief.
@@ -9,9 +12,9 @@ export const landingsCa: LandingsBundle = {
     routeKey: "landingBages",
     status: "published",
     seo: {
-      title: "Allotjament rural al Bages | Cal Masses",
+      title: "Allotjament rural al Bages, entre vinyes | Cal Masses",
       description:
-        "Cal Masses és un allotjament rural per a dues persones a Sant Salvador de Guardiola, envoltat de camp, vinya i natura al cor del Bages.",
+        `${R}. Allotjament rural sencer per a dos en una finca amb vinya i bosc a Sant Salvador de Guardiola, al cor del Bages.`,
       h1: "Allotjament rural al Bages, entre camp i vinyes",
     },
     breadcrumb: [
@@ -102,9 +105,9 @@ export const landingsCa: LandingsBundle = {
     routeKey: "landingManresa",
     status: "published",
     seo: {
-      title: "Allotjament rural a prop de Manresa | Cal Masses",
+      title: "Allotjament rural a 20 min de Manresa | Cal Masses",
       description:
-        "Un allotjament rural per a dos a prop de Manresa, envoltat de natura, camp i vinyes. Descobreix Cal Masses a Sant Salvador de Guardiola.",
+        `Allotjament rural per a dos a 11 km de Manresa, en una finca amb vinya. Jacuzzi, piscina a l'estiu i pàrquing gratuït. ${R}.`,
       h1: "Allotjament rural a prop de Manresa",
     },
     breadcrumb: [
@@ -202,9 +205,9 @@ export const landingsCa: LandingsBundle = {
     routeKey: "landingMontserrat",
     status: "published",
     seo: {
-      title: "Allotjament a prop de Montserrat | Cal Masses",
+      title: "Allotjament rural a 25 min de Montserrat | Cal Masses",
       description:
-        "Descobreix Cal Masses, un allotjament rural per a dos a prop de Montserrat, envoltat de camp i vinyes al Bages.",
+        `Dorm a 25 min de Montserrat en una finca amb vinya del Bages. Allotjament per a dos amb jacuzzi, piscina a l'estiu i pàrquing. ${R}.`,
       h1: "Allotjament a prop de Montserrat per a una escapada tranquil·la",
     },
     breadcrumb: [
@@ -307,10 +310,10 @@ export const landingsCa: LandingsBundle = {
     routeKey: "landingParaDos",
     status: "published",
     seo: {
-      title: "Allotjament rural per a dos al Bages | Cal Masses",
+      title: "Escapada romàntica amb jacuzzi al Bages | Cal Masses",
       description:
-        "Una escapada rural per a dos al Bages. Camp, vinyes i natura a Cal Masses, Sant Salvador de Guardiola.",
-      h1: "Una escapada rural per a dos al Bages",
+        `Allotjament només per a dos, amb jacuzzi, entre vinyes i bosc al Bages. Ideal per a una escapada en parella a prop de Barcelona. ${R}.`,
+      h1: "Una escapada per a dos amb jacuzzi al Bages",
     },
     breadcrumb: [
       { label: "Inici", route: "home" },
@@ -318,7 +321,7 @@ export const landingsCa: LandingsBundle = {
       { label: "Per a dos" },
     ],
     hero: {
-      h1: "Una escapada rural per a dos al Bages",
+      h1: "Una escapada per a dos amb jacuzzi al Bages",
       intro: [
         "No tots els allotjaments rurals han d'estar pensats per a grups.",
         "Cal Masses és un espai per a dues persones, dins d'una finca del Bages envoltada de camp, bosc i vinya.",
@@ -339,6 +342,15 @@ export const landingsCa: LandingsBundle = {
         ],
         image: siteConfig.images.bedroom,
         showFeatureGrid: true,
+      },
+      {
+        h2: "Un jacuzzi per acabar el dia",
+        paragraphs: [
+          "El bany de Cal Masses té jacuzzi.",
+          "Després d'un dia per Montserrat o entre vinyes, és un dels millors moments de l'estada: sense presses i sense haver de sortir de l'allotjament.",
+          "I a l'estiu, la piscina d'aigua salada de la finca també hi és.",
+        ],
+        image: siteConfig.images.jacuzzi,
       },
       {
         h2: "Pocs plans també poden ser un bon pla",
@@ -421,7 +433,7 @@ export const landingsCa: LandingsBundle = {
     seo: {
       title: "Allotjament rural amb piscina al Bages | Cal Masses",
       description:
-        "Allotjament rural per a dos amb piscina al Bages. Descobreix Cal Masses, una finca envoltada de camp i vinyes a Sant Salvador de Guardiola.",
+        `Piscina exterior d'aigua salada (compartida, a l'estiu) en una finca amb vinya del Bages. Allotjament per a dos amb jacuzzi. ${R}.`,
       h1: "Allotjament rural amb piscina al Bages",
     },
     breadcrumb: [
@@ -498,9 +510,9 @@ export const landingsCa: LandingsBundle = {
     routeKey: "landingBarcelona",
     status: "published",
     seo: {
-      title: "Escapada rural a prop de Barcelona | Cal Masses",
+      title: "Escapada rural a 1 h de Barcelona, entre vinyes | Cal Masses",
       description:
-        "Una escapada rural per a dos a prop de Barcelona. Descobreix Cal Masses, al Bages, entre vinyes, camp i natura.",
+        `A 1 h 10 min de Barcelona: allotjament rural per a dos amb jacuzzi en una finca amb vinya del Bages, a prop de Montserrat. ${R}.`,
       h1: "Una escapada rural a prop de Barcelona",
     },
     breadcrumb: [
@@ -597,9 +609,9 @@ export const landingsCa: LandingsBundle = {
     routeKey: "landingEnoturismo",
     status: "published",
     seo: {
-      title: "Enoturisme al Pla de Bages | Cal Masses",
+      title: "Enoturisme Pla de Bages: dorm entre vinyes | Cal Masses",
       description:
-        "Descobreix l'enoturisme del Pla de Bages des de Cal Masses: allotjament entre vinyes, vi propi i un territori profundament lligat a la vinya.",
+        `Cellers de la DO Pla de Bages, vinya i vi propi (SISU) des d'una finca a Sant Salvador de Guardiola. Allotjament per a dos. ${R}.`,
       h1: "Enoturisme al Pla de Bages des d'una finca amb vinya",
     },
     breadcrumb: [

@@ -24,11 +24,12 @@ export function SeoHead({
   title,
   description,
   path,
-  image = siteConfig.images.ogDefault,
+  image,
   noIndex = false,
 }: SeoHeadProps) {
   const canonical = absoluteUrl(path);
-  const ogImage = image.startsWith("http") ? image : absoluteUrl(image);
+  const img = image ?? siteConfig.ogImages[routeKey] ?? siteConfig.images.ogDefault;
+  const ogImage = img.startsWith("http") ? img : absoluteUrl(img);
   const alternates = alternatePaths(routeKey);
 
   return (
@@ -60,6 +61,7 @@ export function SeoHead({
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={title} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />

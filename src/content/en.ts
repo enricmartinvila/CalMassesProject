@@ -1,5 +1,8 @@
+import { ratingSnippet } from "../config/siteConfig";
 import type { ContentBundle } from "./types";
-import { TODO_DATA, TODO_LEGAL_CONTENT } from "../config/siteConfig";
+import { TODO_DATA } from "../config/siteConfig";
+
+const R = ratingSnippet("en");
 
 /** English — faithful translation of approved Spanish copy. */
 export const contentEn: ContentBundle = {
@@ -137,9 +140,9 @@ export const contentEn: ContentBundle = {
     },
     seo: {
       title:
-        "A getaway for two among vineyards and nature in the Bages | Cal Masses",
+        "Rural stay for two with hot tub near Montserrat | Cal Masses",
       description:
-        "Cal Masses is an accommodation in Sant Salvador de Guardiola, surrounded by fields, forest and vineyard, near Manresa and Montserrat.",
+        `${R}. A self-contained place for two on a vineyard farm in the Bages, 25 min from Montserrat. Hot tub, pool and free parking.`,
       h1: "A getaway for two among vineyards and nature in the Bages",
     },
     hero: {
@@ -233,9 +236,9 @@ export const contentEn: ContentBundle = {
 
   alojamiento: {
     seo: {
-      title: "The accommodation | Cal Masses, Bages",
+      title: "Accommodation for two: hot tub, kitchen and pool | Cal Masses",
       description:
-        "Discover the Cal Masses accommodation: a space for two in Sant Salvador de Guardiola with kitchen, pool and nature in the Bages.",
+        "An entire place for two in Sant Salvador de Guardiola: bedroom, bathroom, kitchen, hot tub, air conditioning and a shared pool in summer. See photos and details.",
       h1: "The accommodation",
     },
     hero: {
@@ -477,9 +480,9 @@ export const contentEn: ContentBundle = {
 
   finca: {
     seo: {
-      title: "Cal Masses | The farm",
+      title: "The farm: vineyard, garden and our own wine | Cal Masses",
       description:
-        "Cal Masses did not start as a tourism project. It is a farm, a place where we live, farm and make wine.",
+        "Cal Masses did not start as a tourism project: it is a farm with a vineyard and vegetable garden where we live, grow food and make our wine, SISU.",
       h1: "Cal Masses",
     },
     intro: [
@@ -514,7 +517,7 @@ export const contentEn: ContentBundle = {
 
   sisu: {
     seo: {
-      title: "SISU, wine made at Cal Masses | Cal Masses",
+      title: "SISU, the wine from the Cal Masses farm in Pla de Bages",
       description:
         "SISU comes from the same place. The vineyard is part of Cal Masses and each vintage explains, in its own way, part of what happens on the farm.",
       h1: "SISU",
@@ -545,9 +548,9 @@ export const contentEn: ContentBundle = {
 
   contacto: {
     seo: {
-      title: "Contact | Cal Masses",
+      title: "Contact and location | Cal Masses, Bages",
       description:
-        "If you have any questions about your stay, availability or how to get here, you can contact us directly.",
+        "Message us on WhatsApp, email or phone with questions about dates, your stay or how to get to Cal Masses in Sant Salvador de Guardiola (Bages).",
       h1: "Contact",
     },
     intro:
@@ -573,63 +576,106 @@ export const contentEn: ContentBundle = {
     aviso: {
       seo: {
         title: "Legal notice | Cal Masses",
-        description: TODO_LEGAL_CONTENT,
+        description: "Owner details, terms of use and intellectual property of the Cal Masses website.",
         h1: "Legal notice",
       },
-      body: TODO_LEGAL_CONTENT,
     },
     privacidad: {
       seo: {
         title: "Privacy | Cal Masses",
-        description: TODO_LEGAL_CONTENT,
+        description: "How Cal Masses handles the personal data of people who contact us or stay with us.",
         h1: "Privacy",
       },
-      body: TODO_LEGAL_CONTENT,
     },
     cookies: {
       seo: {
         title: "Cookies | Cal Masses",
-        description: TODO_LEGAL_CONTENT,
+        description: "Which cookies the Cal Masses website uses and how to change your choice.",
         h1: "Cookies",
       },
-      body: TODO_LEGAL_CONTENT,
     },
   },
 
   faq: [
-    { question: "How many people is Cal Masses for?", answer: "2" },
+    {
+      question: "How many people is Cal Masses for?",
+      answer:
+        "Two people. It is an entire place with one bedroom and one bathroom, designed for couples or two friends looking for a few quiet days.",
+    },
+    {
+      question: "Is there a hot tub?",
+      answer:
+        "Yes. The bathroom has a hot tub (jacuzzi), and the place has air conditioning and heating for any time of year.",
+    },
     {
       question: "Is the pool private or shared?",
       answer:
-        "Shared. It is available for guests in summer; the people of the house do not usually use it when there are guests. Outdoor, no fixed hours: common sense.",
+        "Shared. It is an outdoor saltwater pool available to guests in summer; the people of the house do not usually use it when there are guests. No fixed hours: common sense.",
     },
-    { question: "Is there a kitchen?", answer: "Yes" },
+    {
+      question: "Is there a kitchen?",
+      answer:
+        "Yes, the accommodation has its own kitchen so you can cook and plan your days as you like.",
+    },
     {
       question: "Is there parking?",
-      answer: "Yes, there is plenty of parking; any type of vehicle fits.",
+      answer:
+        "Yes, free parking on the farm itself, with plenty of room for any type of vehicle.",
     },
-    { question: "Is there Wi-Fi?", answer: "Yes" },
-    { question: "Are pets allowed?", answer: "No." },
-    { question: "Can children stay?", answer: "Yes" },
-    { question: "What time is check-in?", answer: "From 16:00." },
-    { question: "What time is check-out?", answer: "Until 11:00." },
-    { question: "How do I get there?", answer: TODO_DATA },
+    {
+      question: "Is there Wi-Fi?",
+      answer:
+        "Yes, there is free Wi-Fi in the accommodation.",
+    },
+    {
+      question: "Are pets allowed?",
+      answer:
+        "No, pets are not allowed at Cal Masses.",
+    },
+    {
+      question: "Can children stay?",
+      answer:
+        "Yes, as long as there are no more than two people in total, which is the accommodation's capacity.",
+    },
+    {
+      question: "What time is check-in?",
+      answer:
+        "Check-in is from 16:00.",
+    },
+    {
+      question: "What time is check-out?",
+      answer:
+        "Check-out is until 11:00.",
+    },
+    {
+      question: "Where is Cal Masses?",
+      answer:
+        "At Raval del Sellarès, s/n, 08253 Sant Salvador de Guardiola (Bages, Barcelona). The contact page has a map with the exact location.",
+    },
     {
       question: "How far is Manresa?",
-      answer: "Approx. 11 km / 20 min by car.",
+      answer:
+        "Manresa is about 11 km away, roughly 20 minutes by car.",
     },
     {
       question: "How far is Montserrat?",
-      answer: "Approx. 20 km / 25 min by car.",
+      answer:
+        "Montserrat is about 20 km away, roughly 25 minutes by car.",
+    },
+    {
+      question: "How far is Barcelona?",
+      answer:
+        "Barcelona is about 65 km away, roughly 1 h 10 min by car.",
     },
     {
       question: "How can I check availability?",
       answer:
-        "You can check availability on Airbnb, or contact us by WhatsApp or email.",
+        "You can see free dates on Airbnb, or message us on WhatsApp or email and we will reply directly.",
     },
     {
       question: "What is the cancellation policy?",
-      answer: "It is shown on Airbnb when you select your dates.",
+      answer:
+        "The cancellation policy is shown on Airbnb when you select your dates.",
     },
   ],
 };

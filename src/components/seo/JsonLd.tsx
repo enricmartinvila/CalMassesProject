@@ -28,15 +28,38 @@ export function BreadcrumbJsonLd({ items }: { items: Crumb[] }) {
 
 /** LodgingBusiness with only confirmed fields from siteConfig. */
 export function LodgingJsonLd() {
-  const { path } = useLang();
+  const { path, content, lang } = useLang();
+  const a = siteConfig.amenities;
+  const amenity = (name: string) => ({
+    "@type": "LocationFeatureSpecification",
+    name,
+    value: true,
+  });
+  const features: string[] = [];
+  if (a.kitchen) features.push(lang === "en" ? "Kitchen" : "Cocina");
+  if (a.wifi === true) features.push("Wi-Fi");
+  if (a.airConditioning === true) features.push(lang === "en" ? "Air conditioning" : "Aire acondicionado");
+  if (a.heating === true) features.push(lang === "en" ? "Heating" : "Calefacción");
+  if (a.jacuzzi === true) features.push(lang === "en" ? "Hot tub" : "Jacuzzi");
+  if (a.pool.available) features.push(lang === "en" ? "Outdoor saltwater pool (shared, summer)" : "Piscina exterior de agua salada (compartida, verano)");
+  if (a.parking.available) features.push(lang === "en" ? "Free on-site parking" : "Parking gratuito");
+
   const lodging: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
+    "@id": `${siteConfig.siteUrl}/#lodging`,
     name: siteConfig.brandName,
+    description: content.home.seo.description,
     url: absoluteUrl(path("home")),
     telephone: siteConfig.contact.phoneE164,
     email: siteConfig.contact.email,
-    image: absoluteUrl(siteConfig.images.ogDefault),
+    image: [
+      siteConfig.images.heroLcp,
+      siteConfig.images.bedroom,
+      siteConfig.images.jacuzzi,
+      siteConfig.images.pool,
+      siteConfig.images.exterior,
+    ].map((src) => absoluteUrl(src)),
     address: {
       "@type": "PostalAddress",
       streetAddress: siteConfig.address.line,
@@ -50,7 +73,17 @@ export function LodgingJsonLd() {
       latitude: siteConfig.geo.lat,
       longitude: siteConfig.geo.lng,
     },
+    hasMap: `https://www.google.com/maps?q=${siteConfig.geo.lat},${siteConfig.geo.lng}`,
     numberOfRooms: siteConfig.capacity.bedrooms,
+    checkinTime: siteConfig.checkIn,
+    checkoutTime: siteConfig.checkOut,
+    petsAllowed: siteConfig.amenities.petsAllowed,
+    amenityFeature: features.map(amenity),
+    sameAs: [
+      siteConfig.social.instagram,
+      siteConfig.booking.airbnb,
+      siteConfig.booking.bookingCom,
+    ],
   };
 
   if (!isTodo(siteConfig.lodgingCategory)) {

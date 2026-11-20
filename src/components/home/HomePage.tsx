@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { bookingHref, siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 import { SeoHead } from "../seo/SeoHead";
 import { BreadcrumbJsonLd, FaqJsonLd, LodgingJsonLd } from "../seo/JsonLd";
 import { emphasize, renderText } from "../ui/TodoMark";
 import { SmartImage } from "../ui/SmartImage";
+import { WhatsIcon } from "../../assets/whatsapp_icon";
 import { QuickFacts, ServiceFacts } from "./QuickFacts";
 import { ReviewsSection } from "./ReviewsSection";
 import { ImageGallery } from "./ImageGallery";
@@ -61,6 +63,17 @@ export function HomePage() {
         items={[{ name: content.ui.breadcrumbHome, path: path("home") }]}
       />
       <FaqJsonLd items={content.faq} />
+      <Helmet>
+        {/* LCP: let the browser fetch the hero before JS runs */}
+        <link
+          rel="preload"
+          as="image"
+          type="image/avif"
+          imagesrcset="/images/hero-vinyes-400.avif 400w, /images/hero-vinyes-800.avif 800w, /images/hero-vinyes-1600.avif 1600w"
+          imagesizes="100vw"
+          fetchpriority="high"
+        />
+      </Helmet>
 
       {/* HERO */}
       <section className="relative flex min-h-[100svh] items-end pb-12 text-white md:pb-[70px]">
@@ -234,7 +247,7 @@ export function HomePage() {
                 >
                   <SmartImage
                     src={img}
-                    alt=""
+                    alt={siteConfig.gallery.find((g) => g.src === img)?.alt[lang] ?? siteConfig.brandName}
                     className="h-[220px] w-full object-cover"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
@@ -314,9 +327,15 @@ export function HomePage() {
             <a href={bookingHref()} target="_blank" rel="noopener noreferrer" className={btnLight}>
               {content.ui.cta.availability}
             </a>
-            <Link to={path("contacto")} className={btnGhost}>
-              {content.ui.cta.contact}
-            </Link>
+            <a
+              href={siteConfig.contact.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={btnGhost}
+            >
+              <WhatsIcon className="h-5 w-5" aria-hidden />
+              WhatsApp
+            </a>
           </div>
         </div>
       </section>

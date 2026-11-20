@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { bookingHref, siteConfig } from "../../config/siteConfig";
+import { bookingHref, isTodo, siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 import type { RouteKey } from "../../i18n/routes";
 import { Logo } from "./Header";
@@ -95,6 +95,9 @@ export function Footer() {
         <div className="flex flex-wrap justify-between gap-4 border-t border-white/10 pt-6 text-[0.82rem]">
           <span>
             © {year} {siteConfig.brandName}
+            {!isTodo(siteConfig.registrationNumber) && (
+              <> · {siteConfig.registrationNumber}</>
+            )}
           </span>
           <div className="flex flex-wrap gap-6">
             <Link className={linkCls} to={path("avisoLegal")}>

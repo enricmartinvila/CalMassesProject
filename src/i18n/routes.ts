@@ -141,7 +141,6 @@ export const sitemapRouteKeys: RouteKey[] = [
   "finca",
   "sisu",
   "contacto",
-  "reservar",
   "landingBages",
   "landingManresa",
   "landingMontserrat",
@@ -153,6 +152,7 @@ export const sitemapRouteKeys: RouteKey[] = [
 
 export const publishedRouteKeys: RouteKey[] = [
   ...sitemapRouteKeys,
+  "reservar",
   "avisoLegal",
   "privacidad",
   "cookies",
