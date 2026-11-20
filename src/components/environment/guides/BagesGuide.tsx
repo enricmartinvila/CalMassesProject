@@ -5,6 +5,7 @@ import { SeoHead } from "../../seo/SeoHead";
 import { CtaLink } from "../../ui/CtaLink";
 import { SmartImage } from "../../ui/SmartImage";
 import { EditorialHero } from "../EditorialHero";
+import { GuideBlocks, useGuideToc } from "../../guide/GuideBlocks";
 import {
   EditorialSection,
   FullWidthImage,
@@ -22,11 +23,13 @@ export function BagesGuide({ landing }: { landing: LandingDefinition }) {
   const bookLabel = content.ui.cta.availability;
   const [sleep, forTwo, between, wine] = landing.sections;
 
+  const guideToc = useGuideToc("bages");
   const toc = [
     { id: "dormir", label: sleep.h2 },
     { id: "dos", label: forTwo.h2 },
     { id: "entre", label: between.h2 },
     { id: "vino", label: wine.h2 },
+    ...guideToc,
   ];
 
   const ways = [
@@ -144,6 +147,8 @@ export function BagesGuide({ landing }: { landing: LandingDefinition }) {
             </CtaLink>
           ) : null}
         </ImageTextSplit>
+
+        <GuideBlocks page="bages" />
 
         <RelatedDestinations items={related} />
 

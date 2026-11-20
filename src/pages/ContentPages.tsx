@@ -1,6 +1,7 @@
 import { siteConfig } from "../config/siteConfig";
 import { useLang } from "../hooks/useLang";
 import { SimpleContentPage } from "./SimpleContentPage";
+import { GuideBlocks } from "../components/guide/GuideBlocks";
 import { AlojamientoPage } from "./AlojamientoPage";
 import { SmartImage } from "../components/ui/SmartImage";
 import { Paragraphs, renderText } from "../components/ui/TodoMark";
@@ -15,7 +16,9 @@ export function FincaPage() {
       content={content.finca}
       breadcrumbName={content.ui.nav.finca}
       image={siteConfig.images.vineyard}
-    />
+    >
+      <GuideBlocks page="finca" />
+    </SimpleContentPage>
   );
 }
 

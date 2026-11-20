@@ -7,6 +7,7 @@ import { BreadcrumbJsonLd } from "../components/seo/JsonLd";
 import { ConsentMap } from "../components/ui/ConsentMap";
 import { renderText } from "../components/ui/TodoMark";
 import { WhatsIcon } from "../assets/whatsapp_icon";
+import { GuideBlocks } from "../components/guide/GuideBlocks";
 
 export function ContactPage() {
   const { lang, content, path } = useLang();
@@ -139,6 +140,7 @@ export function ContactPage() {
           </div>
         </div>
       </section>
+      <GuideBlocks page="contacto" />
     </>
   );
 }

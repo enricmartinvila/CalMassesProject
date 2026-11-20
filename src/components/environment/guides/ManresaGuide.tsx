@@ -5,6 +5,7 @@ import { SeoHead } from "../../seo/SeoHead";
 import { CtaLink } from "../../ui/CtaLink";
 import { SmartImage } from "../../ui/SmartImage";
 import { EditorialHero } from "../EditorialHero";
+import { GuideBlocks, useGuideToc } from "../../guide/GuideBlocks";
 import {
   EditorialSection,
   FullWidthImage,
@@ -23,11 +24,13 @@ export function ManresaGuide({ landing }: { landing: LandingDefinition }) {
   const bookLabel = content.ui.cta.availability;
   const [near, base, forTwo, combine] = landing.sections;
 
+  const guideToc = useGuideToc("manresa");
   const toc = [
     { id: "cerca", label: near.h2 },
     { id: "base", label: base.h2 },
     { id: "dos", label: forTwo.h2 },
     { id: "combinar", label: combine.h2 },
+    ...guideToc,
   ];
 
   const numbered =
@@ -130,6 +133,8 @@ export function ManresaGuide({ landing }: { landing: LandingDefinition }) {
         >
           <NumberedList items={numbered} />
         </EditorialSection>
+
+        <GuideBlocks page="manresa" />
 
         <RelatedDestinations items={related} />
 

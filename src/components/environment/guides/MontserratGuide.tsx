@@ -4,6 +4,7 @@ import type { LandingDefinition } from "../../../content/landings/types";
 import { SeoHead } from "../../seo/SeoHead";
 import { CtaLink } from "../../ui/CtaLink";
 import { EditorialHero } from "../EditorialHero";
+import { GuideBlocks, useGuideToc } from "../../guide/GuideBlocks";
 import {
   EditorialSection,
   FullWidthImage,
@@ -22,11 +23,13 @@ export function MontserratGuide({ landing }: { landing: LandingDefinition }) {
   const bookLabel = content.ui.cta.availability;
   const [day, honesty, more, forTwo] = landing.sections;
 
+  const guideToc = useGuideToc("montserrat");
   const toc = [
     { id: "dia", label: day.h2 },
     { id: "ubicacion", label: honesty.h2 },
     { id: "combinar", label: more.h2 },
     { id: "alojamiento", label: forTwo.h2 },
+    ...guideToc,
   ];
 
   const numbered =
@@ -125,6 +128,8 @@ export function MontserratGuide({ landing }: { landing: LandingDefinition }) {
             {content.ui.cta.seeAccommodation}
           </CtaLink>
         </ImageTextSplit>
+
+        <GuideBlocks page="montserrat" />
 
         <RelatedDestinations items={related} />
 

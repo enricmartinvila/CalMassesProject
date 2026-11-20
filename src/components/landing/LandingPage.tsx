@@ -11,6 +11,18 @@ import {
   RelatedPages,
 } from "./DestinationCards";
 import { BookingCTA } from "./BookingCTA";
+import { GuideBlocks } from "../guide/GuideBlocks";
+import type { GuidePageKey } from "../../content/guides/types";
+
+const guideKey: Partial<Record<RouteKey, GuidePageKey>> = {
+  landingParaDos: "paraDos",
+  landingPiscina: "piscina",
+  landingBarcelona: "barcelona",
+  landingBages: "bages",
+  landingManresa: "manresa",
+  landingMontserrat: "montserrat",
+  landingEnoturismo: "enoturismo",
+};
 import { Breadcrumbs } from "./Breadcrumbs";
 import { CtaLink } from "../ui/CtaLink";
 import { Paragraphs, renderText } from "../ui/TodoMark";
@@ -151,6 +163,8 @@ export function LandingPage({ landing }: { landing: LandingDefinition }) {
             )}
           </section>
         ))}
+
+        {guideKey[landing.routeKey] && <GuideBlocks page={guideKey[landing.routeKey]!} />}
 
         <BookingCTA
           h2={landing.finalCta.h2}

@@ -4,6 +4,7 @@ import type { LandingDefinition } from "../../../content/landings/types";
 import { SeoHead } from "../../seo/SeoHead";
 import { CtaLink } from "../../ui/CtaLink";
 import { EditorialHero } from "../EditorialHero";
+import { GuideBlocks, useGuideToc } from "../../guide/GuideBlocks";
 import {
   EditorialSection,
   FullWidthImage,
@@ -21,12 +22,14 @@ export function EnoturismoGuide({ landing }: { landing: LandingDefinition }) {
   const [territory, sleepVine, sisu, bodegas, notTourist, stayWine] =
     landing.sections;
 
+  const guideToc = useGuideToc("enoturismo");
   const toc = [
     { id: "territorio", label: territory.h2 },
     { id: "vina", label: sleepVine.h2 },
     { id: "sisu", label: sisu.h2 },
     { id: "bodegas", label: bodegas.h2 },
     { id: "estancia", label: stayWine.h2 },
+    ...guideToc,
   ];
 
   const related = landing.related.map((l) => ({
@@ -128,6 +131,8 @@ export function EnoturismoGuide({ landing }: { landing: LandingDefinition }) {
             </CtaLink>
           </div>
         </EditorialSection>
+
+        <GuideBlocks page="enoturismo" />
 
         <RelatedDestinations items={related} />
 

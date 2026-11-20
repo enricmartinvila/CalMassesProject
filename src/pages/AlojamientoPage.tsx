@@ -22,6 +22,7 @@ import {
 import { PoolFactsList } from "../components/home/QuickFacts";
 import { ReviewsSection } from "../components/home/ReviewsSection";
 import { FaqSection } from "../components/home/FaqSection";
+import { GuideBlocks } from "../components/guide/GuideBlocks";
 
 export function AlojamientoPage() {
   const { lang, content, path } = useLang();
@@ -242,6 +243,8 @@ export function AlojamientoPage() {
 
         {/* 12. ¿ES PARA TI? */}
         <FitSection />
+
+        <GuideBlocks page="alojamiento" />
 
         {/* 13. OPINIONES */}
         <ReviewsSection title={t.reviews.h2} />
