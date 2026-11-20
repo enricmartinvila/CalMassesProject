@@ -17,7 +17,7 @@ export function QuickFacts({
   /** "band" = dark strip under the home hero. */
   variant?: "list" | "band";
 }) {
-  const { content } = useLang();
+  const { lang, content } = useLang();
   const f = content.ui.facts;
   const facts: Fact[] = [];
 
@@ -51,14 +51,24 @@ export function QuickFacts({
   });
 
   if (variant === "band") {
+    // Short values only: long strings break the one-row grid.
+    const free = lang === "en" ? "Free" : lang === "ca" ? "Gratuït" : "Gratis";
+    const band = facts.map((fact) => {
+      if (fact.label === f.parking) return { ...fact, value: free };
+      if (fact.label === f.location) return { ...fact, value: siteConfig.address.region };
+      if (fact.label === f.wifi && isConfirmedTrue(siteConfig.amenities.jacuzzi)) {
+        return { label: f.jacuzzi, value: "✓" };
+      }
+      return fact;
+    });
     return (
       <ul
-        className={`grid grid-cols-2 sm:grid-cols-4 lg:grid-flow-col lg:auto-cols-fr lg:grid-cols-none ${className}`}
+        className={`grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 ${className}`}
       >
-        {facts.map((fact) => (
+        {band.map((fact) => (
           <li
             key={fact.label}
-            className="border-b border-white/10 px-4 py-7 text-center lg:border-b-0 lg:border-r lg:last:border-r-0"
+            className="min-w-0 border-b border-white/10 px-3 py-7 text-center lg:border-b-0 lg:border-r lg:last:border-r-0"
           >
             <p className="font-serif text-[1.45rem] leading-tight text-white">
               {fact.value}
