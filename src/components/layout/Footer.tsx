@@ -125,9 +125,9 @@ function FooterCol({
 }) {
   return (
     <div>
-      <h4 className="mb-4 text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-white">
+      <h2 className="mb-4 font-sans text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-white">
         {title}
-      </h4>
+      </h2>
       <ul className="space-y-2.5">{children}</ul>
     </div>
   );

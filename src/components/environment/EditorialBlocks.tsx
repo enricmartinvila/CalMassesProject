@@ -131,9 +131,13 @@ export function FullWidthImage({
 
 export function NumberedList({
   items,
+  asHeadings = true,
 }: {
   items: Array<{ title: string; text: string; href?: string; cta?: string }>;
+  /** false when the list sits before the page's first h2 (keeps heading order). */
+  asHeadings?: boolean;
 }) {
+  const Title = asHeadings ? "h3" : "p";
   return (
     <ol className="mt-10 max-w-[46rem] space-y-10">
       {items.map((item, i) => (
@@ -142,9 +146,9 @@ export function NumberedList({
             {String(i + 1).padStart(2, "0")}
           </span>
           <div>
-            <h3 className="text-xl font-semibold text-gray-900">
+            <Title className="font-serif text-xl font-semibold tracking-[-0.015em] text-gray-900">
               {renderText(item.title)}
-            </h3>
+            </Title>
             <p className="mt-2 text-base text-gray-700 leading-relaxed">
               {renderText(item.text)}
             </p>

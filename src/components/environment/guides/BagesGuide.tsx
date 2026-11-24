@@ -74,7 +74,7 @@ export function BagesGuide({ landing }: { landing: LandingDefinition }) {
         <PageTOC items={toc} />
 
         <EditorialSection spacing="loose">
-          <NumberedList items={ways} />
+          <NumberedList items={ways} asHeadings={false} />
         </EditorialSection>
 
         <FullWidthImage src={siteConfig.images.exterior} />
