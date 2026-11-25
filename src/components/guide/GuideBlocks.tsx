@@ -1,7 +1,9 @@
 import type { GuideBlock, GuidePageKey } from "../../content/guides/types";
 import { getGuide } from "../../content/guides";
 import { useLang } from "../../hooks/useLang";
-import { FaqJsonLd } from "../seo/JsonLd";
+import { FaqJsonLd, LodgingJsonLd } from "../seo/JsonLd";
+import { Link } from "react-router-dom";
+import type { RouteKey } from "../../i18n/routes";
 
 const WRAP = "mx-auto max-w-[1180px] px-5 sm:px-7";
 
@@ -21,7 +23,32 @@ function Head({ eyebrow, h2, intro }: { eyebrow?: string; h2: string; intro?: st
   );
 }
 
-function Block({ block }: { block: GuideBlock }) {
+/** Internal link for a place name that has its own page. */
+const PLACE_ROUTES: Array<[RegExp, RouteKey, GuidePageKey?]> = [
+  [/^Montserrat$/, "landingMontserrat", "montserrat"],
+  [/^Manresa$/, "landingManresa", "manresa"],
+  [/^SISU/, "sisu"],
+  [/Pla de Bages/, "landingEnoturismo", "enoturismo"],
+];
+
+function PlaceName({ name, page }: { name: string; page: GuidePageKey }) {
+  const { path } = useLang();
+  const hit = PLACE_ROUTES.find(([re, , own]) => re.test(name) && own !== page);
+  if (!hit) return <>{name}</>;
+  return (
+    <Link to={path(hit[1])} className="underline decoration-brand/40 underline-offset-4 hover:decoration-brand">
+      {name}
+    </Link>
+  );
+}
+
+/** Pages whose template already constrains width: no full-bleed bands. */
+const CONTAINED: GuidePageKey[] = ["paraDos", "piscina", "barcelona", "finca"];
+const LANDINGS: GuidePageKey[] = [
+  "bages", "manresa", "montserrat", "paraDos", "piscina", "barcelona", "enoturismo",
+];
+
+function Block({ block, page }: { block: GuideBlock; page: GuidePageKey }) {
   switch (block.kind) {
     case "text":
       return (
@@ -51,7 +78,7 @@ function Block({ block }: { block: GuideBlock }) {
             {block.items.map((p) => (
               <li key={p.name} className="rounded-card bg-paper p-7">
                 <div className="flex flex-wrap items-baseline justify-between gap-3">
-                  <h3 className="text-[1.45rem] leading-tight">{p.name}</h3>
+                  <h3 className="text-[1.45rem] leading-tight"><PlaceName name={p.name} page={page} /></h3>
                   {p.time && (
                     <span className="rounded-full bg-brand-soft px-3 py-1 text-[0.78rem] font-semibold text-brand-dark">
                       {p.time}
@@ -142,16 +169,23 @@ export function GuideBlocks({ page }: { page: GuidePageKey }) {
   const blocks = getGuide(lang, page);
   if (!blocks.length) return null;
 
+  const contained = CONTAINED.includes(page);
+
   return (
     <>
+      {LANDINGS.includes(page) && <LodgingJsonLd />}
       {blocks.map((block, i) => (
         <section
           key={block.id}
           id={block.id}
-          className={`scroll-mt-28 py-16 md:py-24 ${i % 2 === 0 ? "bg-brand-soft/40" : ""}`}
+          className={
+            contained
+              ? "scroll-mt-28 border-t border-line py-12"
+              : `scroll-mt-28 py-16 md:py-24 ${i % 2 === 0 ? "bg-brand-soft/40" : ""}`
+          }
         >
-          <div className={WRAP}>
-            <Block block={block} />
+          <div className={contained ? "" : WRAP}>
+            <Block block={block} page={page} />
           </div>
         </section>
       ))}

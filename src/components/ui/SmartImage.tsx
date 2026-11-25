@@ -1,3 +1,6 @@
+import { siteConfig } from "../../config/siteConfig";
+import { useLang } from "../../hooks/useLang";
+
 type Props = {
   src: string;
   alt: string;
@@ -54,6 +57,9 @@ export function SmartImage({
   sizes = "100vw",
   srcSet,
 }: Props) {
+  const { lang } = useLang();
+  // Photos passed without alt reuse their gallery description.
+  const altText = alt || siteConfig.gallery.find((g) => g.src === src)?.alt[lang] || "";
   const { webpSrcSet, avifSrcSet, avifSingle } = deriveFromOptimizedSrc(
     src,
     srcSet,
@@ -62,7 +68,7 @@ export function SmartImage({
   const img = (
     <img
       src={src}
-      alt={alt}
+      alt={altText}
       className={className}
       width={width}
       height={height}
