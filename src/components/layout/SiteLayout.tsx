@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { useEffect, useLayoutEffect, useRef } from "react";
+import { Outlet, useLocation, useNavigationType } from "react-router-dom";
 import { resolveRouteKey, type RouteKey } from "../../i18n/routes";
 import type { Lang } from "../../config/siteConfig";
 import { Header } from "./Header";
@@ -45,9 +45,26 @@ function useReveal(pathname: string) {
   }, [pathname]);
 }
 
+/** New page starts at the top (or at its #anchor); reload and back/forward keep the browser's position. */
+function useScrollOnNavigate(pathname: string, hash: string) {
+  const first = useRef(true);
+  const navType = useNavigationType();
+  useLayoutEffect(() => {
+    if (first.current) {
+      first.current = false;
+      return;
+    }
+    if (navType === "POP") return; // back/forward: let the browser restore
+    const target = hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
+    if (target) target.scrollIntoView({ behavior: "instant" as ScrollBehavior });
+    else window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+  }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps
+}
+
 export function SiteLayout() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const overHero = isHeroPath(pathname);
+  useScrollOnNavigate(pathname, hash);
   useReveal(pathname);
 
   return (
