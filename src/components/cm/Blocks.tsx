@@ -296,11 +296,13 @@ export function Stats({ items }: { items: string[] }) {
   if (!items.length) return null;
   return (
     <div className="cm-stats">
-      <ul className="cm-wrap">
-        {items.map((s) => (
-          <li key={s}>{s}</li>
-        ))}
-      </ul>
+      <div className="cm-wrap">
+        <ul>
+          {items.map((s) => (
+            <li key={s}>{s}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
