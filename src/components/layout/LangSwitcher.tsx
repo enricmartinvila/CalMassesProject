@@ -10,6 +10,16 @@ const LABELS: Record<Lang, { short: string; full: string }> = {
   en: { short: "EN", full: "English" },
 };
 
+/** Path of the current page in each language (for inline language links). */
+export function useLangLinks() {
+  const { lang } = useLang();
+  const location = useLocation();
+  const currentKey =
+    resolveRouteKey(lang, location.pathname.replace(new RegExp(`^/${lang}/?`), "").split("/")) ?? "home";
+  const key = currentKey === "entorno" ? "home" : currentKey;
+  return SUPPORTED_LANGS.map((l) => ({ lang: l, label: LABELS[l].short, title: LABELS[l].full, to: pathFor(l, key), active: l === lang }));
+}
+
 export function LangSwitcher({
   className = "",
   onDark = false,

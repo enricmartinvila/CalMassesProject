@@ -1,134 +1,102 @@
 import { Link } from "react-router-dom";
-import { bookingHref, isTodo, siteConfig } from "../../config/siteConfig";
+import { isTodo, siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 import type { RouteKey } from "../../i18n/routes";
+import { Icon } from "../cm/Icons";
 import { Logo } from "./Header";
 
 export function Footer() {
   const { content, path } = useLang();
   const year = new Date().getFullYear();
   const f = content.ui.footer;
+  const { contact } = siteConfig;
 
-  const brand: Array<{ route: RouteKey; label: string }> = [
-    { route: "alojamiento", label: content.ui.nav.alojamiento },
-    { route: "finca", label: f.laFinca },
-    { route: "sisu", label: content.ui.nav.sisu },
-    { route: "contacto", label: content.ui.nav.contacto },
+  const finca: Array<[RouteKey, string]> = [
+    ["alojamiento", content.ui.nav.alojamiento],
+    ["finca", f.laFinca],
+    ["sisu", content.ui.nav.sisu],
+    ["contacto", content.ui.nav.contacto],
+  ];
+  const entorno: Array<[RouteKey, string]> = [
+    ["landingBages", content.ui.nav.entornoBages],
+    ["landingMontserrat", content.ui.nav.entornoMontserrat],
+    ["landingManresa", content.ui.nav.entornoManresa],
+    ["landingEnoturismo", content.ui.nav.entornoEnoturismo],
+    ["landingParaDos", f.paraDos],
+    ["landingPiscina", f.withPool],
+    ["landingBarcelona", "Barcelona"],
   ];
 
-  const entorno: Array<{ route: RouteKey; label: string }> = [
-    { route: "landingBages", label: content.ui.nav.entornoBages },
-    { route: "landingManresa", label: content.ui.nav.entornoManresa },
-    { route: "landingMontserrat", label: content.ui.nav.entornoMontserrat },
-    { route: "landingEnoturismo", label: content.ui.nav.entornoEnoturismo },
-  ];
-
-  const stay: Array<{ label: string; to?: string; href?: string }> = [
-    { label: f.paraDos, to: path("landingParaDos") },
-    { label: f.piscina, to: path("landingPiscina") },
-    {
-      label: content.ui.cta.availability,
-      href: bookingHref(),
-    },
-  ];
-
-  const linkCls = "transition-colors hover:text-white";
+  const a = "no-underline hover:text-white hover:underline";
 
   return (
-    <footer className="bg-[#171a0e] pb-9 pt-20 text-[0.92rem] text-[#b9bca6]">
-      <div className="mx-auto max-w-[1180px] px-5 sm:px-7">
-        <div className="mb-14 grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
-          <div>
-            <Link to={path("home")} className="mb-4 block text-white">
-              <Logo className="!text-[1.8rem]" />
-            </Link>
-            <p className="max-w-xs leading-relaxed">{content.home.seo.h1}.</p>
-            <p className="mt-5 text-xs leading-relaxed text-[#8d907b]">
-              {siteConfig.address.line}
-              <br />
-              {siteConfig.address.postalCode} {siteConfig.address.locality}
-            </p>
-          </div>
-
-          <FooterCol title={f.exploreTitle}>
-            {brand.map((item) => (
-              <li key={item.route}>
-                <Link className={linkCls} to={path(item.route)}>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </FooterCol>
-
-          <FooterCol title={f.entornoTitle}>
-            {entorno.map((item) => (
-              <li key={item.route}>
-                <Link className={linkCls} to={path(item.route)}>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </FooterCol>
-
-          <FooterCol title={f.stayTitle}>
-            {stay.map((item) => (
-              <li key={item.label}>
-                {item.href ? (
-                  <a
-                    className={linkCls}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {item.label}
-                  </a>
-                ) : (
-                  <Link className={linkCls} to={item.to!}>
-                    {item.label}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </FooterCol>
+    <footer className="bg-[#232b14] pt-16 text-[#d8d3bd]">
+      <div className="mx-auto grid max-w-[1160px] gap-10 px-[18px] pb-11 sm:px-6 md:grid-cols-[1.6fr_1fr_1fr]">
+        <div>
+          <Link to={path("home")} className="text-white no-underline">
+            <Logo accent="text-[#e9d8a6]" />
+          </Link>
+          <p className="mt-3.5 max-w-[42ch] text-[0.95rem]">{f.tagline}</p>
+          <p className="mt-3.5 grid gap-2">
+            <a className={`${a} inline-flex items-center gap-2.5`} href={contact.whatsappUrl} target="_blank" rel="noopener noreferrer">
+              <Icon name="whatsapp" />
+              WhatsApp
+            </a>
+            <a className={`${a} inline-flex items-center gap-2.5`} href={`mailto:${contact.email}`}>
+              <Icon name="mail" />
+              {contact.email}
+            </a>
+            <a className={`${a} inline-flex items-center gap-2.5`} href={`tel:${contact.phoneE164}`}>
+              <Icon name="phone" />
+              {contact.phoneDisplay}
+            </a>
+          </p>
         </div>
-
-        <div className="flex flex-wrap justify-between gap-4 border-t border-white/10 pt-6 text-[0.82rem]">
-          <span>
-            © {year} {siteConfig.brandName}
-            {!isTodo(siteConfig.registrationNumber) && (
-              <> · {siteConfig.registrationNumber}</>
-            )}
-          </span>
-          <div className="flex flex-wrap gap-6">
-            <Link className={linkCls} to={path("avisoLegal")}>
-              {f.legal}
-            </Link>
-            <Link className={linkCls} to={path("privacidad")}>
-              {f.privacy}
-            </Link>
-            <Link className={linkCls} to={path("cookies")}>
-              {f.cookies}
-            </Link>
-          </div>
-        </div>
+        <FooterCol title={f.laFinca}>
+          {finca.map(([k, l]) => (
+            <li key={k}>
+              <Link className={a} to={path(k)}>
+                {l}
+              </Link>
+            </li>
+          ))}
+        </FooterCol>
+        <FooterCol title={f.entornoTitle}>
+          {entorno.map(([k, l]) => (
+            <li key={k}>
+              <Link className={a} to={path(k)}>
+                {l}
+              </Link>
+            </li>
+          ))}
+        </FooterCol>
+      </div>
+      <div className="mx-auto flex max-w-[1160px] flex-wrap justify-between gap-2.5 border-t border-white/15 px-[18px] pb-6 pt-5 text-[0.85rem] sm:px-6">
+        <span>
+          © {year} {siteConfig.brandName}
+          {!isTodo(siteConfig.registrationNumber) && <> · {siteConfig.registrationNumber}</>}
+        </span>
+        <span className="flex flex-wrap gap-x-[18px] gap-y-1">
+          <Link className={a} to={path("avisoLegal")}>
+            {f.legal}
+          </Link>
+          <Link className={a} to={path("privacidad")}>
+            {f.privacy}
+          </Link>
+          <Link className={a} to={path("cookies")}>
+            {f.cookies}
+          </Link>
+        </span>
       </div>
     </footer>
   );
 }
 
-function FooterCol({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
+function FooterCol({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h2 className="mb-4 font-sans text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-white">
-        {title}
-      </h2>
-      <ul className="space-y-2.5">{children}</ul>
+      <h2 className="mb-4 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[#e9d8a6]">{title}</h2>
+      <ul className="space-y-2">{children}</ul>
     </div>
   );
 }

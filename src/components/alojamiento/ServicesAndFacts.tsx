@@ -6,167 +6,68 @@ import {
 } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 
-type ServiceItem = { label: string };
+export type ServiceCategory = { title: string; items: string[] };
 
-type Category = {
-  title: string;
-  items: ServiceItem[];
-};
-
-export function ServicesGrid() {
+/** Confirmed amenities grouped by area — empty groups are dropped. */
+export function useServiceCategories(): ServiceCategory[] {
   const { lang, content } = useLang();
   const t = content.alojamiento.services;
   const a = siteConfig.amenities;
+  const cats: ServiceCategory[] = [];
+  const push = (title: string, items: Array<string | false | null | undefined>) => {
+    const list = items.filter(Boolean) as string[];
+    if (list.length) cats.push({ title, items: list });
+  };
 
-  const categories: Category[] = [];
-
-  const kitchen: ServiceItem[] = [];
-  if (a.kitchen) kitchen.push({ label: t.items.kitchen });
-  if (kitchen.length) {
-    categories.push({ title: t.categories.kitchen, items: kitchen });
-  }
-
-  const comfort: ServiceItem[] = [];
-  if (isConfirmedTrue(a.wifi)) comfort.push({ label: t.items.wifi });
-  if (isConfirmedTrue(a.airConditioning)) {
-    comfort.push({ label: t.items.airConditioning });
-  }
-  if (isConfirmedTrue(a.heating)) comfort.push({ label: t.items.heating });
-  if (comfort.length) {
-    categories.push({ title: t.categories.comfort, items: comfort });
-  }
-
-  const exterior: ServiceItem[] = [];
-  if (a.pool.available && a.pool.confirmedForGuests) {
-    const privacy = poolPrivacyLabel(lang);
-    exterior.push({
-      label: privacy ? `${t.items.pool} · ${privacy}` : t.items.pool,
-    });
-  }
-  if (exterior.length) {
-    categories.push({ title: t.categories.exterior, items: exterior });
-  }
-
-  const practical: ServiceItem[] = [];
-  if (a.parking.available && !isTodo(a.parking.detail)) {
-    practical.push({ label: t.items.parking });
-  }
-  if (isConfirmedTrue(a.washer)) practical.push({ label: t.items.washer });
-  if (isConfirmedTrue(a.dryer)) practical.push({ label: t.items.dryer });
-  if (isConfirmedTrue(a.selfCheckIn)) {
-    practical.push({ label: t.items.selfCheckIn });
-  }
-  if (practical.length) {
-    categories.push({ title: t.categories.practical, items: practical });
-  }
-
-  const bedroomBath: ServiceItem[] = [];
-  if (isConfirmedTrue(a.linens)) bedroomBath.push({ label: t.items.linens });
-  if (isConfirmedTrue(a.towels)) bedroomBath.push({ label: t.items.towels });
-  if (isConfirmedTrue(a.hairDryer)) {
-    bedroomBath.push({ label: t.items.hairDryer });
-  }
-  if (isConfirmedTrue(a.jacuzzi)) bedroomBath.push({ label: t.items.jacuzzi });
-  if (bedroomBath.length) {
-    categories.push({ title: t.categories.bedroomBath, items: bedroomBath });
-  }
-
-  if (!categories.length) return null;
-
-  return (
-    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-      {categories.map((cat) => (
-        <div key={cat.title}>
-          <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-[#4d5a2a]">
-            {cat.title}
-          </h3>
-          <ul className="mt-4 space-y-2">
-            {cat.items.map((item) => (
-              <li
-                key={item.label}
-                className="border-b border-gray-100 pb-2 text-sm text-gray-800"
-              >
-                {item.label}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
-  );
+  push(t.categories.kitchen, [a.kitchen && t.items.kitchen]);
+  push(t.categories.comfort, [
+    isConfirmedTrue(a.wifi) && t.items.wifi,
+    isConfirmedTrue(a.airConditioning) && t.items.airConditioning,
+    isConfirmedTrue(a.heating) && t.items.heating,
+  ]);
+  const privacy = poolPrivacyLabel(lang);
+  push(t.categories.exterior, [
+    a.pool.available &&
+      a.pool.confirmedForGuests &&
+      (privacy ?? t.items.pool),
+  ]);
+  push(t.categories.practical, [
+    a.parking.available && !isTodo(a.parking.detail) && t.items.parking,
+    isConfirmedTrue(a.washer) && t.items.washer,
+    isConfirmedTrue(a.dryer) && t.items.dryer,
+    isConfirmedTrue(a.selfCheckIn) && t.items.selfCheckIn,
+  ]);
+  push(t.categories.bedroomBath, [
+    isConfirmedTrue(a.linens) && t.items.linens,
+    isConfirmedTrue(a.towels) && t.items.towels,
+    isConfirmedTrue(a.hairDryer) && t.items.hairDryer,
+    isConfirmedTrue(a.jacuzzi) && t.items.jacuzzi,
+  ]);
+  return cats;
 }
 
-/** Confirmed kitchen equipment chips — hidden until items are confirmed. */
-export function KitchenEquipmentList() {
-  return null;
-}
-
-export function BedroomFacts() {
+export function useBedroomFacts(): string[] {
   const { content } = useLang();
-  const facts: string[] = [];
-
-  if (!isTodo(siteConfig.capacity.beds)) {
-    facts.push(content.alojamiento.essentialLabels.beds);
-  }
-  if (!isTodo(siteConfig.capacity.bedType)) {
-    facts.push(String(siteConfig.capacity.bedType));
-  }
-  if (!isTodo(siteConfig.capacity.bedSize)) {
-    facts.push(String(siteConfig.capacity.bedSize));
-  }
-  if (isConfirmedTrue(siteConfig.amenities.linens)) {
-    facts.push(content.alojamiento.services.items.linens);
-  }
-  if (isConfirmedTrue(siteConfig.amenities.airConditioning)) {
-    facts.push(content.alojamiento.services.items.airConditioning);
-  }
-  if (isConfirmedTrue(siteConfig.amenities.heating)) {
-    facts.push(content.alojamiento.services.items.heating);
-  }
-
-  if (!facts.length) return null;
-
-  return (
-    <ul className="flex flex-wrap gap-2 pt-2">
-      {facts.map((f) => (
-        <li
-          key={f}
-          className="rounded-full border border-[#4d5a2a]/25 px-3 py-1 text-sm text-gray-800"
-        >
-          {f}
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-export function BathroomFacts() {
-  const { content } = useLang();
-  const facts: string[] = [];
+  const items = content.alojamiento.services.items;
+  const c = siteConfig.capacity;
   const a = siteConfig.amenities;
+  return [
+    !isTodo(c.beds) && content.alojamiento.essentialLabels.beds,
+    !isTodo(c.bedType) && String(c.bedType),
+    !isTodo(c.bedSize) && String(c.bedSize),
+    isConfirmedTrue(a.linens) && items.linens,
+    isConfirmedTrue(a.airConditioning) && items.airConditioning,
+    isConfirmedTrue(a.heating) && items.heating,
+  ].filter(Boolean) as string[];
+}
 
-  if (isConfirmedTrue(a.jacuzzi)) {
-    facts.push(content.alojamiento.services.items.jacuzzi);
-  }
-  if (isConfirmedTrue(a.towels)) {
-    facts.push(content.alojamiento.services.items.towels);
-  }
-  if (isConfirmedTrue(a.hairDryer)) {
-    facts.push(content.alojamiento.services.items.hairDryer);
-  }
-
-  if (!facts.length) return null;
-
-  return (
-    <ul className="flex flex-wrap gap-2 pt-2">
-      {facts.map((f) => (
-        <li
-          key={f}
-          className="rounded-full border border-[#4d5a2a]/25 px-3 py-1 text-sm text-gray-800"
-        >
-          {f}
-        </li>
-      ))}
-    </ul>
-  );
+export function useBathroomFacts(): string[] {
+  const { content } = useLang();
+  const items = content.alojamiento.services.items;
+  const a = siteConfig.amenities;
+  return [
+    isConfirmedTrue(a.jacuzzi) && items.jacuzzi,
+    isConfirmedTrue(a.towels) && items.towels,
+    isConfirmedTrue(a.hairDryer) && items.hairDryer,
+  ].filter(Boolean) as string[];
 }

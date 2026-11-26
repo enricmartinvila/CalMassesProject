@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import { resolveRouteKey, type RouteKey } from "../../i18n/routes";
+import type { Lang } from "../../config/siteConfig";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { MobileBookingBar } from "../booking/MobileBookingBar";
@@ -7,8 +9,17 @@ import { CookieBanner } from "../legal/CookieBanner";
 import { AnalyticsGate } from "../legal/AnalyticsGate";
 
 /** Pages whose first section is a full-bleed hero that sits under the header. */
+const HERO_PAGES: RouteKey[] = [
+  "home", "alojamiento", "finca", "sisu", "contacto",
+  "landingBages", "landingManresa", "landingMontserrat", "landingEnoturismo",
+  "landingParaDos", "landingPiscina", "landingBarcelona",
+];
+
 function isHeroPath(pathname: string) {
-  return /^\/(es|ca|en)\/?$/.test(pathname);
+  const m = pathname.match(/^\/(es|ca|en)(?:\/(.*))?$/);
+  if (!m) return false;
+  const key = resolveRouteKey(m[1] as Lang, (m[2] ?? "").replace(/\/$/, "").split("/").filter(Boolean)) ?? (m[2] ? null : "home");
+  return key != null && HERO_PAGES.includes(key);
 }
 
 /** Fade-in for elements marked `.rv` as they scroll into view. */
@@ -42,7 +53,7 @@ export function SiteLayout() {
   return (
     <div className="min-h-screen bg-cream text-ink">
       <Header overHero={overHero} />
-      <main className={`${overHero ? "" : "pt-20"} pb-24 md:pb-0`}>
+      <main className={`${overHero ? "" : "pt-[72px]"} pb-24 md:pb-0`}>
         <Outlet />
       </main>
       <Footer />

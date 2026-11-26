@@ -1,12 +1,10 @@
 import { useCallback, useState } from "react";
-import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import { siteConfig } from "../config/siteConfig";
 import { useLang } from "../hooks/useLang";
 import { SeoHead } from "../components/seo/SeoHead";
-import { BreadcrumbJsonLd } from "../components/seo/JsonLd";
 import { ConsentMap } from "../components/ui/ConsentMap";
-import { renderText } from "../components/ui/TodoMark";
-import { WhatsIcon } from "../assets/whatsapp_icon";
+import { Btn, Hero, Page } from "../components/cm/Blocks";
+import { Icon } from "../components/cm/Icons";
 import { GuideBlocks } from "../components/guide/GuideBlocks";
 
 export function ContactPage() {
@@ -59,88 +57,61 @@ export function ContactPage() {
         description={t.seo.description}
         path={path("contacto")}
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: content.ui.breadcrumbHome, path: path("home") },
-          { name: t.seo.h1, path: path("contacto") },
-        ]}
-      />
-
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <header className="mb-10 space-y-4 max-w-2xl">
-          <h1 className="text-3xl md:text-4xl font-light text-gray-900">
-            {renderText(t.seo.h1)}
-          </h1>
-          <p className="text-gray-700 leading-relaxed">{renderText(t.intro)}</p>
-        </header>
-
-        <div className="grid gap-10 lg:grid-cols-2">
-          <div className="rounded-3xl border border-[#4d5a2a]/20 bg-white p-6 md:p-8 shadow-md">
-            <p className="text-lg font-semibold">{contact.name}</p>
-            <ul className="mt-6 space-y-4 text-gray-800">
-              <li className="flex gap-3">
-                <MapPinIcon className="h-6 w-6 shrink-0" />
-                <span>{addressText}</span>
-              </li>
-              <li className="flex gap-3 items-center">
-                <EnvelopeIcon className="h-6 w-6 shrink-0" />
-                <a className="hover:underline" href={`mailto:${contact.email}`}>
-                  {contact.email}
-                </a>
-              </li>
-              <li className="flex gap-3 items-center">
-                <PhoneIcon className="h-6 w-6 shrink-0" />
-                <a className="hover:underline" href={`tel:${contact.phoneE164}`}>
-                  {contact.phoneDisplay}
-                </a>
-              </li>
-            </ul>
-
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              <a
-                href={contact.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-black px-4 py-3 font-semibold text-white"
-              >
-                <WhatsIcon className="h-5 w-5" />
-                WhatsApp
-              </a>
-              <a
-                href={mapsDir}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#4d5a2a] px-4 py-3 font-semibold text-[#4d5a2a]"
-              >
-                <MapPinIcon className="h-5 w-5" />
-                {t.arrival}
-              </a>
-              <button
-                type="button"
-                onClick={downloadVCard}
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#4d5a2a] px-4 py-3 font-semibold text-[#4d5a2a]"
-              >
-                {t.saveContact}
-              </button>
-              <button
-                type="button"
-                onClick={copyEmail}
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#4d5a2a] px-4 py-3 font-semibold text-[#4d5a2a]"
-              >
-                {copied ? t.copied : t.copyEmail}
-              </button>
+      <Page>
+        <Hero
+          crumbs={[{ label: content.ui.breadcrumbHome, route: "home" }, { label: t.seo.h1 }]}
+          h1={t.seo.h1}
+          intro={[t.intro]}
+          image={siteConfig.images.vineyard}
+          actions={
+            <div className="cm-actions">
+              <Btn href={contact.whatsappUrl} external>
+                {t.whatsappCta}
+              </Btn>
+            </div>
+          }
+        />
+        <section className="cm-sec rv">
+          <div className="cm-wrap cm-contact-grid">
+            <div className="cm-contact-card">
+              <p className="cm-eyebrow">{t.writeUs}</p>
+              <h2>{contact.name}</h2>
+              <ul>
+                <li>
+                  <Icon name="pin" />
+                  <span>{addressText}</span>
+                </li>
+                <li>
+                  <Icon name="mail" />
+                  <a href={`mailto:${contact.email}`}>{contact.email}</a>
+                </li>
+                <li>
+                  <Icon name="phone" />
+                  <a href={`tel:${contact.phoneE164}`}>{contact.phoneDisplay}</a>
+                </li>
+              </ul>
+              <div className="cm-actions">
+                <Btn href={contact.whatsappUrl} external>
+                  WhatsApp
+                </Btn>
+                <Btn variant="ghost-dark" href={mapsDir} external>
+                  {t.arrival}
+                </Btn>
+                <Btn variant="ghost-dark" onClick={copyEmail}>
+                  {copied ? t.copied : t.copyEmail}
+                </Btn>
+                <Btn variant="ghost-dark" onClick={downloadVCard}>
+                  {t.saveContact}
+                </Btn>
+              </div>
+            </div>
+            <div className="cm-mapbox">
+              <ConsentMap />
             </div>
           </div>
-
-          <div className="relative overflow-hidden rounded-3xl border border-[#4d5a2a]/20 shadow-md min-h-[320px]">
-            <ConsentMap />
-            <div className="absolute inset-x-0 bottom-0 bg-[#e8ebd9] px-4 py-3 text-sm font-medium text-[#4d5a2a]">
-              {addressText}
-            </div>
-          </div>
-        </div>
-      </section>
-      <GuideBlocks page="contacto" />
+        </section>
+        <GuideBlocks page="contacto" />
+      </Page>
     </>
   );
 }

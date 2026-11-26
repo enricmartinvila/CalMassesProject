@@ -170,41 +170,44 @@ export function ServiceFacts({ className = "" }: { className?: string }) {
   );
 }
 
-export function PoolFactsList({ className = "" }: { className?: string }) {
+/** Pool values are stored in Spanish in siteConfig; translated here. */
+const POOL_VALUES: Record<string, { ca: string; en: string }> = {
+  verano: { ca: "estiu", en: "summer" },
+  "sin horario fijo": { ca: "sense horari fix", en: "no fixed hours" },
+  "sentido común": { ca: "sentit comú", en: "common sense" },
+  "exterior de agua salada": { ca: "exterior d'aigua salada", en: "outdoor saltwater" },
+};
+
+function poolValue(value: unknown, lang: string): string {
+  const v = String(value);
+  if (lang === "es") return v;
+  return POOL_VALUES[v]?.[lang as "ca" | "en"] ?? v;
+}
+
+/** Confirmed pool facts as label/value rows (TODO values are skipped). */
+export function usePoolFacts(): Fact[] {
   const { lang, content } = useLang();
   const pool = siteConfig.amenities.pool;
   const labels = content.ui.poolLabels;
   const rows: Fact[] = [];
 
   const privacy = poolPrivacyLabel(lang);
-  if (privacy) {
-    rows.push({ label: labels.use, value: privacy });
-  }
-  if (!isTodo(pool.season)) {
-    rows.push({ label: labels.season, value: String(pool.season) });
-  }
-  if (!isTodo(pool.hours)) {
-    rows.push({ label: labels.hours, value: String(pool.hours) });
-  }
-  if (!isTodo(pool.rules)) {
-    rows.push({ label: labels.rules, value: String(pool.rules) });
-  }
-  if (!isTodo(pool.type)) {
-    rows.push({ label: labels.type, value: String(pool.type) });
-  }
-  if (!isTodo(pool.loungers)) {
-    rows.push({ label: labels.loungers, value: String(pool.loungers) });
-  }
-  if (!isTodo(pool.shade)) {
-    rows.push({ label: labels.shade, value: String(pool.shade) });
-  }
-  if (!isTodo(pool.distanceFromLodging)) {
-    rows.push({
-      label: labels.distance,
-      value: String(pool.distanceFromLodging),
-    });
-  }
+  if (privacy) rows.push({ label: labels.use, value: privacy });
+  const add = (label: string, value: unknown) => {
+    if (!isTodo(value)) rows.push({ label, value: poolValue(value, lang) });
+  };
+  add(labels.season, pool.season);
+  add(labels.hours, pool.hours);
+  add(labels.rules, pool.rules);
+  add(labels.type, pool.type);
+  add(labels.loungers, pool.loungers);
+  add(labels.shade, pool.shade);
+  add(labels.distance, pool.distanceFromLodging);
+  return rows;
+}
 
+export function PoolFactsList({ className = "" }: { className?: string }) {
+  const rows = usePoolFacts();
   if (!rows.length) return null;
 
   return (

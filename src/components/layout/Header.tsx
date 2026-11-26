@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { bookingHref, siteConfig } from "../../config/siteConfig";
+import { siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 import { resolveRouteKey, type RouteKey } from "../../i18n/routes";
-import { LangSwitcher } from "./LangSwitcher";
+import { useLangLinks } from "./LangSwitcher";
+import { bookHref } from "../cm/Blocks";
+import { Icon } from "../cm/Icons";
 
-export function Logo({ className = "" }: { className?: string }) {
+export function Logo({ className = "", accent = "" }: { className?: string; accent?: string }) {
   return (
-    <span className={`font-serif text-2xl font-medium tracking-tight ${className}`}>
-      Cal <span className="italic font-normal">Masses</span>
+    <span className={`font-serif text-[1.55rem] font-normal tracking-tight ${className}`}>
+      Cal <i className={`italic ${accent}`}>Masses</i>
     </span>
   );
 }
@@ -16,8 +18,9 @@ export function Logo({ className = "" }: { className?: string }) {
 export function Header({ overHero = false }: { overHero?: boolean }) {
   const { lang, content, path } = useLang();
   const location = useLocation();
+  const langs = useLangLinks();
   const [open, setOpen] = useState(false);
-  const [entornoOpen, setEntornoOpen] = useState(false);
+  const [sub, setSub] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -29,166 +32,181 @@ export function Header({ overHero = false }: { overHero?: boolean }) {
 
   useEffect(() => {
     setOpen(false);
-    setEntornoOpen(false);
+    setSub(false);
   }, [location.pathname]);
 
   const currentKey =
-    resolveRouteKey(
-      lang,
-      location.pathname.replace(new RegExp(`^/${lang}/?`), "").split("/"),
-    ) ?? "home";
+    resolveRouteKey(lang, location.pathname.replace(new RegExp(`^/${lang}/?`), "").split("/")) ?? "home";
 
-  const entornoLinks: Array<{ route: RouteKey; label: string }> = [
-    { route: "landingBages", label: content.ui.nav.entornoBages },
-    { route: "landingMontserrat", label: content.ui.nav.entornoMontserrat },
-    { route: "landingManresa", label: content.ui.nav.entornoManresa },
-    { route: "landingEnoturismo", label: content.ui.nav.entornoEnoturismo },
-  ];
-  const entornoActive = entornoLinks.some((l) => l.route === currentKey);
-
-  const mainLinks: Array<[RouteKey, string]> = [
-    ["home", content.ui.nav.home],
+  const f = content.ui.footer;
+  const main: Array<[RouteKey, string]> = [
     ["alojamiento", content.ui.nav.alojamiento],
-    ["finca", content.ui.nav.finca],
-  ];
-  const tailLinks: Array<[RouteKey, string]> = [
+    ["finca", f.laFinca],
     ["sisu", content.ui.nav.sisu],
     ["contacto", content.ui.nav.contacto],
   ];
+  const entorno: Array<[RouteKey, string]> = [
+    ["landingBages", content.ui.nav.entornoBages],
+    ["landingMontserrat", content.ui.nav.entornoMontserrat],
+    ["landingManresa", content.ui.nav.entornoManresa],
+    ["landingEnoturismo", content.ui.nav.entornoEnoturismo],
+    ["landingParaDos", f.paraDos],
+    ["landingPiscina", f.withPool],
+  ];
 
-  const transparent = overHero && !scrolled && !open;
-
-  const navLink = (key: RouteKey, label: string) => (
-    <li key={key}>
-      <Link
-        to={path(key)}
-        className={`relative opacity-90 hover:opacity-100 after:absolute after:left-0 after:-bottom-1.5 after:h-[1.5px] after:bg-current after:transition-all hover:after:w-full ${
-          currentKey === key ? "after:w-full" : "after:w-0"
-        }`}
-      >
-        {label}
-      </Link>
-    </li>
-  );
+  const solid = !overHero || scrolled || open;
+  const linkBase =
+    "inline-flex items-center gap-1 rounded-full px-3 py-2.5 text-[0.93rem] font-medium no-underline transition-colors";
+  const linkTone = solid ? "text-ink hover:bg-[#e9eddb]" : "text-white hover:bg-white/15";
+  const active = solid ? "bg-[#e9eddb] text-[#2f3a1a]" : "bg-white/20";
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
-        transparent
-          ? "bg-transparent text-white"
-          : "bg-cream/90 text-ink backdrop-blur-md shadow-[0_1px_0_var(--line)]"
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        solid ? "bg-[#fbf8f1]/95 backdrop-blur-md shadow-[0_1px_0_#d9d1bd]" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-[78px] max-w-[1180px] items-center gap-6 px-5 sm:px-7">
-        <Link to={path("home")} className="shrink-0" aria-label={siteConfig.brandName}>
-          <Logo />
+      <div className="mx-auto flex h-[72px] max-w-[1160px] items-center justify-between px-[18px] sm:px-6">
+        <Link to={path("home")} aria-label={siteConfig.brandName} className={solid ? "text-[#2f3a1a]" : "text-white"}>
+          <Logo accent={solid ? "text-[#c9973a]" : "text-[#e9d8a6]"} />
         </Link>
 
-        <nav className="mx-auto hidden lg:block" aria-label="Primary">
-          <ul className="flex items-center gap-5 whitespace-nowrap text-[0.93rem] font-medium xl:gap-8">
-            {mainLinks.map(([k, l]) => navLink(k, l))}
-            <li
-              className="relative"
-              onMouseEnter={() => setEntornoOpen(true)}
-              onMouseLeave={() => setEntornoOpen(false)}
-            >
+        <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary">
+          <ul className="flex items-center gap-1">
+            {main.map(([k, l]) => (
+              <li key={k}>
+                <Link
+                  to={path(k)}
+                  aria-current={currentKey === k ? "page" : undefined}
+                  className={`${linkBase} ${linkTone} ${currentKey === k ? active : ""}`}
+                >
+                  {l}
+                </Link>
+              </li>
+            ))}
+            <li className="group relative" onMouseLeave={() => setSub(false)}>
               <button
                 type="button"
-                className={`relative opacity-90 hover:opacity-100 after:absolute after:left-0 after:-bottom-1.5 after:h-[1.5px] after:bg-current after:transition-all hover:after:w-full ${
-                  entornoActive ? "after:w-full" : "after:w-0"
-                }`}
-                aria-expanded={entornoOpen}
-                onClick={() => setEntornoOpen((v) => !v)}
+                aria-expanded={sub}
+                aria-haspopup="true"
+                onClick={() => setSub((v) => !v)}
+                onMouseEnter={() => setSub(true)}
+                className={`${linkBase} ${linkTone}`}
               >
-                {content.ui.nav.entorno}
+                {content.ui.nav.entorno} <Icon name="chevron" />
               </button>
-              {entornoOpen && (
-                <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3">
-                  <ul className="min-w-[14rem] rounded-2xl border border-line bg-paper py-2 text-ink shadow-[0_20px_40px_-20px_rgba(47,56,25,.35)]">
-                    {entornoLinks.map((l) => (
-                      <li key={l.route}>
-                        <Link
-                          to={path(l.route)}
-                          className="block px-5 py-2 text-sm hover:bg-brand-soft"
-                        >
-                          {l.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              <ul
+                className={`absolute left-0 top-full min-w-[230px] rounded-[14px] bg-white p-2 shadow-[0_18px_40px_-12px_rgba(0,0,0,.28)] ${
+                  sub ? "block" : "hidden group-focus-within:block"
+                }`}
+              >
+                {entorno.map(([k, l]) => (
+                  <li key={k}>
+                    <Link
+                      to={path(k)}
+                      aria-current={currentKey === k ? "page" : undefined}
+                      className="block rounded-[10px] px-3 py-2.5 text-[0.93rem] text-ink no-underline hover:bg-[#e9eddb]"
+                    >
+                      {l}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </li>
-            {tailLinks.map(([k, l]) => navLink(k, l))}
           </ul>
-        </nav>
-
-        <div className="ml-auto flex items-center gap-4">
-          <LangSwitcher onDark={transparent} />
-
+          <div className={`flex gap-0.5 text-[0.8rem] ${solid ? "text-ink" : "text-white"}`} aria-label="Idioma">
+            {langs.map((l) => (
+              <Link
+                key={l.lang}
+                to={l.to}
+                title={l.title}
+                aria-current={l.active ? "true" : undefined}
+                className={`rounded-full px-2 py-1.5 no-underline ${l.active ? "font-bold opacity-100" : "opacity-80 hover:opacity-100"}`}
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
           <a
-            href={bookingHref()}
+            href={bookHref(lang)}
             target="_blank"
             rel="noopener noreferrer"
-            className={`hidden xl:inline-flex items-center whitespace-nowrap rounded-full px-[22px] py-[11px] text-[0.95rem] font-semibold transition hover:-translate-y-0.5 ${
-              transparent
-                ? "bg-white text-brand-dark"
-                : "bg-brand text-white hover:bg-brand-dark"
-            }`}
+            className="cm-btn cm-btn-primary hidden xl:inline-flex"
           >
             {content.ui.cta.availability}
           </a>
+        </nav>
 
-          <button
-            type="button"
-            className="lg:hidden text-2xl leading-none"
-            aria-expanded={open}
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? "✕" : "☰"}
-          </button>
-        </div>
+        <button
+          type="button"
+          className="relative h-[46px] w-[46px] lg:hidden"
+          aria-expanded={open}
+          aria-controls="cm-menu"
+          aria-label={open ? "Close menu" : "Open menu"}
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span
+            className={`absolute left-3 right-3 h-0.5 rounded transition-all ${solid ? "bg-[#2f3a1a]" : "bg-white"} ${
+              open ? "top-[22px] rotate-45" : "top-[18px]"
+            }`}
+          />
+          <span
+            className={`absolute left-3 right-3 h-0.5 rounded transition-all ${solid ? "bg-[#2f3a1a]" : "bg-white"} ${
+              open ? "top-[22px] -rotate-45" : "top-[27px]"
+            }`}
+          />
+        </button>
       </div>
 
-      <div
-        className={`lg:hidden overflow-hidden bg-cream text-ink transition-[max-height] duration-300 ${
-          open ? "max-h-[36rem] shadow-[0_20px_30px_-20px_rgba(0,0,0,.3)]" : "max-h-0"
-        }`}
-      >
-        <ul className="flex flex-col gap-1 px-7 pb-6 pt-2 text-base font-medium">
-          {[...mainLinks, ...tailLinks].map(([key, label]) => (
-            <li key={key}>
-              <Link
-                to={path(key)}
-                className={`block py-2 ${currentKey === key ? "text-brand" : ""}`}
+      {open && (
+        <div id="cm-menu" className="fixed inset-x-0 bottom-0 top-[72px] overflow-auto bg-[#fbf8f1] px-6 pb-10 pt-5 lg:hidden">
+          <ul className="flex flex-col">
+            {main.map(([k, l]) => (
+              <li key={k}>
+                <Link to={path(k)} className="block rounded-full px-3 py-3.5 text-[1.05rem] font-medium text-ink no-underline">
+                  {l}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <button
+                type="button"
+                aria-expanded={sub}
+                onClick={() => setSub((v) => !v)}
+                className="flex w-full items-center justify-between px-3 py-3.5 text-[1.05rem] font-medium text-ink"
               >
-                {label}
-              </Link>
+                {content.ui.nav.entorno} <Icon name="chevron" />
+              </button>
+              {sub && (
+                <ul className="pl-3">
+                  {entorno.map(([k, l]) => (
+                    <li key={k}>
+                      <Link to={path(k)} className="block px-3 py-3 text-ink no-underline">
+                        {l}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
-          ))}
-          <li className="pt-3 text-xs font-semibold uppercase tracking-[0.16em] text-muted">
-            {content.ui.nav.entorno}
-          </li>
-          {entornoLinks.map((l) => (
-            <li key={l.route}>
-              <Link to={path(l.route)} className="block py-2">
+          </ul>
+          <div className="mt-3 flex gap-1 px-1 text-[0.9rem]" aria-label="Idioma">
+            {langs.map((l) => (
+              <Link
+                key={l.lang}
+                to={l.to}
+                aria-current={l.active ? "true" : undefined}
+                className={`rounded-full px-3 py-2 no-underline ${l.active ? "bg-[#e9eddb] font-bold" : ""}`}
+              >
                 {l.label}
               </Link>
-            </li>
-          ))}
-          <li className="pt-4">
-            <a
-              href={bookingHref()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex w-full items-center justify-center rounded-full bg-brand px-6 py-3.5 font-semibold text-white"
-            >
-              {content.ui.cta.availability}
-            </a>
-          </li>
-        </ul>
-      </div>
+            ))}
+          </div>
+          <a href={bookHref(lang)} target="_blank" rel="noopener noreferrer" className="cm-btn cm-btn-primary mt-5 w-full">
+            {content.ui.cta.availability}
+          </a>
+        </div>
+      )}
     </header>
   );
 }

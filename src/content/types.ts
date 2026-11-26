@@ -50,6 +50,8 @@ export type UiCopy = {
     piscina: string;
     laFinca: string;
     exploreTitle: string;
+    tagline: string;
+    withPool: string;
   };
   notFound: {
     title: string;
@@ -186,6 +188,17 @@ export type AlojamientoPageContent = {
     ctaSecondary: string;
   };
   essentialsAria: string;
+  eyebrows: {
+    bedroom: string;
+    living: string;
+    bathroom: string;
+    exterior: string;
+    privacy: string;
+    services: string;
+    arrival: string;
+    explore: string;
+    enlarge: string;
+  };
   gallery: {
     seeAll: string;
     close: string;
@@ -309,6 +322,16 @@ export type SimplePageContent = {
     secondary?: string;
     secondaryRoute?: RouteKey;
   };
+  /** Page-design extras: closing band, next links and wine details. */
+  design?: {
+    eyebrow?: string;
+    specs?: Array<{ label: string; value: string; wide?: boolean }>;
+    tasteEyebrow?: string;
+    tasteH2?: string;
+    projectH2?: string;
+    next: Array<{ label: string; route: RouteKey }>;
+    closing: { h2: string; paragraph: string };
+  };
 };
 
 export type FaqItem = { question: string; answer: string };
@@ -332,6 +355,8 @@ export type ContentBundle = {
     saveContact: string;
     copyEmail: string;
     copied: string;
+    writeUs: string;
+    whatsappCta: string;
   };
   reservar: {
     seo: PageSeo;

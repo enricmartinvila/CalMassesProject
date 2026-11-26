@@ -5,7 +5,7 @@ import { PoolFactsList } from "../home/QuickFacts";
 type Fact = { label: string; value: string };
 
 /** Only confirmed siteConfig facts — never surfaces TODO_DATA to visitors. */
-export function FeatureGrid() {
+export function useFeatureFacts(): Fact[] {
   const { content } = useLang();
   const f = content.ui.facts;
   const facts: Fact[] = [];
@@ -44,6 +44,11 @@ export function FeatureGrid() {
     });
   }
 
+  return facts;
+}
+
+export function FeatureGrid() {
+  const facts = useFeatureFacts();
   if (!facts.length) return null;
 
   return (

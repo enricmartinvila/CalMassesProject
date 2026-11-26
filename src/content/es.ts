@@ -50,6 +50,8 @@ export const contentEs: ContentBundle = {
       piscina: "Piscina",
       laFinca: "La finca",
       exploreTitle: "Explorar",
+      tagline: "Un alojamiento para dos dentro de una finca con viñedo, en Sant Salvador de Guardiola (Bages).",
+      withPool: "Con piscina",
     },
     notFound: {
       title: "Página no encontrada",
@@ -249,6 +251,17 @@ export const contentEs: ContentBundle = {
       ctaSecondary: "Ver los espacios",
     },
     essentialsAria: "Datos esenciales del alojamiento",
+    eyebrows: {
+      bedroom: "Descanso",
+      living: "Cocina y estar",
+      bathroom: "Baño",
+      exterior: "Fuera",
+      privacy: "La finca",
+      services: "Equipamiento",
+      arrival: "Llegada",
+      explore: "Sigue explorando",
+      enlarge: "Ampliar foto",
+    },
     essentialLabels: {
       entirePlace: "Alojamiento entero",
       guests: "2 huéspedes",
@@ -507,6 +520,13 @@ export const contentEs: ContentBundle = {
       secondary: "Ver el alojamiento",
       secondaryRoute: "alojamiento",
     },
+    design: {
+      next: [
+        { label: "Ver el alojamiento", route: "alojamiento" },
+        { label: "SISU, el vino de la finca", route: "sisu" },
+      ],
+      closing: { h2: "Consulta las fechas disponibles", paragraph: "Una finca pequeña, para dos personas, que cambia con cada estación." },
+    },
   },
 
   sisu: {
@@ -537,6 +557,25 @@ export const contentEs: ContentBundle = {
     cta: {
       primary: "Consultar disponibilidad",
       primaryRoute: "reservar",
+      secondary: "Ver el alojamiento",
+      secondaryRoute: "alojamiento",
+    },
+    design: {
+      eyebrow: "Nuestro vino",
+      specs: [
+        { label: "Añada", value: "2024" },
+        { label: "Uvas", value: "Macabeo 80 % · Sumoll 20 %" },
+        { label: "Maceración", value: "5 días con pieles" },
+        { label: "Reposo", value: "6 meses en depósito de acero inoxidable", wide: true },
+      ],
+      tasteEyebrow: "En la copa",
+      tasteH2: "Cómo es",
+      projectH2: "Un proyecto pequeño y honesto",
+      next: [
+        { label: "Enoturismo en el Pla de Bages", route: "landingEnoturismo" },
+        { label: "La finca", route: "finca" },
+      ],
+      closing: { h2: "Consulta las fechas disponibles", paragraph: "El vino y el alojamiento comparten el mismo paisaje." },
     },
   },
 
@@ -553,6 +592,8 @@ export const contentEs: ContentBundle = {
     saveContact: "Guardar contacto",
     copyEmail: "Copiar email",
     copied: "Email copiado",
+    writeUs: "Escríbenos",
+    whatsappCta: "Escribir por WhatsApp",
   },
 
   reservar: {

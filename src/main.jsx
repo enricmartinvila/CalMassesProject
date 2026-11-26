@@ -7,6 +7,7 @@ import "@fontsource-variable/inter/wght.css";
 import "@fontsource-variable/fraunces/standard.css";
 import "@fontsource-variable/fraunces/standard-italic.css";
 import "./index.css";
+import "./styles/cm.css";
 
 const container = document.getElementById("root");
 const app = (

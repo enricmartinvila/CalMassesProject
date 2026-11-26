@@ -50,6 +50,8 @@ export const contentCa: ContentBundle = {
       piscina: "Piscina",
       laFinca: "La finca",
       exploreTitle: "Explora",
+      tagline: "Un allotjament per a dos dins d'una finca amb vinya, a Sant Salvador de Guardiola (Bages).",
+      withPool: "Amb piscina",
     },
     notFound: {
       title: "Pàgina no trobada",
@@ -249,6 +251,17 @@ export const contentCa: ContentBundle = {
       ctaSecondary: "Veure els espais",
     },
     essentialsAria: "Dades essencials de l'allotjament",
+    eyebrows: {
+      bedroom: "Descans",
+      living: "Cuina i estar",
+      bathroom: "Bany",
+      exterior: "A fora",
+      privacy: "La finca",
+      services: "Equipament",
+      arrival: "Arribada",
+      explore: "Continua explorant",
+      enlarge: "Amplia la foto",
+    },
     essentialLabels: {
       entirePlace: "Allotjament sencer",
       guests: "2 hostes",
@@ -507,6 +520,13 @@ export const contentCa: ContentBundle = {
       secondary: "Veure l'allotjament",
       secondaryRoute: "alojamiento",
     },
+    design: {
+      next: [
+        { label: "Veure l'allotjament", route: "alojamiento" },
+        { label: "SISU, el vi de la finca", route: "sisu" },
+      ],
+      closing: { h2: "Consulta les dates disponibles", paragraph: "Una finca petita, per a dues persones, que canvia amb cada estació." },
+    },
   },
 
   sisu: {
@@ -537,6 +557,25 @@ export const contentCa: ContentBundle = {
     cta: {
       primary: "Consultar disponibilitat",
       primaryRoute: "reservar",
+      secondary: "Veure l'allotjament",
+      secondaryRoute: "alojamiento",
+    },
+    design: {
+      eyebrow: "El nostre vi",
+      specs: [
+        { label: "Anyada", value: "2024" },
+        { label: "Raïm", value: "Macabeu 80 % · Sumoll 20 %" },
+        { label: "Maceració", value: "5 dies amb pells" },
+        { label: "Repòs", value: "6 mesos en dipòsit d'acer inoxidable", wide: true },
+      ],
+      tasteEyebrow: "A la copa",
+      tasteH2: "Com és",
+      projectH2: "Un projecte petit i honest",
+      next: [
+        { label: "Enoturisme al Pla de Bages", route: "landingEnoturismo" },
+        { label: "La finca", route: "finca" },
+      ],
+      closing: { h2: "Consulta les dates disponibles", paragraph: "El vi i l'allotjament comparteixen el mateix paisatge." },
     },
   },
 
@@ -553,6 +592,8 @@ export const contentCa: ContentBundle = {
     saveContact: "Desar contacte",
     copyEmail: "Copiar email",
     copied: "Email copiat",
+    writeUs: "Escriu-nos",
+    whatsappCta: "Escriure per WhatsApp",
   },
 
   reservar: {

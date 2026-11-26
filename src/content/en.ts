@@ -50,6 +50,8 @@ export const contentEn: ContentBundle = {
       piscina: "Pool",
       laFinca: "The farm",
       exploreTitle: "Explore",
+      tagline: "A place for two on a farm with a vineyard, in Sant Salvador de Guardiola (Bages).",
+      withPool: "With pool",
     },
     notFound: {
       title: "Page not found",
@@ -249,6 +251,17 @@ export const contentEn: ContentBundle = {
       ctaSecondary: "See the spaces",
     },
     essentialsAria: "Essential accommodation facts",
+    eyebrows: {
+      bedroom: "Rest",
+      living: "Kitchen and living",
+      bathroom: "Bathroom",
+      exterior: "Outside",
+      privacy: "The farm",
+      services: "Amenities",
+      arrival: "Arrival",
+      explore: "Keep exploring",
+      enlarge: "Enlarge photo",
+    },
     essentialLabels: {
       entirePlace: "Entire place",
       guests: "2 guests",
@@ -513,6 +526,13 @@ export const contentEn: ContentBundle = {
       secondary: "See the accommodation",
       secondaryRoute: "alojamiento",
     },
+    design: {
+      next: [
+        { label: "See the accommodation", route: "alojamiento" },
+        { label: "SISU, the farm's wine", route: "sisu" },
+      ],
+      closing: { h2: "Check available dates", paragraph: "A small farm for two people that changes with every season." },
+    },
   },
 
   sisu: {
@@ -543,6 +563,25 @@ export const contentEn: ContentBundle = {
     cta: {
       primary: "Check availability",
       primaryRoute: "reservar",
+      secondary: "See the accommodation",
+      secondaryRoute: "alojamiento",
+    },
+    design: {
+      eyebrow: "Our wine",
+      specs: [
+        { label: "Vintage", value: "2024" },
+        { label: "Grapes", value: "Macabeo 80% · Sumoll 20%" },
+        { label: "Maceration", value: "5 days on the skins" },
+        { label: "Resting", value: "6 months in stainless steel tanks", wide: true },
+      ],
+      tasteEyebrow: "In the glass",
+      tasteH2: "What it is like",
+      projectH2: "A small, honest project",
+      next: [
+        { label: "Wine tourism in Pla de Bages", route: "landingEnoturismo" },
+        { label: "The farm", route: "finca" },
+      ],
+      closing: { h2: "Check available dates", paragraph: "The wine and the accommodation share the same landscape." },
     },
   },
 
@@ -559,6 +598,8 @@ export const contentEn: ContentBundle = {
     saveContact: "Save contact",
     copyEmail: "Copy email",
     copied: "Email copied",
+    writeUs: "Write to us",
+    whatsappCta: "Message us on WhatsApp",
   },
 
   reservar: {

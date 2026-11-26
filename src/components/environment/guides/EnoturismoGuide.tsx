@@ -1,155 +1,52 @@
-import { bookingHref, siteConfig } from "../../../config/siteConfig";
+import { siteConfig } from "../../../config/siteConfig";
 import { useLang } from "../../../hooks/useLang";
 import type { LandingDefinition } from "../../../content/landings/types";
-import { SeoHead } from "../../seo/SeoHead";
-import { CtaLink } from "../../ui/CtaLink";
-import { EditorialHero } from "../EditorialHero";
-import { GuideBlocks, useGuideToc } from "../../guide/GuideBlocks";
-import {
-  EditorialSection,
-  FullWidthImage,
-  ImageTextSplit,
-} from "../EditorialBlocks";
-import {
-  EnvironmentCTA,
-  PageTOC,
-  RelatedDestinations,
-} from "../GuideChrome";
+import { Band, Btn, Callout, Sec, Split } from "../../cm/Blocks";
+import { LandingShell } from "../../cm/LandingShell";
 
 export function EnoturismoGuide({ landing }: { landing: LandingDefinition }) {
-  const { lang, path, content } = useLang();
-  const bookLabel = content.ui.cta.availability;
-  const [territory, sleepVine, sisu, bodegas, notTourist, stayWine] =
-    landing.sections;
-
-  const guideToc = useGuideToc("enoturismo");
-  const toc = [
-    { id: "territorio", label: territory.h2 },
-    { id: "vina", label: sleepVine.h2 },
-    { id: "sisu", label: sisu.h2 },
-    { id: "bodegas", label: bodegas.h2 },
-    { id: "estancia", label: stayWine.h2 },
-    ...guideToc,
-  ];
-
-  const related = landing.related.map((l) => ({
-    title: l.label,
-    to: path(l.route),
-  }));
+  const { path, content } = useLang();
+  const [territory, sleepVine, sisu, bodegas, notTourist, stayWine] = landing.sections;
 
   return (
-    <>
-      <SeoHead
-        lang={lang}
-        routeKey={landing.routeKey}
-        title={landing.seo.title}
-        description={landing.seo.description}
-        path={path(landing.routeKey)}
-      />
-
-      <article>
-        <EditorialHero
-          variant="vineyard"
-          eyebrow={content.ui.nav.entornoEnoturismo}
-          h1={landing.hero.h1}
-          intro={landing.hero.intro}
-          image={siteConfig.images.vineyard}
-          breadcrumb={landing.breadcrumb}
-          softCta={
-            landing.hero.ctaSecondary ? (
-              <CtaLink to={path("sisu")} variant="ghost" className="!px-0">
-                {landing.hero.ctaSecondary.label}
-              </CtaLink>
-            ) : null
-          }
-        />
-
-        <PageTOC items={toc} />
-
-        <EditorialSection
-          id="territorio"
-          h2={territory.h2}
-          paragraphs={territory.paragraphs}
-          spacing="loose"
-        />
-
-        <FullWidthImage src={siteConfig.images.vineyard} />
-
-        <ImageTextSplit
-          id="vina"
-          h2={sleepVine.h2}
-          paragraphs={sleepVine.paragraphs}
-          image={siteConfig.images.garden}
-          imageSide="right"
-          aspect="16/10"
-          spacing="default"
-        />
-
-        <ImageTextSplit
-          id="sisu"
-          h2={sisu.h2}
-          paragraphs={sisu.paragraphs}
-          image={siteConfig.images.wine}
-          imageSide="left"
-          aspect="4/5"
-          spacing="loose"
-        >
-          {sisu.cta ? (
-            <CtaLink to={path(sisu.cta.route)} variant="secondary">
-              {sisu.cta.label}
-            </CtaLink>
-          ) : null}
-        </ImageTextSplit>
-
-        <EditorialSection
-          id="bodegas"
-          h2={bodegas.h2}
-          paragraphs={bodegas.paragraphs}
-          spacing="default"
-        />
-
-        <EditorialSection
-          h2={notTourist.h2}
-          paragraphs={notTourist.paragraphs}
-          spacing="tight"
-        />
-
-        <FullWidthImage src={siteConfig.images.wineAlt} />
-
-        <EditorialSection
-          id="estancia"
-          h2={stayWine.h2}
-          paragraphs={stayWine.paragraphs}
-          spacing="loose"
-        >
-          <div className="mt-6 flex flex-wrap gap-3">
-            <CtaLink to={path("alojamiento")} variant="secondary">
-              {content.ui.cta.seeAccommodation}
-            </CtaLink>
-            <CtaLink to={path("sisu")} variant="ghost" className="!px-0">
-              {content.ui.cta.knowSisu}
-            </CtaLink>
+    <LandingShell
+      landing={landing}
+      guide="enoturismo"
+      eyebrow={content.ui.nav.entornoEnoturismo}
+      heroImage={siteConfig.images.vineyard}
+      toc={[
+        { id: "territorio", label: territory.h2 },
+        { id: "vina", label: sleepVine.h2 },
+        { id: "sisu", label: sisu.h2 },
+        { id: "bodegas", label: bodegas.h2 },
+        { id: "estancia", label: stayWine.h2 },
+      ]}
+    >
+      <Sec id="territorio" h2={territory.h2} intro={territory.paragraphs} />
+      <Band src={siteConfig.images.vineyard} />
+      <Split id="vina" h2={sleepVine.h2} paragraphs={sleepVine.paragraphs} images={[siteConfig.images.garden]} />
+      <Split id="sisu" flip h2={sisu.h2} paragraphs={sisu.paragraphs} images={[siteConfig.images.wine]}>
+        {sisu.cta ? (
+          <div className="cm-actions">
+            <Btn to={path(sisu.cta.route)}>{sisu.cta.label}</Btn>
           </div>
-        </EditorialSection>
-
-        <GuideBlocks page="enoturismo" />
-
-        <RelatedDestinations items={related} />
-
-        <EnvironmentCTA
-          h2={landing.finalCta.h2}
-          paragraphs={landing.finalCta.paragraphs}
-          primary={
-            <CtaLink
-              href={bookingHref()}
-              external
-              className="!bg-white !text-[#4d5a2a] hover:!bg-gray-100"
-            >
-              {bookLabel}
-            </CtaLink>
-          }
-        />
-      </article>
-    </>
+        ) : null}
+      </Split>
+      <Sec id="bodegas" h2={bodegas.h2} intro={bodegas.paragraphs}>
+        <Callout h3={notTourist.h2} paragraphs={notTourist.paragraphs ?? []} />
+      </Sec>
+      <Band src={siteConfig.images.wineAlt} />
+      <Sec
+        id="estancia"
+        h2={stayWine.h2}
+        intro={stayWine.paragraphs}
+        headChildren={
+          <div className="cm-actions">
+            <Btn to={path("alojamiento")}>{content.ui.cta.seeAccommodation}</Btn>
+            <Btn variant="ghost-dark" to={path("sisu")}>{content.ui.cta.knowSisu}</Btn>
+          </div>
+        }
+      />
+    </LandingShell>
   );
 }
