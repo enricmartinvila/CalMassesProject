@@ -457,11 +457,11 @@ export const contentEn: ContentBundle = {
         {
           question: "How can I check availability?",
           answer:
-            "You can check availability on Airbnb, or contact us by WhatsApp or email.",
+            "You can check availability on Booking.com, or contact us by WhatsApp or email.",
         },
         {
           question: "What is the cancellation policy?",
-          answer: "It is shown on Airbnb when you choose the booking dates.",
+          answer: "It is shown on Booking.com when you choose the booking dates.",
         },
       ],
     },
@@ -606,11 +606,11 @@ export const contentEn: ContentBundle = {
     seo: {
       title: "Check availability | Cal Masses",
       description:
-        "Check the available dates on Airbnb. If you need to know anything before coming, write to us.",
+        "Check the available dates on Booking.com. If you need to know anything before coming, write to us.",
       h1: "Check availability",
     },
     intro:
-      "Check the available dates on Airbnb. If you have any questions before coming, write to us.",
+      "Check the available dates on Booking.com. If you have any questions before coming, write to us.",
   },
 
   legal: {
@@ -711,12 +711,12 @@ export const contentEn: ContentBundle = {
     {
       question: "How can I check availability?",
       answer:
-        "You can see free dates on Airbnb, or message us on WhatsApp or email and we will reply directly.",
+        "You can see free dates on Booking.com, or message us on WhatsApp or email and we will reply directly.",
     },
     {
       question: "What is the cancellation policy?",
       answer:
-        "The cancellation policy is shown on Airbnb when you select your dates.",
+        "The cancellation policy is shown on Booking.com when you select your dates.",
     },
   ],
 };

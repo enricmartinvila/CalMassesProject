@@ -155,7 +155,7 @@ export const siteConfig = {
 
   checkIn: "16:00",
   checkOut: "11:00",
-  cancellationPolicy: "Según la política de Airbnb al reservar",
+  cancellationPolicy: "Según la política de Booking.com al reservar",
 
   distances: {
     montserrat: "aprox. 20 km / 25 min en coche",
@@ -168,7 +168,8 @@ export const siteConfig = {
   },
 
   booking: {
-    url: "https://www.airbnb.es/rooms/896856836379489751",
+    /** Where every "check availability" button goes. */
+    url: "https://www.booking.com/hotel/es/cal-masses-st-salvador-de-guardiola.html",
     airbnb: "https://www.airbnb.es/rooms/896856836379489751",
     bookingCom:
       "https://www.booking.com/hotel/es/cal-masses-st-salvador-de-guardiola.es.html",

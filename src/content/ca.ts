@@ -457,11 +457,11 @@ export const contentCa: ContentBundle = {
         {
           question: "Com puc consultar disponibilitat?",
           answer:
-            "Pots consultar disponibilitat a Airbnb, o contactar per WhatsApp o email.",
+            "Pots consultar disponibilitat a Booking.com, o contactar per WhatsApp o email.",
         },
         {
           question: "Quina és la política de cancel·lació?",
-          answer: "S'indica a Airbnb en triar les dates de la reserva.",
+          answer: "S'indica a Booking.com en triar les dates de la reserva.",
         },
       ],
     },
@@ -600,11 +600,11 @@ export const contentCa: ContentBundle = {
     seo: {
       title: "Consultar disponibilitat | Cal Masses",
       description:
-        "Consulta les dates disponibles a Airbnb. Si necessites saber alguna cosa abans de venir, escriu-nos.",
+        "Consulta les dates disponibles a Booking.com. Si necessites saber alguna cosa abans de venir, escriu-nos.",
       h1: "Consultar disponibilitat",
     },
     intro:
-      "Consulta les dates disponibles a Airbnb. Si tens algun dubte abans de venir, escriu-nos.",
+      "Consulta les dates disponibles a Booking.com. Si tens algun dubte abans de venir, escriu-nos.",
   },
 
   legal: {
@@ -705,12 +705,12 @@ export const contentCa: ContentBundle = {
     {
       question: "Com puc consultar la disponibilitat?",
       answer:
-        "Pots veure les dates lliures a Airbnb o escriure'ns per WhatsApp o correu i et responem directament.",
+        "Pots veure les dates lliures a Booking.com o escriure'ns per WhatsApp o correu i et responem directament.",
     },
     {
       question: "Quina és la política de cancel·lació?",
       answer:
-        "La política de cancel·lació es mostra a Airbnb en triar les dates de la reserva.",
+        "La política de cancel·lació es mostra a Booking.com en triar les dates de la reserva.",
     },
   ],
 };

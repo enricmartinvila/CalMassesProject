@@ -457,11 +457,11 @@ export const contentEs: ContentBundle = {
         {
           question: "¿Cómo puedo consultar disponibilidad?",
           answer:
-            "Puedes consultar disponibilidad en Airbnb, o contactar por WhatsApp o email.",
+            "Puedes consultar disponibilidad en Booking.com, o contactar por WhatsApp o email.",
         },
         {
           question: "¿Cuál es la política de cancelación?",
-          answer: "Se indica en Airbnb al elegir las fechas de la reserva.",
+          answer: "Se indica en Booking.com al elegir las fechas de la reserva.",
         },
       ],
     },
@@ -600,11 +600,11 @@ export const contentEs: ContentBundle = {
     seo: {
       title: "Consultar disponibilidad | Cal Masses",
       description:
-        "Consulta las fechas disponibles en Airbnb. Si necesitas saber alguna cosa antes de venir, escríbenos.",
+        "Consulta las fechas disponibles en Booking.com. Si necesitas saber alguna cosa antes de venir, escríbenos.",
       h1: "Consultar disponibilidad",
     },
     intro:
-      "Consulta las fechas disponibles en Airbnb. Si tienes alguna duda antes de venir, escríbenos.",
+      "Consulta las fechas disponibles en Booking.com. Si tienes alguna duda antes de venir, escríbenos.",
   },
 
   legal: {
@@ -705,12 +705,12 @@ export const contentEs: ContentBundle = {
     {
       question: "¿Cómo puedo consultar disponibilidad?",
       answer:
-        "Puedes ver las fechas libres en Airbnb o escribirnos por WhatsApp o email y te respondemos directamente.",
+        "Puedes ver las fechas libres en Booking.com o escribirnos por WhatsApp o email y te respondemos directamente.",
     },
     {
       question: "¿Cuál es la política de cancelación?",
       answer:
-        "La política de cancelación se muestra en Airbnb al elegir las fechas de la reserva.",
+        "La política de cancelación se muestra en Booking.com al elegir las fechas de la reserva.",
     },
   ],
 };
