@@ -10,7 +10,6 @@ import {
   EditorialSection,
   FullWidthImage,
   ImageTextSplit,
-  NumberedList,
 } from "../EditorialBlocks";
 import {
   EnvironmentCTA,
@@ -32,12 +31,6 @@ export function BagesGuide({ landing }: { landing: LandingDefinition }) {
     ...guideToc,
   ];
 
-  const ways = [
-    { title: sleep.h2, text: sleep.paragraphs?.[0] ?? "" },
-    { title: forTwo.h2, text: forTwo.paragraphs?.[0] ?? "" },
-    { title: between.h2, text: between.paragraphs?.[0] ?? "" },
-    { title: wine.h2, text: wine.paragraphs?.[0] ?? "" },
-  ].filter((w) => w.text);
 
   const related = landing.related.map((l) => ({
     title: l.label,
@@ -72,10 +65,6 @@ export function BagesGuide({ landing }: { landing: LandingDefinition }) {
         />
 
         <PageTOC items={toc} />
-
-        <EditorialSection spacing="loose">
-          <NumberedList items={ways} asHeadings={false} />
-        </EditorialSection>
 
         <FullWidthImage src={siteConfig.images.exterior} />
 

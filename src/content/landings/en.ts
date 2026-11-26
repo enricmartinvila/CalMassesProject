@@ -5,7 +5,8 @@ import type { LandingsBundle } from "./types";
 const R = ratingSnippet("en");
 
 /**
- * English landing copy — faithful translation of the Spanish editorial brief.
+ * English landing copy. Only confirmed facts about the property
+ * (see siteConfig); the practical guide blocks live in content/guides.
  */
 export const landingsEn: LandingsBundle = {
   bages: {
@@ -14,7 +15,7 @@ export const landingsEn: LandingsBundle = {
     seo: {
       title: "Rural accommodation in the Bages, among vineyards | Cal Masses",
       description:
-        `${R}. An entire rural place for two on a farm with vineyard and woodland in Sant Salvador de Guardiola, in the heart of the Bages.`,
+        `${R}. An entire rural place for two on a farm with vineyard and woodland in Sant Salvador de Guardiola, 20 min from Manresa and close to Montserrat.`,
       h1: "Rural accommodation in the Bages, between countryside and vineyards",
     },
     breadcrumb: [
@@ -24,9 +25,8 @@ export const landingsEn: LandingsBundle = {
     hero: {
       h1: "Rural accommodation in the Bages, between countryside and vineyards",
       intro: [
-        "The Bages is a region to explore without too much hurry.",
-        "Montserrat, Manresa, small villages, vineyards, paths and wineries share a territory where it is still easy to move quickly from city to countryside.",
-        "Cal Masses is in Sant Salvador de Guardiola, in a rural setting surrounded by woodland, fields and vineyard. It is an accommodation designed for two people who want to spend a few days in the Bages and have a quiet place to return to after discovering the region.",
+        "Cal Masses is a rural place for two in Sant Salvador de Guardiola, in the heart of the Bages, Catalonia. It is part of a farm with its own vineyard, woodland and fields.",
+        "Manresa is about 20 minutes away and Montserrat a little further. You can spend the day exploring the area and come back in the evening to a quiet place with a hot tub, a private patio and a kitchen to cook dinner.",
       ],
       image: siteConfig.images.exterior,
       ctaPrimary: { label: "Check availability", route: "reservar" },
@@ -34,40 +34,33 @@ export const landingsEn: LandingsBundle = {
     },
     sections: [
       {
-        h2: "Sleep in the countryside to discover the Bages",
+        h2: "A working farm, not a housing estate",
         paragraphs: [
-          "Staying at Cal Masses lets you get to know the Bages from within the landscape itself.",
-          "We are not in a tourist hub or a housing development. The accommodation is part of a farm where the countryside, the vineyard and the seasons still set much of the pace.",
-          "From here you can spend the day visiting some of the region's best-known places, or simply stay nearby and enjoy the surroundings.",
-          "Montserrat and Manresa are two obvious landmarks, but the Bages is much more than these two destinations.",
+          "Cal Masses is not in a tourist resort. The accommodation sits on a working farm where the vines are still tended and the landscape changes with the seasons: budding in spring, deep green in summer, harvest at the end of summer and rest in winter.",
+          "That is the main difference from staying in Manresa or next to Montserrat. When you get back from a day out you are not on a street or in a car park, but in the countryside, with trails leaving straight from the farm.",
         ],
         image: siteConfig.images.vineyard,
       },
       {
-        h2: "An accommodation designed for two",
+        h2: "What the accommodation includes",
         paragraphs: [
-          "Cal Masses is a small accommodation.",
-          "It is designed for two people, and that is part of how it works.",
-          "It is not a large rural house for groups, nor a tourist complex. It is a space to spend a few days with autonomy, cook, rest and use the farm as a starting point to explore the region.",
+          "It is a small place for two guests, rented as a whole: you don't share the kitchen, bathroom or patio with anyone. It has a bedroom, an equipped kitchen, a bathroom with a hot tub, air conditioning and heating.",
+          "The farm also has an outdoor saltwater pool, shared and open in summer, bikes and free parking. Check-in is self check-in from 16:00.",
         ],
         showFeatureGrid: true,
       },
       {
-        h2: "Between Montserrat, Manresa and the Pla de Bages",
+        h2: "An area to explore by car, at an easy pace",
         paragraphs: [
-          "Cal Masses's location lets you combine different kinds of plans during the same stay.",
-          "You can visit Montserrat, head into Manresa, discover a DO Pla de Bages winery, or drive and walk between vineyards and small rural villages.",
-          "And you can also decide not to do too much.",
-          "An important part of staying in the countryside is precisely not having to fill every day with activities.",
+          "The Bages is a county in central Catalonia, with Manresa as its capital. It has well-known sights, such as Montserrat monastery, Manresa's Seu and Cardona castle, but also a network of back roads between vineyards, small villages and dry-stone huts.",
+          "The easiest way to get around is by car, choosing one or two visits a day. Further down you'll find the main places with approximate drive times from Cal Masses, what each season is like and how many days to stay.",
         ],
       },
       {
-        h2: "Wine and landscape",
+        h2: "Our own wine and the DO Pla de Bages",
         paragraphs: [
-          "The vineyard is part of Cal Masses.",
-          "We grow our own vineyard and make small amounts of wine under the name SISU.",
-          "We do not aim to turn every stay into an organised wine experience. Wine simply forms part of the farm and of the landscape around the accommodation.",
-          "For those who want to go further, the Pla de Bages offers wineries, routes and wine tourism experiences across the region.",
+          "At Cal Masses we tend our own vineyard and make small amounts of wine under the name SISU. We don't run tastings or tours: the wine is part of the farm, not a tourist package.",
+          "If you're into wine, the area has its own designation of origin, the DO Pla de Bages, with wineries that open by appointment and a native grape, picapoll.",
         ],
         cta: {
           label: "Discover wine tourism in the Pla de Bages",
@@ -77,9 +70,9 @@ export const landingsEn: LandingsBundle = {
       },
     ],
     finalCta: {
-      h2: "Feel like discovering the Bages from here?",
+      h2: "Fancy exploring the Bages from here?",
       paragraphs: [
-        "Check availability and discover Cal Masses as a starting point for a few days in the region.",
+        "Check the available dates. Check-in is from 16:00 and check-out by 11:00.",
       ],
       primary: { label: "Check availability", route: "reservar" },
       secondary: { label: "See the accommodation", route: "alojamiento" },
@@ -107,7 +100,7 @@ export const landingsEn: LandingsBundle = {
     seo: {
       title: "Rural accommodation 20 min from Manresa | Cal Masses",
       description:
-        `Rural accommodation for two 11 km from Manresa, on a vineyard farm. Hot tub, summer pool and free parking. ${R}.`,
+        `Rural accommodation for two 11 km from Manresa, on a vineyard farm. Hot tub, private patio, summer pool and free parking. ${R}.`,
       h1: "Rural accommodation near Manresa",
     },
     breadcrumb: [
@@ -118,9 +111,8 @@ export const landingsEn: LandingsBundle = {
     hero: {
       h1: "Rural accommodation near Manresa",
       intro: [
-        "Being near Manresa does not mean you have to sleep in the city.",
-        "Cal Masses is in Sant Salvador de Guardiola, in a setting of countryside and nature from which you can head into Manresa whenever you like and return afterwards to the quiet of the farm.",
-        "It is an option especially suited to two people who want to combine Manresa with a rural stay.",
+        "Cal Masses is in Sant Salvador de Guardiola, about 11 km from Manresa (around 20 minutes by car). It is a rural place for two on a farm with vineyard and woodland.",
+        "The city is close enough to visit the Seu, eat out or do your shopping, and at night you sleep in the countryside, with free parking on the farm.",
       ],
       image: siteConfig.images.exterior,
       ctaPrimary: { label: "Check availability", route: "reservar" },
@@ -128,51 +120,46 @@ export const landingsEn: LandingsBundle = {
     },
     sections: [
       {
-        h2: "Manresa close by, the countryside when you return",
+        h2: "Manresa by day, the countryside at night",
         paragraphs: [
-          "Manresa concentrates much of the region's activity, services and heritage.",
-          "A few kilometres away, however, the landscape changes quickly.",
-          "Fields, woodland, vineyards, small villages and secondary roads appear, telling another side of the Bages.",
-          "Cal Masses lets you combine those two realities during the same stay.",
-          "You do not have to choose between city and countryside.",
+          "Manresa is the capital of the Bages and holds the area's most visited heritage: the Gothic Seu above the river Cardener, the Pont Vell, the old town and the Cave of Saint Ignatius, end point of the Ignatian Way.",
+          "As soon as you leave the city the landscape changes within a few kilometres: fields, woodland and vines. Cal Masses is in that landscape, so you can combine both in the same stay without having to choose.",
         ],
         image: siteConfig.images.vineyard,
       },
       {
-        h2: "A quiet base for exploring the area",
+        h2: "Why not stay in the centre",
         paragraphs: [
-          "You can use Cal Masses as a starting point to visit Manresa, Montserrat, Pla de Bages wineries or different corners of the region.",
-          "The idea is not to spend the day covering kilometres.",
-          "You can also come back early, prepare something to eat, enjoy the outdoors or simply let the afternoon pass on the farm.",
+          "Whether you come to Manresa for work, the Ignatian Way or to explore the area, staying on the outskirts has practical advantages: free parking on the farm, outdoor space and your own kitchen so you don't depend on restaurants every day.",
+          "The trade-off is that you need a car. Public transport to Sant Salvador de Guardiola is limited, so most guests drive, or take the train to Manresa and continue by road.",
         ],
       },
       {
-        h2: "For a stay for two",
+        h2: "The accommodation, for two",
         paragraphs: [
-          "Cal Masses is designed for two guests.",
-          "That allows for a small, simple accommodation, closer to the idea of a getaway than to a large rural house for groups.",
-          "You have the spaces you need to spend a few days with autonomy and use the accommodation as you like: as a base for exploring the area, or simply as a place to rest.",
+          "Cal Masses is rented as a whole and designed for two guests: a bedroom, an equipped kitchen, a bathroom with a hot tub and a private patio. It has air conditioning and heating, and in summer there is a shared outdoor saltwater pool.",
+          "Self check-in is from 16:00, so you can stop in Manresa for groceries and arrive whenever suits you.",
         ],
         showFeatureGrid: true,
       },
       {
-        h2: "What can you combine with Manresa?",
+        h2: "What to combine with Manresa",
         cards: [
           {
             title: "Montserrat",
-            text: "Montserrat lets you spend a few hours or a full day getting to know one of Catalonia's most recognisable landscapes.",
+            text: "The monastery and the massif, close enough to go in the morning and be back for lunch or a rest.",
             cta: "Accommodation near Montserrat",
             route: "landingMontserrat",
           },
           {
             title: "Pla de Bages",
-            text: "Vineyards, wineries and quiet roads let you discover another side of the region.",
+            text: "DO wineries, vineyards and dry-stone wine vats spread across the area.",
             cta: "Wine tourism in the Pla de Bages",
             route: "landingEnoturismo",
           },
           {
             title: "Cal Masses",
-            text: "Countryside, vineyard and quiet at the end of the day.",
+            text: "The farm: our own vineyard, woodland, trails and SISU wine.",
             cta: "Discover Cal Masses",
             route: "finca",
           },
@@ -180,10 +167,9 @@ export const landingsEn: LandingsBundle = {
       },
     ],
     finalCta: {
-      h2: "Sleep near Manresa without sleeping in Manresa",
+      h2: "Stay near Manresa without staying in Manresa",
       paragraphs: [
-        "If you are looking for accommodation, a rural apartment or a quiet stay near Manresa, Cal Masses offers a different alternative to sleeping in the city centre.",
-        "Check availability and decide the rest of the trip afterwards.",
+        "If you're looking for rural accommodation or an apartment near Manresa, check the available dates. Check-out is by 11:00, leaving time for a last stroll around the city.",
       ],
       primary: { label: "Check availability", route: "reservar" },
     },
@@ -207,7 +193,7 @@ export const landingsEn: LandingsBundle = {
     seo: {
       title: "Where to stay near Montserrat: 25 min away | Cal Masses",
       description:
-        `Stay 25 min from Montserrat on a vineyard farm in the Bages. Accommodation for two with a hot tub, summer pool and parking. ${R}.`,
+        `Stay 25 min from Montserrat on a vineyard farm in the Bages. Accommodation for two with a hot tub, private patio, summer pool and parking. ${R}.`,
       h1: "Accommodation near Montserrat for a quiet getaway",
     },
     breadcrumb: [
@@ -218,9 +204,8 @@ export const landingsEn: LandingsBundle = {
     hero: {
       h1: "Accommodation near Montserrat for a quiet getaway",
       intro: [
-        "Visiting Montserrat does not necessarily mean staying next to the monastery.",
-        "Cal Masses is in Sant Salvador de Guardiola, in the Bages, and lets you combine a visit to Montserrat with a stay surrounded by countryside, woodland and vineyard.",
-        "You can spend part of the day discovering the mountain and return afterwards to a completely different setting.",
+        "Cal Masses is a rural place for two in Sant Salvador de Guardiola, in the Bages, about 20 km from Montserrat monastery.",
+        "It lets you go up early, before most visitors arrive, and come back in the afternoon to a vineyard farm with a hot tub and a private patio.",
       ],
       image: siteConfig.images.montserrat,
       ctaPrimary: { label: "Check availability", route: "reservar" },
@@ -228,67 +213,60 @@ export const landingsEn: LandingsBundle = {
     },
     sections: [
       {
-        h2: "Montserrat during the day, Cal Masses when you return",
+        h2: "Get there before the coaches",
         paragraphs: [
-          "Montserrat deserves time.",
-          "The monastery is probably its best-known point, but the mountain, the paths and the landscape allow you to approach the visit in very different ways.",
-          "Staying at Cal Masses lets you complement that day with another part of the territory.",
-          "After Montserrat you can return to the countryside, rest, cook or enjoy the outdoors without needing to stay inside a tourist area.",
+          "Most Montserrat visitors come from Barcelona and arrive mid-morning. Leaving Cal Masses after breakfast, you can be up there well before them, with a shorter queue to see the Black Madonna and quieter trails.",
+          "If you'd rather not drive all the way up, you can also park below and take the rack railway or the cable car. Further down we explain the options, what to see at the top and which walk to choose for the time you have.",
         ],
         image: siteConfig.images.exterior,
       },
       {
-        h2: "We are not in Montserrat",
+        h2: "We're not on the mountain, and that has advantages",
         paragraphs: [
-          "We prefer to say this clearly.",
-          "Cal Masses is not an accommodation on the mountain of Montserrat or next to the monastery.",
-          "We are in Sant Salvador de Guardiola, within the Bages region.",
-          "That is precisely why it can suit those who want to visit Montserrat but prefer to stay in a rural setting and use the stay to also discover Manresa, the Pla de Bages and its vineyards.",
+          "To be clear: Cal Masses is not on Montserrat or next to the monastery. It is in the Bages area, at the distance shown below.",
+          "Staying off the mountain has advantages: you don't depend on the site's opening times, you have your own kitchen and outdoor space, and you can split your stay between Montserrat, Manresa and the Pla de Bages wineries.",
         ],
         showDistanceKey: "montserrat",
       },
       {
-        h2: "More to do besides Montserrat",
+        h2: "Beyond Montserrat",
         paragraphs: [
-          "If you stay more than one night, you do not need to plan the whole stay around Montserrat.",
-          "You can combine the mountain with Manresa, a wine-related visit, short routes through the Bages, or simply time on the farm itself.",
-          "Cal Masses works better as a point from which to discover the territory than as accommodation tied to a single attraction.",
+          "With two or more nights there's no need to build the whole trip around the mountain. The second day can be for Manresa, a winery or simply staying on the farm.",
         ],
         cards: [
           {
             title: "Manresa",
-            text: "History, heritage, food and services a few kilometres from the farm.",
+            text: "The Seu, the Pont Vell and the Cave of Saint Ignatius, about 20 minutes from the farm.",
             cta: "Rural accommodation near Manresa",
             route: "landingManresa",
           },
           {
             title: "Wine tourism",
-            text: "Vineyards, wineries and quiet roads let you discover another side of the region.",
+            text: "DO Pla de Bages wineries, the picapoll grape and dry-stone wine vats.",
             cta: "Wine tourism in the Pla de Bages",
             route: "landingEnoturismo",
           },
           {
             title: "Bages",
-            text: "Rural accommodation in the Bages, between countryside and vineyards.",
+            text: "Cardona, Món Sant Benet and Sant Llorenç del Munt, all within an hour.",
             cta: "Rural accommodation in the Bages",
             route: "landingBages",
           },
         ],
       },
       {
-        h2: "An accommodation for two",
+        h2: "A place for two",
         paragraphs: [
-          "Cal Masses is designed for two guests.",
-          "It is an option for those looking for a small, quiet stay with autonomy, away from the format of large rural houses for groups.",
-          "If you are coming to discover Montserrat and want to spend the rest of the trip in the countryside, this may be your place.",
+          "Cal Masses is rented as a whole for two guests: a bedroom, an equipped kitchen, a bathroom with a hot tub and a private patio, with air conditioning and heating.",
+          "In summer the farm has a shared outdoor saltwater pool. Parking is free.",
         ],
         showFeatureGrid: true,
       },
     ],
     finalCta: {
-      h2: "Montserrat is only one part of the trip",
+      h2: "Montserrat is only part of the trip",
       paragraphs: [
-        "Check availability and discover everything you can do from Cal Masses.",
+        "Check the available dates. Montserrat is much quieter on weekdays, so those dates are worth a look too.",
       ],
       primary: { label: "Check availability", route: "reservar" },
     },
@@ -312,7 +290,7 @@ export const landingsEn: LandingsBundle = {
     seo: {
       title: "Romantic getaway with hot tub in the Bages | Cal Masses",
       description:
-        `A place just for two, with a hot tub, among vineyards and woodland in the Bages. Ideal for a couple's getaway near Barcelona. ${R}.`,
+        `A place just for two, with a hot tub and private patio, among vineyards and woodland in the Bages. A couple's getaway 1 h from Barcelona. ${R}.`,
       h1: "A getaway for two with a hot tub in the Bages",
     },
     breadcrumb: [
@@ -323,9 +301,8 @@ export const landingsEn: LandingsBundle = {
     hero: {
       h1: "A getaway for two with a hot tub in the Bages",
       intro: [
-        "Not every rural accommodation has to be designed for groups.",
-        "Cal Masses is a space for two people, on a Bages farm surrounded by countryside, woodland and vineyard.",
-        "A place from which to discover the region, or simply spend a few days without too many plans.",
+        "Cal Masses is a rural place designed for two people only, on a farm with vineyard and woodland in Sant Salvador de Guardiola, in the Bages.",
+        "It is rented as a whole: the bedroom, kitchen, bathroom with hot tub and patio are yours alone. It is a little over an hour from Barcelona.",
       ],
       image: siteConfig.images.interior,
       ctaPrimary: { label: "Check availability", route: "reservar" },
@@ -333,74 +310,57 @@ export const landingsEn: LandingsBundle = {
     },
     sections: [
       {
-        h2: "Two people, a small place and time ahead",
+        h2: "Designed for two, not adapted for two",
         paragraphs: [
-          "The idea of Cal Masses is simple.",
-          "Having a comfortable space to sleep, cook and be at ease, with the countryside beginning practically as you step outside.",
-          "You do not need to organise every moment of the stay.",
-          "You can spend the day out or stay in. You can head to Montserrat or Manresa, visit a winery, walk, or simply read and rest.",
+          "Many rural houses are built for groups and also rented to couples. Cal Masses is the other way round: it is sized for two, so there are no spare rooms or empty spaces.",
+          "It has a bedroom, a kitchen equipped for real cooking, air conditioning and heating, and a private patio with a table for breakfast or dinner outdoors. Check-in is self check-in, with no reception hours.",
         ],
         image: siteConfig.images.bedroom,
         showFeatureGrid: true,
       },
       {
-        h2: "A hot tub to end the day",
+        h2: "The hot tub, inside the accommodation",
         paragraphs: [
-          "The Cal Masses bathroom has a hot tub.",
-          "After a day at Montserrat or among the vineyards, it is one of the best moments of the stay: no rush, and no need to leave the accommodation.",
-          "And in summer, the farm's saltwater pool is there too.",
+          "The hot tub is in the bathroom and is for you alone. Being indoors, it works all year: in winter after a day at Montserrat, or late in the evening in summer.",
+          "In summer the farm also has an outdoor saltwater pool. It is shared and has no fixed hours.",
         ],
         image: siteConfig.images.jacuzzi,
       },
       {
-        h2: "Few plans can also be a good plan",
+        h2: "A farm that is still at work",
         paragraphs: [
-          "A morning walk.",
-          "A quiet meal.",
-          "An afternoon by the pool when it is available and the weather is right.",
-          "A bottle of wine.",
-          "A visit to Montserrat.",
-          "Or none of that.",
-          "Cal Masses is also for the days when you simply feel like not having too much planned.",
-        ],
-      },
-      {
-        h2: "A working farm",
-        paragraphs: [
-          "Cal Masses is not a rural set built around the accommodation.",
-          "Here we still farm, care for the vineyard and make wine.",
-          "Each season of the year has a different rhythm, and the landscape keeps changing too.",
-          "The accommodation is part of that place.",
+          "The accommodation is not a rural film set. It is on a farm where vines are grown and SISU wine is made in small amounts. Chickens and cats also live on the farm.",
+          "Trails between fields and woodland start at the door, for walking or heading out on the farm's bikes.",
         ],
         image: siteConfig.images.vineyard,
       },
       {
-        h2: "What to do if you feel like going out",
+        h2: "If you feel like going out",
         paragraphs: [
-          "If you feel like getting out, around Cal Masses there are enough options to fill several days without needing long journeys.",
+          "There's enough around for several days without driving far. Or you can skip all of it.",
         ],
         cards: [
           {
             title: "Montserrat",
-            text: "Montserrat is close enough to spend a morning or a full day there and return afterwards to the quiet of Cal Masses.",
+            text: "Go up early, walk along the upper trails and be back for lunch on the patio.",
             cta: "Accommodation near Montserrat",
             route: "landingMontserrat",
           },
           {
             title: "Manresa",
-            text: "History, heritage, food and services a few kilometres from the farm.",
+            text: "The Seu, the old town and the market, about 20 minutes away.",
             cta: "Rural accommodation near Manresa",
             route: "landingManresa",
           },
           {
             title: "Wine tourism",
-            text: "Vineyards, wineries, rural landscape and a wine culture closely tied to the territory.",
+            text: "A visit and tasting at a DO Pla de Bages winery, by appointment.",
             cta: "Wine tourism in the Pla de Bages",
             route: "landingEnoturismo",
           },
           {
             title: "Bages",
-            text: "Rural accommodation in the Bages, between countryside and vineyards.",
+            text: "Cardona, Món Sant Benet and small villages among the vines.",
             cta: "Rural accommodation in the Bages",
             route: "landingBages",
           },
@@ -409,7 +369,9 @@ export const landingsEn: LandingsBundle = {
     ],
     finalCta: {
       h2: "Looking for a place for two?",
-      paragraphs: ["Check availability and discover Cal Masses."],
+      paragraphs: [
+        "Check the available dates. Two nights give you time for one outing and an unhurried day on the farm.",
+      ],
       primary: { label: "Check availability", route: "reservar" },
     },
     related: [
@@ -433,7 +395,7 @@ export const landingsEn: LandingsBundle = {
     seo: {
       title: "Rural accommodation with pool in the Bages | Cal Masses",
       description:
-        `Outdoor saltwater pool (shared, summer) on a vineyard farm in the Bages. Accommodation for two with a hot tub. ${R}.`,
+        `Outdoor saltwater pool (shared, summer) on a vineyard farm in the Bages. Accommodation for two with a hot tub and private patio. ${R}.`,
       h1: "Rural accommodation with pool in the Bages",
     },
     breadcrumb: [
@@ -444,53 +406,47 @@ export const landingsEn: LandingsBundle = {
     hero: {
       h1: "Rural accommodation with pool in the Bages",
       intro: [
-        "In summer, much of Cal Masses is enjoyed outdoors.",
-        "The countryside, the outdoor areas and the pool let you spend more time on the farm and approach the stay with even less hurry.",
-        "Cal Masses is an accommodation for two in Sant Salvador de Guardiola, surrounded by nature and vineyards.",
+        "Cal Masses is a rural place for two in Sant Salvador de Guardiola, on a farm with vineyard and woodland. In summer the farm has an outdoor saltwater pool.",
+        "It's a good way to handle inland Catalonia's summer heat: an outing in the morning and the afternoon in the water, without getting in the car.",
       ],
       image: siteConfig.images.pool,
       ctaPrimary: { label: "Check availability", route: "reservar" },
     },
     sections: [
       {
-        h2: "The pool is part of the stay",
+        h2: "What the pool is like",
         paragraphs: [
-          "The pool is integrated into the outdoor space at Cal Masses and is available during its season of use.",
+          "It is an outdoor saltwater pool, open in the summer season with no fixed hours. It is shared, not exclusive to the accommodation. These are the confirmed details:",
         ],
         showPoolFacts: true,
       },
       {
-        h2: "A day without leaving Cal Masses",
+        h2: "Saltwater: what's different",
         paragraphs: [
-          "Not every day needs an outing.",
-          "When the weather is good you can spend much of the day on the farm: breakfast outside, reading, swimming, cooking or simply resting.",
-          "Montserrat, Manresa and the rest of the Bages will still be there the next day.",
+          "A saltwater pool is still disinfected with chlorine, but the chlorine is produced from the dissolved salt. For swimmers, the water usually feels gentler on skin and eyes and smells less of chlorine.",
+          "It isn't seawater: the salt concentration is far lower than the sea's.",
         ],
       },
       {
-        h2: "Countryside, vineyard and summer",
+        h2: "Out of season, the hot tub",
         paragraphs: [
-          "The surroundings of Cal Masses change a great deal with the time of year.",
-          "During the warmer months life moves outdoors, and the pool becomes one more part of that relationship with the farm.",
-          "We do not want to present it as a resort or as a standalone facility.",
-          "It is part of a small rural accommodation within an agricultural landscape.",
+          "The pool only opens in summer. The rest of the year, the accommodation has an indoor hot tub in the bathroom, for guests only, which works in any season.",
+          "If you're after water in winter or spring, the hot tub is what you'll have. Further down there's a month-by-month comparison of the two.",
         ],
         image: siteConfig.images.vineyard,
       },
       {
-        h2: "For two people",
+        h2: "The accommodation, for two",
         paragraphs: [
-          "Cal Masses is designed for two guests.",
-          "That lets you enjoy the accommodation, the outdoors and the surroundings at a much quieter scale than large rural houses for groups.",
+          "Cal Masses is rented as a whole for two guests: a bedroom, an equipped kitchen, a bathroom with a hot tub and a private patio for dinner outdoors on summer nights. It has air conditioning, which helps in July and August.",
         ],
         showFeatureGrid: true,
       },
     ],
     finalCta: {
-      h2: "For two people",
+      h2: "Coming in summer?",
       paragraphs: [
-        "Cal Masses is designed for two guests.",
-        "That lets you enjoy the accommodation, the outdoors and the surroundings at a much quieter scale than large rural houses for groups.",
+        "Check the available dates. The pool opens in the summer season; if you're unsure whether it will be open on your dates, ask us before booking.",
       ],
       primary: { label: "Check availability", route: "reservar" },
     },
@@ -522,9 +478,8 @@ export const landingsEn: LandingsBundle = {
     hero: {
       h1: "A rural getaway near Barcelona",
       intro: [
-        "You do not need to go very far to change the landscape completely.",
-        "Cal Masses is in the Bages, in Sant Salvador de Guardiola, surrounded by fields, woodland and vineyards.",
-        "It is an accommodation for two designed for spending a few days away from the city and using time differently.",
+        "Cal Masses is about 65 km from Barcelona, around 1 h 10 min by car, in Sant Salvador de Guardiola, in the Bages.",
+        "It is a rural place for two on a farm with vineyard and woodland, with a hot tub and a private patio. It's close to Montserrat and Manresa, so it works well for a weekend without spending half of it on the road.",
       ],
       image: siteConfig.images.exterior,
       ctaPrimary: { label: "Check availability", route: "reservar" },
@@ -532,34 +487,33 @@ export const landingsEn: LandingsBundle = {
     },
     sections: [
       {
-        h2: "Swap the city for the countryside for a few days",
+        h2: "Close enough for a weekend",
         paragraphs: [
-          "A short getaway works better when it does not force you to spend half the trip travelling.",
-          "From Barcelona you can plan Cal Masses as a weekend stay or a few days to discover the Bages, visit Montserrat and Manresa, or simply rest on the farm.",
+          "A two-day break works best when the journey doesn't eat into it. Leave Barcelona on Friday afternoon and you arrive in time for dinner; on Sunday you can head back at an easy pace after the 11:00 check-out.",
+          "Without a car, the train reaches Manresa, but from there you'll need a car or taxi: rural public transport is limited.",
         ],
         showDistanceKey: "barcelona",
         image: siteConfig.images.vineyard,
       },
       {
-        h2: "What can you do over a weekend?",
+        h2: "What changes compared with the city",
         h3Blocks: [
           {
-            h3: "Arrive and slow down",
+            h3: "Space and calm",
             paragraphs: [
-              "You do not need to start the stay with a list of visits.",
-              "Arriving, settling in, cooking something and enjoying the surroundings can be enough for the first day.",
+              "The accommodation is on a working farm surrounded by fields and woodland. When you get back from a day out there are no streets or city traffic, just countryside and trails leaving from the farm.",
             ],
           },
           {
-            h3: "Discover the Bages",
+            h3: "Cooking without rushing",
             paragraphs: [
-              "During the day you can head to Montserrat, visit Manresa, discover a winery or explore the territory without a tightly fixed itinerary.",
+              "The kitchen is equipped and the patio is private. The easiest option is to shop in Manresa on the way and eat in.",
             ],
           },
           {
-            h3: "Return without hurry",
+            h3: "Plans within an hour",
             paragraphs: [
-              "One of the advantages of staying in the countryside is being able to return after a visit and keep enjoying the place where you sleep.",
+              "Montserrat, Manresa, the Pla de Bages wineries and Cardona castle. Or not leaving the farm at all.",
             ],
           },
         ],
@@ -567,26 +521,16 @@ export const landingsEn: LandingsBundle = {
       {
         h2: "For two people",
         paragraphs: [
-          "Cal Masses is a small accommodation designed for two.",
-          "We are not trying to compete with large rural houses for groups.",
-          "The offer is different: few guests, autonomy and a setting that invites you to spend part of your time on the farm itself.",
+          "Cal Masses is a small place rented as a whole: a bedroom, kitchen, bathroom with a hot tub and patio, with air conditioning and heating. In summer the farm has a shared outdoor saltwater pool.",
+          "It isn't a rural house for groups. If there are more than two of you, it's not the right place.",
         ],
         showFeatureGrid: true,
       },
-      {
-        h2: "You do not need to fill the weekend",
-        paragraphs: [
-          "Montserrat, wine, Manresa, nature or the pool can form part of the stay.",
-          "But you can also use Cal Masses simply to stop for a few days.",
-        ],
-        cta: { label: "Check availability", route: "reservar" },
-      },
     ],
     finalCta: {
-      h2: "You do not need to fill the weekend",
+      h2: "No need to fill the weekend",
       paragraphs: [
-        "Montserrat, wine, Manresa, nature or the pool can form part of the stay.",
-        "But you can also use Cal Masses simply to stop for a few days.",
+        "Montserrat, wine, Manresa or the pool can all be part of your stay, but you can also just come to slow down. Check the available dates.",
       ],
       primary: { label: "Check availability", route: "reservar" },
     },
@@ -611,7 +555,7 @@ export const landingsEn: LandingsBundle = {
     seo: {
       title: "Wine tourism in Pla de Bages: sleep among vines | Cal Masses",
       description:
-        `DO Pla de Bages wineries, vineyards and our own wine (SISU) from a farm in Sant Salvador de Guardiola. Accommodation for two. ${R}.`,
+        `DO Pla de Bages wineries, the picapoll grape and dry-stone wine vats, from a farm with its own vineyard and wine (SISU). Accommodation for two. ${R}.`,
       h1: "Wine tourism in the Pla de Bages from a farm with a vineyard",
     },
     breadcrumb: [
@@ -622,9 +566,8 @@ export const landingsEn: LandingsBundle = {
     hero: {
       h1: "Wine tourism in the Pla de Bages from a farm with a vineyard",
       intro: [
-        "Wine is not a decorative add-on at Cal Masses.",
-        "The vineyard is part of the farm, and we ourselves make small amounts of wine under the name SISU.",
-        "Staying here lets you discover the Pla de Bages from a place that also forms part, on a small scale, of that winegrowing landscape.",
+        "Cal Masses is a rural place for two in Sant Salvador de Guardiola, on a farm with its own vineyard. This is where we make our small-batch SISU wine.",
+        "It's a good base for visiting DO Pla de Bages wineries and coming back to sleep among the vines, without a long drive after a tasting.",
       ],
       image: siteConfig.images.vineyard,
       ctaPrimary: { label: "Check availability", route: "reservar" },
@@ -632,65 +575,53 @@ export const landingsEn: LandingsBundle = {
     },
     sections: [
       {
-        h2: "A territory shaped by the vine",
+        h2: "An area with a long wine history",
         paragraphs: [
-          "The Pla de Bages keeps a very visible relationship with wine.",
-          "Vineyards appear across the region and share space with woodland, fields, small villages and numerous dry-stone buildings.",
-          "There are also very different wineries, from small projects to producers with a much longer track record.",
-          "Discovering Bages wine is also a way to understand the territory better.",
+          "The Bages was one of Catalonia's great wine areas until phylloxera wiped out the vines in the late 19th century. From that time the tines remain: dry-stone vats built in the middle of the vineyards to ferment the wine on the spot.",
+          "Today the DO Pla de Bages brings together wineries of different sizes, and its signature variety is picapoll, a white grape closely tied to the area.",
         ],
       },
       {
-        h2: "Sleep among vineyards",
+        h2: "Sleeping inside a vineyard",
         paragraphs: [
-          "At Cal Masses we do not look at the vineyard from afar.",
-          "It is part of the farm.",
-          "Depending on the time of year you may find it beginning to bud, fully green, approaching harvest, or in full winter rest.",
-          "That continuous change is part of the landscape around the accommodation.",
+          "At Cal Masses the vineyard isn't something you look at from a distance: it's part of the farm. Depending on when you come, you'll find it budding in spring, green in summer, ready for harvest at the end of summer or resting in winter.",
+          "If you're into wine, it helps: you see up close the cycle the wineries then explain.",
         ],
         image: siteConfig.images.wine,
       },
       {
-        h2: "SISU, our small wine project",
+        h2: "SISU, our wine",
         paragraphs: [
-          "SISU comes from the wish to make our own wine and learn from every harvest.",
-          "We work in small quantities and aim to intervene only as much as needed so that the grapes and each vintage keep their personality.",
-          "We do not try to produce identical wines year after year.",
-          "What interests us is precisely that each harvest tells something different.",
+          "SISU is our small wine project. We make few bottles, with as little intervention as possible, and we don't try to make each vintage taste like the last: we want every harvest to show.",
         ],
         cta: { label: "Discover SISU", route: "sisu" },
       },
       {
-        h2: "Discover the wineries of the Pla de Bages",
+        h2: "How to visit the DO wineries",
         paragraphs: [
-          "Cal Masses can serve as a starting point to get to know different wineries and wine tourism experiences in the region.",
-          "We do not recommend trying to visit them all.",
-          "Choosing one or two, driving through the territory, stopping for a meal and leaving time for the rest of the trip is usually a much more enjoyable way to discover the Pla de Bages.",
+          "Almost all Pla de Bages wineries open by appointment, so book your visit before you come. They usually offer a walk through the vineyard or cellar and a tasting at the end.",
+          "There's no need to try to see them all. One or two visits per stay, with time for lunch nearby, usually beats back-to-back tastings.",
         ],
         showWineriesTodo: true,
       },
       {
-        h2: "We are not a tourist winery",
+        h2: "What we don't offer",
         paragraphs: [
-          "Cal Masses has a vineyard and we make wine, but we do not want to present services we do not offer.",
-          "If visits, tastings or other organised activities exist in the future, they will be added here.",
-          "Until then, the vineyard and SISU are part of the place and of our story, not of a mandatory tourist package.",
+          "Cal Masses is not a winery with tours: right now we don't run tastings or wine tourism activities. If we do in the future, we'll say so here.",
+          "The vineyard and SISU are part of the place and our story, not a tourist package.",
         ],
       },
       {
-        h2: "Accommodation and wine without turning everything into an activity",
+        h2: "After a day of wineries",
         paragraphs: [
-          "You can devote part of the stay to wine and the rest to Montserrat, Manresa, nature or simply Cal Masses.",
-          "Wine tourism does not need to take up the whole trip.",
+          "When you get back, the accommodation is yours alone: an equipped kitchen for dinner in, a private patio and a bathroom with a hot tub. Being in the middle of the Pla de Bages, drives from the wineries are short.",
         ],
-        cta: { label: "Check availability", route: "reservar" },
       },
     ],
     finalCta: {
-      h2: "Accommodation and wine without turning everything into an activity",
+      h2: "Wine, without turning everything into an activity",
       paragraphs: [
-        "You can devote part of the stay to wine and the rest to Montserrat, Manresa, nature or simply Cal Masses.",
-        "Wine tourism does not need to take up the whole trip.",
+        "Spend one morning at a winery and the rest of your stay on Montserrat, Manresa or the farm. Check the available dates.",
       ],
       primary: { label: "Check availability", route: "reservar" },
     },

@@ -5,7 +5,8 @@ import type { LandingsBundle } from "./types";
 const R = ratingSnippet("ca");
 
 /**
- * Catalan landing copy — faithful translation of the Spanish editorial brief.
+ * Catalan landing copy. Only confirmed facts about the property
+ * (see siteConfig); the practical guide blocks live in content/guides.
  */
 export const landingsCa: LandingsBundle = {
   bages: {
@@ -14,7 +15,7 @@ export const landingsCa: LandingsBundle = {
     seo: {
       title: "Allotjament rural al Bages, entre vinyes | Cal Masses",
       description:
-        `${R}. Allotjament rural sencer per a dos en una finca amb vinya i bosc a Sant Salvador de Guardiola, al cor del Bages.`,
+        `${R}. Allotjament rural sencer per a dos en una finca amb vinya i bosc a Sant Salvador de Guardiola, a 20 min de Manresa i a prop de Montserrat.`,
       h1: "Allotjament rural al Bages, entre camp i vinyes",
     },
     breadcrumb: [
@@ -24,9 +25,8 @@ export const landingsCa: LandingsBundle = {
     hero: {
       h1: "Allotjament rural al Bages, entre camp i vinyes",
       intro: [
-        "El Bages és una comarca per recórrer sense massa presses.",
-        "Montserrat, Manresa, petits pobles, vinyes, camins i cellers conviuen en un territori on encara és fàcil passar ràpidament de la ciutat al camp.",
-        "Cal Masses és a Sant Salvador de Guardiola, en un entorn rural envoltat de bosc, camps i vinya. És un allotjament pensat per a dues persones que volen passar uns dies al Bages i tenir un lloc tranquil on tornar després de descobrir la comarca.",
+        "Cal Masses és un allotjament rural per a dues persones a Sant Salvador de Guardiola, en ple Bages. Forma part d'una finca amb vinya pròpia, bosc i camps de conreu.",
+        "Des d'aquí, Manresa queda a uns 20 minuts i Montserrat a poc més. Pots passar el dia recorrent la comarca i tornar a la tarda a un lloc tranquil, amb jacuzzi, pati privat i cuina per preparar-te el sopar.",
       ],
       image: siteConfig.images.exterior,
       ctaPrimary: { label: "Consultar disponibilitat", route: "reservar" },
@@ -34,40 +34,33 @@ export const landingsCa: LandingsBundle = {
     },
     sections: [
       {
-        h2: "Dormir al camp per descobrir el Bages",
+        h2: "Una finca en actiu, no una urbanització",
         paragraphs: [
-          "Allotjar-se a Cal Masses permet conèixer el Bages des de dins del propi paisatge.",
-          "No som en un nucli turístic ni en una urbanització. L'allotjament forma part d'una finca on el camp, la vinya i les estacions continuen marcant bona part del ritme.",
-          "Des d'aquí pots dedicar el dia a visitar alguns dels indrets més coneguts de la comarca o simplement quedar-te a prop i gaudir de l'entorn.",
-          "Montserrat i Manresa són dues referències evidents, però el Bages és molt més que aquestes dues destinacions.",
+          "Cal Masses no és en un nucli turístic. L'allotjament és dins d'una finca agrícola on es continua conreant la vinya i on el paisatge canvia amb les estacions: brotada a la primavera, verd intens a l'estiu, verema a finals d'estiu i repòs a l'hivern.",
+          "Aquesta és la diferència principal amb dormir a Manresa o al costat de Montserrat. En tornar de les visites no ets en un carrer ni en un aparcament, sinó al camp, amb camins que surten directament de la finca.",
         ],
         image: siteConfig.images.vineyard,
       },
       {
-        h2: "Un allotjament pensat per a dos",
+        h2: "Què inclou l'allotjament",
         paragraphs: [
-          "Cal Masses és un allotjament petit.",
-          "Està pensat per a dues persones i això forma part de la seva manera de ser.",
-          "No és una gran casa rural destinada a grups ni un complex turístic. És un espai per passar uns dies amb autonomia, cuinar, descansar i utilitzar la finca com a punt de partida per conèixer la comarca.",
+          "És un espai petit, per a dos hostes, i es lloga sencer: no comparteixes cuina, bany ni pati amb ningú. Té dormitori, cuina equipada, bany amb jacuzzi, aire condicionat i calefacció.",
+          "A la finca hi ha a més una piscina exterior d'aigua salada, compartida i oberta a l'estiu, bicicletes i aparcament gratuït. L'arribada és autònoma a partir de les 16:00.",
         ],
         showFeatureGrid: true,
       },
       {
-        h2: "Entre Montserrat, Manresa i el Pla de Bages",
+        h2: "Una comarca per recórrer en cotxe i sense presses",
         paragraphs: [
-          "La ubicació de Cal Masses permet combinar diferents tipus de plans durant una mateixa estada.",
-          "Pots visitar Montserrat, apropar-te a Manresa, descobrir algun celler de la DO Pla de Bages o recórrer carreteres i camins entre vinyes i petits nuclis rurals.",
-          "I també pots decidir no fer gaire.",
-          "Una part important d'allotjar-se al camp consisteix precisament a no haver d'omplir tots els dies d'activitats.",
+          "El Bages és al centre de Catalunya i la seva capital és Manresa. Té monuments coneguts, com el monestir de Montserrat, la Seu de Manresa o el castell de Cardona, però també una xarxa de carreteres secundàries entre vinyes, pobles petits i construccions de pedra seca.",
+          "El més còmode és moure's en cotxe i triar una o dues visites al dia. Més avall tens els llocs principals amb el temps aproximat des de Cal Masses, segons l'època de l'any i quants dies convé quedar-se.",
         ],
       },
       {
-        h2: "Vi i paisatge",
+        h2: "Vi propi i DO Pla de Bages",
         paragraphs: [
-          "La vinya forma part de Cal Masses.",
-          "Cultivem la nostra pròpia vinya i elaborem petites quantitats de vi sota el nom SISU.",
-          "No preténem convertir cada estada en una experiència enològica organitzada. Simplement el vi forma part de la finca i del paisatge que envolta l'allotjament.",
-          "Per a qui vulgui aprofundir més, el Pla de Bages ofereix cellers, rutes i propostes d'enoturisme repartides per tota la comarca.",
+          "A Cal Masses conreem la nostra pròpia vinya i elaborem petites quantitats de vi amb el nom SISU. No organitzem tastos ni visites: el vi forma part de la finca, no d'un paquet turístic.",
+          "Si t'interessa el vi, la comarca té la seva pròpia denominació d'origen, la DO Pla de Bages, amb cellers que obren amb cita prèvia i una varietat de raïm autòctona, el picapoll.",
         ],
         cta: {
           label: "Descobrir l'enoturisme al Pla de Bages",
@@ -79,7 +72,7 @@ export const landingsCa: LandingsBundle = {
     finalCta: {
       h2: "Et ve de gust conèixer el Bages des d'aquí?",
       paragraphs: [
-        "Consulta les dates disponibles i descobreix Cal Masses com a punt de partida per passar uns dies a la comarca.",
+        "Mira les dates disponibles. L'entrada és a partir de les 16:00 i la sortida fins a les 11:00.",
       ],
       primary: { label: "Consultar disponibilitat", route: "reservar" },
       secondary: { label: "Veure l'allotjament", route: "alojamiento" },
@@ -107,7 +100,7 @@ export const landingsCa: LandingsBundle = {
     seo: {
       title: "Allotjament rural a 20 min de Manresa | Cal Masses",
       description:
-        `Allotjament rural per a dos a 11 km de Manresa, en una finca amb vinya. Jacuzzi, piscina a l'estiu i pàrquing gratuït. ${R}.`,
+        `Allotjament rural per a dos a 11 km de Manresa, en una finca amb vinya. Jacuzzi, pati privat, piscina a l'estiu i pàrquing gratuït. ${R}.`,
       h1: "Allotjament rural a prop de Manresa",
     },
     breadcrumb: [
@@ -118,9 +111,8 @@ export const landingsCa: LandingsBundle = {
     hero: {
       h1: "Allotjament rural a prop de Manresa",
       intro: [
-        "Estar a prop de Manresa no significa haver de dormir a la ciutat.",
-        "Cal Masses és a Sant Salvador de Guardiola, en un entorn de camp i natura des del qual pots apropar-te a Manresa quan vulguis i tornar després a la tranquil·litat de la finca.",
-        "És una opció especialment pensada per a dues persones que volen combinar Manresa amb una estada rural.",
+        "Cal Masses és a Sant Salvador de Guardiola, a uns 11 km de Manresa (uns 20 minuts en cotxe). És un allotjament rural per a dues persones dins d'una finca amb vinya i bosc.",
+        "Tens la ciutat a prop per visitar la Seu, dinar o fer la compra, i a la nit dorms al camp, amb aparcament gratuït a la finca.",
       ],
       image: siteConfig.images.exterior,
       ctaPrimary: { label: "Consultar disponibilitat", route: "reservar" },
@@ -128,51 +120,46 @@ export const landingsCa: LandingsBundle = {
     },
     sections: [
       {
-        h2: "Manresa a prop, el camp en tornar",
+        h2: "Manresa de dia, el camp a la nit",
         paragraphs: [
-          "Manresa concentra bona part de l'activitat, els serveis i el patrimoni de la comarca.",
-          "A pocs quilòmetres, però, el paisatge canvia ràpidament.",
-          "Apareixen camps, boscos, vinyes, petits nuclis i carreteres secundàries que expliquen una altra part del Bages.",
-          "Cal Masses permet combinar aquestes dues realitats durant una mateixa estada.",
-          "No cal escollir entre ciutat i camp.",
+          "Manresa és la capital del Bages i concentra el patrimoni més visitat de la comarca: la Seu gòtica sobre el riu Cardener, el Pont Vell, el nucli antic i la Cova de Sant Ignasi, punt final del Camí Ignasià.",
+          "Així que surts de la ciutat, el paisatge canvia en pocs quilòmetres: camps, bosc i vinyes. Cal Masses és en aquest paisatge, de manera que pots combinar les dues coses en la mateixa estada sense haver de triar.",
         ],
         image: siteConfig.images.vineyard,
       },
       {
-        h2: "Una base tranquil·la per conèixer la zona",
+        h2: "Per què no dormir al centre",
         paragraphs: [
-          "Pots utilitzar Cal Masses com a punt de partida per visitar Manresa, Montserrat, cellers del Pla de Bages o diferents racons de la comarca.",
-          "La idea no és passar el dia fent quilòmetres.",
-          "També pots tornar aviat, preparar alguna cosa per menjar, gaudir de l'exterior o senzillament deixar passar la tarda a la finca.",
+          "Si véns a Manresa per feina, pel Camí Ignasià o per visitar la comarca, un allotjament als afores té avantatges pràctics: aparcament gratuït a la finca, espai exterior i cuina pròpia per no dependre de restaurants cada dia.",
+          "A canvi, necessites cotxe. El transport públic fins a Sant Salvador de Guardiola és limitat, així que el més habitual és arribar en cotxe o en tren a Manresa i continuar per carretera.",
         ],
       },
       {
-        h2: "Per a una estada de dues persones",
+        h2: "L'allotjament, per a dues persones",
         paragraphs: [
-          "Cal Masses està pensat per a dos hostes.",
-          "Això permet mantenir un allotjament petit i senzill, més proper a la idea d'una escapada que a la d'una gran casa rural per a grups.",
-          "Disposes dels espais necessaris per passar uns dies amb autonomia i utilitzar l'allotjament com vulguis: com a base per recórrer la zona o simplement com a lloc on descansar.",
+          "Cal Masses es lloga sencer i està pensat per a dos hostes: dormitori, cuina equipada, bany amb jacuzzi i pati privat. Hi ha aire condicionat i calefacció, i a l'estiu piscina exterior d'aigua salada compartida.",
+          "L'arribada és autònoma a partir de les 16:00, així que pots passar per Manresa a fer la compra i arribar a l'hora que et vagi bé.",
         ],
         showFeatureGrid: true,
       },
       {
-        h2: "Què pots combinar amb Manresa?",
+        h2: "Què combinar amb Manresa",
         cards: [
           {
             title: "Montserrat",
-            text: "Montserrat permet dedicar unes hores o un dia sencer a conèixer un dels paisatges més recognoscibles de Catalunya.",
+            text: "El monestir i el massís, a una distància que permet anar-hi al matí i tornar a dinar o descansar.",
             cta: "Allotjament a prop de Montserrat",
             route: "landingMontserrat",
           },
           {
             title: "Pla de Bages",
-            text: "Vinyes, cellers i petites carreteres permeten descobrir una altra cara de la comarca.",
+            text: "Cellers de la DO, vinyes i tines de pedra seca repartides per la comarca.",
             cta: "Enoturisme al Pla de Bages",
             route: "landingEnoturismo",
           },
           {
             title: "Cal Masses",
-            text: "Camp, vinya i tranquil·litat al final del dia.",
+            text: "La finca: vinya pròpia, bosc, camins i el vi SISU.",
             cta: "Conèixer Cal Masses",
             route: "finca",
           },
@@ -182,8 +169,7 @@ export const landingsCa: LandingsBundle = {
     finalCta: {
       h2: "Dormir a prop de Manresa sense dormir a Manresa",
       paragraphs: [
-        "Si busques un allotjament, apartament rural o una estada tranquil·la a prop de Manresa, Cal Masses ofereix una alternativa diferent a dormir al centre de la ciutat.",
-        "Consulta les dates disponibles i decideix la resta del viatge després.",
+        "Si busques un allotjament o apartament rural a prop de Manresa, consulta les dates disponibles. La sortida és fins a les 11:00, amb temps per a una última volta per la ciutat.",
       ],
       primary: { label: "Consultar disponibilitat", route: "reservar" },
     },
@@ -207,7 +193,7 @@ export const landingsCa: LandingsBundle = {
     seo: {
       title: "Allotjament rural a 25 min de Montserrat | Cal Masses",
       description:
-        `Dorm a 25 min de Montserrat en una finca amb vinya del Bages. Allotjament per a dos amb jacuzzi, piscina a l'estiu i pàrquing. ${R}.`,
+        `Dorm a 25 min de Montserrat en una finca amb vinya del Bages. Allotjament per a dos amb jacuzzi, pati privat, piscina a l'estiu i pàrquing. ${R}.`,
       h1: "Allotjament a prop de Montserrat per a una escapada tranquil·la",
     },
     breadcrumb: [
@@ -218,9 +204,8 @@ export const landingsCa: LandingsBundle = {
     hero: {
       h1: "Allotjament a prop de Montserrat per a una escapada tranquil·la",
       intro: [
-        "Visitar Montserrat no significa necessàriament haver d'allotjar-se junt al monestir.",
-        "Cal Masses és a Sant Salvador de Guardiola, al Bages, i permet combinar una visita a Montserrat amb una estada envoltada de camp, bosc i vinya.",
-        "Pots dedicar part del dia a descobrir la muntanya i tornar després a un entorn completament distint.",
+        "Cal Masses és un allotjament rural per a dues persones a Sant Salvador de Guardiola, al Bages, a uns 20 km del monestir de Montserrat.",
+        "Permet pujar d'hora, abans que arribin la majoria de visitants, i tornar a la tarda a una finca amb vinya, jacuzzi i pati privat.",
       ],
       image: siteConfig.images.montserrat,
       ctaPrimary: { label: "Consultar disponibilitat", route: "reservar" },
@@ -228,48 +213,42 @@ export const landingsCa: LandingsBundle = {
     },
     sections: [
       {
-        h2: "Montserrat durant el dia, Cal Masses en tornar",
+        h2: "Arribar abans que els autocars",
         paragraphs: [
-          "Montserrat mereix temps.",
-          "El monestir és probablement el seu punt més conegut, però la muntanya, els camins i el paisatge permeten plantejar la visita de maneres molt diferents.",
-          "Allotjar-te a Cal Masses permet complementar aquesta jornada amb una altra part del territori.",
-          "Després de Montserrat pots tornar al camp, descansar, cuinar o gaudir de l'exterior sense necessitat de continuar dins d'una zona turística.",
+          "La majoria de visitants de Montserrat puja des de Barcelona i arriba a mig matí. Sortint de Cal Masses després d'esmorzar, pots ser-hi dalt força abans, amb menys cua per veure la Moreneta i els camins més buits.",
+          "Si prefereixes no pujar en cotxe fins al monestir, també pots deixar-lo a baix i pujar amb el cremallera o l'aeri. Més avall expliquem les opcions, què veure a dalt i quina ruta triar segons el temps que tinguis.",
         ],
         image: siteConfig.images.exterior,
       },
       {
-        h2: "No som a Montserrat",
+        h2: "No som a la muntanya, i això té avantatges",
         paragraphs: [
-          "Preferim explicar-ho clarament.",
-          "Cal Masses no és un allotjament situat a la muntanya de Montserrat ni junt al monestir.",
-          "Som a Sant Salvador de Guardiola, dins de la comarca del Bages.",
-          "Precisament per això pot ser interessant per a qui vulgui visitar Montserrat però prefereixi allotjar-se en un entorn rural i aprofitar l'estada per conèixer també Manresa, el Pla de Bages i les seves vinyes.",
+          "Perquè quedi clar: Cal Masses no és a Montserrat ni al costat del monestir. És a la comarca del Bages, a la distància que indiquem aquí sota.",
+          "Dormir fora de la muntanya té avantatges: no depens dels horaris del recinte, tens cuina pròpia i espai exterior, i pots repartir l'estada entre Montserrat, Manresa i els cellers del Pla de Bages.",
         ],
         showDistanceKey: "montserrat",
       },
       {
-        h2: "Més coses a fer a més de Montserrat",
+        h2: "Més enllà de Montserrat",
         paragraphs: [
-          "Si véns més d'una nit, no necessites plantejar tota l'estada al voltant de Montserrat.",
-          "Pots combinar la muntanya amb Manresa, alguna visita relacionada amb el vi, petits recorreguts pel Bages o simplement temps a la pròpia finca.",
-          "Cal Masses funciona millor com a punt des del qual descobrir el territori que com a allotjament vinculat a una sola atracció.",
+          "Amb dues nits o més no cal organitzar tot el viatge al voltant de la muntanya. La segona jornada pot ser per a Manresa, un celler o simplement per quedar-se a la finca.",
         ],
         cards: [
           {
             title: "Manresa",
-            text: "Història, patrimoni, gastronomia i serveis a pocs quilòmetres de la finca.",
+            text: "La Seu, el Pont Vell i la Cova de Sant Ignasi, a uns 20 minuts de la finca.",
             cta: "Allotjament rural a prop de Manresa",
             route: "landingManresa",
           },
           {
             title: "Enoturisme",
-            text: "Vinyes, cellers i petites carreteres permeten descobrir una altra cara de la comarca.",
+            text: "Cellers de la DO Pla de Bages, el raïm picapoll i les tines de pedra seca.",
             cta: "Enoturisme al Pla de Bages",
             route: "landingEnoturismo",
           },
           {
             title: "Bages",
-            text: "Allotjament rural al Bages, entre camp i vinyes.",
+            text: "Cardona, Món Sant Benet i Sant Llorenç del Munt, tot a menys d'una hora.",
             cta: "Allotjament rural al Bages",
             route: "landingBages",
           },
@@ -278,9 +257,8 @@ export const landingsCa: LandingsBundle = {
       {
         h2: "Un allotjament per a dos",
         paragraphs: [
-          "Cal Masses està pensat per a dos hostes.",
-          "És una opció per a qui busca una estada petita, tranquil·la i amb autonomia, lluny del format de les grans cases rurals per a grups.",
-          "Si véns a conèixer Montserrat i vols passar la resta del viatge al camp, aquest pot ser el teu lloc.",
+          "Cal Masses es lloga sencer per a dos hostes: dormitori, cuina equipada, bany amb jacuzzi i pati privat, amb aire condicionat i calefacció.",
+          "A l'estiu hi ha una piscina exterior d'aigua salada a la finca, compartida. L'aparcament és gratuït.",
         ],
         showFeatureGrid: true,
       },
@@ -288,7 +266,7 @@ export const landingsCa: LandingsBundle = {
     finalCta: {
       h2: "Montserrat és només una part del viatge",
       paragraphs: [
-        "Consulta les dates disponibles i descobreix tot el que pots fer des de Cal Masses.",
+        "Consulta les dates disponibles. Entre setmana Montserrat és molt més tranquil·la, així que val la pena mirar també aquests dies.",
       ],
       primary: { label: "Consultar disponibilitat", route: "reservar" },
     },
@@ -312,7 +290,7 @@ export const landingsCa: LandingsBundle = {
     seo: {
       title: "Escapada romàntica amb jacuzzi al Bages | Cal Masses",
       description:
-        `Allotjament només per a dos, amb jacuzzi, entre vinyes i bosc al Bages. Ideal per a una escapada en parella a prop de Barcelona. ${R}.`,
+        `Allotjament només per a dos, amb jacuzzi i pati privat, entre vinyes i bosc al Bages. Escapada en parella a 1 h de Barcelona. ${R}.`,
       h1: "Una escapada per a dos amb jacuzzi al Bages",
     },
     breadcrumb: [
@@ -323,9 +301,8 @@ export const landingsCa: LandingsBundle = {
     hero: {
       h1: "Una escapada per a dos amb jacuzzi al Bages",
       intro: [
-        "No tots els allotjaments rurals han d'estar pensats per a grups.",
-        "Cal Masses és un espai per a dues persones, dins d'una finca del Bages envoltada de camp, bosc i vinya.",
-        "Un lloc des del qual descobrir la comarca o simplement passar uns dies sense massa plans.",
+        "Cal Masses és un allotjament rural pensat només per a dues persones, en una finca amb vinya i bosc de Sant Salvador de Guardiola, al Bages.",
+        "Es lloga sencer: el dormitori, la cuina, el bany amb jacuzzi i el pati són només per a vosaltres. És a poc més d'una hora de Barcelona.",
       ],
       image: siteConfig.images.interior,
       ctaPrimary: { label: "Consultar disponibilitat", route: "reservar" },
@@ -333,74 +310,57 @@ export const landingsCa: LandingsBundle = {
     },
     sections: [
       {
-        h2: "Dues persones, un lloc petit i temps per davant",
+        h2: "Pensat per a dos, no adaptat per a dos",
         paragraphs: [
-          "La idea de Cal Masses és senzilla.",
-          "Tenir un espai còmode on dormir, cuinar i anar a la teva, amb el camp començant pràcticament en sortir per la porta.",
-          "No necessites organitzar cada moment de l'estada.",
-          "Pots passar el dia fora o quedar-te. Pots apropar-te a Montserrat o Manresa, visitar un celler, passejar o senzillament llegir i descansar.",
+          "Moltes cases rurals estan pensades per a grups i es lloguen també a parelles. Cal Masses és al revés: té la mida justa per a dues persones, de manera que no sobren habitacions ni espais buits.",
+          "Té dormitori, cuina equipada per cuinar de debò, aire condicionat i calefacció, i un pati privat amb taula per esmorzar o sopar a fora. L'arribada és autònoma, sense horaris de recepció.",
         ],
         image: siteConfig.images.bedroom,
         showFeatureGrid: true,
       },
       {
-        h2: "Un jacuzzi per acabar el dia",
+        h2: "El jacuzzi, dins l'allotjament",
         paragraphs: [
-          "El bany de Cal Masses té jacuzzi.",
-          "Després d'un dia per Montserrat o entre vinyes, és un dels millors moments de l'estada: sense presses i sense haver de sortir de l'allotjament.",
-          "I a l'estiu, la piscina d'aigua salada de la finca també hi és.",
+          "El jacuzzi és al bany de l'allotjament i és només per a vosaltres. Com que és interior, es pot fer servir tot l'any: a l'hivern, després d'un dia a Montserrat, o a l'estiu, a última hora.",
+          "A l'estiu la finca té a més una piscina exterior d'aigua salada. És compartida i no té horari fix.",
         ],
         image: siteConfig.images.jacuzzi,
       },
       {
-        h2: "Pocs plans també poden ser un bon pla",
-        paragraphs: [
-          "Un passeig al matí.",
-          "Un dinar tranquil.",
-          "Una tarda al costat de la piscina quan està disponible i el temps acompanya.",
-          "Una ampolla de vi.",
-          "Una visita a Montserrat.",
-          "O res de tot això.",
-          "Cal Masses també és per als dies en què senzillament ve de gust no tenir massa coses previstes.",
-        ],
-      },
-      {
         h2: "Una finca que continua funcionant",
         paragraphs: [
-          "Cal Masses no és un decorat rural construït al voltant de l'allotjament.",
-          "Aquí continuem cultivant, cuidant la vinya i fent vi.",
-          "Cada època de l'any té un ritme distint i el paisatge també va canviant.",
-          "L'allotjament forma part d'aquest indret.",
+          "L'allotjament no és un decorat rural. És dins d'una finca on es conrea la vinya i s'elabora en petites quantitats el vi SISU. A la finca també hi viuen gallines i gats.",
+          "Des de la porta surten camins entre camps i bosc per passejar o sortir amb les bicicletes de la finca.",
         ],
         image: siteConfig.images.vineyard,
       },
       {
-        h2: "Què fer si et ve de gust sortir",
+        h2: "Si us ve de gust sortir",
         paragraphs: [
-          "Si et ve de gust moure't, al voltant de Cal Masses tens prou opcions per omplir diversos dies sense necessitat de fer grans desplaçaments.",
+          "Al voltant teniu plans per a uns quants dies sense fer gaires quilòmetres. També podeu no fer-ne cap.",
         ],
         cards: [
           {
             title: "Montserrat",
-            text: "Montserrat és prou a prop per dedicar-li un matí o un dia sencer i tornar després a la tranquil·litat de Cal Masses.",
+            text: "Pugeu d'hora, camineu per la part alta i torneu a dinar al pati.",
             cta: "Allotjament a prop de Montserrat",
             route: "landingMontserrat",
           },
           {
             title: "Manresa",
-            text: "Història, patrimoni, gastronomia i serveis a pocs quilòmetres de la finca.",
+            text: "La Seu, el nucli antic i el mercat, a uns 20 minuts.",
             cta: "Allotjament rural a prop de Manresa",
             route: "landingManresa",
           },
           {
             title: "Enoturisme",
-            text: "Vinyes, cellers, paisatge rural i una cultura del vi molt lligada al territori.",
+            text: "Una visita amb tast en un celler de la DO Pla de Bages, amb cita prèvia.",
             cta: "Enoturisme al Pla de Bages",
             route: "landingEnoturismo",
           },
           {
             title: "Bages",
-            text: "Allotjament rural al Bages, entre camp i vinyes.",
+            text: "Cardona, Món Sant Benet i pobles petits entre vinyes.",
             cta: "Allotjament rural al Bages",
             route: "landingBages",
           },
@@ -408,8 +368,10 @@ export const landingsCa: LandingsBundle = {
       },
     ],
     finalCta: {
-      h2: "Busques un lloc per a dos?",
-      paragraphs: ["Consulta les dates disponibles i descobreix Cal Masses."],
+      h2: "Busqueu un lloc per a dos?",
+      paragraphs: [
+        "Consulteu les dates disponibles. Amb dues nits hi ha temps per fer una excursió i gaudir de la finca sense presses.",
+      ],
       primary: { label: "Consultar disponibilitat", route: "reservar" },
     },
     related: [
@@ -433,7 +395,7 @@ export const landingsCa: LandingsBundle = {
     seo: {
       title: "Allotjament rural amb piscina al Bages | Cal Masses",
       description:
-        `Piscina exterior d'aigua salada (compartida, a l'estiu) en una finca amb vinya del Bages. Allotjament per a dos amb jacuzzi. ${R}.`,
+        `Piscina exterior d'aigua salada (compartida, a l'estiu) en una finca amb vinya del Bages. Allotjament per a dos amb jacuzzi i pati privat. ${R}.`,
       h1: "Allotjament rural amb piscina al Bages",
     },
     breadcrumb: [
@@ -444,53 +406,47 @@ export const landingsCa: LandingsBundle = {
     hero: {
       h1: "Allotjament rural amb piscina al Bages",
       intro: [
-        "A l'estiu, bona part de Cal Masses es gaudeix a fora.",
-        "El camp, les zones exteriors i la piscina permeten passar més temps a la finca i plantejar l'estada amb encara menys presses.",
-        "Cal Masses és un allotjament per a dues persones a Sant Salvador de Guardiola, envoltat de natura i vinyes.",
+        "Cal Masses és un allotjament rural per a dues persones a Sant Salvador de Guardiola, en una finca amb vinya i bosc. A l'estiu, la finca té una piscina exterior d'aigua salada.",
+        "És una manera de passar la calor de la Catalunya interior: excursió al matí i tarda a l'aigua, sense agafar el cotxe.",
       ],
       image: siteConfig.images.pool,
       ctaPrimary: { label: "Consultar disponibilitat", route: "reservar" },
     },
     sections: [
       {
-        h2: "La piscina forma part de l'estada",
+        h2: "Com és la piscina",
         paragraphs: [
-          "La piscina està integrada a l'espai exterior de Cal Masses i està disponible durant la seva temporada d'ús.",
+          "És una piscina exterior d'aigua salada, oberta en temporada d'estiu i sense horari fix. És compartida: no és d'ús exclusiu de l'allotjament. Aquestes són les dades confirmades:",
         ],
         showPoolFacts: true,
       },
       {
-        h2: "Un dia sense sortir de Cal Masses",
+        h2: "Aigua salada: què canvia",
         paragraphs: [
-          "No tots els dies necessiten una excursió.",
-          "Quan fa bon temps pots passar bona part del dia a la finca: esmorzar a fora, llegir, banyar-te, cuinar o simplement descansar.",
-          "Montserrat, Manresa i la resta del Bages continuaran sent-hi l'endemà.",
+          "Una piscina d'aigua salada es continua desinfectant amb clor, però el clor es genera a partir de la sal dissolta. Per al banyista, la diferència és que l'aigua sol ser més suau per a la pell i els ulls i fa menys olor de clor.",
+          "No és aigua de mar: la concentració de sal és molt més baixa que la del mar.",
         ],
       },
       {
-        h2: "Camp, vinya i estiu",
+        h2: "Fora de temporada, el jacuzzi",
         paragraphs: [
-          "L'entorn de Cal Masses canvia molt segons l'època de l'any.",
-          "Durant els mesos més càlids la vida es desplaça cap a l'exterior i la piscina es converteix en una part més d'aquesta relació amb la finca.",
-          "No volem presentar-la com un resort ni com una instal·lació aïllada.",
-          "Forma part d'un allotjament rural petit, dins d'un paisatge agrícola.",
+          "La piscina només obre a l'estiu. La resta de l'any, l'allotjament té un jacuzzi interior al bany, d'ús exclusiu per als hostes, que funciona en qualsevol estació.",
+          "Si el que busques és aigua a l'hivern o a la primavera, el jacuzzi és el que tindràs. Més avall tens una comparació de les dues opcions mes a mes.",
         ],
         image: siteConfig.images.vineyard,
       },
       {
-        h2: "Per a dues persones",
+        h2: "L'allotjament, per a dos",
         paragraphs: [
-          "Cal Masses està pensat per a dos hostes.",
-          "Això permet gaudir de l'allotjament, els exteriors i l'entorn des d'una escala molt més tranquil·la que la de les grans cases rurals destinades a grups.",
+          "Cal Masses es lloga sencer per a dos hostes: dormitori, cuina equipada, bany amb jacuzzi i pati privat per menjar a fora les nits d'estiu. Té aire condicionat, cosa que s'agraeix al juliol i a l'agost.",
         ],
         showFeatureGrid: true,
       },
     ],
     finalCta: {
-      h2: "Per a dues persones",
+      h2: "Véns a l'estiu?",
       paragraphs: [
-        "Cal Masses està pensat per a dos hostes.",
-        "Això permet gaudir de l'allotjament, els exteriors i l'entorn des d'una escala molt més tranquil·la que la de les grans cases rurals destinades a grups.",
+        "Consulta les dates disponibles. La piscina obre en temporada d'estiu; si dubtes de si estarà oberta en les teves dates, pregunta'ns abans de reservar.",
       ],
       primary: { label: "Consultar disponibilitat", route: "reservar" },
     },
@@ -522,9 +478,8 @@ export const landingsCa: LandingsBundle = {
     hero: {
       h1: "Una escapada rural a prop de Barcelona",
       intro: [
-        "No cal anar-se'n gaire lluny per canviar completament de paisatge.",
-        "Cal Masses és al Bages, a Sant Salvador de Guardiola, envoltat de camps, bosc i vinyes.",
-        "És un allotjament per a dues persones pensat per passar uns dies fora de la ciutat i utilitzar el temps d'una altra manera.",
+        "Cal Masses és a uns 65 km de Barcelona, al voltant d'1 h 10 min en cotxe, a Sant Salvador de Guardiola, al Bages.",
+        "És un allotjament rural per a dues persones en una finca amb vinya i bosc, amb jacuzzi i pati privat. És a prop de Montserrat i de Manresa, així que funciona bé per a un cap de setmana sense passar mig viatge a la carretera.",
       ],
       image: siteConfig.images.exterior,
       ctaPrimary: { label: "Consultar disponibilitat", route: "reservar" },
@@ -532,34 +487,33 @@ export const landingsCa: LandingsBundle = {
     },
     sections: [
       {
-        h2: "Canviar ciutat per camp durant uns dies",
+        h2: "Prou a prop per a un cap de setmana",
         paragraphs: [
-          "Una escapada curta funciona millor quan no obliga a passar mig viatge desplaçant-se.",
-          "Des de Barcelona pots plantejar Cal Masses com una estada de cap de setmana o d'alguns dies per conèixer el Bages, visitar Montserrat i Manresa o simplement descansar a la finca.",
+          "Una escapada de dos dies funciona millor quan el trajecte no es menja el viatge. Sortint de Barcelona divendres a la tarda arribes a l'hora de sopar, i diumenge pots tornar amb calma després del check-out de les 11:00.",
+          "Si no tens cotxe, el tren arriba a Manresa, però des d'allà cal cotxe o taxi: el transport públic rural és limitat.",
         ],
         showDistanceKey: "barcelona",
         image: siteConfig.images.vineyard,
       },
       {
-        h2: "Què pots fer durant un cap de setmana?",
+        h2: "Què canvia respecte a la ciutat",
         h3Blocks: [
           {
-            h3: "Arribar i baixar el ritme",
+            h3: "Espai i calma",
             paragraphs: [
-              "No necessites començar l'estada amb una llista de visites.",
-              "Arribar, instal·lar-te, cuinar alguna cosa i gaudir de l'entorn pot ser suficient per al primer dia.",
+              "L'allotjament és en una finca agrícola envoltada de camps i bosc. En tornar de les visites no hi ha carrers ni trànsit de ciutat, sinó camp i camins que surten de la mateixa finca.",
             ],
           },
           {
-            h3: "Descobrir el Bages",
+            h3: "Cuinar sense presses",
             paragraphs: [
-              "Durant el dia pots apropar-te a Montserrat, visitar Manresa, descobrir algun celler o recórrer el territori sense un itinerari massa tancat.",
+              "La cuina és equipada i el pati és privat. El més pràctic és comprar a Manresa de camí i sopar a casa.",
             ],
           },
           {
-            h3: "Tornar sense presses",
+            h3: "Plans a menys d'una hora",
             paragraphs: [
-              "Un dels avantatges d'allotjar-se al camp és poder tornar després d'una visita i continuar gaudint del lloc on dorms.",
+              "Montserrat, Manresa, els cellers del Pla de Bages i el castell de Cardona. O no sortir de la finca.",
             ],
           },
         ],
@@ -567,26 +521,16 @@ export const landingsCa: LandingsBundle = {
       {
         h2: "Per a dues persones",
         paragraphs: [
-          "Cal Masses és un allotjament petit pensat per a dos.",
-          "No busquem competir amb grans cases rurals per a grups.",
-          "La proposta és distinta: pocs hostes, autonomia i un entorn que convida a passar part del temps a la pròpia finca.",
+          "Cal Masses és un allotjament petit que es lloga sencer: dormitori, cuina, bany amb jacuzzi i pati, amb aire condicionat i calefacció. A l'estiu hi ha una piscina exterior d'aigua salada a la finca, compartida.",
+          "No és una casa rural per a grups. Si veniu més de dues persones, no és el lloc adequat.",
         ],
         showFeatureGrid: true,
-      },
-      {
-        h2: "No cal omplir el cap de setmana",
-        paragraphs: [
-          "Montserrat, vi, Manresa, natura o piscina poden formar part de l'estada.",
-          "Però també pots utilitzar Cal Masses simplement per parar uns dies.",
-        ],
-        cta: { label: "Consultar disponibilitat", route: "reservar" },
       },
     ],
     finalCta: {
       h2: "No cal omplir el cap de setmana",
       paragraphs: [
-        "Montserrat, vi, Manresa, natura o piscina poden formar part de l'estada.",
-        "Però també pots utilitzar Cal Masses simplement per parar uns dies.",
+        "Montserrat, vi, Manresa o piscina poden formar part de l'estada, però també pots venir simplement a aturar-te. Consulta les dates disponibles.",
       ],
       primary: { label: "Consultar disponibilitat", route: "reservar" },
     },
@@ -611,7 +555,7 @@ export const landingsCa: LandingsBundle = {
     seo: {
       title: "Enoturisme Pla de Bages: dorm entre vinyes | Cal Masses",
       description:
-        `Cellers de la DO Pla de Bages, vinya i vi propi (SISU) des d'una finca a Sant Salvador de Guardiola. Allotjament per a dos. ${R}.`,
+        `Cellers de la DO Pla de Bages, raïm picapoll i tines de pedra seca, des d'una finca amb vinya i vi propi (SISU). Allotjament per a dos. ${R}.`,
       h1: "Enoturisme al Pla de Bages des d'una finca amb vinya",
     },
     breadcrumb: [
@@ -622,9 +566,8 @@ export const landingsCa: LandingsBundle = {
     hero: {
       h1: "Enoturisme al Pla de Bages des d'una finca amb vinya",
       intro: [
-        "El vi no és un afegitó decoratiu a Cal Masses.",
-        "La vinya forma part de la finca i nosaltres mateixos elaborem petites quantitats de vi sota el nom SISU.",
-        "Allotjar-se aquí permet descobrir el Pla de Bages des d'un lloc que també forma part, a petita escala, d'aquest paisatge vitícola.",
+        "Cal Masses és un allotjament rural per a dues persones a Sant Salvador de Guardiola, dins d'una finca amb vinya pròpia. Aquí elaborem en petites quantitats el vi SISU.",
+        "És un bon punt de partida per conèixer els cellers de la DO Pla de Bages i tornar a dormir entre vinyes, sense haver de conduir lluny després d'un tast.",
       ],
       image: siteConfig.images.vineyard,
       ctaPrimary: { label: "Consultar disponibilitat", route: "reservar" },
@@ -632,65 +575,53 @@ export const landingsCa: LandingsBundle = {
     },
     sections: [
       {
-        h2: "Un territori marcat per la vinya",
+        h2: "Una comarca amb molta història vinícola",
         paragraphs: [
-          "El Pla de Bages manté una relació molt visible amb el vi.",
-          "Les vinyes apareixen repartides per la comarca i conviuen amb boscos, camps, petits pobles i nombroses construccions de pedra seca.",
-          "També hi ha cellers molt diferents entre si, des de projectes petits fins a productors amb una trajectòria molt més llarga.",
-          "Descobrir el vi del Bages és també una manera d'entendre millor el territori.",
+          "El Bages va ser una de les grans zones vinícoles de Catalunya fins que la fil·loxera va arrasar les vinyes a finals del segle XIX. D'aquella època queden les tines: dipòsits de pedra seca construïts enmig de les vinyes per fermentar-hi el vi allà mateix.",
+          "Avui la DO Pla de Bages reuneix cellers de mides diferents i té com a varietat pròpia el picapoll, un raïm blanc molt lligat a la comarca.",
         ],
       },
       {
-        h2: "Dormir entre vinyes",
+        h2: "Dormir dins d'una vinya",
         paragraphs: [
-          "A Cal Masses no mirem la vinya de lluny.",
-          "Forma part de la finca.",
-          "Segons l'època de l'any la pots trobar començant a brotar, completament verda, acostant-se a la verema o en ple descans hivernal.",
-          "Aquest canvi continu forma part del paisatge que envolta l'allotjament.",
+          "A Cal Masses la vinya no es mira de lluny: forma part de la finca. Segons quan vinguis, la trobaràs brotant a la primavera, verda a l'estiu, a punt de verema a finals d'estiu o en repòs a l'hivern.",
+          "Té sentit si t'interessa el vi, perquè veus de prop el cicle que després t'expliquen als cellers.",
         ],
         image: siteConfig.images.wine,
       },
       {
-        h2: "SISU, el nostre petit projecte de vi",
+        h2: "SISU, el nostre vi",
         paragraphs: [
-          "SISU neix de les ganes d'elaborar el nostre propi vi i aprendre de cada verema.",
-          "Treballem en petites quantitats i busquem intervenir només el necessari perquè el raïm i cada anyada mantinguin la seva personalitat.",
-          "No intentem produir vins idèntics any rere any.",
-          "Precisament ens interessa que cada collita expliqui alguna cosa diferent.",
+          "SISU és el nostre petit projecte de vi. Elaborem poques ampolles, amb la mínima intervenció possible, i no busquem que cada anyada sigui igual que l'anterior: ens interessa que cada verema es noti.",
         ],
         cta: { label: "Conèixer SISU", route: "sisu" },
       },
       {
-        h2: "Descobrir els cellers del Pla de Bages",
+        h2: "Com visitar els cellers de la DO",
         paragraphs: [
-          "Cal Masses pot servir com a punt de partida per conèixer diferents cellers i propostes d'enoturisme de la comarca.",
-          "No recomanem intentar visitar-los tots.",
-          "Escollir-ne un o dos, conduir pel territori, parar a menjar i deixar temps per a la resta del viatge sol ser una manera molt més agradable de conèixer el Pla de Bages.",
+          "Gairebé tots els cellers del Pla de Bages obren amb cita prèvia, així que convé reservar la visita abans de venir. Solen oferir un recorregut per la vinya o el celler i un tast al final.",
+          "No cal intentar veure'ls tots. Una o dues visites per estada, amb temps per dinar per la zona, sol ser millor pla que encadenar tastos.",
         ],
         showWineriesTodo: true,
       },
       {
-        h2: "No som un celler turístic",
+        h2: "El que no oferim",
         paragraphs: [
-          "Cal Masses té vinya i fem vi, però no volem presentar serveis que no oferim.",
-          "Si en el futur existeixen visites, tastets o altres activitats organitzades, s'afegiran aquí.",
-          "Fins aleshores, la vinya i SISU formen part del lloc i de la nostra història, no d'un paquet turístic obligatori.",
+          "Cal Masses no és un celler amb visites: ara mateix no organitzem tastos ni activitats d'enoturisme. Si en el futur en fem, ho indicarem aquí.",
+          "La vinya i SISU formen part del lloc i de la nostra història, no d'un paquet turístic.",
         ],
       },
       {
-        h2: "Allotjament i vi sense convertir-ho tot en una activitat",
+        h2: "Després d'un dia de cellers",
         paragraphs: [
-          "Pots dedicar part de l'estada al vi i la resta a Montserrat, Manresa, la natura o simplement Cal Masses.",
-          "L'enoturisme no necessita ocupar tot el viatge.",
+          "En tornar, l'allotjament és només per a vosaltres: cuina equipada per sopar a casa, pati privat i bany amb jacuzzi. Com que és al centre del Pla de Bages, els trajectes des dels cellers són curts.",
         ],
-        cta: { label: "Consultar disponibilitat", route: "reservar" },
       },
     ],
     finalCta: {
-      h2: "Allotjament i vi sense convertir-ho tot en una activitat",
+      h2: "Vi, sense convertir-ho tot en una activitat",
       paragraphs: [
-        "Pots dedicar part de l'estada al vi i la resta a Montserrat, Manresa, la natura o simplement Cal Masses.",
-        "L'enoturisme no necessita ocupar tot el viatge.",
+        "Dedica un matí a un celler i la resta de l'estada a Montserrat, Manresa o la finca. Consulta les dates disponibles.",
       ],
       primary: { label: "Consultar disponibilitat", route: "reservar" },
     },
