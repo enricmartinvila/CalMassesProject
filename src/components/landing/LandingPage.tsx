@@ -2,6 +2,7 @@ import { bookingHref, isTodo, siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
 import { isDraftRoute, type RouteKey } from "../../i18n/routes";
 import type { LandingDefinition } from "../../content/landings/types";
+import { distanceLabel } from "../../config/distanceLabel";
 import { SeoHead } from "../seo/SeoHead";
 import { LandingHero } from "./LandingHero";
 import { FeatureGrid, PoolFacts } from "./FeatureGrid";
@@ -125,7 +126,7 @@ export function LandingPage({ landing }: { landing: LandingDefinition }) {
                 {section.showDistanceKey &&
                   !isTodo(siteConfig.distances[section.showDistanceKey]) && (
                     <p className="text-sm text-gray-700">
-                      {String(siteConfig.distances[section.showDistanceKey])}
+                      {distanceLabel(section.showDistanceKey, lang)}
                     </p>
                   )}
 

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { isTodo, siteConfig } from "../../config/siteConfig";
 import { useLang } from "../../hooks/useLang";
+import { distanceLabel } from "../../config/distanceLabel";
 
 type DestinationKey = "montserrat" | "manresa" | "barcelona";
 
@@ -15,7 +16,7 @@ export function DistanceFromCalMasses({
   destination: DestinationKey;
   destinationLabel: string;
 }) {
-  const { content } = useLang();
+  const { content, lang } = useLang();
   const raw = siteConfig.distances[destination];
   if (isTodo(raw)) return null;
 
@@ -31,7 +32,7 @@ export function DistanceFromCalMasses({
         </span>
         {destinationLabel}
       </p>
-      <p className="mt-2 text-sm md:text-base text-gray-600">{String(raw)}</p>
+      <p className="mt-2 text-sm md:text-base text-gray-600">{distanceLabel(destination, lang)}</p>
     </div>
   );
 }
