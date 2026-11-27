@@ -142,7 +142,7 @@ export const contentCa: ContentBundle = {
     },
     seo: {
       title:
-        "Allotjament rural per a dos amb jacuzzi · Bages | Cal Masses",
+        "Casa rural per a dos amb jacuzzi · Bages | Cal Masses",
       description:
         `${R}. Allotjament sencer per a dos en una finca amb vinya a Sant Salvador de Guardiola, a 25 min de Montserrat. Jacuzzi, piscina i pàrquing.`,
       h1: "Una escapada per a dos entre vinyes i natura al Bages",
@@ -467,7 +467,7 @@ export const contentCa: ContentBundle = {
     },
     related: [
       { label: "Descobrir el Bages", route: "landingBages" },
-      { label: "Allotjament rural prop de Manresa", route: "landingManresa" },
+      { label: "Casa rural a prop de Manresa", route: "landingManresa" },
       { label: "Allotjament prop de Montserrat", route: "landingMontserrat" },
       {
         label: "Descobrir el Pla de Bages i els seus vins",

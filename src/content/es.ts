@@ -142,7 +142,7 @@ export const contentEs: ContentBundle = {
     },
     seo: {
       title:
-        "Alojamiento rural para dos con jacuzzi · Bages | Cal Masses",
+        "Casa rural para dos con jacuzzi · Bages | Cal Masses",
       description:
         `${R}. Alojamiento entero para dos en una finca con viñedo en Sant Salvador de Guardiola, a 25 min de Montserrat. Jacuzzi, piscina y parking.`,
       h1: "Una escapada para dos entre viñedos y naturaleza en el Bages",
@@ -467,7 +467,7 @@ export const contentEs: ContentBundle = {
     },
     related: [
       { label: "Descubrir el Bages", route: "landingBages" },
-      { label: "Alojamiento rural cerca de Manresa", route: "landingManresa" },
+      { label: "Casa rural cerca de Manresa", route: "landingManresa" },
       { label: "Alojamiento cerca de Montserrat", route: "landingMontserrat" },
       {
         label: "Descubrir el Pla de Bages y sus vinos",

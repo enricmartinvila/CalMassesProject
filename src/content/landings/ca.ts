@@ -13,19 +13,19 @@ export const landingsCa: LandingsBundle = {
     routeKey: "landingBages",
     status: "published",
     seo: {
-      title: "Allotjament rural al Bages, entre vinyes | Cal Masses",
+      title: "Casa rural al Bages, entre vinyes | Cal Masses",
       description:
-        `${R}. Allotjament rural sencer per a dos en una finca amb vinya i bosc a Sant Salvador de Guardiola, a 20 min de Manresa i a prop de Montserrat.`,
-      h1: "Allotjament rural al Bages, entre camp i vinyes",
+        `${R}. Casa rural sencera per a dos en una finca amb vinya i bosc a Sant Salvador de Guardiola, a 20 min de Manresa i a prop de Montserrat.`,
+      h1: "Casa rural al Bages, entre camp i vinyes",
     },
     breadcrumb: [
       { label: "Inici", route: "home" },
-      { label: "Allotjament rural al Bages" },
+      { label: "Casa rural al Bages" },
     ],
     hero: {
-      h1: "Allotjament rural al Bages, entre camp i vinyes",
+      h1: "Casa rural al Bages, entre camp i vinyes",
       intro: [
-        "Cal Masses és un allotjament rural per a dues persones a Sant Salvador de Guardiola, en ple Bages. Forma part d'una finca amb vinya pròpia, bosc i camps de conreu.",
+        "Cal Masses és una casa rural per a dues persones a Sant Salvador de Guardiola, en ple Bages. Forma part d'una finca amb vinya pròpia, bosc i camps de conreu.",
         "Des d'aquí, Manresa queda a uns 20 minuts i Montserrat a poc més. Pots passar el dia recorrent la comarca i tornar a la tarda a un lloc tranquil, amb jacuzzi, pati privat i cuina per preparar-te el sopar.",
       ],
       image: siteConfig.images.exterior,
@@ -85,7 +85,7 @@ export const landingsCa: LandingsBundle = {
     ],
     internalLinks: [
       { label: "Veure l'allotjament", route: "alojamiento" },
-      { label: "Allotjament rural a prop de Manresa", route: "landingManresa" },
+      { label: "Casa rural a prop de Manresa", route: "landingManresa" },
       { label: "Allotjament a prop de Montserrat", route: "landingMontserrat" },
       { label: "Allotjament rural per a dos", route: "landingParaDos" },
       { label: "Allotjament rural amb piscina", route: "landingPiscina" },
@@ -98,10 +98,10 @@ export const landingsCa: LandingsBundle = {
     routeKey: "landingManresa",
     status: "published",
     seo: {
-      title: "Allotjament rural a 20 min de Manresa | Cal Masses",
+      title: "Casa rural a 20 min de Manresa, per a dos | Cal Masses",
       description:
-        `Allotjament rural per a dos a 11 km de Manresa, en una finca amb vinya. Jacuzzi, pati privat, piscina a l'estiu i pàrquing gratuït. ${R}.`,
-      h1: "Allotjament rural a prop de Manresa",
+        `Casa rural per a dos a 11 km de Manresa, en una finca amb vinya. Jacuzzi, pati privat, piscina a l'estiu i pàrquing gratuït. ${R}.`,
+      h1: "Casa rural a prop de Manresa",
     },
     breadcrumb: [
       { label: "Inici", route: "home" },
@@ -109,9 +109,9 @@ export const landingsCa: LandingsBundle = {
       { label: "A prop de Manresa" },
     ],
     hero: {
-      h1: "Allotjament rural a prop de Manresa",
+      h1: "Casa rural a prop de Manresa",
       intro: [
-        "Cal Masses és a Sant Salvador de Guardiola, a uns 11 km de Manresa (uns 20 minuts en cotxe). És un allotjament rural per a dues persones dins d'una finca amb vinya i bosc.",
+        "Cal Masses és a Sant Salvador de Guardiola, a uns 11 km de Manresa (uns 20 minuts en cotxe). És una casa rural per a dues persones dins d'una finca amb vinya i bosc.",
         "Tens la ciutat a prop per visitar la Seu, dinar o fer la compra, i a la nit dorms al camp, amb aparcament gratuït a la finca.",
       ],
       image: siteConfig.images.exterior,
@@ -174,13 +174,13 @@ export const landingsCa: LandingsBundle = {
       primary: { label: "Consultar disponibilitat", route: "reservar" },
     },
     related: [
-      { label: "Allotjament rural al Bages", route: "landingBages" },
+      { label: "Casa rural al Bages", route: "landingBages" },
       { label: "A prop de Montserrat", route: "landingMontserrat" },
       { label: "Enoturisme", route: "landingEnoturismo" },
     ],
     internalLinks: [
       { label: "Veure l'allotjament", route: "alojamiento" },
-      { label: "Allotjament rural al Bages", route: "landingBages" },
+      { label: "Casa rural al Bages", route: "landingBages" },
       { label: "Allotjament a prop de Montserrat", route: "landingMontserrat" },
       { label: "Enoturisme al Pla de Bages", route: "landingEnoturismo" },
       { label: "Consultar disponibilitat", route: "reservar" },
@@ -191,7 +191,7 @@ export const landingsCa: LandingsBundle = {
     routeKey: "landingMontserrat",
     status: "published",
     seo: {
-      title: "Allotjament rural a 25 min de Montserrat | Cal Masses",
+      title: "Casa rural a 25 min de Montserrat | Cal Masses",
       description:
         `Dorm a 25 min de Montserrat en una finca amb vinya del Bages. Allotjament per a dos amb jacuzzi, pati privat, piscina a l'estiu i pàrquing. ${R}.`,
       h1: "Allotjament a prop de Montserrat per a una escapada tranquil·la",
@@ -237,7 +237,7 @@ export const landingsCa: LandingsBundle = {
           {
             title: "Manresa",
             text: "La Seu, el Pont Vell i la Cova de Sant Ignasi, a uns 20 minuts de la finca.",
-            cta: "Allotjament rural a prop de Manresa",
+            cta: "Casa rural a prop de Manresa",
             route: "landingManresa",
           },
           {
@@ -249,7 +249,7 @@ export const landingsCa: LandingsBundle = {
           {
             title: "Bages",
             text: "Cardona, Món Sant Benet i Sant Llorenç del Munt, tot a menys d'una hora.",
-            cta: "Allotjament rural al Bages",
+            cta: "Casa rural al Bages",
             route: "landingBages",
           },
         ],
@@ -272,13 +272,13 @@ export const landingsCa: LandingsBundle = {
     },
     related: [
       { label: "A prop de Manresa", route: "landingManresa" },
-      { label: "Allotjament rural al Bages", route: "landingBages" },
+      { label: "Casa rural al Bages", route: "landingBages" },
       { label: "Per a dos", route: "landingParaDos" },
     ],
     internalLinks: [
       { label: "Veure l'allotjament", route: "alojamiento" },
-      { label: "Allotjament rural a prop de Manresa", route: "landingManresa" },
-      { label: "Allotjament rural al Bages", route: "landingBages" },
+      { label: "Casa rural a prop de Manresa", route: "landingManresa" },
+      { label: "Casa rural al Bages", route: "landingBages" },
       { label: "Allotjament rural per a dos", route: "landingParaDos" },
       { label: "Consultar disponibilitat", route: "reservar" },
     ],
@@ -349,7 +349,7 @@ export const landingsCa: LandingsBundle = {
           {
             title: "Manresa",
             text: "La Seu, el nucli antic i el mercat, a uns 20 minuts.",
-            cta: "Allotjament rural a prop de Manresa",
+            cta: "Casa rural a prop de Manresa",
             route: "landingManresa",
           },
           {
@@ -361,7 +361,7 @@ export const landingsCa: LandingsBundle = {
           {
             title: "Bages",
             text: "Cardona, Món Sant Benet i pobles petits entre vinyes.",
-            cta: "Allotjament rural al Bages",
+            cta: "Casa rural al Bages",
             route: "landingBages",
           },
         ],
@@ -383,7 +383,7 @@ export const landingsCa: LandingsBundle = {
       { label: "Veure l'allotjament", route: "alojamiento" },
       { label: "Allotjament rural amb piscina", route: "landingPiscina" },
       { label: "Allotjament a prop de Montserrat", route: "landingMontserrat" },
-      { label: "Allotjament rural a prop de Manresa", route: "landingManresa" },
+      { label: "Casa rural a prop de Manresa", route: "landingManresa" },
       { label: "Enoturisme al Pla de Bages", route: "landingEnoturismo" },
       { label: "Consultar disponibilitat", route: "reservar" },
     ],
@@ -393,10 +393,10 @@ export const landingsCa: LandingsBundle = {
     routeKey: "landingPiscina",
     status: "published",
     seo: {
-      title: "Allotjament rural amb piscina al Bages | Cal Masses",
+      title: "Casa rural amb piscina al Bages | Cal Masses",
       description:
         `Piscina exterior d'aigua salada (compartida, a l'estiu) en una finca amb vinya del Bages. Allotjament per a dos amb jacuzzi i pati privat. ${R}.`,
-      h1: "Allotjament rural amb piscina al Bages",
+      h1: "Casa rural amb piscina al Bages",
     },
     breadcrumb: [
       { label: "Inici", route: "home" },
@@ -404,9 +404,9 @@ export const landingsCa: LandingsBundle = {
       { label: "Amb piscina" },
     ],
     hero: {
-      h1: "Allotjament rural amb piscina al Bages",
+      h1: "Casa rural amb piscina al Bages",
       intro: [
-        "Cal Masses és un allotjament rural per a dues persones a Sant Salvador de Guardiola, en una finca amb vinya i bosc. A l'estiu, la finca té una piscina exterior d'aigua salada.",
+        "Cal Masses és una casa rural per a dues persones a Sant Salvador de Guardiola, en una finca amb vinya i bosc. A l'estiu, la finca té una piscina exterior d'aigua salada.",
         "És una manera de passar la calor de la Catalunya interior: excursió al matí i tarda a l'aigua, sense agafar el cotxe.",
       ],
       image: siteConfig.images.pool,
@@ -452,12 +452,12 @@ export const landingsCa: LandingsBundle = {
     },
     related: [
       { label: "Per a dos", route: "landingParaDos" },
-      { label: "Allotjament rural al Bages", route: "landingBages" },
+      { label: "Casa rural al Bages", route: "landingBages" },
     ],
     internalLinks: [
       { label: "Veure l'allotjament", route: "alojamiento" },
       { label: "Allotjament rural per a dos", route: "landingParaDos" },
-      { label: "Allotjament rural al Bages", route: "landingBages" },
+      { label: "Casa rural al Bages", route: "landingBages" },
       { label: "Consultar disponibilitat", route: "reservar" },
     ],
   },
@@ -535,15 +535,15 @@ export const landingsCa: LandingsBundle = {
       primary: { label: "Consultar disponibilitat", route: "reservar" },
     },
     related: [
-      { label: "Allotjament rural al Bages", route: "landingBages" },
+      { label: "Casa rural al Bages", route: "landingBages" },
       { label: "A prop de Montserrat", route: "landingMontserrat" },
       { label: "A prop de Manresa", route: "landingManresa" },
       { label: "Per a dos", route: "landingParaDos" },
     ],
     internalLinks: [
-      { label: "Allotjament rural al Bages", route: "landingBages" },
+      { label: "Casa rural al Bages", route: "landingBages" },
       { label: "Allotjament a prop de Montserrat", route: "landingMontserrat" },
-      { label: "Allotjament rural a prop de Manresa", route: "landingManresa" },
+      { label: "Casa rural a prop de Manresa", route: "landingManresa" },
       { label: "Allotjament rural per a dos", route: "landingParaDos" },
       { label: "Consultar disponibilitat", route: "reservar" },
     ],
@@ -628,13 +628,13 @@ export const landingsCa: LandingsBundle = {
     related: [
       { label: "SISU", route: "sisu" },
       { label: "Cal Masses", route: "finca" },
-      { label: "Allotjament rural al Bages", route: "landingBages" },
+      { label: "Casa rural al Bages", route: "landingBages" },
       { label: "Per a dos", route: "landingParaDos" },
     ],
     internalLinks: [
       { label: "Conèixer SISU", route: "sisu" },
       { label: "Conèixer Cal Masses", route: "finca" },
-      { label: "Allotjament rural al Bages", route: "landingBages" },
+      { label: "Casa rural al Bages", route: "landingBages" },
       { label: "Allotjament rural per a dos", route: "landingParaDos" },
       { label: "Consultar disponibilitat", route: "reservar" },
     ],
